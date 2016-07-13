@@ -1,0 +1,35 @@
+language: php
+php:
+- 5.4
+- 5.5
+- 5.6
+before_install:
+- composer self-update
+env:
+- DB=pgsql
+before_script:
+- composer install --dev --prefer-source
+- psql postgres -c "CREATE ROLE root WITH LOGIN PASSWORD 'P@ssw0rd';"
+- psql postgres -c 'DROP DATABASE IF EXISTS chousei;'
+- psql postgres -c 'CREATE DATABASE chousei owner root;'
+- psql postgres -c 'DROP DATABASE IF EXISTS chousei_test;'
+- psql postgres -c 'CREATE DATABASE chousei_test owner root;'
+- php cli migrate
+script:
+- mkdir -p build/logs
+- cd application/tests
+- "../../vendor/bin/phpunit --coverage-clover ../build/logs/clover.xml"
+- cd ../../
+after_script:
+- php vendor/bin/coveralls -v -c .coveralls.yml
+- CODECLIMATE_REPO_TOKEN=9f0870890bbdaa29a2e7259601a1d0e2afca892deeb22251b4ec70cfd1e0dc47
+  vendor/bin/test-reporter --stdout > codeclimate.json
+- 'curl -X POST -d @codeclimate.json -H ''Content-Type: application/json'' -H ''User-Agent:
+  Code Climate (PHP Test Reporter v0.1.1)'' https://codeclimate.com/test_reports'
+deploy:
+  provider: heroku
+  api_key:
+    secure: WBLuPQhYhwWf21P85ihLsLrfgrnd+b+GGU8qYk8DKa5eCi4vSGYmysg1M/PeccEHKYvgEMJ4NlaIDVjeqOY6aIUcOXgd6jNv/+jR62m9ApxoomTbqBlnNqVNMZiGoe4zRWvX4tvujQvITWdiKyupmxCZ40vi3JO3/S28vkgzXMXyLJ8hJmxVgAmlY2eOOchSOuzu91P9AdxZua+8yVyM0a3ricXRzuPg+/XrFHNj30fGtb68Sq0yOaSIsla4VtFT07gyBpVeNx+zrKgfOx6khZNRaqfr7n21LgwD6t/G/yuU3x3Ixix1NWcnM1vMPVo9a8+ZNAN9KyUm0MMWQHdMAQD2Lj5a1G02ikBUp4LePUOIzXhtYS9MFfU0b/0UIgnFzUrg6t1gMZFWcfLqa4SiLItae3TcZmQ+wOL2u6XTnQNA3JFdOafqzlb4vWGOqF6NlhBGe7tNryUphq3YignvrrDbvP8/Qs8Q6VMYk7nIk6zyR20puZW03IhM14i0hsvi5zXQXJb39etBbQC3FVcQKftb8S7SCKnJKdV5kiLjkHskhnOKeQBqvOHC6PB2ADKOIvWc4Cn35j8kim5KuyNmsf21w547Ygj031uA2xHETxxAqX6Yd87x0vBBRSiHBCHpwi6TpmcpeP7RNKmrICd4k1+dRb7w5w9f6agTlXpbqbY=
+  app: mighty-temple-72031
+  on:
+    repo: daiki-takeuchi/chousei
