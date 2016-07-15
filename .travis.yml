@@ -10,10 +10,10 @@ env:
 before_script:
 - composer install --dev --prefer-source
 - psql postgres -c "CREATE ROLE root WITH LOGIN PASSWORD 'P@ssw0rd';"
-- psql postgres -c 'DROP DATABASE IF EXISTS menu-sys;'
-- psql postgres -c 'CREATE DATABASE menu-sys owner root;'
-- psql postgres -c 'DROP DATABASE IF EXISTS menu-sys_test;'
-- psql postgres -c 'CREATE DATABASE menu-sys_test owner root;'
+- psql postgres -c 'DROP DATABASE IF EXISTS "menu-sys";'
+- psql postgres -c 'CREATE DATABASE "menu-sys" owner root;'
+- psql postgres -c 'DROP DATABASE IF EXISTS "menu-sys_test";'
+- psql postgres -c 'CREATE DATABASE "menu-sys_test" owner root;'
 - php cli migrate
 script:
 - mkdir -p build/logs
@@ -22,14 +22,14 @@ script:
 - cd ../../
 after_script:
 - php vendor/bin/coveralls -v -c .coveralls.yml
-- CODECLIMATE_REPO_TOKEN=9f0870890bbdaa29a2e7259601a1d0e2afca892deeb22251b4ec70cfd1e0dc47
+- CODECLIMATE_REPO_TOKEN=b583a30d8d6cb8945319789b08fa22e1bdbd9c3eb5ce475822a5bcd948518dd5
   vendor/bin/test-reporter --stdout > codeclimate.json
 - 'curl -X POST -d @codeclimate.json -H ''Content-Type: application/json'' -H ''User-Agent:
   Code Climate (PHP Test Reporter v0.1.1)'' https://codeclimate.com/test_reports'
 deploy:
   provider: heroku
   api_key:
-    secure: WBLuPQhYhwWf21P85ihLsLrfgrnd+b+GGU8qYk8DKa5eCi4vSGYmysg1M/PeccEHKYvgEMJ4NlaIDVjeqOY6aIUcOXgd6jNv/+jR62m9ApxoomTbqBlnNqVNMZiGoe4zRWvX4tvujQvITWdiKyupmxCZ40vi3JO3/S28vkgzXMXyLJ8hJmxVgAmlY2eOOchSOuzu91P9AdxZua+8yVyM0a3ricXRzuPg+/XrFHNj30fGtb68Sq0yOaSIsla4VtFT07gyBpVeNx+zrKgfOx6khZNRaqfr7n21LgwD6t/G/yuU3x3Ixix1NWcnM1vMPVo9a8+ZNAN9KyUm0MMWQHdMAQD2Lj5a1G02ikBUp4LePUOIzXhtYS9MFfU0b/0UIgnFzUrg6t1gMZFWcfLqa4SiLItae3TcZmQ+wOL2u6XTnQNA3JFdOafqzlb4vWGOqF6NlhBGe7tNryUphq3YignvrrDbvP8/Qs8Q6VMYk7nIk6zyR20puZW03IhM14i0hsvi5zXQXJb39etBbQC3FVcQKftb8S7SCKnJKdV5kiLjkHskhnOKeQBqvOHC6PB2ADKOIvWc4Cn35j8kim5KuyNmsf21w547Ygj031uA2xHETxxAqX6Yd87x0vBBRSiHBCHpwi6TpmcpeP7RNKmrICd4k1+dRb7w5w9f6agTlXpbqbY=
-  app: mighty-temple-72031
+    secure: rHx63ux9rPj35lyrm0fcpXy5p+BKh9uyM5XsoLgXbsYtpl7E73k5ZI12ROOAa3tGF9n1HUaTnfWp5kVo/bPajkiu8W9du5cXTrdYSPC1Q8GHosOZJfCL0pvn+TgO0G1AL9CszYAkE7Ejg6oCrNYvq3e2aZPvdFuOSg2VrQ41aMbT1ZIo9TelrYnUGw7UP913CCUoo320wiPUlLGOqg+3HWiW+MT19cLqLHy2Ih4rI2OeZK4aB2RcQpEfHMwD/HsIBJCkQLEcwRnDQKR7cPcaywpX91Pg25a9ei54pcjmXnC0quw6YV709pwWyZ+Fw+KL4UrvfUjkNNnTOTjng4QTmJ2HvJ+QZv9hAU85+eNzufXwVRh9Pq5TYWq+kn02aPZeObXxcOt5x8UYnZAqGHL0mt+TvKwfNSauup9chUERAKn4XH7nXGWbdJxL+LooWGiLaUS8AyR35PV+i36+UJfG5tUTj9Y0SC6mtiKmz4u8DpYAQoyhOO4lIbelma7WvAe8lE8B0u3nUyULijPbqqQJO1B1hKkm2hESr5IWWe+xNn6N7Gw5G8O7SB/OMH+7hzVKMCYh1fmwPt8846yXv3dTamoH6YxvbU0pbO+Ybhke58TmFADB9kqyyN9OhEtxx2bQ5CQVLqvHCz4NGp5sOZTmTP+lSI+YeRXiO0NLDKrpar0=
+  app: dry-plains-28266
   on:
-    repo: daiki-takeuchi/chousei
+    repo: daiki-takeuchi/menu-sys
