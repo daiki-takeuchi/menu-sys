@@ -1,0 +1,268 @@
+@CHARSET "UTF-8";
+
+/* universal */
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic ProN","メイリオ","Meiryo UI", sans-serif;
+    min-height: 700px;
+    padding-top: 60px;
+}
+
+.navbar-fixed-top {
+    margin-bottom: 19px;
+}
+
+.container-fluid {
+    margin-right: 19px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h1 {
+    margin-bottom: 10px;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: #777;
+}
+
+/* header */
+/* navbar 全体の背景色とボーダーカラー */
+.navbar-default {
+    background-color: #ff9900;
+}
+/* navbar テキストカラー */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+/* navbar hover,focus時のテキストカラー */
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #505050;
+    background-color: #ffffff;
+}
+
+/* navbar active設定時のカラー */
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+    color: #505050;
+    background-color: #ffffff;
+}
+
+.navbar-default .navbar-text{
+    color: #ffffff;
+}
+
+/* navbar ドロップダウン(親)のカラー */
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #505050;
+    background-color: #ffffff;
+}
+
+/* navbar 画面サイズ767px以下の時のカラー */
+@media (max-width:767px) {
+    .navbar-nav .open .dropdown-menu {
+        color: #505050;
+        background-color: #ffffff;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #505050;
+    }
+
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+        color: #505050;
+        background-color: #f5f5f5;;
+    }
+    /* ドロップダウンactive設定時のカラー */
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,
+    .navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+        color: #ff9900;
+        background-color: #f5f5f5;
+    }
+}
+
+/* navbar ハンバーガー四角枠 */
+.navbar-default .navbar-toggle {
+    border-color: #ff9900;
+}
+/* navbar ハンバーガー三本線 */
+.navbar-default .navbar-toggle .fa-bars {
+    color: #ffffff;
+    background-color: #ff9900;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の背景色 */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: #ffffff;
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の四角枠 */
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+}
+/* navbar ハンバーガーボタン,タップとホバーした時の三本線 */
+.navbar-default .navbar-toggle:focus > .fa-bars,
+.navbar-default .navbar-toggle:hover > .fa-bars {
+    color: #505050;
+    background-color: #ffffff;
+}
+
+/* navbar Brandのカラー */
+.navbar-default .navbar-brand {
+    background: url("/assets/img/logo.png") no-repeat 10px center;
+    background-size: 40px;
+    font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN';
+    font-size: 18pt;
+    font-weight:bold;
+    color: #ffffff;
+    padding-left: 60px;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+header {
+    border-top: 1px solid #eaeaea;
+    color: #999;
+}
+
+/* forms */
+.from-group {
+    margin-bottom: 15px;
+}
+
+input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+input {
+    height: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* footer */
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #999;
+}
+
+footer a {
+    color: #555;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+footer small {
+    float: left;
+    margin-left: 20px;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+    margin-right: 20px;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 10px;
+}
+
+.rd3 {
+    border-radius: 3px;
+}
+
+.rd5 {
+    border-radius: 5px;
+}
+
+.rd8 {
+    border-radius: 8px;
+}
+
+span.must {
+    background-color: #ee6557;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 3px 4px;
+    margin: 3px 3px 3px 0;
+}
+
+.input-group.date input[type="text"][readonly] {
+    background: #fff;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+span.fa,span.glyphicon{
+    width: 11px;
+}
+
+.btn-default:hover,
+.btn-default:active:hover,
+.btn-default.active:hover {
+    background-color: #fff;
+}
+
+.bb-alert
+{
+    position: fixed;
+    top: 20%;
+    right: 0;
+    margin-bottom: 0;
+    font-size: small;
+    z-index: 2000;
+}
