@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-dialog.min.css"/>
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/assets/css/application.css"/>
     <script src="/assets/js/jquery-2.1.4.min.js"></script>
     <script src="/assets/js/jquery-ui-1.12.0.min.js"></script>
@@ -23,14 +23,10 @@
 </head>
 <body>
 {include file='templates/header.tpl'}
-{block name=carousel}{/block}
-{block name=jumbotron}{/block}
-<div class="container">
-    <div class="bb-alert alert alert-info" style="display:none;">
-        <span></span>
-    </div>
-    {block name=main_contents}{/block}
+<div class="bb-alert alert alert-info" style="display:none;">
+    <span></span>
 </div>
-{include file='templates/footer.tpl'}
+{block name=main_contents}{/block}
+{*{include file='templates/footer.tpl'}*}
 </body>
 </html>

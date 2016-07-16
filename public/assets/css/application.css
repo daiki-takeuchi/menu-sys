@@ -2,13 +2,15 @@
 
 /* universal */
 html {
+    height:100%;
     overflow-y: scroll;
 }
 
 body {
+    height:100%;
     font-family: "Hiragino Kaku Gothic ProN","メイリオ","Meiryo UI", sans-serif;
-    min-height: 700px;
-    padding-top: 60px;
+    font-size: 12px;
+    padding-top: 65px;
 }
 
 .navbar-fixed-top {
@@ -147,9 +149,9 @@ h2 {
 .navbar-default .navbar-brand {
     background: url("/assets/img/logo.png") no-repeat 10px center;
     background-size: 40px;
-    font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN';
-    font-size: 18pt;
-    font-weight:bold;
+    font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
     color: #ffffff;
     padding-left: 60px;
 }
@@ -163,6 +165,25 @@ h2 {
 header {
     border-top: 1px solid #eaeaea;
     color: #999;
+}
+
+.header{
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
+.header-cat{
+    display: table-cell;
+    width: 15%;
+    height:100%;
+    vertical-align: middle;
+}
+
+.header-cal{
+    display: table-cell;
+    width: 85%;
+    height:100%;
 }
 
 /* forms */
@@ -186,34 +207,10 @@ textarea {
 
 /* footer */
 footer {
+    height:70px;
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
-    color: #999;
-}
-
-footer a {
-    color: #555;
-}
-
-footer a:hover {
-    color: #222;
-}
-
-footer small {
-    float: left;
-    margin-left: 20px;
-}
-
-footer ul {
-    float: right;
-    list-style: none;
-    margin-right: 20px;
-}
-
-footer ul li {
-    float: left;
-    margin-left: 10px;
 }
 
 .rd3 {
@@ -226,6 +223,10 @@ footer ul li {
 
 .rd8 {
     border-radius: 8px;
+}
+
+.rd15 {
+    border-radius: 15px;
 }
 
 span.must {
@@ -247,14 +248,80 @@ span.must {
     background: #fff;
 }
 
-span.fa,span.glyphicon{
-    width: 11px;
+.bg-light-gray {
+    background: #f5f5f5;
 }
 
-.btn-default:hover,
-.btn-default:active:hover,
-.btn-default.active:hover {
+.btn-orange {
+    color: #fff;
+    background-color: #ff9900;
+/*    border-color: #f57c00;*/
+}
+.btn-orange:focus,
+.btn-orange.focus {
+    color: #fff;
+    background-color: #ef6c00;
+/*    border-color: #e65100;*/
+}
+.btn-orange:hover {
+    color: #fff;
+    background-color: #ef6c00;
+/*    border-color: #bf360c;*/
+}
+.btn-orange:active,
+.btn-orange.active,
+.open > .dropdown-toggle.btn-orange {
+    color: #fff;
+    background-color: #ef6c00;
+/*    border-color: #bf360c;*/
+}
+.btn-orange:active:hover,
+.btn-orange.active:hover,
+.open > .dropdown-toggle.btn-orange:hover,
+.btn-orange:active:focus,
+.btn-orange.active:focus,
+.open > .dropdown-toggle.btn-orange:focus,
+.btn-orange:active.focus,
+.btn-orange.active.focus,
+.open > .dropdown-toggle.btn-orange.focus {
+    color: #fff;
+    background-color: #bf360c;
+/*    border-color: #e65100;*/
+}
+.btn-orange:active,
+.btn-orange.active,
+.open > .dropdown-toggle.btn-orange {
+    background-image: none;
+}
+.btn-orange.disabled:hover,
+.btn-orange[disabled]:hover,
+fieldset[disabled] .btn-orange:hover,
+.btn-orange.disabled:focus,
+.btn-orange[disabled]:focus,
+fieldset[disabled] .btn-orange:focus,
+.btn-orange.disabled.focus,
+.btn-orange[disabled].focus,
+fieldset[disabled] .btn-orange.focus {
+    background-color: #ff9900;
+/*    border-color: #f57c00;*/
+}
+.btn-orange .badge {
+    color: #ff9900;
     background-color: #fff;
+}
+
+.box {
+    box-shadow: -1px 1px 5px 0 #b2b2b2;
+    -webkit-box-shadow: -1px 1px 5px 0 #b2b2b2;
+    -moz-box-shadow: -1px 1px 5px 0 #b2b2b2;
+}
+
+span.cal-sel {
+    background-color: #ee6557;
+    color: #fff;
+    display: inline-block;
+    padding: 4px 8px;
+    margin: 5px 3px 3px 3px;
 }
 
 .bb-alert
