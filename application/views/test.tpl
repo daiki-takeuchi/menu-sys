@@ -59,8 +59,63 @@
             </div>
         </div>
     </div>
-    <hr/>
-    <div class="container">
+    <hr style="margin: 5px 0 5px 0;"/>
+    <div class="list_menu" style="height:450px;overflow: scroll">
+        <div class="container">
+            <div style="width:100%">
+                <div class="pull-right" style="width: 80%;">
+                    <div class="menu">
+                        <span class="cover" style="background-image: url('/assets/img/チキンカツ.jpg')"></span>
+                    </div>
+                </div>
+                <div class="category pull-left" style="width: 20%;">
+                    <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 5px 0 5px 0;"/>
+        <div class="container">
+            <div style="width:100%">
+                <div class="pull-right" style="width: 80%;">
+                    <div class="menu">
+                        <span class="cover" style="background-image: url('/assets/img/麻婆豆腐.jpg')"></span>
+                    </div>
+                </div>
+                <div class="category pull-left" style="width: 20%;">
+                    <span class="contain" style="background-image: url('/assets/img/A Lunch.png')"></span>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 5px 0 5px 0;"/>
+        <div class="container">
+            <div style="width:100%">
+                <div class="pull-right" style="width: 80%;">
+                    <div class="menu">
+                        <span class="cover" style="background-image: url('/assets/img/お魚定食.jpg')"></span>
+                    </div>
+                </div>
+                <div class="category pull-left" style="width: 20%;">
+                    <span class="contain" style="background-image: url('/assets/img/B Lunch.png')"></span>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 5px 0 5px 0;"/>
+        <div class="container">
+            <div style="width:100%">
+                <div class="pull-right" style="width: 80%;">
+                    <div class="menu">
+                        <span class="cover" style="background-image: url('/assets/img/チキンカツ.jpg')"></span>
+                    </div>
+                    <hr style="margin: 10px 0 10px 0;"/>
+                    <div class="menu">
+                        <span class="cover" style="background-image: url('/assets/img/チキンカツ.jpg')"></span>
+                    </div>
+                </div>
+                <div class="category pull-left" style="width: 20%;">
+                    <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
+                </div>
+            </div>
+        </div>
     </div>
     <footer class="footer">
         <div class="container">
@@ -70,6 +125,6 @@
                 </button>
             </div>
             <div>
-        </div>
+            </div>
     </footer>
 {/block}

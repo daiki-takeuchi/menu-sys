@@ -205,12 +205,30 @@ textarea {
     resize: vertical;
 }
 
+.list_menu {
+    min-height: 100%;
+    height: auto;
+    /* フッターの高さ分だけ、ネガティブインデントを指定 */
+    margin: 0 auto -150px;
+    /* フッターの高さ分だけ、パディングを指定 */
+    padding: 0 0 150px;
+}
+
 /* footer */
 footer {
-    height:70px;
+    height:60px;
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
+}
+
+.footer {  /*<footer class="footer">*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #fff;
 }
 
 .rd3 {
@@ -332,4 +350,26 @@ span.cal-sel {
     margin-bottom: 0;
     font-size: small;
     z-index: 2000;
+}
+
+/* 内接リサイズ */
+.contain {
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 5px;
+    width: 140px;
+    height: 140px;
+    background-size: contain;
+}
+
+/* 外接リサイズ */
+.cover {
+    display: inline-block;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 5px;
+    width: 200px;
+    height: 140px;
+    background-size: cover;
 }
