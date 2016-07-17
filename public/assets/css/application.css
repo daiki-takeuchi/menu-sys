@@ -10,7 +10,7 @@ body {
     height:100%;
     font-family: "Hiragino Kaku Gothic ProN","メイリオ","Meiryo UI", sans-serif;
     font-size: 12px;
-    padding-top: 65px;
+    padding-top: 55px;
 }
 
 .navbar-fixed-top {
@@ -209,9 +209,9 @@ textarea {
     min-height: 100%;
     height: auto;
     /* フッターの高さ分だけ、ネガティブインデントを指定 */
-    margin: 0 auto -150px;
+    margin: 0 auto -65px;
     /* フッターの高さ分だけ、パディングを指定 */
-    padding: 0 0 150px;
+    padding: 0 0 65px;
 }
 
 /* footer */
