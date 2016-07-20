@@ -9,7 +9,6 @@ html {
 body {
     height:100%;
     font-family: "Hiragino Kaku Gothic ProN","メイリオ","Meiryo UI", sans-serif;
-    font-size: 12px;
     padding-top: 55px;
 }
 
@@ -246,6 +245,14 @@ footer {
 
 .rd15 {
     border-radius: 15px;
+}
+
+.rd24 {
+    border-radius: 24px;
+}
+
+.font-pop {
+    font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
 }
 
 span.must {
