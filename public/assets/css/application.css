@@ -208,10 +208,11 @@ textarea {
 .list_menu {
     min-height: 100%;
     height: auto;
+    width: 100%;
     /* フッターの高さ分だけ、ネガティブインデントを指定 */
-    margin: 0 auto -65px;
+    margin: 0 auto -60px;
     /* フッターの高さ分だけ、パディングを指定 */
-    padding: 0 0 65px;
+    padding: 0 0 60px;
 }
 
 /* footer */
@@ -372,4 +373,59 @@ span.cal-sel {
     width: 200px;
     height: 140px;
     background-size: cover;
+}
+
+/* ヘッダーの固定 */
+div#header-fixed
+{
+    position: fixed;            /* ヘッダーの固定 */
+    top: 50px;                   /* 位置(上50px) */
+    left: 0;                  /* 位置(右0px) */
+    width: 100%;                /* 横幅100%　*/
+    height: 70px;              /* 縦幅70px */
+}
+
+div#header-bk {
+    background-color:#fff;     /* 背景色(白) */
+    padding:10px 0 0;       /* 上10pxをあける */
+    height:70px;              /* 縦の高さ70px */
+    width:100%;                /* 横の幅を100% */
+}
+
+div#header {
+    height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+    width: 1200px;              /* 横の幅1200px */
+    margin: auto;              /* 中央揃え */
+}
+/* フッターの固定 */
+div#footer-fixed
+{
+    position: fixed;            /* フッターの固定 */
+    bottom: -30px;                /* 位置(下0px) */
+    left: 0px;                  /* 位置(左0px) */
+    width: 100%;                /* 横幅100%　*/
+    height: 120px;              /* 縦幅140px */
+}
+
+div#footer-bk
+{
+    background-color:#fff;     /* 背景色(白) */
+    height:120px;              /* 縦の高さ80px */
+    width:100%;                /* 横の幅を100% */
+}
+
+div#footer {
+    height: 100%;              /* 縦の表示領域はheader-bkと同じ */
+    width: 1200px;              /* 横の幅1200px */
+    margin: auto;              /* 中央揃え */
+}
+
+/* ボディの定義 */
+div#body-bk{
+    padding:80px 0 80px 0;    /* 上下に80pxを余白を取る */
+}
+
+div#body{
+    width:1200px;
+    margin:auto;
 }
