@@ -35,7 +35,8 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="bg-light-gray" align="center" style="height:50px;margin: 0 20px 0 20px;">
+                                    <div class="bg-light-gray" align="center"
+                                         style="height:50px;margin: 0 20px 0 20px;">
                                         <table style="table-layout:fixed;" width="100%">
                                             <tr>
                                                 <td align="center"><span class="cal-sel rd8">7/11(月)</span></td>
@@ -136,12 +137,15 @@
     <div id="footer-fixed">
         <div id="footer-bk">
             <hr style="margin:0;"/>
-            <div id="footer">
-                <div class="pull-right" align="center" style="height:45px;padding-top:9px;">
-                    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop" style="font-size: large;width:150px;">
-                        予約する
-                    </button>
-                </div>
+            <div class="container">
+                <footer id="footer">
+                    <div class="pull-right" style="height:45px;padding-top:9px;">
+                        <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
+                                style="font-size: large;width:150px;">
+                            予約する
+                        </button>
+                    </div>
+                </footer>
             </div>
         </div>
     </div>
