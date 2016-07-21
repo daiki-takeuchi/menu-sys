@@ -130,13 +130,14 @@
                     </div>
                 </div>
             </div>
+            <hr style="margin: 5px 0 5px 0;"/>
         </div>
     </div>
     <div id="footer-fixed">
         <div id="footer-bk">
             <hr style="margin:0;"/>
             <div id="footer">
-                <div class="col-md-2 pull-right" align="center" style="height:45px;padding-top:9px;">
+                <div class="pull-right" align="center" style="height:45px;padding-top:9px;">
                     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop" style="font-size: large;width:150px;">
                         予約する
                     </button>
