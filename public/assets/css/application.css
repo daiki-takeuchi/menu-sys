@@ -430,3 +430,7 @@ div#body{
     height: 100px;
     background-color: #fff;
 }
+
+@media screen and (max-width: 480px){
+    .spNone { display: none;}
+}
