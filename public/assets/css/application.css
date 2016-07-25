@@ -4,6 +4,7 @@
 html {
     position: relative;
     min-height: 100%;
+    min-width: 375px;
     overflow-y: scroll;
 }
 
@@ -435,7 +436,7 @@ div#body{
     .spNone { display: none;}
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
     .spNone1024 { display: none;}
 }
 

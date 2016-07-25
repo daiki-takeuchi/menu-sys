@@ -13,7 +13,7 @@
                         </select>
                     </div>
                     <div class="header-cal">
-                        <table style="margin-right: 30px;">
+                        <table style="margin-right: 15px;">
                             <tr>
                                 <td>
                                     <div align="center" style="height:45px;padding-top:9px;">
@@ -47,7 +47,7 @@
                                         </table>
                                     </div>
                                     <div class="ltNone1024" align="center"
-                                         style="margin: 0 20px 0 20px;">
+                                         style="margin: 0 5px 0 5px;">
                                         <table style="table-layout:fixed;" width="100%">
                                             <tr>
                                                 <td align="center">
