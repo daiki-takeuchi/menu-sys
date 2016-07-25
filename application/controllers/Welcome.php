@@ -22,9 +22,4 @@ class Welcome extends MY_Controller {
 	{
         $this->display('test.tpl');
 	}
-
-    public function test2()
-    {
-        $this->display('test2.tpl');
-    }
 }
