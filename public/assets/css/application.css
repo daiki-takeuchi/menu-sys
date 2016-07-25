@@ -434,3 +434,11 @@ div#body{
 @media screen and (max-width: 480px){
     .spNone { display: none;}
 }
+
+@media screen and (max-width: 1024px){
+    .spNone1024 { display: none;}
+}
+
+@media screen and (min-width: 1024px){
+    .ltNone1024 { display: none;}
+}

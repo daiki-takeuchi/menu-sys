@@ -23,7 +23,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="bg-light-gray" align="center"
+                                    <div class="bg-light-gray spNone1024" align="center"
                                          style="height:50px;margin: 0 20px 0 20px;">
                                         <table style="table-layout:fixed;" width="100%">
                                             <tr>
@@ -46,6 +46,27 @@
                                             </tr>
                                         </table>
                                     </div>
+                                    <div class="ltNone1024" align="center"
+                                         style="margin: 0 20px 0 20px;">
+                                        <table style="table-layout:fixed;" width="100%">
+                                            <tr>
+                                                <td align="center">
+                                                    <select class="selectpicker" data-width="105px">
+                                                        <option value="20160711" selected>7/11(月)</option>
+                                                        <option value="20160712">7/12(火)</option>
+                                                        <option value="20160713">7/13(水)</option>
+                                                        <option value="20160714">7/14(木)</option>
+                                                        <option value="20160715">7/15(金)</option>
+                                                        <option value="20160716">7/16(土)</option>
+                                                        <option value="20160717">7/17(日)</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td align="center" style="font-size: x-small;color: #999">予約済み</td>
+                                            </tr>
+                                        </table>
+                                    </div>
                                 </td>
                                 <td>
                                     <div align="center" style="height:45px;padding-top:9px;">
@@ -61,7 +82,6 @@
                 <hr style="margin:0;"/>
             </div>
         </div>
-    </div>
     </div>
     <hr style="margin: 5px 0 5px 0;"/>
     <div class="list_menu" style="overflow: scroll">
