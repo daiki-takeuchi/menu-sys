@@ -18,7 +18,7 @@
                                 <td>
                                     <div align="center" style="height:45px;padding-top:9px;">
                                         <button type="button" class="btn btn-orange btn-sm box rd15">
-                                            <span class="fa fa-arrow-left"></span> 前の週
+                                            <span class="fa fa-arrow-left"></span> <span class="spNone">前の週</span>
                                         </button>
                                     </div>
                                 </td>
@@ -50,7 +50,7 @@
                                 <td>
                                     <div align="center" style="height:45px;padding-top:9px;">
                                         <button type="button" class="btn btn-orange btn-sm box rd15">
-                                            次の週 <span class="fa fa-arrow-right"></span>
+                                            <span class="spNone">次の週</span> <span class="fa fa-arrow-right"></span>
                                         </button>
                                     </div>
                                 </td>
@@ -111,11 +111,11 @@
                 </div>
                 <div class="pull-right" style="width: 80%;">
                     <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/chic.jpg')"></span>
+                        <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
                     </div>
                     <hr style="margin: 10px 0 10px 0;"/>
                     <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/チキンカツ.jpg')"></span>
+                        <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
                     </div>
                 </div>
             </div>
