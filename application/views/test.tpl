@@ -83,7 +83,6 @@
             </div>
         </div>
     </div>
-    <hr style="margin: 5px 0 5px 0;"/>
     <div class="list_menu" style="overflow: scroll">
         <div class="container">
             <div style="width:100%">

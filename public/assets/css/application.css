@@ -187,6 +187,7 @@ header {
     display: table-cell;
     width: 85%;
     height:100%;
+    vertical-align: middle;
 }
 
 /* forms */
@@ -372,16 +373,16 @@ span.cal-sel {
 div#header-fixed
 {
     position: fixed;            /* ヘッダーの固定 */
-    top: 50px;                   /* 位置(上50px) */
+    top: 45px;                   /* 位置(上45px) */
     left: 0;                  /* 位置(右0px) */
     width: 100%;                /* 横幅100%　*/
-    height: 70px;              /* 縦幅70px */
+    height: 75px;              /* 縦幅75px */
 }
 
 div#header-bk {
     background-color:#fff;     /* 背景色(白) */
     padding:10px 0 0;       /* 上10pxをあける */
-    height:70px;              /* 縦の高さ70px */
+    height:75px;              /* 縦の高さ75px */
     width:100%;                /* 横の幅を100% */
 }
 
