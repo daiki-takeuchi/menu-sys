@@ -45,6 +45,15 @@ $(function () {
 });
 
 $(function () {
+    if (!pluginExists("selectpicker")) {
+        return;
+    }
+    $('.selectpicker').selectpicker({
+        'selectedText': 'cat'
+    });
+})
+
+$(function () {
     $('.dropdown-menu a').click(function(){
         //反映先の要素名を取得
         var visibleTag = $(this).parents('ul').attr('visibleTag');

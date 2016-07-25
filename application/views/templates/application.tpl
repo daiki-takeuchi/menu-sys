@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-dialog.min.css"/>
+    <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="/assets/css/application.css"/>
     <script src="/assets/js/jquery-2.1.4.min.js"></script>
@@ -18,6 +19,7 @@
     <script src="/assets/js/bootstrap-datepicker.min.js"></script>
     <script src="/assets/js/bootstrap-datepicker.ja.min.js"></script>
     <script src="/assets/js/bootstrap-dialog.min.js"></script>
+    <script src="/assets/js/bootstrap-select.min.js"></script>
     <script src="/assets/js/application.js"></script>
     {include file='templates/shim.tpl'}
 </head>

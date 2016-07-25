@@ -6,22 +6,11 @@
             <div id="header-bk">
                 <div id="header" class="header">
                     <div class="header-cat" align="center" style="width:170px;">
-                        <div class="btn-group">
-                            <button class="btn btn-default btn-sm" type="button" data-toggle="dropdown"
-                                    style="width:80px;">
-                                <span id="visibleValue">Lunch</span>
-                            </button>
-                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" hiddenTag="#hiddenValue" visibleTag="#visibleValue">
-                                <li><a href="javascript:void(0)" value="Breakfast">Breakfast</a></li>
-                                <li><a href="javascript:void(0)" value="Lunch">Lunch</a></li>
-                                <li><a href="javascript:void(0)" value="Dinner">Dinner</a></li>
-                            </ul>
-                            <input type="hidden" id="hiddenValue" value="">
-                        </div>
+                        <select class="selectpicker" data-width="110px">
+                            <option value="1">Breakfast</option>
+                            <option value="2" selected>Lunch</option>
+                            <option value="3">Dinner</option>
+                        </select>
                     </div>
                     <div class="header-cal">
                         <table style="margin-right: 30px;">
@@ -83,7 +72,7 @@
                 </div>
                 <div class="pull-right" style="width: 80%;">
                     <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/チキンカツ.jpg')"></span>
+                        <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
                     </div>
                 </div>
             </div>
@@ -96,7 +85,7 @@
                 </div>
                 <div class="pull-right" style="width: 80%;">
                     <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/麻婆豆腐.jpg')"></span>
+                        <span class="cover" style="background-image: url('/assets/img/mabo.jpg')"></span>
                     </div>
                 </div>
             </div>
@@ -109,7 +98,7 @@
                 </div>
                 <div class="pull-right" style="width: 80%;">
                     <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/お魚定食.jpg')"></span>
+                        <span class="cover" style="background-image: url('/assets/img/fish.jpg')"></span>
                     </div>
                 </div>
             </div>
@@ -122,7 +111,7 @@
                 </div>
                 <div class="pull-right" style="width: 80%;">
                     <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/チキンカツ.jpg')"></span>
+                        <span class="cover" style="background-image: url('/assets/img/chic.jpg')"></span>
                     </div>
                     <hr style="margin: 10px 0 10px 0;"/>
                     <div class="menu">
