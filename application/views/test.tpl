@@ -2,6 +2,23 @@
 {block name=title}test{/block}
 {block name=main_contents}
     <div class="container">
+        <div id="news-fixed">
+            <div id="news-bk">
+                <span class="label-news rd5" style="float: left;">お知らせ</span>
+                <div class="ticker" rel="slide">
+                    <ul>
+                        <li>
+                            <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
+                            <span class="news-content" style="padding-left: 10px;">【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。</span>
+                        </li>
+                        <li>
+                            <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
+                            <span class="news-content" style="padding-left: 10px;">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
+                        </li>
+                    </ul>
+                </div><!--/.ticker-->
+            </div>
+        </div>
         <div id="header-fixed">
             <div id="header-bk">
                 <div id="header" class="header">
@@ -79,7 +96,7 @@
                         </table>
                     </div>
                 </div>
-                <hr style="margin:0;"/>
+                <hr style="margin: 5px 0 5px 0;"/>
             </div>
         </div>
     </div>

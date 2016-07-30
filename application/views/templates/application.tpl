@@ -21,6 +21,7 @@
     <script src="/assets/js/bootstrap-dialog.min.js"></script>
     <script src="/assets/js/bootstrap-select.min.js"></script>
     <script src="/assets/js/application.js"></script>
+    <script src="/assets/js/ticker.js"></script>
     {include file='templates/shim.tpl'}
 </head>
 <body>

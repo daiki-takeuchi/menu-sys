@@ -10,14 +10,15 @@ html {
 
 body {
     height:100%;
-    font-family: "Hiragino Kaku Gothic ProN","メイリオ","Meiryo UI", sans-serif;
+    font-family: "Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","メイリオ","Meiryo UI", sans-serif;
     padding-top: 55px;
     /* Margin bottom by footer height */
     margin-bottom: 80px;
 }
 
 .navbar-fixed-top {
-    margin-bottom: 19px;
+    margin-bottom: 24px;
+    border-width: 0;
 }
 
 .container-fluid {
@@ -213,7 +214,7 @@ textarea {
     min-height: 100%;
     height: auto;
     /* フッターの高さ分だけ、ネガティブインデントを指定 */
-    margin: 65px auto -120px;
+    margin: 85px auto -120px;
     /* フッターの高さ分だけ、パディングを指定 */
     padding: 0 0 120px;
 }
@@ -240,9 +241,10 @@ textarea {
 
 .font-pop {
     font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    font-weight: bold;
 }
 
-span.must {
+span.label-required {
     background-color: #ee6557;
     color: #fff;
     display: inline-block;
@@ -250,7 +252,18 @@ span.must {
     font-weight: bold;
     line-height: 1;
     padding: 3px 4px;
-    margin: 3px 3px 3px 0;
+    margin: 2px 0 3px 0;
+}
+
+span.label-news {
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 3px 4px;
+    margin: 2px 0 3px 0;
 }
 
 .input-group.date input[type="text"][readonly] {
@@ -373,24 +386,19 @@ span.cal-sel {
 div#header-fixed
 {
     position: fixed;            /* ヘッダーの固定 */
-    top: 45px;                   /* 位置(上45px) */
+    top: 75px;                   /* 位置(上45px) */
     left: 0;                  /* 位置(右0px) */
     width: 100%;                /* 横幅100%　*/
-    height: 75px;              /* 縦幅75px */
+    height: 70px;              /* 縦幅75px */
 }
 
 div#header-bk {
     background-color:#fff;     /* 背景色(白) */
-    padding:10px 0 0;       /* 上10pxをあける */
-    height:75px;              /* 縦の高さ75px */
+    padding:7px 0 0;       /* 上10pxをあける */
+    height:70px;              /* 縦の高さ75px */
     width:100%;                /* 横の幅を100% */
 }
 
-div#header {
-    height: 100%;              /* 縦の表示領域はheader-bkと同じ */
-    width:  100%;              /* 横の幅100% */
-    margin: auto;              /* 中央揃え */
-}
 /* フッターの固定 */
 div#footer-fixed
 {
@@ -429,7 +437,7 @@ div#body{
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 80px;
+    height: 85px;
     background-color: #fff;
 }
 
@@ -443,4 +451,39 @@ div#body{
 
 @media screen and (min-width: 1025px){
     .ltNone1024 { display: none;}
+}
+
+.ticker {
+    margin: 3px auto;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    font-size: x-small;
+}
+
+.ticker ul {
+    width: 100%;
+    position: relative;
+}
+
+.ticker ul li {
+    width: 100%;
+    display: none;
+}
+
+/* お知らせ */
+div#news-fixed
+{
+    position: fixed;            /* ヘッダーの固定 */
+    top: 50px;                  /* 位置(上50px) */
+    left: 0;                    /* 位置(右0px) */
+    width: 100%;                /* 横幅100%　*/
+    height: 25px;               /* 縦幅25px */
+}
+
+div#news-bk {
+    background-color: #FFCC80;  /* 背景色(白) */
+    padding: 3px 8px;           /* 上下3px、左右8pxをあける */
+    height: 25px;               /* 縦の高さ25px */
+    width: 100%;                /* 横の幅を100% */
 }
