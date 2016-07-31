@@ -15,6 +15,10 @@
                             <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
                             <span class="news-content" style="padding-left: 10px;">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
                         </li>
+                        <li>
+                            <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
+                            <span class="news-content" style="padding-left: 10px;">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
+                        </li>
                     </ul>
                 </div><!--/.ticker-->
             </div>
@@ -102,56 +106,83 @@
     </div>
     <div class="list_menu" style="overflow: scroll">
         <div class="container">
-            <div style="width:100%">
-                <div class="category pull-left" style="width: 20%;">
+            <div class="row">
+                <div class="col-sm-2">
                     <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
                 </div>
-                <div class="pull-right" style="width: 80%;">
-                    <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                <div class="menu col-sm-10">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                        </div>
+                        <div class="col-lg-9">
+                            <span>aaa</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr style="margin: 5px 0 5px 0;"/>
         <div class="container">
-            <div style="width:100%">
-                <div class="category pull-left" style="width: 20%;">
+            <div class="row">
+                <div class="col-sm-2">
                     <span class="contain" style="background-image: url('/assets/img/A Lunch.png')"></span>
                 </div>
-                <div class="pull-right" style="width: 80%;">
-                    <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/mabo.jpg')"></span>
+                <div class="menu col-sm-10">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span class="cover" style="background-image: url('/assets/img/mabo.jpg')"></span>
+                        </div>
+                        <div class="col-lg-9">
+                            <span>aaa</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr style="margin: 5px 0 5px 0;"/>
         <div class="container">
-            <div style="width:100%">
-                <div class="category pull-left" style="width: 20%;">
+            <div class="row">
+                <div class="col-sm-2">
                     <span class="contain" style="background-image: url('/assets/img/B Lunch.png')"></span>
                 </div>
-                <div class="pull-right" style="width: 80%;">
-                    <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/fish.jpg')"></span>
+                <div class="menu col-sm-10">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span class="cover" style="background-image: url('/assets/img/fish.jpg')"></span>
+                        </div>
+                        <div class="col-lg-9">
+                            <span>aaa</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr style="margin: 5px 0 5px 0;"/>
         <div class="container">
-            <div style="width:100%">
-                <div class="category pull-left" style="width: 20%;">
+            <div class="row">
+                <div class="col-sm-2">
                     <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
                 </div>
-                <div class="pull-right" style="width: 80%;">
-                    <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                <div class="menu col-sm-10">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                        </div>
+                        <div class="col-lg-9">
+                            <span>aaa</span>
+                        </div>
                     </div>
+                </div>
+                <div class="menu col-sm-10 col-sm-offset-2">
                     <hr style="margin: 10px 0 10px 0;"/>
-                    <div class="menu">
-                        <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                        </div>
+                        <div class="col-lg-9">
+                            <span>aaa</span>
+                        </div>
                     </div>
                 </div>
             </div>

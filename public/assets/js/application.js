@@ -64,3 +64,7 @@ $(function () {
         $(hiddenTag).val($(this).attr('value'));
     })
 })
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+})

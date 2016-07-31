@@ -390,6 +390,7 @@ div#header-fixed
     left: 0;                  /* 位置(右0px) */
     width: 100%;                /* 横幅100%　*/
     height: 70px;              /* 縦幅75px */
+    z-index: 1;
 }
 
 div#header-bk {
@@ -407,6 +408,7 @@ div#footer-fixed
     left: 0;                  /* 位置(左0px) */
     width: 100%;                /* 横幅100%　*/
     height: 80px;              /* 縦幅80px */
+    z-index: 1;
 }
 
 div#footer-bk
@@ -479,6 +481,7 @@ div#news-fixed
     left: 0;                    /* 位置(右0px) */
     width: 100%;                /* 横幅100%　*/
     height: 25px;               /* 縦幅25px */
+    z-index: 1;
 }
 
 div#news-bk {
