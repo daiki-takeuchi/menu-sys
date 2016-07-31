@@ -4,20 +4,20 @@
     <div class="container">
         <div id="news-fixed">
             <div id="news-bk">
-                <span class="label-news rd5" style="float: left;">お知らせ</span>
+                <span class="label-news rd5 pull-left">お知らせ</span>
                 <div class="ticker" rel="slide">
                     <ul>
                         <li>
-                            <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
-                            <span class="news-content" style="padding-left: 10px;">【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。</span>
+                            <span class="news-date">2016年7月7日掲載</span>
+                            <span class="news-content">【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。</span>
                         </li>
                         <li>
-                            <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
-                            <span class="news-content" style="padding-left: 10px;">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
+                            <span class="news-date">2016年7月7日掲載</span>
+                            <span class="news-content">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
                         </li>
                         <li>
-                            <span class="news-date" style="padding-left: 10px;">2016年7月7日掲載</span>
-                            <span class="news-content" style="padding-left: 10px;">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
+                            <span class="news-date">2016年7月7日掲載</span>
+                            <span class="news-content">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
                         </li>
                     </ul>
                 </div><!--/.ticker-->
@@ -104,13 +104,13 @@
             </div>
         </div>
     </div>
-    <div class="list_menu" style="overflow: scroll">
+    <div class="list_menu" style="overflow: scroll;">
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3 col-md-2">
                     <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
                 </div>
-                <div class="menu col-sm-10">
+                <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-lg-3">
                             <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
@@ -125,10 +125,10 @@
         <hr style="margin: 5px 0 5px 0;"/>
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3 col-md-2">
                     <span class="contain" style="background-image: url('/assets/img/A Lunch.png')"></span>
                 </div>
-                <div class="menu col-sm-10">
+                <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-lg-3">
                             <span class="cover" style="background-image: url('/assets/img/mabo.jpg')"></span>
@@ -143,10 +143,10 @@
         <hr style="margin: 5px 0 5px 0;"/>
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3 col-md-2">
                     <span class="contain" style="background-image: url('/assets/img/B Lunch.png')"></span>
                 </div>
-                <div class="menu col-sm-10">
+                <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-lg-3">
                             <span class="cover" style="background-image: url('/assets/img/fish.jpg')"></span>
@@ -161,10 +161,10 @@
         <hr style="margin: 5px 0 5px 0;"/>
         <div class="container">
             <div class="row">
-                <div class="col-sm-2">
+                <div class="col-sm-3 col-md-2">
                     <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
                 </div>
-                <div class="menu col-sm-10">
+                <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-lg-3">
                             <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
@@ -174,7 +174,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu col-sm-10 col-sm-offset-2">
+                <div class="menu col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
                     <hr style="margin: 10px 0 10px 0;"/>
                     <div class="row">
                         <div class="col-lg-3">

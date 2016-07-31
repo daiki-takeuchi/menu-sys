@@ -490,3 +490,7 @@ div#news-bk {
     height: 25px;               /* 縦の高さ25px */
     width: 100%;                /* 横の幅を100% */
 }
+
+.news-date, .news-content {
+    padding-left: 10px;
+}
