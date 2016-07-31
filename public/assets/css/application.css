@@ -385,28 +385,28 @@ span.cal-sel {
 /* ヘッダーの固定 */
 div#header-fixed
 {
-    position: fixed;            /* ヘッダーの固定 */
-    top: 75px;                   /* 位置(上45px) */
-    left: 0;                  /* 位置(右0px) */
-    width: 100%;                /* 横幅100%　*/
-    height: 70px;              /* 縦幅75px */
+    position: fixed;           /* ヘッダーの固定 */
+    top: 75px;                 /* 位置(上75px) */
+    left: 0;                   /* 位置(右0px) */
+    width: 100%;               /* 横幅100% */
+    height: 70px;              /* 縦幅70px */
     z-index: 1;
 }
 
 div#header-bk {
     background-color:#fff;     /* 背景色(白) */
-    padding:7px 0 0;       /* 上10pxをあける */
-    height:70px;              /* 縦の高さ75px */
+    padding:7px 0 0;           /* 上7pxをあける */
+    height:70px;               /* 縦の高さ70px */
     width:100%;                /* 横の幅を100% */
 }
 
 /* フッターの固定 */
 div#footer-fixed
 {
-    position: fixed;            /* フッターの固定 */
-    bottom: -30px;                /* 位置(下-30px) */
-    left: 0;                  /* 位置(左0px) */
-    width: 100%;                /* 横幅100%　*/
+    position: fixed;           /* フッターの固定 */
+    bottom: -30px;             /* 位置(下-30px) */
+    left: 0;                   /* 位置(左0px) */
+    width: 100%;               /* 横幅100% */
     height: 80px;              /* 縦幅80px */
     z-index: 1;
 }
@@ -414,13 +414,13 @@ div#footer-fixed
 div#footer-bk
 {
     background-color:#fff;     /* 背景色(白) */
-    height:80px;              /* 縦の高さ80px */
+    height:80px;               /* 縦の高さ80px */
     width:100%;                /* 横の幅を100% */
 }
 
 div#footer {
     height: 100%;              /* 縦の表示領域はheader-bkと同じ */
-    width: 1200px;              /* 横の幅1200px */
+    width: 1200px;             /* 横の幅1200px */
     margin: auto;              /* 中央揃え */
 }
 
@@ -455,12 +455,14 @@ div#body{
     .ltNone1024 { display: none;}
 }
 
+/* お知らせ */
 .ticker {
     margin: 3px auto;
     text-align: left;
     position: relative;
     overflow: hidden;
     font-size: x-small;
+    white-space: nowrap;
 }
 
 .ticker ul {
@@ -473,13 +475,12 @@ div#body{
     display: none;
 }
 
-/* お知らせ */
 div#news-fixed
 {
     position: fixed;            /* ヘッダーの固定 */
     top: 50px;                  /* 位置(上50px) */
     left: 0;                    /* 位置(右0px) */
-    width: 100%;                /* 横幅100%　*/
+    width: 100%;                /* 横幅100% */
     height: 25px;               /* 縦幅25px */
     z-index: 1;
 }

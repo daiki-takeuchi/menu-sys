@@ -122,7 +122,7 @@
                 </div>
             </div>
         </div>
-        <hr style="margin: 5px 0 5px 0;"/>
+        <hr style="margin: 0 0 5px 0;"/>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <hr style="margin: 5px 0 5px 0;"/>
+        <hr style="margin: 0 0 5px 0;"/>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
@@ -158,7 +158,7 @@
                 </div>
             </div>
         </div>
-        <hr style="margin: 5px 0 5px 0;"/>
+        <hr style="margin: 0 0 5px 0;"/>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
@@ -175,7 +175,7 @@
                     </div>
                 </div>
                 <div class="menu col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-                    <hr style="margin: 10px 0 10px 0;"/>
+                    <hr style="margin: 0 0 5px 0;"/>
                     <div class="row">
                         <div class="col-lg-3">
                             <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
