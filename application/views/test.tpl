@@ -13,11 +13,11 @@
                         </li>
                         <li>
                             <span class="news-date">2016年7月7日掲載</span>
-                            <span class="news-content"><a href="#">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</a></span>
+                            <span class="news-content"><a>【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</a></span>
                         </li>
                         <li>
                             <span class="news-date">2016年7月7日掲載</span>
-                            <span class="news-content"><a href="#">【News3】このテキストはNewsTicker用のダミーテキスト［3］です。</a></span>
+                            <span class="news-content"><a>【News3】このテキストはNewsTicker用のダミーテキスト［3］です。</a></span>
                         </li>
                     </ul>
                 </div><!--/.ticker-->
