@@ -3,7 +3,7 @@
 {block name=main_contents}
     <div class="container">
         <div id="news-fixed">
-            <div id="news-bk">
+            <div id="news-bk" class="clearfix">
                 <span class="label-news rd5 pull-left">お知らせ</span>
                 <div class="ticker" rel="slide">
                     <ul>
@@ -48,13 +48,13 @@
                                          style="height:50px;margin: 0 20px 0 20px;">
                                         <table style="table-layout:fixed;" width="100%">
                                             <tr>
-                                                <td align="center"><span class="cal-sel rd8">7/11(月)</span></td>
-                                                <td align="center">7/12(火)</td>
-                                                <td align="center">7/13(水)</td>
-                                                <td align="center">7/14(木)</td>
-                                                <td align="center">7/15(金)</td>
-                                                <td align="center">7/16(土)</td>
-                                                <td align="center">7/17(日)</td>
+                                                <td align="center"><a class="cal-day cal-selected">7/11(月)</a></td>
+                                                <td align="center"><a class="cal-day">7/12(火)</a></td>
+                                                <td align="center"><a class="cal-day">7/13(水)</a></td>
+                                                <td align="center"><a class="cal-day">7/14(木)</a></td>
+                                                <td align="center"><a class="cal-day">7/15(金)</a></td>
+                                                <td align="center"><a class="cal-day">7/16(土)</a></td>
+                                                <td align="center"><a class="cal-day">7/17(日)</a></td>
                                             </tr>
                                             <tr>
                                                 <td align="center" style="font-size: x-small;color: #999">予約済み</td>

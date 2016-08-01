@@ -342,12 +342,31 @@ fieldset[disabled] .btn-orange.focus {
     -moz-box-shadow: -1px 1px 5px 0 #b2b2b2;
 }
 
-span.cal-sel {
+a.cal-day {
+    margin: 3px;
+    padding: 4px 8px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+}
+
+a.cal-day:hover {
     background-color: #ee6557;
     color: #fff;
+    border-radius: 8px;
     display: inline-block;
     padding: 4px 8px;
-    margin: 5px 3px 3px 3px;
+    text-decoration: none;
+}
+
+a.cal-selected {
+    background-color: #ee6557;
+    color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 4px 8px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .bb-alert
@@ -500,5 +519,4 @@ div#news-bk {
     color: #000000;
     text-decoration: underline;
     cursor: pointer;
-    cursor: hand;
 }
