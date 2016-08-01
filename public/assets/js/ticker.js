@@ -2,8 +2,8 @@
  * Created by DaikiTakeuchi on 2016/07/30.
  */
 $(function(){
-    var $setElm = $('.ticker ul li span.news-content');
-    var cutFigure = '130'; // カットする文字数
+    var $setElm = $('.ticker ul li span.news-content a');
+    var cutFigure = '200'; // カットする文字数
     var afterTxt = ' …'; // 文字カット後に表示するテキスト
 
     $setElm.each(function(){

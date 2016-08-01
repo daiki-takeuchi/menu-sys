@@ -51,7 +51,7 @@ $(function () {
     $('.selectpicker').selectpicker({
         'selectedText': 'cat'
     });
-})
+});
 
 $(function () {
     $('.dropdown-menu a').click(function(){
@@ -62,9 +62,18 @@ $(function () {
         $(visibleTag).html($(this).attr('value'));
         //選択された内容でhidden項目の値を変える
         $(hiddenTag).val($(this).attr('value'));
-    })
-})
+    });
+});
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip();
-})
+});
+
+$(function () {
+    $('.news-content a').click(function() {
+        BootstrapDialog.show({
+            title: 'お知らせ',
+            message: $(this).html()
+        });
+    });
+});

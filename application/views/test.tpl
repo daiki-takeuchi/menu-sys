@@ -9,15 +9,15 @@
                     <ul>
                         <li>
                             <span class="news-date">2016年7月7日掲載</span>
-                            <span class="news-content">【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。</span>
+                            <span class="news-content"><a>【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。</a></span>
                         </li>
                         <li>
                             <span class="news-date">2016年7月7日掲載</span>
-                            <span class="news-content">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
+                            <span class="news-content"><a href="#">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</a></span>
                         </li>
                         <li>
                             <span class="news-date">2016年7月7日掲載</span>
-                            <span class="news-content">【News2】このテキストはNewsTicker用のダミーテキスト［2］です。</span>
+                            <span class="news-content"><a href="#">【News3】このテキストはNewsTicker用のダミーテキスト［3］です。</a></span>
                         </li>
                     </ul>
                 </div><!--/.ticker-->

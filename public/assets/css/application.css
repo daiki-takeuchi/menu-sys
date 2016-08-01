@@ -495,3 +495,10 @@ div#news-bk {
 .news-date, .news-content {
     padding-left: 10px;
 }
+
+.news-content a {
+    color: #000000;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
