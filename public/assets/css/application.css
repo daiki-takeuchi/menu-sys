@@ -520,3 +520,9 @@ div#news-bk {
     text-decoration: underline;
     cursor: pointer;
 }
+
+#footer-right-button {
+    height: 45px;
+    padding-top: 9px;
+    text-align: center;
+}

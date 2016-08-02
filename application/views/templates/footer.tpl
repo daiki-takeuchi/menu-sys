@@ -1,10 +1,8 @@
 <footer class="footer">
-    <small> &copy; 2016</small>
-    <nav>
-        <ul>
-            <li><a href="/"></a></li>
-            <li><a href="/"></a></li>
-            <li><a href="/"></a></li>
-        </ul>
-    </nav>
+    <hr style="margin: 5px 0 5px 0;"/>
+    <div class="container">
+        <div id=footer-right-button" class="pull-right">
+            {block name=footer-right}{/block}
+        </div>
+    </div>
 </footer>

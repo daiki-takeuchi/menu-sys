@@ -8,7 +8,6 @@
     <meta name="format-detection" content="telephone=no"/>
     <link rel="stylesheet" href="/assets/css/jquery-ui-1.12.0.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-dialog.min.css"/>
     <link rel="stylesheet" href="/assets/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="/assets/css/font-awesome.min.css"/>
@@ -16,12 +15,10 @@
     <script src="/assets/js/jquery-2.1.4.min.js"></script>
     <script src="/assets/js/jquery-ui-1.12.0.min.js"></script>
     <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/bootstrap-datepicker.min.js"></script>
-    <script src="/assets/js/bootstrap-datepicker.ja.min.js"></script>
     <script src="/assets/js/bootstrap-dialog.min.js"></script>
     <script src="/assets/js/bootstrap-select.min.js"></script>
     <script src="/assets/js/application.js"></script>
-    <script src="/assets/js/ticker.js"></script>
+    {block name=include}{/block}
     {include file='templates/shim.tpl'}
 </head>
 <body>
@@ -30,6 +27,5 @@
     <span></span>
 </div>
 {block name=main_contents}{/block}
-{*{include file='templates/footer.tpl'}*}
 </body>
 </html>
