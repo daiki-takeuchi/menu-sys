@@ -114,7 +114,6 @@
         </div>
     </div>
 {/block}
-{extends file='templates/footer.tpl'}
 {block name=footer-right}
     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
             style="font-size: large;width:150px;">

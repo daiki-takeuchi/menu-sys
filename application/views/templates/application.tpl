@@ -27,5 +27,6 @@
     <span></span>
 </div>
 {block name=main_contents}{/block}
+{include file='templates/footer.tpl'}
 </body>
 </html>
