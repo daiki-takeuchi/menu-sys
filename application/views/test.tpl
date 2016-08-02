@@ -108,7 +108,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
+                    <span class="contain" style="background-image: url('/assets/img/special_lunch.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
@@ -126,7 +126,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/A Lunch.png')"></span>
+                    <span class="contain" style="background-image: url('/assets/img/a_lunch.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
@@ -144,7 +144,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/B Lunch.png')"></span>
+                    <span class="contain" style="background-image: url('/assets/img/b_lunch.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
@@ -162,12 +162,30 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/Special Lunch.png')"></span>
+                    <span class="contain" style="background-image: url('/assets/img/japanese_noodle.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                            <span class="cover" style="background-image: url('/assets/img/soba.jpg')"></span>
+                        </div>
+                        <div class="col-lg-9">
+                            <span>aaa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr style="margin: 0 0 5px 0;"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-2">
+                    <span class="contain" style="background-image: url('/assets/img/bowl.jpg')"></span>
+                </div>
+                <div class="menu col-sm-9 col-md-10">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <span class="cover" style="background-image: url('/assets/img/oyako.jpg')"></span>
                         </div>
                         <div class="col-lg-9">
                             <span>aaa</span>
@@ -178,7 +196,7 @@
                     <hr style="margin: 0 0 5px 0;"/>
                     <div class="row">
                         <div class="col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                            <span class="cover" style="background-image: url('/assets/img/gyudon.jpg')"></span>
                         </div>
                         <div class="col-lg-9">
                             <span>aaa</span>
