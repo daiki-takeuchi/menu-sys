@@ -27,7 +27,7 @@
             <div id="header-bk">
                 <div id="header" class="header">
                     <div class="header-cat" align="center" style="width:170px;">
-                        <select class="selectpicker" data-width="110px">
+                        <select class="selectpicker show-menu-arrow" data-width="110px">
                             <option value="1">Breakfast</option>
                             <option value="2" selected>Lunch</option>
                             <option value="3">Dinner</option>
@@ -72,7 +72,7 @@
                                         <table style="table-layout:fixed;" width="100%">
                                             <tr>
                                                 <td align="center">
-                                                    <select class="selectpicker" data-width="105px">
+                                                    <select class="selectpicker show-menu-arrow" data-width="105px">
                                                         <option value="20160711" selected>7/11(月)</option>
                                                         <option value="20160712">7/12(火)</option>
                                                         <option value="20160713">7/13(水)</option>
