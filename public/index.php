@@ -311,7 +311,29 @@ switch (ENVIRONMENT)
  *
  * Automatic base url
  */
-    define('APP_URL', ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . "://{$_SERVER['HTTP_HOST']}".str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']));
+    $is_ssl = false;
+    if ( isset($_SERVER['HTTPS']) === true ) // Apache
+    {
+        $is_ssl = ( $_SERVER['HTTPS'] === 'on' or $_SERVER['HTTPS'] === '1' );
+    }
+    elseif ( isset($_SERVER['SSL']) === true ) // IIS
+    {
+        $is_ssl = ( $_SERVER['SSL'] === 'on' );
+    }
+    elseif ( isset($_SERVER['HTTP_X_FORWARDED_PROTO']) === true ) // Reverse proxy
+    {
+        $is_ssl = ( strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https' );
+    }
+    elseif ( isset($_SERVER['HTTP_X_FORWARDED_PORT']) === true ) // Reverse proxy
+    {
+        $is_ssl = ( $_SERVER['HTTP_X_FORWARDED_PORT'] === '443' );
+    }
+    elseif ( isset($_SERVER['SERVER_PORT']) === true )
+    {
+        $is_ssl = ( $_SERVER['SERVER_PORT'] === '443' );
+    }
+    define('APP_URL', ($is_ssl ? 'https' : 'http') . "://{$_SERVER['HTTP_HOST']}" . str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']));
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

@@ -29,10 +29,6 @@ class MY_Controller extends CI_Controller
         $data['user_name'] = $this->user_name = isset($userdata["user"]["name"]) ? $userdata["user"]["name"] : false;
         $data['employee_id'] = $this->employee_id = isset($userdata["user"]["employee_id"]) ? $userdata["user"]["employee_id"] : false;
 
-        var_dump($_SERVER);
-        var_dump(str_replace($_SERVER['PATH_INFO'],"",$_SERVER['HTTP_REFERER']));
-        var_dump(str_replace(basename($_SERVER['HTTP_REFERER']),"",$_SERVER['HTTP_REFERER']));
-
         $this->smarty->assign($data);
     }
 
