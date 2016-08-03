@@ -17,13 +17,13 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-bars"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><span class="glyphicon glyphicon-cutlery"></span> メニュー予約</a></li>
-                        <li><a href="#"><span class="fa fa-edit"></span> メニュー管理</a></li>
-                        <li><a href="#"><span class="fa fa-bell"></span> お知らせ管理</a></li>
-                        <li><a href="#"><span class="fa fa-user"></span> ユーザー管理</a></li>
-                        <li><a href="#"><span class="fa fa-key"></span> パスワード変更</a></li>
+                        <li><a href="/"><span class="glyphicon glyphicon-cutlery"></span> メニュー予約</a></li>
+                        <li><a href="/menu/menu_list"><span class="fa fa-edit"></span> メニュー管理</a></li>
+                        <li><a href="/news"><span class="fa fa-bell"></span> お知らせ管理</a></li>
+                        <li><a href="/user"><span class="fa fa-user"></span> ユーザー管理</a></li>
+                        <li><a href="/pwchange"><span class="fa fa-key"></span> パスワード変更</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#"><span class="fa fa-sign-out"></span> ログアウト</a></li>
+                        <li><a href="/logout"><span class="fa fa-sign-out"></span> ログアウト</a></li>
                     </ul>
                 </li>
             </ul>

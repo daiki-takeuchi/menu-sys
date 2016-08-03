@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Menus extends MY_Controller {
+class Menu extends MY_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -20,6 +20,11 @@ class Menus extends MY_Controller {
 	 */
 	public function index()
 	{
-        $this->display('menus/index.tpl');
+        $this->display('menu/index.tpl');
 	}
+
+    public function menu_list()
+    {
+        $this->display('menu/menu_list.tpl');
+    }
 }

@@ -1,5 +1,5 @@
 {extends file='templates/application.tpl'}
-{block name=title}test{/block}
+{block name=title}メニュー管理{/block}
 {block name=include}
     <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
     <script src="/assets/js/bootstrap-datepicker.min.js"></script>
@@ -8,8 +8,8 @@
 {/block}
 {block name=main_contents}
     <div class="container">
-        {include file='menus/news_ticker.tpl'}
-        {include file='menus/header_calendar.tpl'}
+        {include file='menu/news_ticker.tpl'}
+        {include file='menu/header_calendar.tpl'}
     </div>
     <div class="list_menu">
         <div class="container">
@@ -114,9 +114,19 @@
         </div>
     </div>
 {/block}
-{block name=footer_right}
+{block name=footer_left}
     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
             style="font-size: large;width:150px;">
-        予約する
+        <span class="fa fa-download"></span> 実績をDL
+    </button>
+{/block}
+{block name=footer_right}
+    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
+            style="margin-right:15px;font-size: large;width:150px;">
+        <span class="fa fa-plus"></span> メニュー登録
+    </button>
+    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
+            style="font-size: large;width:150px;">
+        <span class="glyphicon glyphicon-saved"></span> 食数を保存
     </button>
 {/block}
