@@ -7,7 +7,7 @@
                 <div class="alert alert-success text-hide" style="height: 50px;text-align: left;margin-bottom: 5px;"></div>
                 <div class="row" style="margin: 5px;display: inline-block;">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-light-gray" style="height: 380px;padding-top: 10px;">
-                        <div class="row" style="padding-top: 10px;">
+                        <div class="row" style="padding-top: 50px;">
                             <div class="col-sm-12 controls">
                                 <div class="form-group" style="text-align: left;">
                                     <label><span class="label-required rd5">必須</span> 現在のパスワード</label>
