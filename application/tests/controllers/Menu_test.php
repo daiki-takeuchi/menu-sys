@@ -8,12 +8,12 @@
  * @link       https://github.com/kenjis/ci-phpunit-test
  */
 
-class Welcome_test extends TestCase
+class Menu_test extends TestCase
 {
 	public function test_index()
 	{
 		$output = $this->request('GET', '/');
-		$this->assertContains('<title>test</title>', $output);
+		$this->assertContains('<title>メニュー予約</title>', $output);
 	}
 
 	public function test_method_404()
