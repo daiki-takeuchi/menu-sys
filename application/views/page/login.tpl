@@ -1,26 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <title>ログイン</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <link rel="stylesheet" href="/assets/css/jquery-ui-1.12.0.min.css"/>
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="/assets/css/application.css"/>
-    <script src="/assets/js/jquery-2.1.4.min.js"></script>
-    <script src="/assets/js/jquery-ui-1.12.0.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/application.js"></script>
-    {include file='templates/shim.tpl'}
-</head>
-<body>
+{extends file='templates/application.tpl'}
+{block name=title}ログイン{/block}
+{block name=include}{/block}
+{block name=main_contents}
 <form method="post">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 col-lg-offset-3">
+            <div class="col-md-12 col-lg-6 col-lg-offset-3">
                 <div class="panel panel-default panel-login">
                     <div class="panel-heading">食堂メニュー予約システム</div>
                     <div class="panel-body center">
@@ -83,5 +68,4 @@
         </div>
     </div>
 </form>
-</body>
-</html>
+{/block}

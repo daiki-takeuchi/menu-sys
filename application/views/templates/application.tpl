@@ -22,11 +22,15 @@
     {include file='templates/shim.tpl'}
 </head>
 <body>
+{if !isset($has_header) || $has_header}
 {include file='templates/header.tpl'}
+{/if}
 <div class="bb-alert alert alert-info" style="display:none;">
     <span></span>
 </div>
 {block name=main_contents}{/block}
+{if !isset($has_footer) || $has_footer}
 {include file='templates/footer.tpl'}
+{/if}
 </body>
 </html>

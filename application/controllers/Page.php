@@ -20,6 +20,8 @@ class Page extends MY_Controller {
      */
     public function pwchange()
     {
+        $has_footer = false;
+        $this->smarty->assign(compact("has_footer"));
         $this->display('page/pwchange.tpl');
     }
 
@@ -30,6 +32,10 @@ class Page extends MY_Controller {
             // 予約画面にリダイレクト
             redirect('/');
         }
+        $has_header = false;
+        $has_footer = false;
+        $this->smarty->assign(compact("has_header" ,"has_footer"));
+
         $this->display('page/login.tpl');
     }
 
