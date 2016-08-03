@@ -241,7 +241,6 @@ textarea {
 
 .font-pop {
     font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
-    font-weight: bold;
 }
 
 span.label-required {
@@ -505,7 +504,7 @@ div#news-fixed
 }
 
 div#news-bk {
-    background-color: #FFCC80;  /* 背景色(白) */
+    background-color: #FFCC80;  /* 背景色(薄いオレンジ) */
     padding: 3px 8px;           /* 上下3px、左右8pxをあける */
     height: 25px;               /* 縦の高さ25px */
     width: 100%;                /* 横の幅を100% */
@@ -526,3 +525,33 @@ div#news-bk {
     padding-top: 9px;
     text-align: center;
 }
+
+.panel-default.panel-login > .panel-heading {
+    background: url("/assets/img/logo.png") no-repeat 10px center;
+    background-size: 40px;
+    font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    font-size: 16pt;
+    color: #ffffff;
+    padding-left: 60px;
+    background-color: #ff9900;
+    border-top-right-radius: 13px;
+    border-top-left-radius: 13px;
+}
+
+.panel-default.panel-login {
+    border-radius: 13px;
+}
+
+/* ログインで利用するソフトキーボード用ボタン */
+.btn-keyboard {
+    display: inline-block;
+    background-color: #fff;
+    border: solid 1px #bbb;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
+    font-size: 20pt;
+}
+
+/* ログイン画面の灰色エリア */

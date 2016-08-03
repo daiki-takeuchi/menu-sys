@@ -25,6 +25,11 @@ class Page extends MY_Controller {
 
     public function login()
     {
+        if($this->input->post()) {
+            // ログイン処理して
+            // 予約画面にリダイレクト
+            redirect('/');
+        }
         $this->display('page/login.tpl');
     }
 
