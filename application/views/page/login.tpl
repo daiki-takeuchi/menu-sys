@@ -5,15 +5,15 @@
 <form method="post">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 col-lg-6 col-lg-offset-3">
+            <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 login">
                 <div class="panel panel-default panel-login">
                     <div class="panel-heading">食堂メニュー予約システム</div>
                     <div class="panel-body center">
                         <div class="row" style="margin: 5px;display: inline-block;">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-light-gray" style="height: 380px;padding-top: 10px;">
+                            <div class="col-xs-12 bg-light-gray" style="height: 380px;padding-top: 15px;">
                                 <div style="text-align: center;"><img class="img-rounded" src="/assets/img/a_lunch.jpg"></div>
-                                <div class="row" style="padding-top: 30px;">
-                                    <div class="col-sm-12 controls">
+                                <div class="row" style="padding-top: 20px;">
+                                    <div class="col-xs-10 col-xs-offset-2 controls">
                                         <div class="form-group">
                                             <div class='input-group'>
                                                 <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
@@ -24,6 +24,10 @@
                                                 <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
                                         <a href="#" class="font-pop">パスワードがわからない場合はこちらをクリック</a>
                                     </div>
                                 </div>
@@ -31,7 +35,7 @@
                         </div>
                         <div class="row" style="margin: 5px;display: inline-block;">
                             <div class="spNone">
-                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-light-gray" style="height: 380px;padding-top: 10px;">
+                                <div class="col-xs-12 bg-light-gray" style="height: 380px;padding-top: 10px;">
                                     <div>
                                         <button type="button" class="btn-keyboard">1</button>
                                         <button type="button" class="btn-keyboard">2</button>
