@@ -1,10 +1,10 @@
 {extends file='templates/application.tpl'}
 {block name=title}メニュー予約{/block}
 {block name=include}
-    <link rel="stylesheet" href="/assets/css/bootstrap-datepicker.min.css"/>
-    <script src="/assets/js/bootstrap-datepicker.min.js"></script>
-    <script src="/assets/js/bootstrap-datepicker.ja.min.js"></script>
-    <script src="/assets/js/ticker.js"></script>
+    <link rel="stylesheet" href="{base_url}assets/css/bootstrap-datepicker.min.css"/>
+    <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
+    <script src="{base_url}assets/js/ticker.js"></script>
 {/block}
 {block name=main_contents}
     <div class="container">
@@ -15,12 +15,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/special_lunch.jpg')"></span>
+                    <span class="contain" style="background-image: url('{base_url}assets/img/special_lunch.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/chicken.jpg')"></span>
+                            <span class="cover" style="background-image: url('{base_url}assets/img/chicken.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -33,12 +33,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/a_lunch.jpg')"></span>
+                    <span class="contain" style="background-image: url('{base_url}assets/img/a_lunch.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/mabo.jpg')"></span>
+                            <span class="cover" style="background-image: url('{base_url}assets/img/mabo.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -51,12 +51,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/b_lunch.jpg')"></span>
+                    <span class="contain" style="background-image: url('{base_url}assets/img/b_lunch.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/fish.jpg')"></span>
+                            <span class="cover" style="background-image: url('{base_url}assets/img/fish.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -69,12 +69,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/japanese_noodle.jpg')"></span>
+                    <span class="contain" style="background-image: url('{base_url}assets/img/japanese_noodle.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/soba.jpg')"></span>
+                            <span class="cover" style="background-image: url('{base_url}assets/img/soba.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -87,12 +87,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('/assets/img/bowl.jpg')"></span>
+                    <span class="contain" style="background-image: url('{base_url}assets/img/bowl.jpg')"></span>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/oyako.jpg')"></span>
+                            <span class="cover" style="background-image: url('{base_url}assets/img/oyako.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -103,7 +103,7 @@
                     <hr style="margin: 0 0 5px 0;"/>
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('/assets/img/gyudon.jpg')"></span>
+                            <span class="cover" style="background-image: url('{base_url}assets/img/gyudon.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>

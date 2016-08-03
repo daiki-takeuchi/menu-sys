@@ -18,7 +18,7 @@ class Menu_test extends TestCase
 
 	public function test_method_404()
 	{
-		$this->request('GET', 'welcome/method_not_exist');
+		$this->request('GET', 'menu/method_not_exist');
 		$this->assertResponseCode(404);
 	}
 
