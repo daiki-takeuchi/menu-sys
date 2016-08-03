@@ -31,15 +31,15 @@
                                     <div class="col-sm-12 controls">
                                         <div class="form-group">
                                             <div class='input-group'>
-                                                <input type="text" class="form-control" name="shain_id" placeholder="社員番号" />
+                                                <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <div class='input-group'>
-                                                <input type="password" class="form-control" name="password" placeholder="パスワード" />
+                                                <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
                                             </div>
                                         </div>
-                                        <a href="#" class="font-pop"">パスワードがわからない場合はこちらをクリック</a>
+                                        <a href="#" class="font-pop">パスワードがわからない場合はこちらをクリック</a>
                                     </div>
                                 </div>
                             </div>
