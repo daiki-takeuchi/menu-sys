@@ -30,7 +30,7 @@ class Page extends MY_Controller {
         if($this->input->post()) {
             // ログイン処理して
             // 予約画面にリダイレクト
-            redirect(site_url());
+            redirect(base_url());
         }
         $has_header = false;
         $has_footer = false;
@@ -42,6 +42,6 @@ class Page extends MY_Controller {
     public function logout()
     {
         // ログアウト処理をしてからlogin画面にリダイレクト
-        redirect(site_url().'login');
+        redirect(base_url().'login');
     }
 }
