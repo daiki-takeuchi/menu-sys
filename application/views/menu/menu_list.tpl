@@ -116,17 +116,17 @@
 {/block}
 {block name=footer_left}
     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
-            style="font-size: large;width:150px;">
-        <span class="fa fa-download"></span> 実績をDL
+            style="font-size: large;">
+        <span class="fa fa-download"></span><span class="spNone"> 実績をDL</span>
     </button>
 {/block}
 {block name=footer_right}
     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
-            style="margin-right:15px;font-size: large;width:150px;">
-        <span class="fa fa-plus"></span> メニュー登録
+            style="margin-right:15px;font-size: large;">
+        <span class="fa fa-plus"></span><span class="spNone"> メニュー登録</span>
     </button>
     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
-            style="font-size: large;width:150px;">
-        <span class="glyphicon glyphicon-saved"></span> 食数を保存
+            style="font-size: large;">
+        <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 食数を保存</span>
     </button>
 {/block}

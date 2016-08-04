@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <button type="submit" name="login" class="btn btn-orange btn-sm box rd24 font-pop"
-                                                style="font-size: large;">
+                                                style="font-size: large;width: 190px;">
                                             <span class="fa fa-sign-in"></span> ログイン&nbsp;&nbsp;
                                         </button>
                                     </div>
