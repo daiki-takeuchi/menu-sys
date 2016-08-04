@@ -258,11 +258,11 @@ span.label-news {
     background-color: #000;
     color: #fff;
     display: inline-block;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     line-height: 1;
     padding: 3px 4px;
-    margin: 2px 0 3px 0;
+    margin: 1px 0 3px 0;
 }
 
 .input-group.date input[type="text"][readonly] {
@@ -475,11 +475,11 @@ div#body{
 
 /* お知らせ */
 .ticker {
-    margin: 3px auto;
+    margin: 1px auto;
     text-align: left;
     position: relative;
     overflow: hidden;
-    font-size: x-small;
+    font-size: small;
     white-space: nowrap;
 }
 
@@ -553,5 +553,3 @@ div#news-bk {
     font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     font-size: 20pt;
 }
-
-/* ログイン画面の灰色エリア */

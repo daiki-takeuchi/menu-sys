@@ -1,7 +1,14 @@
-<div class="row" style="padding-top: 20px;">
-    <div class="col-xs-12 controls">
+<script>
+    $(function () {
+        $(".selectpicker").selectpicker({
+            "selectedText": "cat"
+        });
+    });
+</script>
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3 controls">
         <div class="form-group">
-            <label>対象年月</label>
+            <div><label>対象年月</label></div>
             <select class="selectpicker show-menu-arrow" data-width="90px">
                 <option value="2015">2015</option>
                 <option value="2016" selected>2016</option>
@@ -23,7 +30,7 @@
             </select> 月　
         </div>
         <div class="form-group">
-            <label>対象カテゴリ</label>
+            <div><label>対象カテゴリ</label></div>
             <select class="selectpicker show-menu-arrow" data-width="125px">
                 <option value="1">Breakfast</option>
                 <option value="2" selected>Lunch</option>
@@ -31,18 +38,11 @@
             </select>
         </div>
         <div class="form-group">
-            <label>出力帳票</label>
+            <div><label>出力帳票</label></div>
             <select class="selectpicker show-menu-arrow" data-width="150px">
                 <option value="1">食数実績表</option>
                 <option value="2">食堂取組報告</option>
             </select>
         </div>
     </div>
-    <script>
-        $(function () {
-            $(".selectpicker").selectpicker({
-                "selectedText": "cat"
-            });
-        });
-    </script>
 </div>
