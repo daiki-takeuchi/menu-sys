@@ -61,7 +61,8 @@ $(function () {
     $('.news-content a').click(function() {
         BootstrapDialog.show({
             title: "お知らせ",
-            message: $(this).html()
+            message: $(this).html(),
+            draggable: true
         });
     });
 });
@@ -83,5 +84,35 @@ $(function () {
                 input.val(input.val() + $(this).text());
             }
         }
+    });
+});
+
+$(function () {
+    $('.excel-download').click(function() {
+        BootstrapDialog.show({
+            title: "実績ダウンロード",
+            message: function(dialog) {
+                var $message = $('<div></div>');
+                var pageToLoad = dialog.getData('pageToLoad');
+                $message.load(pageToLoad);
+
+                return $message;
+            },
+            data: {
+                'pageToLoad': 'download_display'
+            },
+            buttons: [{
+                id: 'btn-download',
+                label: 'ダウンロード',
+                cssClass: 'btn-success',
+                action: function(dialog) {
+                    var $button = this; // 'this' here is a jQuery object that wrapping the <button> DOM element.
+                    $button.disable();
+                    $button.spin();
+//                    dialog.setClosable(false);
+                }
+            }],
+            draggable: true
+        });
     });
 });

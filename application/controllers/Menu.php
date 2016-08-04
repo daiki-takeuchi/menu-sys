@@ -27,4 +27,12 @@ class Menu extends MY_Controller {
     {
         $this->display('menu/menu_list.tpl');
     }
+
+    public function download_display()
+    {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            $this->display('menu/download.tpl');
+        }
+    }
 }
