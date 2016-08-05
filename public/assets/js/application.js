@@ -107,3 +107,60 @@ $(function () {
         });
     });
 });
+
+$(function () {
+    $('#pwchange').click(function() {
+
+        var $text = $('<div></div>');
+        $text.append('食堂利用状況を分析する際に利用させていただきますので、性別の入力にご協力お願いします。<br /><br />');
+        $text.append('<div class="row center">' +
+                     '  <div class="col-xs-12">' +
+                     '      <div class="radio-inline">' +
+                     '          <label><input type="radio" name="gender" value="1"> 男性</label>' +
+                     '      </div>' +
+                     '      <div class="radio-inline">' +
+                     '          <label><input type="radio" name="gender" value="2"> 女性</label>' +
+                     '      </div>' +
+                     '      <div class="radio-inline">' +
+                     '          <label><input type="radio" name="gender" value="3"> その他</label>' +
+                     '      </div>' +
+                     '  </div>' +
+                     '</div><br /><div class="alert alert-danger hidden">性別を選択してください。</div>');
+
+        BootstrapDialog.show({
+            title: '性別の入力をお願いします。',
+            message: $text,
+            cssClass: 'input-gender-dialog',
+            draggable: true,
+            closable: false,
+            buttons: [{
+                id: 'btn-register',
+                label: '登録',
+                cssClass: 'btn-success',
+                action: function(dialog) {
+                    var gender = dialog.getModalBody().find("[name=gender]:checked").val();
+                    if(gender === undefined) {
+                        dialog.getModalBody().find('.alert').removeClass('hidden');
+                        return false;
+                    }
+                    var $button = this; // 'this' here is a jQuery object that wrapping the <button> DOM element.
+                    $button.disable();
+                    $button.spin();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'user/update_gender',
+                        data: {gender : gender},
+                        dataType: 'json',
+                        success: function(data, dataType) {dialog.close();},
+                        error: function(XMLHttpRequest, textStatus, errorThrown){MessageBox.show(errorThrown.message);}
+                    });
+                    $button.stopSpin();
+                    $button.enable();
+                }
+            }],
+            onhide: function(dialog){
+                $('#form').submit();
+            }
+        });
+    });
+});

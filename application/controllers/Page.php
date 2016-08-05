@@ -20,8 +20,16 @@ class Page extends MY_Controller {
      */
     public function pwchange()
     {
+        $base_url = base_url();
         $has_footer = false;
-        $this->smarty->assign(compact("has_footer"));
+        $message_class = "text-hide";
+        $message = "パスワードを変更しました。引き続き、メニュー予約をする場合は、<a href='${base_url}'><b>こちら</b></a>をクリックして下さい。";
+
+        if($this->input->post()) {
+            $message_class = "";
+        }
+
+        $this->smarty->assign(compact("has_footer", "message_class", "message"));
         $this->display('page/pwchange.tpl');
     }
 
@@ -42,6 +50,6 @@ class Page extends MY_Controller {
     public function logout()
     {
         // ログアウト処理をしてからlogin画面にリダイレクト
-        redirect(base_url().'login');
+        redirect(base_url()."login");
     }
 }

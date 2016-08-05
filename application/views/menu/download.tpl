@@ -13,11 +13,11 @@
         $('.form_list').change(function(){
             var selected = $('.form_list option:selected').val();
             if(selected == '1') {
-                $('.target-month').addClass('hidden');
-                $('.target-date').removeClass('hidden');
+                $('.area-target-year-month').addClass('hidden');
+                $('.area-target-date').removeClass('hidden');
             } else {
-                $('.target-month').removeClass('hidden');
-                $('.target-date').addClass('hidden');
+                $('.area-target-year-month').removeClass('hidden');
+                $('.area-target-date').addClass('hidden');
             }
         });
     });
@@ -32,23 +32,23 @@
                 <option value="3">食堂取組報告</option>
             </select>
         </div>
-        <div class="form-group target-date">
+        <div class="form-group area-target-date">
             <div><label>対象日</label></div>
             <div class='input-group date'>
                 <span class="input-group-addon">
                     <span class="fa fa-calendar"></span>
                 </span>
-                <input type="text" class="form-control" name="date" value="{$smarty.now|date_format:'%Y/%m/%d'}" placeholder="対象日" />
+                <input type="text" class="form-control" name="target-date" value="{$smarty.now|date_format:'%Y/%m/%d'}" placeholder="対象日" />
             </div>
         </div>
-        <div class="form-group target-month hidden">
+        <div class="form-group area-target-year-month hidden">
             <div><label>対象年月</label></div>
-            <select class="selectpicker show-menu-arrow" data-width="90px">
+            <select class="selectpicker show-menu-arrow" name="target-year" data-width="90px">
                 <option value="2015">2015</option>
                 <option value="2016" selected>2016</option>
                 <option value="2017">2017</option>
             </select> 年　
-            <select class="selectpicker show-menu-arrow" data-width="65px">>
+            <select class="selectpicker show-menu-arrow" name="target-month" data-width="65px">>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>

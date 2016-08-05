@@ -548,3 +548,7 @@ div#news-bk {
     font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     font-size: 20pt;
 }
+
+.input-gender-dialog .modal-dialog {
+    width: 400px;
+}

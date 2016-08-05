@@ -22,4 +22,12 @@ class User extends MY_Controller {
     {
         $this->display('user/index.tpl');
     }
+
+    public function update_gender()
+    {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            echo json_encode("");
+        }
+    }
 }
