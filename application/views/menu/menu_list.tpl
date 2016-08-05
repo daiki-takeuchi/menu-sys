@@ -117,7 +117,7 @@
 {block name=footer_left}
     <button type="button" class="btn btn-orange btn-sm box rd24 font-pop excel-download"
             style="font-size: large;">
-        <span class="fa fa-download"></span><span class="spNone"> 実績をDL</span>
+        <span class="fa fa-download"></span><span class="spNone"> 帳票をDL</span>
     </button>
 {/block}
 {block name=footer_right}

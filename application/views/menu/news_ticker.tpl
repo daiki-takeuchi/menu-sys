@@ -1,7 +1,7 @@
 <div id="news-fixed">
     <div id="news-bk" class="clearfix">
         <span class="label-news rd5 pull-left">お知らせ</span>
-        <div class="ticker" rel="slide">
+        <div class="ticker" rel="roll">
             <ul>
                 <li>
                     <span class="news-date">2016年7月7日掲載</span>

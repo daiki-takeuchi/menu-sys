@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-xs-12 col-md-12 col-lg-6 col-lg-offset-3">
                 <div class="panel panel-default panel-login">
-                    <div class="panel-heading">食堂メニュー予約システム</div>
+                    <div class="panel-heading" style="background: url('{base_url}assets/img/logo.png') no-repeat 10px center;background-size: 40px;background-color: #ff9900;">食堂メニュー予約システム</div>
                     <div class="panel-body center">
                         <div class="row" style="margin: 5px;display: inline-block;">
                             <div class="col-xs-12 bg-light-gray" style="height: 380px; width: 220px;padding-top: 15px;">

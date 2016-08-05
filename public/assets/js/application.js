@@ -90,17 +90,8 @@ $(function () {
 $(function () {
     $('.excel-download').click(function() {
         BootstrapDialog.show({
-            title: "実績ダウンロード",
-            message: function(dialog) {
-                var $message = $('<div></div>');
-                var pageToLoad = dialog.getData('pageToLoad');
-                $message.load(pageToLoad);
-
-                return $message;
-            },
-            data: {
-                'pageToLoad': 'download_display'
-            },
+            title: "帳票ダウンロード",
+            message: $('<div></div>').load('download_display'),
             buttons: [{
                 id: 'btn-download',
                 label: 'ダウンロード',

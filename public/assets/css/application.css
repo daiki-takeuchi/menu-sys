@@ -151,8 +151,6 @@ h2 {
 
 /* navbar Brandのカラー */
 .navbar-default .navbar-brand {
-    background: url("/assets/img/logo.png") no-repeat 10px center;
-    background-size: 40px;
     font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     font-size: 16pt;
     font-weight: bold;
@@ -479,7 +477,7 @@ div#body{
     text-align: left;
     position: relative;
     overflow: hidden;
-    font-size: small;
+    font-size: 10pt;
     white-space: nowrap;
 }
 
@@ -527,13 +525,10 @@ div#news-bk {
 }
 
 .panel-default.panel-login > .panel-heading {
-    background: url("/assets/img/logo.png") no-repeat 10px center;
-    background-size: 40px;
     font-family: 'HGP創英角ﾎﾟｯﾌﾟ体','ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN', sans-serif;
     font-size: 16pt;
     color: #ffffff;
     padding-left: 60px;
-    background-color: #ff9900;
     border-top-right-radius: 13px;
     border-top-left-radius: 13px;
 }
