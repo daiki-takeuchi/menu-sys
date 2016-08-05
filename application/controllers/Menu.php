@@ -28,11 +28,11 @@ class Menu extends MY_Controller {
         $this->display('menu/menu_list.tpl');
     }
 
-    public function download_display()
+    public function excel_download()
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            $this->display('menu/download.tpl');
+            $this->display('menu/excel_download.tpl');
         }
     }
 }

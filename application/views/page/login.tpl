@@ -1,8 +1,9 @@
 {extends file='templates/application.tpl'}
 {block name=title}ログイン{/block}
-{block name=include}{/block}
+{block name=include}
+    <script src="{base_url}assets/js/keyboard.js"></script>
+{/block}
 {block name=main_contents}
-<form method="post">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-12 col-lg-6 col-lg-offset-3">
@@ -12,24 +13,20 @@
                         <div class="row" style="margin: 5px;display: inline-block;">
                             <div class="col-xs-12 bg-light-gray" style="height: 380px; width: 220px;padding-top: 15px;">
                                 <div style="text-align: center;"><img class="img-rounded" src="{base_url}assets/img/a_lunch.jpg"></div>
-                                <div class="row" style="padding-top: 20px;">
-                                    <div class="col-xs-12 controls">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
+                                <form class="form-horizontal" method="post">
+                                    <div class="row" style="padding-top: 20px;">
+                                        <div class="col-xs-10 col-xs-offset-1 controls">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
+                                                <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
+                                                <button type="submit" name="login" class="btn btn-orange btn-sm box rd24 font-pop"
+                                                        style="font-size: large;width: 190px;">
+                                                    <span class="fa fa-sign-in"></span> ログイン&nbsp;&nbsp;
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <button type="submit" name="login" class="btn btn-orange btn-sm box rd24 font-pop"
-                                                style="font-size: large;width: 190px;">
-                                            <span class="fa fa-sign-in"></span> ログイン&nbsp;&nbsp;
-                                        </button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                         <div class="row" style="margin: 5px;display: inline-block;">
@@ -67,5 +64,4 @@
             </div>
         </div>
     </div>
-</form>
 {/block}

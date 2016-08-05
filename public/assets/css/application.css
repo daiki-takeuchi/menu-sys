@@ -549,6 +549,9 @@ div#news-bk {
     font-size: 20pt;
 }
 
-.input-gender-dialog .modal-dialog {
-    width: 400px;
+/* 画面サイズ768px以上の時 */
+@media (min-width:768px) {
+    .input-gender-dialog .modal-dialog {
+        width: 400px;
+    }
 }

@@ -52,4 +52,20 @@ class Page extends MY_Controller {
         // ログアウト処理をしてからlogin画面にリダイレクト
         redirect(base_url()."login");
     }
+
+    public function input_gender()
+    {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            $this->display('page/input_gender.tpl');
+        }
+    }
+
+    public function update_gender()
+    {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            echo json_encode("");
+        }
+    }
 }

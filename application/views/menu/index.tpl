@@ -5,6 +5,7 @@
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
     <script src="{base_url}assets/js/ticker.js"></script>
+    <script src="{base_url}assets/js/popup-news.js"></script>
 {/block}
 {block name=main_contents}
     <div class="container">
