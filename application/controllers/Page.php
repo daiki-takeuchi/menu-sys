@@ -30,7 +30,7 @@ class Page extends MY_Controller {
         }
 
         $this->smarty->assign(compact("has_footer", "message_class", "message"));
-        $this->display('page/pwchange.tpl');
+        $this->display("page/pwchange.tpl");
     }
 
     public function login()
@@ -44,7 +44,7 @@ class Page extends MY_Controller {
         $has_footer = false;
         $this->smarty->assign(compact("has_header" ,"has_footer"));
 
-        $this->display('page/login.tpl');
+        $this->display("page/login.tpl");
     }
 
     public function logout()
@@ -57,7 +57,10 @@ class Page extends MY_Controller {
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            $this->display('page/input_gender.tpl');
+            $data['gender'] = array("1" => "男性", "2" => "女性", "3" => "その他");
+
+            $this->smarty->assign($data);
+            $this->display("page/input_gender.tpl");
         }
     }
 

@@ -32,6 +32,17 @@ class Menu extends MY_Controller {
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
+            $data['form_list'] = array('1' => '予約者リスト', '2' => '食数実績表', '3' => '食堂取組報告', );
+
+            $data['year']['values'] = array(date('Y')-1,date('Y'),date('Y')+1);
+            $data['year']['selected'] = date('Y');
+            for ($i=1; $i<=12; $i++){
+                $data['month']['values'][] = $i;
+            }
+            $data['month']['selected'] = date('n');
+            $data['category'] = array('1' => '朝食メニュー', '2' => 'ランチメニュー', '3' => '夕食メニュー');
+
+            $this->smarty->assign($data);
             $this->display('menu/excel_download.tpl');
         }
     }
