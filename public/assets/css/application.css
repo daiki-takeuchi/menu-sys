@@ -13,7 +13,7 @@ body {
     font-family: "Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","メイリオ","Meiryo UI", sans-serif;
     padding-top: 55px;
     /* Margin bottom by footer height */
-    margin-bottom: 80px;
+    margin-bottom: 85px;
 }
 
 .navbar-fixed-top {
@@ -331,6 +331,65 @@ fieldset[disabled] .btn-orange.focus {
 .btn-orange .badge {
     color: #ff9900;
     background-color: #fff;
+}
+
+/* 削除ボタン */
+.btn-delete {
+    color: #444;
+    background-color: #bdbdbd;
+    /*    border-color: #f57c00;*/
+}
+.btn-delete:focus,
+.btn-delete.focus {
+    color: #444;
+    background-color: #9e9e9e;
+    /*    border-color: #e65100;*/
+}
+.btn-delete:hover {
+    color: #444;
+    background-color: #9e9e9e;
+    /*    border-color: #bf360c;*/
+}
+.btn-delete:active,
+.btn-delete.active,
+.open > .dropdown-toggle.btn-delete {
+    color: #444;
+    background-color: #757575;
+    /*    border-color: #bf360c;*/
+}
+.btn-delete:active:hover,
+.btn-delete.active:hover,
+.open > .dropdown-toggle.btn-delete:hover,
+.btn-delete:active:focus,
+.btn-delete.active:focus,
+.open > .dropdown-toggle.btn-delete:focus,
+.btn-delete:active.focus,
+.btn-delete.active.focus,
+.open > .dropdown-toggle.btn-delete.focus {
+    color: #444;
+    background-color: #757575;
+    /*    border-color: #e65100;*/
+}
+.btn-delete:active,
+.btn-delete.active,
+.open > .dropdown-toggle.btn-delete {
+    background-image: none;
+}
+.btn-delete.disabled:hover,
+.btn-delete[disabled]:hover,
+fieldset[disabled] .btn-delete:hover,
+.btn-delete.disabled:focus,
+.btn-delete[disabled]:focus,
+fieldset[disabled] .btn-delete:focus,
+.btn-delete.disabled.focus,
+.btn-delete[disabled].focus,
+fieldset[disabled] .btn-delete.focus {
+    background-color: #bdbdbd;
+    /*    border-color: #f57c00;*/
+}
+.btn-delete .badge {
+    color: #bdbdbd;
+    background-color: #444;
 }
 
 .box {
