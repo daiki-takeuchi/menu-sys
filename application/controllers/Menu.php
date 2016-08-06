@@ -23,11 +23,17 @@ class Menu extends MY_Controller {
 
     public function index()
 	{
+        $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
+
+        $this->smarty->assign($data);
         $this->display('menu/index.tpl');
 	}
 
     public function menu_list()
     {
+        $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
+
+        $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
     }
 
@@ -61,7 +67,7 @@ class Menu extends MY_Controller {
                 $data['month']['values'][] = $i;
             }
             $data['month']['selected'] = date('n');
-            $data['category'] = array('1' => '朝食メニュー', '2' => 'ランチメニュー', '3' => '夕食メニュー');
+            $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
 
             $this->smarty->assign($data);
             $this->display('menu/excel_download.tpl');
