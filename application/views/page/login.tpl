@@ -19,7 +19,7 @@
                                             <div class="form-group">
                                                 <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
                                                 <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
-                                                <button type="submit" name="login" class="btn btn-orange btn-sm box rd24 font-pop"
+                                                <button type="submit" name="login" class="btn btn-orange box rd24 font-pop"
                                                         style="font-size: large;width: 190px;">
                                                     <span class="fa fa-sign-in"></span> ログイン&nbsp;&nbsp;
                                                 </button>

@@ -25,7 +25,7 @@
                             <span class="cover" style="background-image: url('{base_url}assets/img/chicken.jpg')"></span>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
+                            <a href="{base_url}menu/edit/1">aaa</a>
                         </div>
                     </div>
                 </div>
@@ -117,18 +117,18 @@
     </div>
 {/block}
 {block name=footer_left}
-    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop excel-download"
+    <button type="button" class="btn btn-orange box rd24 font-pop excel-download"
             style="font-size: large;">
         <span class="fa fa-download"></span><span class="spNone"> 帳票をDL</span>
     </button>
 {/block}
 {block name=footer_right}
-    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
+    <a href="{base_url}menu/new" class="btn btn-orange box rd24 font-pop"
             style="margin-right:15px;font-size: large;">
         <span class="fa fa-plus"></span><span class="spNone"> メニュー登録</span>
-    </button>
-    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
+    </a>
+    <a href="{base_url}menu/list" class="btn btn-orange box rd24 font-pop"
             style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 食数を保存</span>
-    </button>
+    </a>
 {/block}

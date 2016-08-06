@@ -28,6 +28,22 @@ class Menu extends MY_Controller {
         $this->display('menu/menu_list.tpl');
     }
 
+    public function menu_new()
+    {
+        $this->edit();
+    }
+
+    public function edit($menu_id = null)
+    {
+        $title = 'メニュー登録';
+        if($menu_id) {
+            $title = 'メニュー編集';
+        }
+
+        $this->smarty->assign(compact('title'));
+        $this->display('menu/menu_form.tpl');
+    }
+
     public function excel_download()
     {
         // Ajax通信の場合のみ処理する

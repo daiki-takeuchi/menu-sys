@@ -30,7 +30,7 @@
                                         <label><span class="label-required rd5">必須</span> 新しいパスワード（確認）</label>
                                         <input type="password" class="form-control soft_keyboard" name="new_password_confirmation" placeholder="新しいパスワード（確認）" />
                                     </div>
-                                    <button type="button" id="pwchange" class="btn btn-orange btn-sm box rd24 font-pop"
+                                    <button type="button" id="pwchange" class="btn btn-orange box rd24 font-pop"
                                             style="font-size: large;">
                                         <span class="glyphicon glyphicon-saved"></span> パスワードを変更&nbsp;&nbsp;
                                     </button>

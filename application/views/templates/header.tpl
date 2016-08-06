@@ -20,7 +20,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="{base_url}"><span class="glyphicon glyphicon-cutlery"></span> メニュー予約</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="{base_url}menu/menu_list"><span class="fa fa-edit"></span> メニュー管理</a></li>
+                        <li><a href="{base_url}menu/list"><span class="fa fa-edit"></span> メニュー管理</a></li>
                         <li><a href="{base_url}news"><span class="fa fa-bell"></span> お知らせ管理</a></li>
                         <li><a href="{base_url}user"><span class="fa fa-user"></span> ユーザー管理</a></li>
                         <li><a href="{base_url}pwchange"><span class="fa fa-key"></span> パスワード変更</a></li>

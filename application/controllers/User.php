@@ -22,4 +22,20 @@ class User extends MY_Controller {
     {
         $this->display('user/index.tpl');
     }
+
+    public function user_new()
+    {
+        $this->edit();
+    }
+
+    public function edit($user_id = null)
+    {
+        $title = 'ユーザー登録';
+        if($user_id) {
+            $title = 'ユーザー編集';
+        }
+
+        $this->smarty->assign(compact('title'));
+        $this->display('user/user_form.tpl');
+    }
 }

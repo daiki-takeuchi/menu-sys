@@ -116,7 +116,7 @@
     </div>
 {/block}
 {block name=footer_right}
-    <button type="button" class="btn btn-orange btn-sm box rd24 font-pop"
+    <button type="button" class="btn btn-orange box rd24 font-pop"
             style="font-size: large;width:150px;">
         予約する
     </button>

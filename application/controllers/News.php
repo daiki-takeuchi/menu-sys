@@ -22,4 +22,20 @@ class News extends MY_Controller {
     {
         $this->display('news/index.tpl');
     }
+
+    public function news_new()
+    {
+        $this->edit();
+    }
+
+    public function edit($news_id = null)
+    {
+        $title = 'お知らせ登録';
+        if($news_id) {
+            $title = 'お知らせ編集';
+        }
+
+        $this->smarty->assign(compact('title'));
+        $this->display('news/news_form.tpl');
+    }
 }
