@@ -253,7 +253,7 @@ span.label-required {
 }
 
 span.label-news {
-    background-color: #000;
+    background-color: #222222;
     color: #fff;
     display: inline-block;
     font-size: 12px;
@@ -344,7 +344,7 @@ a.cal-day {
     padding: 4px 8px;
     text-decoration: none;
     cursor: pointer;
-    color: #000000;
+    color: #222222;
 }
 
 a.cal-day:hover {
@@ -513,15 +513,9 @@ div#news-bk {
 }
 
 .news-content a {
-    color: #000000;
+    color: #222222;
     text-decoration: underline;
     cursor: pointer;
-}
-
-#footer-right-button {
-    height: 45px;
-    padding-top: 9px;
-    text-align: center;
 }
 
 .panel-default.panel-login > .panel-heading {

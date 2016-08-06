@@ -18,7 +18,10 @@ class Menu extends MY_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+
+    protected $page_title = 'メニュー';
+
+    public function index()
 	{
         $this->display('menu/index.tpl');
 	}
@@ -35,13 +38,15 @@ class Menu extends MY_Controller {
 
     public function edit($menu_id = null)
     {
-        $title = 'メニュー登録';
-        if($menu_id) {
-            $title = 'メニュー編集';
-        }
+        parent::edit($menu_id);
 
-        $this->smarty->assign(compact('title'));
         $this->display('menu/menu_form.tpl');
+    }
+
+    public function delete($menu_id)
+    {
+        // 削除処理をしたら一覧に戻る
+        redirect(base_url().'menu/list');
     }
 
     public function excel_download()

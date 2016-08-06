@@ -1,5 +1,5 @@
 <footer class="footer">
-    <hr style="margin: 5px 0 5px 0;"/>
+    <hr style="margin: 5px 0 15px 0;"/>
     <div class="container">
         <div class="pull-left">
             {block name=footer_left}{/block}

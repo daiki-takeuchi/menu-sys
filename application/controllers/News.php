@@ -18,6 +18,9 @@ class News extends MY_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
+
+    protected $page_title = 'お知らせ';
+
     public function index()
     {
         $this->display('news/index.tpl');
@@ -30,12 +33,14 @@ class News extends MY_Controller {
 
     public function edit($news_id = null)
     {
-        $title = 'お知らせ登録';
-        if($news_id) {
-            $title = 'お知らせ編集';
-        }
+        parent::edit($news_id);
 
-        $this->smarty->assign(compact('title'));
         $this->display('news/news_form.tpl');
+    }
+
+    public function delete($news_id)
+    {
+        // 削除処理をしたら一覧に戻る
+        redirect(base_url().'news');
     }
 }

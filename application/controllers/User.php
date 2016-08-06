@@ -18,6 +18,9 @@ class User extends MY_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
+
+    protected $page_title = 'ユーザー';
+
     public function index()
     {
         $this->display('user/index.tpl');
@@ -30,12 +33,14 @@ class User extends MY_Controller {
 
     public function edit($user_id = null)
     {
-        $title = 'ユーザー登録';
-        if($user_id) {
-            $title = 'ユーザー編集';
-        }
+        parent::edit($user_id);
 
-        $this->smarty->assign(compact('title'));
         $this->display('user/user_form.tpl');
+    }
+
+    public function delete($user_id)
+    {
+        // 削除処理をしたら一覧に戻る
+        redirect(base_url().'user');
     }
 }

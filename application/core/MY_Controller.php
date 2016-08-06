@@ -14,6 +14,8 @@ class MY_Controller extends CI_Controller
     protected $user_name;
     protected $employee_id;
 
+    protected $page_title = '';
+
     public function __construct()
     {
         parent::__construct();
@@ -30,6 +32,15 @@ class MY_Controller extends CI_Controller
         $data['employee_id'] = $this->employee_id = isset($userdata["user"]["employee_id"]) ? $userdata["user"]["employee_id"] : false;
 
         $this->smarty->assign($data);
+    }
+
+    public function edit($id = null)
+    {
+        $title = $this->page_title.'登録';
+        if($id) {
+            $title = $this->page_title.'編集';
+        }
+        $this->smarty->assign(compact('title', 'id'));
     }
 
     /**
