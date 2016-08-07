@@ -8,8 +8,10 @@ $(function () {
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
                 if (file.url) {
-                    $('#ima-menu').attr('data-src','');
-                    $('#img-menu').attr('src',file.url);
+                    $('#img-menu').removeAttr('data-src')
+                        .removeAttr('data-holder-rendered')
+                        .removeAttr('style')
+                        .attr('src',file.url);
                 } else if (file.error) {
                     var error = $('<span class="text-danger"/>').text(file.error);
                     $('<p/>').append(error).appendTo('#files');
