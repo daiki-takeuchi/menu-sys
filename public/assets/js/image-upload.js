@@ -7,6 +7,8 @@ $(function () {
         dataType: 'json',
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
+                $('#progress').addClass('hidden');
+                $('#progress .progress-bar').css('width', '0%').addClass('hidden');
                 $('#files').html('');
                 if (file.url) {
                     $('#img-menu').removeAttr('data-src')
@@ -20,6 +22,7 @@ $(function () {
             });
         },
         progressall: function (e, data) {
+            $('#progress').removeClass('hidden');
             var progress = parseInt(data.loaded / data.total * 100, 10);
             $('#progress .progress-bar').css(
                 'width',

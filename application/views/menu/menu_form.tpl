@@ -32,7 +32,7 @@
 {block name=main_contents}
     <div class="container">
         <div class="row">
-            <div class="col-sx-12 col-md-4" style="background-color: #00CC00;">
+            <div class="col-sx-12 col-md-4 center">
                 <span class="fileinput-button">
                     <div class="img-thumbnail img-menu-form">
                         <img class="img-responsive" id="img-menu" data-src="holder.js/290x200?text=ここをクリックして画像を登録">
@@ -41,14 +41,14 @@
                     <input id="fileupload" type="file" name="files[]" />
                 </span>
                 <!-- The global progress bar -->
-                <div id="progress" class="progress">
+                <div id="progress" class="progress hidden">
                     <div class="progress-bar progress-bar-success"></div>
                 </div>
                 <!-- The container for the uploaded files -->
                 <div id="files" class="files"></div>
 
             </div>
-            <div class="col-sx-12 col-md-8" style="background-color: #aa0000;height: 50px;">
+            <div class="col-sx-12 col-md-8">
 
             </div>
         </div>
