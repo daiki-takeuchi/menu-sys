@@ -435,6 +435,7 @@ a.cal-selected {
     z-index: 2000;
 }
 
+/* リスト表示する時のメニューカテゴリ画像 トリミング用 */
 .img-menu-category {
     overflow: hidden;
     width: 140px;
@@ -453,6 +454,7 @@ a.cal-selected {
     transform: translate(-50%,-50%);
 }
 
+/* リスト表示する時のメニュー画像 トリミング用 */
 .img-menu {
     overflow: hidden;
     width: 200px;
@@ -461,6 +463,25 @@ a.cal-selected {
 }
 
 .img-menu img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/* 登録時のメニュー画像 トリミング用 */
+.img-menu-form {
+    overflow: hidden;
+    width: 300px;
+    height: 210px;
+    margin-top: 5px;
+}
+
+.img-menu-form img {
     position: relative;
     top: 50%;
     left: 50%;
