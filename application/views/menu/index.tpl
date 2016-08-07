@@ -16,12 +16,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('{base_url}assets/img/special_lunch.jpg')"></span>
+                    <div class="img-menu-category">
+                        <img src="{base_url}assets/img/special_lunch.jpg">
+                    </div>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('{base_url}assets/img/chicken.jpg')"></span>
+                            <div class="img-menu">
+                                <img src="{base_url}assets/img/chicken.jpg">
+                            </div>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -34,12 +38,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('{base_url}assets/img/a_lunch.jpg')"></span>
+                    <div class="img-menu-category">
+                        <img src="{base_url}assets/img/a_lunch.jpg">
+                    </div>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('{base_url}assets/img/mabo.jpg')"></span>
+                            <div class="img-menu">
+                                <img src="{base_url}assets/img/mabo.jpg">
+                            </div>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -52,12 +60,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('{base_url}assets/img/b_lunch.jpg')"></span>
+                    <div class="img-menu-category">
+                        <img src="{base_url}assets/img/b_lunch.jpg">
+                    </div>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('{base_url}assets/img/fish.jpg')"></span>
+                            <div class="img-menu">
+                                <img src="{base_url}assets/img/fish.jpg">
+                            </div>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -70,12 +82,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('{base_url}assets/img/japanese_noodle.jpg')"></span>
+                    <div class="img-menu-category">
+                        <img src="{base_url}assets/img/japanese_noodle.jpg">
+                    </div>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('{base_url}assets/img/soba.jpg')"></span>
+                            <div class="img-menu">
+                                <img src="{base_url}assets/img/soba.jpg">
+                            </div>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -88,12 +104,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 col-md-2">
-                    <span class="contain" style="background-image: url('{base_url}assets/img/bowl.jpg')"></span>
+                    <div class="img-menu-category">
+                        <img src="{base_url}assets/img/bowl.jpg">
+                    </div>
                 </div>
                 <div class="menu col-sm-9 col-md-10">
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('{base_url}assets/img/oyako.jpg')"></span>
+                            <div class="img-menu">
+                                <img src="{base_url}assets/img/oyako.jpg">
+                            </div>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>
@@ -104,7 +124,9 @@
                     <hr style="margin: 0 0 5px 0;"/>
                     <div class="row">
                         <div class="col-sm-5 col-md-4 col-lg-3">
-                            <span class="cover" style="background-image: url('{base_url}assets/img/gyudon.jpg')"></span>
+                            <div class="img-menu">
+                                <img src="{base_url}assets/img/gyudon.jpg">
+                            </div>
                         </div>
                         <div class="ccol-sm-7 col-md-8 col-lg-9">
                             <span>aaa</span>

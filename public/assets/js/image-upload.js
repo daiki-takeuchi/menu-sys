@@ -7,6 +7,7 @@ $(function () {
         dataType: 'json',
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
+                $('#files').html('');
                 if (file.url) {
                     $('#img-menu').removeAttr('data-src')
                         .removeAttr('data-holder-rendered')

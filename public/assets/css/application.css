@@ -435,26 +435,40 @@ a.cal-selected {
     z-index: 2000;
 }
 
-/* 内接リサイズ */
-.contain {
-    display: inline-block;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 5px;
+.img-menu-category {
+    overflow: hidden;
     width: 140px;
     height: 140px;
-    background-size: contain;
+    margin: 5px;
 }
 
-/* 外接リサイズ */
-.cover {
-    display: inline-block;
-    background-position: center center;
-    background-repeat: no-repeat;
-    margin: 5px;
+.img-menu-category img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.img-menu {
+    overflow: hidden;
     width: 200px;
     height: 140px;
-    background-size: cover;
+    margin: 5px;
+}
+
+.img-menu img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
 }
 
 /* ヘッダーの固定 */
