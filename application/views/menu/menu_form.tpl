@@ -34,7 +34,9 @@
         <div class="row">
             <div class="col-sx-12 col-md-4" style="background-color: #00CC00;">
                 <span class="fileinput-button">
-                    <img class="img-thumbnail" data-src="holder.js/295x200?text=ここをクリックして画像を登録">
+                    <div class="img-thumbnail">
+                        <img id="img-menu" data-src="holder.js/295x200?text=ここをクリックして画像を登録">
+                    </div>
                     <!-- The file input field used as target for the file upload widget -->
                     <input id="fileupload" type="file" name="files[]" />
                 </span>
