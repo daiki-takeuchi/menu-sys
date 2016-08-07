@@ -3,25 +3,7 @@ $(function () {
     // Change this to the location of your server-side upload handler:
 //            var url = window.location.hostname === 'blueimp.github.io' ?
 //                            '//jquery-file-upload.appspot.com/' : 'server/php/',
-    var url = '//jquery-file-upload.appspot.com/',
-        uploadButton = $('<button/>')
-            .addClass('btn btn-primary')
-            .prop('disabled', true)
-            .text('Processing...')
-            .on('click', function () {
-                var $this = $(this),
-                    data = $this.data();
-                $this
-                    .off('click')
-                    .text('Abort')
-                    .on('click', function () {
-                        $this.remove();
-                        data.abort();
-                    });
-                data.submit().always(function () {
-                    $this.remove();
-                });
-            });
+    var url = '//jquery-file-upload.appspot.com/';
     $('#fileupload').fileupload({
         url: url,
         dataType: 'json',
@@ -43,8 +25,7 @@ $(function () {
                 .append($('<span/>').text(file.name));
             if (!index) {
                 node
-                    .append('<br>')
-                    .append(uploadButton.clone(true).data(data));
+                    .append('<br>');
             }
             node.appendTo(data.context);
         });
