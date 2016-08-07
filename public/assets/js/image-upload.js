@@ -2,6 +2,7 @@ $(function () {
     'use strict';
 
     var url = '//jquery-file-upload.appspot.com/';
+//    var url = '/page/file_upload';
     $('#fileupload').fileupload({
         url: url,
         dataType: 'json',

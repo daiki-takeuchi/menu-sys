@@ -71,4 +71,10 @@ class Page extends MY_Controller {
             echo json_encode("");
         }
     }
+
+    public function file_upload()
+    {
+        $this->load->library('UploadHandler');
+        $upload_handler = new UploadHandler();
+    }
 }
