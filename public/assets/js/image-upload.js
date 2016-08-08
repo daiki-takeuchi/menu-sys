@@ -1,7 +1,7 @@
 $(function () {
     'use strict';
 
-    var url = '/page/file_upload';
+    var url = base_url + 'page/file_upload';
     $('#fileupload').fileupload({
         url: url,
         dataType: 'json',
