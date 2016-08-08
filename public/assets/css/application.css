@@ -198,6 +198,14 @@ input {
     height: auto;
 }
 
+.input-group, .bootstrap-select {
+    z-index: 0;
+}
+
+.bootstrap-select.open {
+    z-index: 1;
+}
+
 textarea {
     resize: vertical;
 }
@@ -241,9 +249,8 @@ span.label-required {
     display: inline-block;
     font-size: 10px;
     font-weight: bold;
-    line-height: 1;
-    padding: 3px 4px;
-    margin: 2px 0 3px 0;
+    padding: 2px 3px;
+    margin: 0;
 }
 
 span.label-news {
@@ -495,7 +502,7 @@ div#header-fixed
     left: 0;                   /* 位置(右0px) */
     width: 100%;               /* 横幅100% */
     height: 70px;              /* 縦幅70px */
-    z-index: 1;
+    z-index: 2;
 }
 
 div#header-bk {
@@ -513,7 +520,7 @@ div#footer-fixed
     left: 0;                   /* 位置(左0px) */
     width: 100%;               /* 横幅100% */
     height: 80px;              /* 縦幅80px */
-    z-index: 1;
+    z-index: 2;
 }
 
 div#footer-bk
@@ -587,7 +594,7 @@ div#news-fixed
     left: 0;                    /* 位置(右0px) */
     width: 100%;                /* 横幅100% */
     height: 25px;               /* 縦幅25px */
-    z-index: 1;
+    z-index: 2;
 }
 
 div#news-bk {

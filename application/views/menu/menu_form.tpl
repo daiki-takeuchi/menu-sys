@@ -19,14 +19,14 @@
     <div class="container">
         <div class="row">
             <form class="form-horizontal" method="post" id="form">
-                <div class="col-sx-12 col-md-4 center">
-                <span class="fileinput-button">
-                    <div class="img-thumbnail img-menu-form">
-                        <img class="img-responsive" id="img-menu" data-src="holder.js/290x200?text=ここをクリックして画像を登録">
-                    </div>
-                    <!-- The file input field used as target for the file upload widget -->
-                    <input id="fileupload" type="file" name="files[]" accept="image/png, image/jpeg, image/gif" />
-                </span>
+                <div class="col-md-4 center">
+                    <span class="fileinput-button">
+                        <div class="img-thumbnail img-menu-form">
+                            <img class="img-responsive" id="img-menu" data-src="holder.js/290x200?text=ここをクリックして画像を登録">
+                        </div>
+                        <!-- The file input field used as target for the file upload widget -->
+                        <input id="fileupload" type="file" name="files[]" accept="image/png, image/jpeg, image/gif" />
+                    </span>
                     <!-- The global progress bar -->
                     <div id="progress" class="progress hidden">
                         <div class="progress-bar progress-bar-success"></div>
@@ -34,22 +34,29 @@
                     <!-- The container for the uploaded files -->
                     <div id="files" class="files"></div>
                 </div>
-                <div class="col-sx-12 col-md-8">
-                    <div class="row" style="padding-top: 15px;">
+                <div class="col-md-8 pull-right">
+                    <button type="button" class="btn btn-success btn-xs pull-right" style="margin-bottom: 15px;">
+                        {if $id}
+                            「よく使うメニュー」から選ぶ
+                        {else}
+                            このメニューを「よく使うメニュー」として登録
+                        {/if}
+                    </button>
+                    <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
                             <div class="row">
-                                <div class="col-xs-5">
+                                <div class="col-sm-5">
                                     <div class="form-group">
-                                        <label><span class="label-required rd5">必須</span> 日付</label>
+                                        <label><span class="label-required rd5">必須</span> メニュー提供日</label>
                                         <div class='input-group date'>
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control" style="min-width: 120px;" name="date" />
+                                            <input type="text" class="form-control" style="min-width: 120px;" name="menu-provide-date" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-5 col-xs-offset-1">
+                                <div class="col-sm-5 col-sm-offset-2">
                                     <div class="form-group">
                                         <label><span class="label-required rd5">必須</span> メニュー公開日</label>
                                         <div class='input-group date'>
@@ -73,25 +80,106 @@
                                 <label><span class="label-required rd5">必須</span> カテゴリ</label><br />
                                 {html_options name="sel_category" options=$category data-width="175px" class="selectpicker show-menu-arrow" title=" "}
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-bottom: 0">
                                 <label><span class="label-required rd5">必須</span> 価格</label>
-                                <div class="row">
-                                    <div class="col-xs-6">
-                                        <input type="text" class="form-control" name="price-regular" placeholder="正規従業員の価格" />
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <div class="form-group">
+                                        <div class='input-group'>
+                                            <input type="number" class="form-control" name="price-regular" placeholder="正規従業員の価格" />
+                                            <span class="input-group-addon">円</span>
+                                        </div>
                                     </div>
-                                    <div class="col-xs-6">
-                                        <input type="text" class="form-control" name="price-non-regular" placeholder="正規従業員以外の価格" />
+                                </div>
+                                <div class="col-xs-5 col-xs-offset-2">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" name="price-non-regular" placeholder="正規従業員以外の価格" />
+                                            <span class="input-group-addon">円</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label>ご飯付き、小鉢付きなどで価格が違う場合は以下の項目を入力してください。</label>
                                 <div class="row">
-                                    <div class="col-xs-10">
-                                        <input type="text" class="form-control" name="with-rice" placeholder="" />
+                                    <div class="col-xs-12">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="with-rice" placeholder="" />
+                                            <span class="input-group-addon">付き</span>
+                                        </div>
                                     </div>
-                                    <div class="col-xs-2">
-                                        付き
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0">
+                                <label>ご飯付き等にした場合の価格（上の項目を入力した場合は必須）</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <div class="form-group">
+                                        <div class='input-group'>
+                                            <input type="number" class="form-control" name="price-regular" placeholder="正規従業員の価格" />
+                                            <span class="input-group-addon">円</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5 col-xs-offset-2">
+                                    <div class="form-group">
+                                        <div class='input-group'>
+                                            <input type="number" class="form-control" name="price-non-regular" placeholder="正規従業員以外の価格" />
+                                            <span class="input-group-addon">円</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 pull-left">
+                    <div class="row" style="padding-top: 15px;">
+                        <div class="row">
+                            <div class="col-xs-10 col-xs-offset-1">
+                                <div class="col-xs-5">
+                                    <div class="form-group">
+                                        <label>エネルギー</label>
+                                        <div class='input-group'>
+                                            <input type="text" class="form-control" name="energy" />
+                                            <span class="input-group-addon">kcal</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5 col-xs-offset-2">
+                                    <div class="form-group">
+                                        <label>塩分</label>
+                                        <div class='input-group'>
+                                            <input type="text" class="form-control" name="salt" />
+                                            <span class="input-group-addon">g</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5">
+                                    <div class="form-group">
+                                        <label>たんぱく質</label>
+                                        <div class='input-group'>
+                                            <input type="text" class="form-control" name="protein" />
+                                            <span class="input-group-addon">g</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-5 col-xs-offset-2">
+                                    <div class="form-group">
+                                        <label>脂質</label>
+                                        <div class='input-group'>
+                                            <input type="text" class="form-control" name="lipid" />
+                                            <span class="input-group-addon">g</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12">
+                                    <div class="form-group">
+                                        <label>アレルゲン</label>
+                                        <input type="text" class="form-control" name="allergen" />
                                     </div>
                                 </div>
                             </div>
