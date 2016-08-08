@@ -20,6 +20,15 @@
     <div class="container">
         <div class="row">
             <form class="form-horizontal" method="post" id="form">
+                <div class="col-xs-12">
+                    <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
+                        {if $id}
+                            このメニューを「よく使うメニュー」として登録
+                        {else}
+                            「よく使うメニュー」から選ぶ
+                        {/if}
+                    </button>
+                </div>
                 <div class="col-md-4 center">
                     <span class="fileinput-button">
                         <div class="img-thumbnail img-menu-form">
@@ -36,13 +45,6 @@
                     <div id="files" class="files"></div>
                 </div>
                 <div class="col-md-8 pull-right">
-                    <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
-                        {if $id}
-                            このメニューを「よく使うメニュー」として登録
-                        {else}
-                            「よく使うメニュー」から選ぶ
-                        {/if}
-                    </button>
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
                             <div class="row">
