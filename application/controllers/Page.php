@@ -76,6 +76,9 @@ class Page extends MY_Controller {
     {
         //$this->load->library('UploadHandler');  // ←これだとオプションを指定できない。
         require_once dirname(__FILE__).'/../libraries/UploadHandler.php';
-        $upload_handler = new UploadHandler();
+
+        $option = array('mkdir_mode' => 0777, 'image_versions' => array());
+
+        $upload_handler = new UploadHandler($option);
     }
 }
