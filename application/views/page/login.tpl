@@ -18,7 +18,11 @@
                                         <div class="col-xs-10 col-xs-offset-1 controls">
                                             <div class="form-group">
                                                 <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
+                                            </div>
+                                            <div class="form-group">
                                                 <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
+                                            </div>
+                                            <div class="form-group">
                                                 <button type="submit" name="login" class="btn btn-orange box rd24 font-pop"
                                                         style="font-size: large;width: 190px;">
                                                     <span class="fa fa-sign-in"></span> ログイン&nbsp;&nbsp;

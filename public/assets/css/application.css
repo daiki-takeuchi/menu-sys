@@ -190,14 +190,8 @@ header {
 }
 
 /* forms */
-.from-group {
-    margin-bottom: 15px;
-}
-
 input, textarea, select, .uneditable-input {
     border: 1px solid #bbb;
-    padding: 10px;
-    margin-bottom: 15px;
 }
 
 input {
