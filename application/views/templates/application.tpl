@@ -17,6 +17,7 @@
     <script src="{base_url}assets/js/bootstrap.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-dialog.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript">window.base_url = "{base_url}";</script>
     <script src="{base_url}assets/js/application.js"></script>
     {block name=include}{/block}
     {include file='templates/shim.tpl'}

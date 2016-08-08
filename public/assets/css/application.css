@@ -261,6 +261,7 @@ span.label-news {
     line-height: 1;
     padding: 3px 4px;
     margin: 1px 0 3px 0;
+    cursor: pointer;
 }
 
 .input-group.date input[type="text"][readonly] {
@@ -606,7 +607,7 @@ div#news-bk {
     padding-left: 10px;
 }
 
-.news-content a {
+.news-content a, .news-content-modal a {
     color: #222222;
     text-decoration: underline;
     cursor: pointer;

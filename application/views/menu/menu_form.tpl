@@ -12,9 +12,6 @@
     <!-- The basic File Upload plugin -->
     <script src="{base_url}assets/js/jquery.fileupload.js"></script>
     <script src="{base_url}assets/js/holder.min.js"></script>
-    <script type="text/javascript">
-        window.base_url = "{base_url}";
-    </script>
     <script src="{base_url}assets/js/image-upload.js"></script>
 
 {/block}
