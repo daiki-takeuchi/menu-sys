@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{base_url}assets/css/jquery.fileupload.css">
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
+    <script src="{base_url}assets/js/menu.js"></script>
 
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
     <script src="{base_url}assets/js/jquery.iframe-transport.js"></script>
@@ -35,11 +36,11 @@
                     <div id="files" class="files"></div>
                 </div>
                 <div class="col-md-8 pull-right">
-                    <button type="button" class="btn btn-success btn-xs pull-right" style="margin-bottom: 15px;">
+                    <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
                         {if $id}
-                            「よく使うメニュー」から選ぶ
-                        {else}
                             このメニューを「よく使うメニュー」として登録
+                        {else}
+                            「よく使うメニュー」から選ぶ
                         {/if}
                     </button>
                     <div class="row">
