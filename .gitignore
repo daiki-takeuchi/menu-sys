@@ -11,8 +11,9 @@ build
 vendor/
 composer.phar
 application/logs/*
-!index.html
 /application/views/templates_c/*
-!.gitkeep
 tmp/log/*.log
 /application/cache/ci_session*
+public/files/*
+!index.html
+!.gitkeep

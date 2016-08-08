@@ -7,24 +7,10 @@
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
 
-    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
-    <script src="{base_url}assets/js/load-image.all.min.js"></script>
-    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="{base_url}assets/js/canvas-to-blob.min.js"></script>
     <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
     <script src="{base_url}assets/js/jquery.iframe-transport.js"></script>
     <!-- The basic File Upload plugin -->
     <script src="{base_url}assets/js/jquery.fileupload.js"></script>
-    <!-- The File Upload processing plugin -->
-    <script src="{base_url}assets/js/jquery.fileupload-process.js"></script>
-    <!-- The File Upload image preview & resize plugin -->
-    <script src="{base_url}assets/js/jquery.fileupload-image.js"></script>
-    <!-- The File Upload audio preview plugin -->
-    <script src="{base_url}assets/js/jquery.fileupload-audio.js"></script>
-    <!-- The File Upload video preview plugin -->
-    <script src="{base_url}assets/js/jquery.fileupload-video.js"></script>
-    <!-- The File Upload validation plugin -->
-    <script src="{base_url}assets/js/jquery.fileupload-validate.js"></script>
     <script src="{base_url}assets/js/holder.min.js"></script>
     <script src="{base_url}assets/js/image-upload.js"></script>
 

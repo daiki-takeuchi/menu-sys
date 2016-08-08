@@ -74,7 +74,8 @@ class Page extends MY_Controller {
 
     public function file_upload()
     {
-        $this->load->library('UploadHandler');
+        //$this->load->library('UploadHandler');  // ←これだとオプションを指定できない。
+        require_once dirname(__FILE__).'/../libraries/UploadHandler.php';
         $upload_handler = new UploadHandler();
     }
 }
