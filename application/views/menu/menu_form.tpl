@@ -104,7 +104,7 @@
                             <div class="form-group">
                                 <label>ご飯付き、小鉢付きなどで価格が違う場合は以下の項目を入力してください。</label>
                                 <div class="row">
-                                    <div class="col-xs-12">
+                                    <div class="col-sm-5">
                                         <div class="input-group">
                                             <input type="text" class="form-control" name="with-rice" placeholder="" />
                                             <span class="input-group-addon">付き</span>
