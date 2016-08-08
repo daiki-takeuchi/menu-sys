@@ -27,7 +27,7 @@
                         <img class="img-responsive" id="img-menu" data-src="holder.js/290x200?text=ここをクリックして画像を登録">
                     </div>
                     <!-- The file input field used as target for the file upload widget -->
-                    <input id="fileupload" type="file" name="files[]" />
+                    <input id="fileupload" type="file" name="files[]" accept="image/png, image/jpeg, image/gif" />
                 </span>
                 <!-- The global progress bar -->
                 <div id="progress" class="progress hidden">
@@ -35,7 +35,6 @@
                 </div>
                 <!-- The container for the uploaded files -->
                 <div id="files" class="files"></div>
-
             </div>
             <div class="col-sx-12 col-md-8">
 
