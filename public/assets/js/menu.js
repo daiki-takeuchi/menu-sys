@@ -21,7 +21,7 @@ $(function () {
     $('.select-favorite-menu').click(function() {
         BootstrapDialog.show({
             title: "よく使うメニューから選ぶ",
-            message: 'test',
+            message: $('<div></div>').load('favorite_menu_list'),
             buttons: [{
                 id: 'btn-set',
                 label: '設定',
