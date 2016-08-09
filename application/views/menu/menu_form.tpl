@@ -29,10 +29,11 @@
                         {/if}
                     </button>
                 </div>
+                <div class="clearfix"></div>
                 <div class="col-md-4 center">
                     <span class="fileinput-button">
                         <div class="img-thumbnail img-menu-form">
-                            <img class="img-responsive" id="img-menu" data-src="holder.js/290x200?text=ここをクリックして画像を登録">
+                            <img class="img-responsive" id="img-menu" data-src="holder.js/300x210?text=ここをクリックして画像を登録">
                         </div>
                         <!-- The file input field used as target for the file upload widget -->
                         <input id="fileupload" type="file" name="files[]" accept="image/png, image/jpeg, image/gif" />

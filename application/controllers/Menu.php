@@ -71,11 +71,9 @@ class Menu extends MY_Controller {
     {
         parent::edit($menu_id);
         $data['category'] = array(
-            array(
-                '朝食' => array(1 => 'A定食',2 => 'B定食'),
-                'ランチ' => array(3 => 'スペシャルランチ', 4 => 'Aランチ', 5 => 'Bランチ'),
-                '夕食' => array(6 => 'スペシャルディナー')
-            )
+            '朝食' => array(1 => 'A定食',2 => 'B定食'),
+            'ランチ' => array(3 => 'スペシャルランチ', 4 => 'Aランチ', 5 => 'Bランチ'),
+            '夕食' => array(6 => 'スペシャルディナー')
         );
 
         $this->smarty->assign($data);
