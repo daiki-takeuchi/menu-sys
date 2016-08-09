@@ -37,6 +37,10 @@ $(function () {
 
     $('.register-favorite-menu').click(function() {
         // ajaxで登録処理を実装
-        MessageBox.show('よく使うメニューとして登録しました。');
+        var button = $(this);
+        button.prop('disabled', true);
+        MessageBox.show('よく使うメニューとして登録しました。', function () {
+            button.prop('disabled', false);
+        });
     });
 });

@@ -28,11 +28,13 @@ var MessageBox = (function() {
         elem = $(options.selector);
     };
 
-    that.show = function(text) {
+    that.show = function(text, callback) {
         clearTimeout(hideHandler);
 
         elem.find("span").html(text);
-        elem.delay(200).fadeIn().delay(4000).fadeOut();
+        elem.delay(200).fadeIn().delay(4000).fadeOut(function () {
+            if(callback !== undefined) callback();
+        });
     };
 
     return that;
