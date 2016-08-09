@@ -44,3 +44,27 @@ $(function () {
         });
     });
 });
+
+/* BootstrapDialogから呼ばれる用 ajaxで後から呼ばれるのでイベントハンドラが動かないため */
+function favMenuDelete(obj) {
+    var record = $(obj).parent().parent();
+    BootstrapDialog.confirm({
+        title: '削除の確認',
+        message: '削除してよろしいですか？',
+        type: BootstrapDialog.TYPE_WARNING,
+        closable: true,
+        draggable: true,
+        btnCancelLabel: 'キャンセル',
+        btnOKLabel: '削除する',
+        btnOKClass: 'btn-warning',
+        callback: function(result) {
+            if(result) {
+                record.remove();
+                var table = $('#id-tbl-fav-menu tbody');
+                if(table.children().length == 0) {
+                    table.append('<tr><td colspan="2">表示するデータがありません。</td></tr>');
+                }
+            }
+        }
+    });
+}

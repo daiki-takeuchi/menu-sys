@@ -1,14 +1,3 @@
-<script>
-    $(function () {
-        $('.news-content-modal a').click(function() {
-            BootstrapDialog.show({
-                title: "お知らせ",
-                message: $(this).html(),
-                draggable: true
-            });
-        });
-    });
-</script>
 <div class="form-group">
     <div class="row">
         <div class="col-xs-12">
@@ -31,3 +20,14 @@
         </div>
     </div>
 </div>
+<script>
+    $(function () {
+        $('.news-content-modal a').click(function() {
+            BootstrapDialog.show({
+                title: "お知らせ",
+                message: $(this).html(),
+                draggable: true
+            });
+        });
+    });
+</script>

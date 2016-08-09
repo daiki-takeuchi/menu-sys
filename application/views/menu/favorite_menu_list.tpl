@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
             <div class="panel panel-default table-responsive">
-                <table class="table table-sm table-condensed table-hover table-striped table-headerfixed">
+                <table id="id-tbl-fav-menu" class="table table-sm table-condensed table-hover table-striped table-headerfixed">
                     <thead>
                     <tr style="margin-top:2px;padding: 0;" >
                         <th style="padding-left: 30px;width: 80%;">メニュー</th>
-                        <th style="width: 20%;">削除</th>
+                        <th style="width: 20%;padding-left: 15px;">削除</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -18,7 +18,7 @@
                                 </label>
                             </td>
                             <td style="padding-top: 7px;padding-left: 0;width: 20%;">
-                                <button type="button" class="btn btn-sm btn-default fav-menu-delete rd15"><span class="fa fa-trash"></span></button>
+                                <button type="button" class="btn btn-sm btn-default fav-menu-delete rd15" onclick="favMenuDelete(this);"><span class="fa fa-trash"></span></button>
                             </td>
                         </tr>
                     {/foreach}
