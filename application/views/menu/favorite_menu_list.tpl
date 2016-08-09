@@ -4,7 +4,7 @@
             <div class="panel panel-default table-responsive">
                 <table class="table table-sm table-condensed table-hover table-striped table-headerfixed">
                     <thead>
-                    <tr style="margin-top:10px;padding: 0;" >
+                    <tr style="margin-top:2px;padding: 0;" >
                         <th style="padding-left: 30px;width: 80%;">メニュー</th>
                         <th style="width: 20%;">削除</th>
                     </tr>

@@ -96,6 +96,9 @@ class Menu extends MY_Controller {
                 array('menu_id' => '3', 'menu_name' => 'ラーメン'),
                 array('menu_id' => '4', 'menu_name' => '生姜焼き定食'),
                 array('menu_id' => '5', 'menu_name' => 'うどん'),
+                array('menu_id' => '6', 'menu_name' => '長崎ちゃんぽん'),
+                array('menu_id' => '7', 'menu_name' => 'そば'),
+                array('menu_id' => '8', 'menu_name' => 'チキンカレー'),
             );
 
             $this->smarty->assign($data);
