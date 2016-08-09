@@ -19,32 +19,32 @@
 {block name=main_contents}
     <div class="container">
         <div class="row">
-            <form class="form-horizontal" method="post" id="form">
-                <div class="col-xs-12">
-                    <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
-                        {if $id}
-                            このメニューを「よく使うメニュー」として登録
-                        {else}
-                            「よく使うメニュー」から選ぶ
-                        {/if}
-                    </button>
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-md-4 center">
-                    <span class="fileinput-button">
-                        <div class="img-thumbnail img-menu-form">
-                            <img class="img-responsive" id="img-menu" data-src="holder.js/300x210?text=ここをクリックして画像を登録">
-                        </div>
-                        <!-- The file input field used as target for the file upload widget -->
-                        <input id="fileupload" type="file" name="files[]" accept="image/png, image/jpeg, image/gif" />
-                    </span>
-                    <!-- The global progress bar -->
-                    <div id="progress" class="progress hidden">
-                        <div class="progress-bar progress-bar-success"></div>
+            <div class="col-xs-12">
+                <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
+                    {if $id}
+                        このメニューを「よく使うメニュー」として登録
+                    {else}
+                        「よく使うメニュー」から選ぶ
+                    {/if}
+                </button>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-4 center">
+                <span class="fileinput-button">
+                    <div class="img-thumbnail img-menu-form">
+                        <img class="img-responsive" id="img-menu" data-src="holder.js/300x210?text=ここをクリックして画像を登録">
                     </div>
-                    <!-- The container for the uploaded files -->
-                    <div id="files" class="files"></div>
+                    <!-- The file input field used as target for the file upload widget -->
+                    <input id="fileupload" type="file" name="files[]" accept="image/png, image/jpeg, image/gif" />
+                </span>
+                <!-- The global progress bar -->
+                <div id="progress" class="progress hidden">
+                    <div class="progress-bar progress-bar-success"></div>
                 </div>
+                <!-- The container for the uploaded files -->
+                <div id="files" class="files"></div>
+            </div>
+            <form class="form-horizontal" method="post" id="form">
                 <div class="col-md-8 pull-right">
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
@@ -123,7 +123,7 @@
                                 <div class="col-xs-5">
                                     <div class="form-group">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price-regular" placeholder="正規従業員の価格" />
+                                            <input type="number" class="form-control" name="price-regular-with-rice" placeholder="正規従業員の価格" />
                                             <span class="input-group-addon">円</span>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                                 <div class="col-xs-5 col-xs-offset-2">
                                     <div class="form-group">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price-non-regular" placeholder="正規従業員以外の価格" />
+                                            <input type="number" class="form-control" name="price-non-regular-with-rice" placeholder="正規従業員以外の価格" />
                                             <span class="input-group-addon">円</span>
                                         </div>
                                     </div>

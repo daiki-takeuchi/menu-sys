@@ -36,6 +36,7 @@ $(function () {
     });
 
     $('.register-favorite-menu').click(function() {
-        $('#form').submit();
+        // ajaxで登録処理を実装
+        MessageBox.show('よく使うメニューとして登録しました。');
     });
 });
