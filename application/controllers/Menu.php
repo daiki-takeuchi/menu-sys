@@ -128,7 +128,7 @@ class Menu extends MY_Controller {
     public function tag() {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            echo json_encode(array('ヘルシーメニュー', '減塩'));
+            echo json_encode(array('ヘルシーメニュー', '減塩','1日に必要な野菜の1/3使用', 'Healty Menu'));
         }
     }
 }

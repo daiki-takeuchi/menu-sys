@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="{base_url}assets/css/jquery.fileupload.css">
     <link rel="stylesheet" href="{base_url}assets/css/jquery.tagit.css">
+    <link rel="stylesheet" href="{base_url}assets/css/tag-input.css">
 {/block}
 {block name=include_js}
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
@@ -78,7 +79,7 @@
                                 <input type="text" class="form-control" name="nemu_name" />
                             </div>
                             <div class="form-group">
-                                <label> タグ</label>
+                                <label> タグ（"減塩"や"ヘルシーメニュー"等の強調したい文字を入力してください。）</label>
                                 <input type="text" class="form-control tag-input" name="tag" />
                             </div>
                             <div class="form-group">
