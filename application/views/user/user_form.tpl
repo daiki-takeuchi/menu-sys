@@ -9,7 +9,7 @@
 {/block}
 {block name=footer_left}
     {if $id}
-        <a href="{base_url}user/delete{$id}" class="btn btn-delete box rd24 font-pop"
+        <a href="{base_url}user/delete/{$id}" class="btn btn-delete box rd24 font-pop"
            style="font-size: large;">
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
         </a>
