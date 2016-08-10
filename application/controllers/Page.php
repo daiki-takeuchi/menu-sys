@@ -23,7 +23,6 @@ class Page extends MY_Controller {
         $base_url = base_url();
         $has_footer = false;
         $message_class = "text-hide";
-        $message = "パスワードを変更しました。引き続き、メニュー予約をする場合は、<a href='${base_url}'><b>こちら</b></a>をクリックして下さい。";
 
         if($this->input->post()) {
             $message_class = "";
