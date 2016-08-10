@@ -6,7 +6,7 @@
                     <thead>
                     <tr style="margin-top:2px;padding: 0;" >
                         <th style="padding-left: 30px;width: 80%;">メニュー</th>
-                        <th style="width: 20%;padding-left: 15px;">削除</th>
+                        <th style="width: 20%;margin-left: -17px;">削除</th>
                     </tr>
                     </thead>
                     <tbody>
