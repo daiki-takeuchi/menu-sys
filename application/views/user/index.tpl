@@ -67,7 +67,6 @@
             <li class=""><a href="#">前のページ</a></li>
             <li><a href="#">1</a></li>
             <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
             <li class=""><a href="#">次のページ</a></li>
         </ul>
         <div class="hidden" style="height: 32px;margin: 5px 0 5px 0;"></div>
