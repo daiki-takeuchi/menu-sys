@@ -1,6 +1,6 @@
 {extends file='templates/application.tpl'}
 {block name=title}パスワード変更{/block}
-{block name=include}
+{block name=include_js}
     <script src="{base_url}assets/js/keyboard.js"></script>
     <script src="{base_url}assets/js/page.js"></script>
 {/block}

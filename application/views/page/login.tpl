@@ -1,6 +1,6 @@
 {extends file='templates/application.tpl'}
 {block name=title}ログイン{/block}
-{block name=include}
+{block name=include_js}
     <script src="{base_url}assets/js/keyboard.js"></script>
 {/block}
 {block name=main_contents}

@@ -55,6 +55,17 @@ $(function () {
         });
     });
 
+    $.ajax({
+        url: base_url + 'menu/tag',
+        dataType: 'json',
+        success: function(data) {
+            $('.tag-input').tagit({
+                removeConfirmation: true,
+                availableTags: data
+            });
+        }
+    });
+
     // モーダル画面から実行（ajaxでページ読み込みされるため.click等でのイベント登録不可）
     $(document).on('click','.fav-menu-delete', function () {
         var record = $(this).parent().parent();

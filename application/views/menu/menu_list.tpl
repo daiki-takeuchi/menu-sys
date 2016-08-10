@@ -1,7 +1,9 @@
 {extends file='templates/application.tpl'}
 {block name=title}メニュー管理{/block}
-{block name=include}
+{block name=include_css}
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-datepicker.min.css"/>
+{/block}
+{block name=include_js}
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
     <script src="{base_url}assets/js/ticker.js"></script>

@@ -124,4 +124,11 @@ class Menu extends MY_Controller {
             $this->display('menu/excel_download.tpl');
         }
     }
+
+    public function tag() {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            echo json_encode(array('ヘルシーメニュー', '減塩'));
+        }
+    }
 }

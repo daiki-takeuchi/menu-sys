@@ -657,3 +657,14 @@ table.table-headerfixed tbody td,
 table.table-headerfixed thead th {
     float: left;
 }
+
+.tagit.ui-widget.ui-widget-content.ui-corner-all {
+    margin: 0;
+}
+
+li.tagit-choice.ui-widget-content.ui-state-default.ui-corner-all.tagit-choice-editable {
+    background-color: #ee6557;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}

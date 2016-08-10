@@ -1,17 +1,20 @@
 {extends file='templates/application.tpl'}
 {block name=title}{$title}{/block}
-{block name=include}
+{block name=include_css}
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-datepicker.min.css"/>
     <link rel="stylesheet" href="{base_url}assets/css/jquery.fileupload.css">
+    <link rel="stylesheet" href="{base_url}assets/css/jquery.tagit.css">
+{/block}
+{block name=include_js}
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
+    <script src="{base_url}assets/js/tag-it.min.js"></script>
     <script src="{base_url}assets/js/menu.js"></script>
 
     <script src="{base_url}assets/js/jquery.iframe-transport.js"></script>
     <script src="{base_url}assets/js/jquery.fileupload.js"></script>
     <script src="{base_url}assets/js/holder.min.js"></script>
     <script src="{base_url}assets/js/image-upload.js"></script>
-
 {/block}
 {block name=main_contents}
     <div class="container">
@@ -76,7 +79,7 @@
                             </div>
                             <div class="form-group">
                                 <label> タグ</label>
-                                <input type="text" class="form-control" name="tag" placeholder="”減塩”や”ヘルシーメニュー”等強調したい文字を入れてください。" />
+                                <input type="text" class="form-control tag-input" name="tag" />
                             </div>
                             <div class="form-group">
                                 <label><span class="label-required rd5">必須</span> カテゴリ</label><br />

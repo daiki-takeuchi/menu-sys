@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-dialog.min.css"/>
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-select.min.css"/>
     <link rel="stylesheet" href="{base_url}assets/css/font-awesome.min.css"/>
+    {block name=include_css}{/block}
     <link rel="stylesheet" href="{base_url}assets/css/application.css"/>
     <script src="{base_url}assets/js/jquery-2.1.4.min.js"></script>
     <script src="{base_url}assets/js/jquery-ui-1.12.0.min.js"></script>
@@ -18,8 +19,8 @@
     <script src="{base_url}assets/js/bootstrap-dialog.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-select.min.js"></script>
     <script type="text/javascript">window.base_url = "{base_url}";</script>
+    {block name=include_js}{/block}
     <script src="{base_url}assets/js/application.js"></script>
-    {block name=include}{/block}
     {include file='templates/shim.tpl'}
 </head>
 <body>
