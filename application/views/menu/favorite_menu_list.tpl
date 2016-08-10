@@ -18,7 +18,7 @@
                                 </label>
                             </td>
                             <td style="padding-top: 7px;padding-left: 0;width: 20%;">
-                                <button type="button" class="btn btn-sm btn-default fav-menu-delete rd15" onclick="favMenuDelete(this);"><span class="fa fa-trash"></span></button>
+                                <button type="button" class="btn btn-sm btn-default fav-menu-delete rd15"><span class="fa fa-trash"></span></button>
                             </td>
                         </tr>
                     {/foreach}

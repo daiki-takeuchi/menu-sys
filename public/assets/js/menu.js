@@ -2,7 +2,18 @@ $(function () {
     $('.excel-download').click(function() {
         BootstrapDialog.show({
             title: "帳票ダウンロード",
-            message: $('<div></div>').load('excel_download'),
+            message: $('<div></div>').load('excel_download', function () {
+                $(".selectpicker").selectpicker({
+                    "selectedText": "cat"
+                });
+                $('.input-group.date').datepicker({
+                    weekStart: 1,
+                    format: "yyyy/mm/dd",
+                    language: "ja",
+                    autoclose: true,
+                    todayHighlight: true
+                });
+            }),
             buttons: [{
                 id: 'btn-download',
                 label: 'ダウンロード',
@@ -43,28 +54,39 @@ $(function () {
             button.prop('disabled', false);
         });
     });
-});
 
-/* BootstrapDialogから呼ばれる用 ajaxで後から呼ばれるのでイベントハンドラが動かないため */
-function favMenuDelete(obj) {
-    var record = $(obj).parent().parent();
-    BootstrapDialog.confirm({
-        title: '削除の確認',
-        message: '削除してよろしいですか？',
-        type: BootstrapDialog.TYPE_WARNING,
-        closable: true,
-        draggable: true,
-        btnCancelLabel: 'キャンセル',
-        btnOKLabel: '削除する',
-        btnOKClass: 'btn-warning',
-        callback: function(result) {
-            if(result) {
-                record.remove();
-                var table = $('#id-tbl-fav-menu tbody');
-                if(table.children().length == 0) {
-                    table.append('<tr><td colspan="2">表示するデータがありません。</td></tr>');
+    // モーダル画面から実行（ajaxでページ読み込みされるため.click等でのイベント登録不可）
+    $(document).on('click','.fav-menu-delete', function () {
+        var record = $(this).parent().parent();
+        BootstrapDialog.confirm({
+            title: '削除の確認',
+            message: '削除してよろしいですか？',
+            type: BootstrapDialog.TYPE_WARNING,
+            closable: true,
+            draggable: true,
+            btnCancelLabel: 'キャンセル',
+            btnOKLabel: '削除する',
+            btnOKClass: 'btn-warning',
+            callback: function(result) {
+                if(result) {
+                    record.remove();
+                    var table = $('#id-tbl-fav-menu tbody');
+                    if(table.children().length == 0) {
+                        table.append('<tr><td colspan="2">表示するデータがありません。</td></tr>');
+                    }
                 }
             }
+        });
+    });
+    
+    $(document).on('change','.form_list', function () {
+        var selected = $('.form_list option:selected').val();
+        if(selected == '1') {
+            $('.area-target-year-month').addClass('hidden');
+            $('.area-target-date').removeClass('hidden');
+        } else {
+            $('.area-target-year-month').removeClass('hidden');
+            $('.area-target-date').addClass('hidden');
         }
     });
-}
+});
