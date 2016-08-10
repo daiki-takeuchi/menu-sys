@@ -2,9 +2,6 @@ $(function () {
     $(document).on('change','input.csv_file', function () {
         $('#file_error').html('');
         var file = $(this)[0].files[0];
-        MessageBox.show(file.type, function () {
-            MessageBox.show(file.type == 'text/comma-separated-values');
-        });
 
         if (file.type == 'text/csv' || file.type == 'text/comma-separated-values' ) {
             $('.txt_user_csv').val($(this).val().replace("C:\\fakepath\\", ""));
