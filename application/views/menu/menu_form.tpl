@@ -16,14 +16,18 @@
 {block name=main_contents}
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
-                    {if $id}
-                        このメニューを「よく使うメニュー」として登録
-                    {else}
-                        「よく使うメニュー」から選ぶ
-                    {/if}
-                </button>
+            <div class="col-md-8 col-md-push-4">
+                <div class="row">
+                    <div class="col-xs-10 col-xs-offset-1" style="padding-right: 0;">
+                        <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
+                            {if $id}
+                                このメニューを「よく使うメニュー」として登録
+                            {else}
+                                「よく使うメニュー」から選ぶ
+                            {/if}
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="clearfix"></div>
             <div class="col-md-4 center">
