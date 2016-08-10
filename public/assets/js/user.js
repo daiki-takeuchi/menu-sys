@@ -3,7 +3,7 @@ $(function () {
         $('#file_error').html('');
         var file = $(this)[0].files[0];
         MessageBox.show(file.type);
-        if (file.type == 'text/csv' ) {
+        if (file.type == 'text/csv' || file.type == 'text/comma-separated-values' ) {
             $('.txt_user_csv').val($(this).val().replace("C:\\fakepath\\", ""));
         } else {
             var error = $('<span class="text-danger"/>').text('CSVファイルのみアップロード可能です。');
