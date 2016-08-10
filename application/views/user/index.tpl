@@ -13,19 +13,19 @@
                     <form class="form-horizonta" method="post">
                         <div class="row">
                             <div class='form-group'>
-                                <div class="col-xs-10 col-xs-offset-1 col-lg-4" style="margin-bottom: 10px;">
+                                <div class="col-xs-10 col-xs-offset-1 col-md-4" style="margin-bottom: 10px;">
                                     <div class='input-group'>
                                         <span class="input-group-addon">名前</span>
                                         <input type="text" class="form-control" name="name" />
                                     </div>
                                 </div>
-                                <div class="col-xs-10 col-xs-offset-1 col-lg-4 col-lg-pull-1" style="margin-bottom: 10px;">
+                                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-pull-1" style="margin-bottom: 10px;z-index: 1;">
                                     <div class='input-group'>
                                         <span class="input-group-addon">組織</span>
                                         {html_options name="sel_organization" options=$organization data-width="fit" data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください" data-size="8"}
                                     </div>
                                 </div>
-                                <div class="col-xs-10 col-xs-offset-1 col-lg-1 col-lg-pull-1">
+                                <div class="col-xs-10 col-xs-offset-1 col-md-1 col-md-pull-1">
                                     <button class="btn btn-orange box rd24 font-pop pull-right" style="font-size: large;">
                                         <span class="fa fa-search"></span> 検索
                                     </button>
