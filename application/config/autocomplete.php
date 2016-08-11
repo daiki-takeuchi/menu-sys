@@ -215,6 +215,7 @@ class CI_DB extends CI_DB_query_builder{};
  * @property CI_Session               $session
  *
  * @property Your_lib                 $your_lib
+ * @property User_model               $User_model
  */
 class CI_Model{};
 class MY_Model extends CI_Model{};

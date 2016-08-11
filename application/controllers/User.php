@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Class User
+ *
+ * @property User_model $user_model
+ */
 class User extends MY_Controller {
 
     /**
@@ -20,6 +25,15 @@ class User extends MY_Controller {
      */
 
     protected $page_title = 'ユーザー';
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('user_model');
+        $this->lang->load('master_lang');
+
+        $this->user_model->setUserName($this->user_name);
+    }
 
     public function index()
     {
@@ -98,12 +112,26 @@ class User extends MY_Controller {
                 '1201|1173225' => '生産Ｃ　東海事業所　管理部　工務課',
                 '1201|1173600' => '生産Ｃ　東海事業所　管理部　企画推進課',
             ),
-            'クノールサービス㈱' => array('1432|00000000' => 'クノールサービス株式会社'),
-            'クノールトレーディング㈱' => array('1434|00000000' => 'クノールトレーディング株式会社'),
+            'クノールサービス㈱' => array('1432|0000000' => 'クノールサービス株式会社'),
+            'クノールトレーディング㈱' => array('1434|0000000' => 'クノールトレーディング株式会社'),
         );
+
+        $offset = $this->uri->segment(3 ,0);
+        // 登録されているデータを全件取得
+        $data['users'] = $this->user_model->get_users($offset);
+        $data['company'] = $this->lang->line('company');
+        $data['keitai'] = $this->lang->line('keitai');
+
+        // pagerの作成
+        $data['pager'] = $this->user_model->get_pagination();
 
         $this->smarty->assign($data);
         $this->display('user/index.tpl');
+    }
+
+    public function pages()
+    {
+        $this->index();
     }
 
     public function user_new()

@@ -12,10 +12,16 @@ class MY_Model extends CI_Model
     protected $table;
     protected $per_page;
 
+    protected $user_name;
+
     public function __construct()
     {
         parent::__construct();
         $this->load->database();
+    }
+
+    public function setUserName($user_name) {
+        $this->user_name = $user_name;
     }
 
     public function find($id = FALSE)
@@ -35,10 +41,12 @@ class MY_Model extends CI_Model
     {
         if (!isset($data['id'])) {
             $data['created_at'] = $data['updated_at'] = date('Y/m/d H:i:s');
+            $data['created_user'] = $data['updated_user'] = $this->user_name;
             $this->db->insert($this->table, $data);
             $data['id'] = $this->db->insert_id();
         } else {
             $data['updated_at'] = date('Y/m/d H:i:s');
+            $data['updated_user'] = $this->user_name;
             $this->db->where('id', $data['id']);
             $this->db->update($this->table, $data);
         }
@@ -63,7 +71,7 @@ class MY_Model extends CI_Model
     public function get_pagination()
     {
         $this->load->library('Generate_pagination');
-        $path = base_url() . "/" . $this->table . "/pages";
+        $path = base_url() . $this->table . "/pages";
         $total_rows = $this->get_count_all();
 
         $pagination = $this->generate_pagination->get_links($path, $total_rows, $this->per_page);
