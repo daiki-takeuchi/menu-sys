@@ -64,10 +64,11 @@
     </div>
     <div class="container-fluid">
         <ul class="pager" style="margin: 5px 0 5px 0;">
-            <li class=""><a href="#">前のページ</a></li>
+            <li class=""><a href="#">&lt; 前<span class="spNone">のページ</span></a></li>
             <li><a href="#">1</a></li>
             <li><a href="#">2</a></li>
-            <li class=""><a href="#">次のページ</a></li>
+            <li><a href="#">3</a></li>
+            <li class=""><a href="#">次<span class="spNone">のページ</span> &gt;</a></li>
         </ul>
         <div class="hidden" style="height: 32px;margin: 5px 0 5px 0;"></div>
         <div class="panel panel-default table-responsive">
