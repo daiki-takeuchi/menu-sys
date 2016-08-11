@@ -7,15 +7,15 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['company'] = array(
-    '1201' => 'クノール食品㈱',
-    '1432' => 'クノールサービス㈱',
-    '1434' => 'クノールトレーディング㈱',
-);
+$lang['company'] = [
+    ['company_cc' => '1201', 'company_nm' => 'クノール食品㈱'],
+    ['company_cc' => '1432', 'company_nm' => 'クノールサービス㈱'],
+    ['company_cc' => '1434', 'company_nm' => 'クノールトレーディング㈱'],
+];
 
-$lang['keitai'] = array(
-    '01' => '正社員',
-    '02' => 'パート',
-    '03' => '派遣社員',
-    '04' => '嘱託・契約社員',
-);
+$lang['keitai'] = [
+    ['keitai_cc' => '01', 'keitai_nm' => '正社員'],
+    ['keitai_cc' => '02', 'keitai_nm' => 'パート'],
+    ['keitai_cc' => '03', 'keitai_nm' => '派遣社員'],
+    ['keitai_cc' => '04', 'keitai_nm' => '嘱託・契約社員'],
+];

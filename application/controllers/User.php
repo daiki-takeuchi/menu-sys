@@ -119,8 +119,8 @@ class User extends MY_Controller {
         $offset = $this->uri->segment(3 ,0);
         // 登録されているデータを全件取得
         $data['users'] = $this->user_model->get_users($offset);
-        $data['company'] = $this->lang->line('company');
-        $data['keitai'] = $this->lang->line('keitai');
+        $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
+        $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
 
         // pagerの作成
         $data['pager'] = $this->user_model->get_pagination();

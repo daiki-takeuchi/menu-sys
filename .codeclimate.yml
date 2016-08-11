@@ -2,8 +2,12 @@
 languages:
   PHP: true
 exclude_paths:
+ - "application/database/seeds/*"
  - "application/third_party/*"
  - "application/tests/*"
+ - "application/libraries/UploadHandler.php"
  - "public/assets/js/jquery*"
+ - "public/assets/js/holder.js"
+ - "public/assets/js/tag-it*"
  - "public/assets/js/bootstrap*"
  - "public/assets/css/bootstrap*"
