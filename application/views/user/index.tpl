@@ -23,7 +23,7 @@
                                 <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-pull-1" style="margin-bottom: 5px;z-index: 1;">
                                     <div class='input-group'>
                                         <span class="input-group-addon">組織</span>
-                                        {html_options name="sel_organization" options=$organization data-width="fit"
+                                        {html_options name="sel_organization[]" options=$organization data-width="fit"
                                         data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
                                         data-size="8" data-actions-box="true" data-selected-text-format="count > 1" multiple="multiple"}
                                     </div>
