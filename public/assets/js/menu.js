@@ -2,17 +2,20 @@ $(function () {
     $('.excel-download').click(function() {
         BootstrapDialog.show({
             title: "帳票ダウンロード",
-            message: $('<div></div>').load('excel_download', function () {
-                $(".selectpicker").selectpicker({
-                    "selectedText": "cat"
-                });
-                $('.input-group.date').datepicker({
-                    weekStart: 1,
-                    format: "yyyy/mm/dd",
-                    language: "ja",
-                    autoclose: true,
-                    todayHighlight: true
-                });
+            message: $('<div></div>').load('excel_download', function (response, status, xhr) {
+                // 画面描写より早くに動いちゃうときがあるので、0.1秒後に実行
+                setTimeout( function() {
+                    $(".selectpicker").selectpicker({
+                        "selectedText": "cat"
+                    });
+                    $('.input-group.date').datepicker({
+                        weekStart: 1,
+                        format: "yyyy/mm/dd",
+                        language: "ja",
+                        autoclose: true,
+                        todayHighlight: true
+                    });
+                }, 100 )
             }),
             buttons: [{
                 id: 'btn-download',

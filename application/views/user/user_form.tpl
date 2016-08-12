@@ -1,5 +1,8 @@
 {extends file='templates/application.tpl'}
 {block name=title}{$title}{/block}
+{block name=include_js}
+    <script src="{base_url}assets/js/user.js"></script>
+{/block}
 {block name=main_contents}
     <form class="form-horizontal" method="post" id="form">
         <div class="row">
@@ -24,15 +27,15 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <label><span class="label-required rd5">必須</span> 会社名</label><br />
-                                    {html_options name="sel_company" options=$company data-width="100%" class="selectpicker show-menu-arrow" title="会社を選択してください" selected="{$user.company_cc}"}
+                                    {html_options id="company" name="sel_company" options=$company data-width="100%" class="selectpicker show-menu-arrow" title="会社を選択してください" selected="{$user.company_cc}"}
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-1">
                                 <div class="form-group">
                                     <label><span class="label-required rd5">必須</span> 組織</label><br />
-                                    {html_options name="sel_organization[]" options=$organization data-width="100%"
+                                    {html_options id="organization" name="sel_organization" options=$organization data-width="100%"
                                     data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
-                                    data-size="8" selected="{$user.company_cc}|{$user.soshiki_cc}"}
+                                    data-size="8" selected="{$user.soshiki_cc}"}
                                 </div>
                             </div>
                         </div>

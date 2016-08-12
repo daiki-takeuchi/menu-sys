@@ -65,4 +65,28 @@ $(function () {
             }
         });
     });
+
+    $('#company').change(function () {
+        var company_cc = $('#company option:selected').val();
+        var company_nm = $('#company option:selected').text();
+
+        $.ajax({
+            type: 'POST',
+            url: base_url + 'user/organization',
+            data: {company_cc : company_cc},
+            dataType: 'json',
+            success: function(data, dataType) {
+                var $select = $('#organization');
+                $select.html('');
+                $optionGroup = $('<optgroup>').attr('label',company_nm);
+                $select.append($optionGroup);
+                $.each(data, function(key, item) {
+                    $option = $('<option>').val(key).text(item);
+                    $optionGroup.append($option);
+                });
+                $select.selectpicker('refresh');
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){MessageBox.show(errorThrown.message);}
+        });
+    });
 });

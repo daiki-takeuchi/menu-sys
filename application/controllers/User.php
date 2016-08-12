@@ -94,4 +94,12 @@ class User extends MY_Controller {
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'user');
     }
+
+    public function organization() {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            $company_cc = $this->input->post('company_cc');
+            echo json_encode($this->lang->line('organization2')[$company_cc]);
+        }
+    }
 }
