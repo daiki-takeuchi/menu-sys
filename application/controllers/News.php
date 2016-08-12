@@ -23,6 +23,19 @@ class News extends MY_Controller {
 
     public function index()
     {
+        $data['year']['values'] = array(date('Y')-1,date('Y'),date('Y')+1);
+        $data['year']['selected'] = date('Y');
+        for ($i=1; $i<=12; $i++){
+            $data['month']['values'][] = $i;
+        }
+        $data['month']['selected'] = date('n');
+
+        $data['news'] = [];
+
+        // pagerの作成
+        $data['pager'] = [];
+
+        $this->smarty->assign($data);
         $this->display('news/index.tpl');
     }
 

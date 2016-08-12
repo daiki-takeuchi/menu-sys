@@ -6,40 +6,36 @@
 {block name=main_contents}
     <div class="container">
         <div class="bg-light-gray" style="padding: 5px 10px 5px 10px;">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div style="font-size: 12pt;">
-                        <span class="fa fa-search"></span><span class="font-pop"> 絞り込み</span>
-                    </div>
-                    <form class="form-horizonta" method="post">
-                        <div class="row">
-                            <div class='form-group'>
-                                <div class="col-xs-10 col-xs-offset-1 col-md-3 col-lg-4" style="margin-bottom: 5px;">
-                                    <div class='input-group'>
-                                        <span class="input-group-addon">名前</span>
-                                        <input type="text" class="form-control" name="name" />
-                                    </div>
-                                </div>
-                                <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-pull-1" style="margin-bottom: 5px;z-index: 1;">
-                                    <div class='input-group'>
-                                        <span class="input-group-addon">組織</span>
-                                        {html_options name="sel_organization[]" options=$organization data-width="fit"
-                                        data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
-                                        data-size="8" data-actions-box="true" data-selected-text-format="count > 1" multiple="multiple"}
-                                    </div>
-                                </div>
-                                <div class="col-xs-10 col-xs-offset-1 col-md-2 col-lg-1 col-lg-pull-1">
-                                    <button class="btn btn-orange box rd24 font-pop pull-right" style="font-size: large;">
-                                        <span class="fa fa-search"></span> 検索
-                                    </button>
-                                </div>
+            <div style="font-size: 12pt;">
+                <span class="fa fa-search"></span><span class="font-pop"> 絞り込み</span>
+            </div>
+            <form class="form-horizonta" method="post">
+                <div class="row">
+                    <div class='form-group'>
+                        <div class="col-xs-10 col-xs-offset-1 col-md-3 col-lg-4" style="margin-bottom: 5px;">
+                            <div class='input-group'>
+                                <span class="input-group-addon">名前</span>
+                                <input type="text" class="form-control" name="name" />
                             </div>
                         </div>
-                    </form>
+                        <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-pull-1" style="margin-bottom: 5px;z-index: 1;">
+                            <div class='input-group'>
+                                <span class="input-group-addon">組織</span>
+                                {html_options name="sel_organization[]" options=$organization data-width="fit"
+                                data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
+                                data-size="8" data-actions-box="true" data-selected-text-format="count > 1" multiple="multiple"}
+                            </div>
+                        </div>
+                        <div class="col-xs-10 col-xs-offset-1 col-md-2 col-lg-1 col-lg-pull-1">
+                            <button class="btn btn-orange box rd24 font-pop pull-right" style="font-size: large;">
+                                <span class="fa fa-search"></span> 検索
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
-        <div class="bg-light-gray" style="padding: 5px;margin-top: 5px;">
+        <div class="bg-light-gray" style="padding: 5px 10px 5px 10px;margin-top: 5px;">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1">
                     <div id="file_error"></div>
@@ -57,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1">
-                    <span>ユーザー登録用CSVテンプレートのダウンロードは<a href="#">こちら</a></span>
+                    <span style="font-size: 10pt;">ユーザー登録用CSVテンプレートのダウンロードは<a href="#">こちら</a></span>
                 </div>
             </div>
         </div>
