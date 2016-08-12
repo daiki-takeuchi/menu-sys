@@ -9,7 +9,7 @@ class UserSeeder_KSK extends Seeder
         $data = [
             'company_cc' => '1201',
             'soshiki_cc' => '1130100',
-            'soshiki_nm' => '総務・人事部　労務Ｇ',
+            'soshiki_nm' => '総務・人事部　総務Ｇ',
             'shain_bn' => '12345678',
             'name' => '山田　太郎',
             'shain_keitai_cc' => '01',
@@ -28,7 +28,7 @@ class UserSeeder_KSK extends Seeder
         $data = [
             'company_cc' => '1201',
             'soshiki_cc' => '1130100',
-            'soshiki_nm' => '総務・人事部　労務Ｇ',
+            'soshiki_nm' => '総務・人事部　総務Ｇ',
             'shain_bn' => '23456789',
             'name' => '鈴木　一郎',
             'shain_keitai_cc' => '01',
@@ -104,7 +104,7 @@ class UserSeeder_KSK extends Seeder
         $data = [
             'company_cc' => '1201',
             'soshiki_cc' => '1130100',
-            'soshiki_nm' => '総務・人事部　労務Ｇ',
+            'soshiki_nm' => '総務・人事部　総務Ｇ',
             'shain_bn' => '78901234',
             'name' => '山田　栞',
             'shain_keitai_cc' => '01',
@@ -149,7 +149,7 @@ class UserSeeder_KSK extends Seeder
         $data = [
             'company_cc' => '1201',
             'soshiki_cc' => '1130100',
-            'soshiki_nm' => '総務・人事部　労務Ｇ',
+            'soshiki_nm' => '総務・人事部　総務Ｇ',
             'shain_bn' => '01234567',
             'name' => '速水　尚道',
             'shain_keitai_cc' => '01',

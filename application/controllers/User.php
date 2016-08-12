@@ -72,13 +72,32 @@ class User extends MY_Controller {
             $this->display('user/not_found.tpl');
             return;
         }
+
+        if($this->input->post()) {
+            if ($user_id === null) $user =[];
+            $user = array_merge($user, $this->input->post());
+            $btn = $this->input->post('btn-save');
+            unset($user['btn-save']);
+
+            if($this->_save($user)) {
+                if($btn === 'save-user') {
+                    redirect(base_url() . 'user');
+                } elseif ($btn === 'save-user-more') {
+                    redirect(base_url() . 'user/new');
+                }
+            }
+        }
+
         $data['user'] = $user;
 
         // マスター情報を取得
         $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
-        $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => $this->lang->line('organization2')[$user['company_cc']]);
         $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
+        $data['organization'] = [];
+        if($user_id) {
+            $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => $this->lang->line('organization2')[$user['company_cc']]);
+        }
 
         $this->smarty->assign($data);
 
@@ -101,5 +120,19 @@ class User extends MY_Controller {
             $company_cc = $this->input->post('company_cc');
             echo json_encode($this->lang->line('organization2')[$company_cc]);
         }
+    }
+
+    private function _save(&$user) {
+        if ($this->form_validation->run('user/save') === false) {
+            return false;
+        }
+        $user['password'] = sha1($this->input->post('shain_bn').$this->input->post('shain_bn'));
+        $this->user_model->save($user);
+        $user = $this->user_model->find($user['id']);
+        if($user['id'] == $this->user_id) {
+            $data = array("user" => $user);
+            $this->session->set_userdata($data);
+        }
+        return true;
     }
 }

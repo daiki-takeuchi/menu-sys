@@ -78,6 +78,7 @@ $(function () {
             success: function(data, dataType) {
                 var $select = $('#organization');
                 $select.html('');
+                $select.prop('disabled', false);
                 $optionGroup = $('<optgroup>').attr('label',company_nm);
                 $select.append($optionGroup);
                 $.each(data, function(key, item) {
@@ -88,5 +89,23 @@ $(function () {
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){MessageBox.show(errorThrown.message);}
         });
+    });
+
+    $('#organization').change(function () {
+        $('#soshiki_nm').val($('#organization option:selected').text());
+    });
+
+    if($('#organization option:selected').val() === undefined) {
+        $('#organization').prop('disabled', true);
+    }
+
+    $('.btn-save-user').click(function () {
+        $('#save_btn').val('save-user');
+        $('#form').submit();
+    });
+
+    $('.btn-save-user-more').click(function () {
+        $('#save_btn').val('save-user-more');
+        $('#form').submit();
     });
 });

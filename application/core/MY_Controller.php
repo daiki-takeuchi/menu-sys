@@ -35,10 +35,10 @@ class MY_Controller extends CI_Controller
             return;
         } elseif(!isset($userdata["is_logged_in"])) {
             // ログインしていない場合はログイン画面に遷移する
-            redirect(site_url() . 'login');
+            redirect(base_url() . 'login');
         } elseif ($userdata["user"]["first_login"] === '1' && $this->uri->segment(1 ,0) !== 'pwchange') {
             // 最初のログイン時はパスワード変更画面に遷移する
-            redirect(site_url() . 'pwchange');
+            redirect(base_url() . 'pwchange');
         }
 
         $data['is_login'] = $this->is_login = $userdata["is_logged_in"];
