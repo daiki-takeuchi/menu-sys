@@ -13,6 +13,8 @@ class UserSeeder_KSK extends Seeder
             'shain_bn' => '12345678',
             'name' => '山田　太郎',
             'shain_keitai_cc' => '01',
+            'first_login' => '0',
+            'gender' => '1',
             'permission_menu' => '1',
             'permission_user' => '1',
             'password' => sha1('12345678'.'password'),

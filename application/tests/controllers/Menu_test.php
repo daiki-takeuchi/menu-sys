@@ -21,14 +21,25 @@ class Menu_test extends TestCase
         $CI->seeder->call('UserSeeder_Add_30');
     }
 
-    public function test_index()
-	{
-        // 管理者でログイン
-        $data = ['shain_bn' => '12345678','password' => 'password'];
-        $this->request('POST', '/login', $data);
+    public function setUp()
+    {
+        $this->resetInstance();
+    }
 
-		$output = $this->request('GET', '/');
-//		$this->assertContains('<title>メニュー予約</title>', $output);
+    /**
+     * @test
+     */
+    public function 初回ログイン時はパスワード変更画面に遷移する()
+	{
+        // ログイン
+        $data = ['shain_bn' => '23456789', 'password' => 'password'];
+        $this->request('POST', 'login', $data);
+
+        $this->request('GET', '/');
+        $this->assertRedirect('pwchange');
+
+        // Teardown ログアウト
+        $this->request('GET', 'logout');
 	}
 
 	public function test_method_404()
