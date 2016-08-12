@@ -98,3 +98,9 @@ $lang['organization'] = array(
     'クノールサービス㈱' => array('1432|0000000' => 'クノールサービス株式会社'),
     'クノールトレーディング㈱' => array('1434|0000000' => 'クノールトレーディング株式会社'),
 );
+
+$lang['gender'] = [
+    ['gender_cc' => '1', 'gender_nm' => '男性'],
+    ['gender_cc' => '2', 'gender_nm' => '女性'],
+    ['gender_cc' => '3', 'gender_nm' => 'その他'],
+];

@@ -206,6 +206,21 @@ input {
     z-index: 1;
 }
 
+.form-horizontal .checkbox,
+.form-horizontal .checkbox-inline,
+.form-horizontal .radio,
+.form-horizontal .radio-inline {
+    padding-top: 0;
+}
+
+.form-horizontal .checkbox label,
+.form-horizontal .checkbox-inline label,
+.form-horizontal .radio label,
+.form-horizontal .radio-inline label {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
 textarea {
     resize: vertical;
 }
@@ -267,6 +282,10 @@ span.label-news {
 
 .input-group.date input[type="text"][readonly] {
     background: #fff;
+}
+
+.input-group.date input[type="text"] {
+    min-width: 120px;
 }
 
 .bg-white {

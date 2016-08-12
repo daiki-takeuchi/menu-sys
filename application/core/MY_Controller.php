@@ -27,6 +27,7 @@ class MY_Controller extends CI_Controller
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->library('form_validation');
+        $this->lang->load('master_lang');
 
         $userdata = $this->session->userdata();
         if($this->uri->segment(1 ,0) === 'login') {

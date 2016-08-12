@@ -30,7 +30,6 @@ class User extends MY_Controller {
     {
         parent::__construct();
         $this->load->model('user_model');
-        $this->lang->load('master_lang');
 
         $this->user_model->setUserName($this->user_name);
     }
@@ -66,6 +65,22 @@ class User extends MY_Controller {
     public function edit($user_id = null)
     {
         parent::edit($user_id);
+
+        // 選択したユーザー情報を取得
+        $user = $this->user_model->find($user_id);
+        if (empty($user) && !empty($user_id)) {
+            $this->display('user/not_found.tpl');
+            return;
+        }
+        $data['user'] = $user;
+
+        // マスター情報を取得
+        $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
+        $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
+        $data['organization'] = $this->lang->line('organization');
+        $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
+
+        $this->smarty->assign($data);
 
         $this->display('user/user_form.tpl');
     }

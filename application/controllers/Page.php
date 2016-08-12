@@ -91,7 +91,7 @@ class Page extends MY_Controller {
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            $data['gender'] = array("1" => "男性", "2" => "女性", "3" => "その他");
+            $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
 
             $this->smarty->assign($data);
             $this->display("page/input_gender.tpl");
@@ -104,7 +104,6 @@ class Page extends MY_Controller {
         if($this->input->is_ajax_request()) {
             $user = $this->user_model->find_by_shain_bn($this->shain_bn);
             $user['gender'] = $this->input->post('gender');
-            log_message('info', $this->input->post('gender'));
             $this->user_model->save($user);
             $this->session->set_userdata(array("user" => $user));
 
