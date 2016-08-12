@@ -79,13 +79,13 @@
             <div class="bg-light-gray" style="padding: 10px 10px 0 10px;font-size: 12px;">
                     <div class="row">
                         <div class="col-sm-5 col-sm-offset-1">
-                            <p>初回登録日：{$user.created_at|date_format:'Y/m/d h:i:s'}</p>
+                            <p>初回登録日：{$user.created_at|date_format:'Y/m/d H:i:s'}</p>
                         </div>
                         <div class="col-sm-5">
                             <p>初回登録者：{$user.created_user}</p>
                         </div>
                         <div class="col-sm-5 col-sm-offset-1">
-                            <p>最終更新日：{$user.updated_at|date_format:'Y/m/d h:i:s'}</p>
+                            <p>最終更新日：{$user.updated_at|date_format:'Y/m/d H:i:s'}</p>
                         </div>
                         <div class="col-sm-5">
                             <p>最終更新者：{$user.updated_user}</p>

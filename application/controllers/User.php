@@ -77,7 +77,7 @@ class User extends MY_Controller {
         // マスター情報を取得
         $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
-        $data['organization'] = $this->lang->line('organization');
+        $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => $this->lang->line('organization2')[$user['company_cc']]);
         $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
 
         $this->smarty->assign($data);
