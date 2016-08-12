@@ -1,6 +1,12 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/**
+ * Class Page
+ *
+ * @property User_model $user_model
+ */
 class Page extends MY_Controller {
 
     /**
@@ -18,14 +24,33 @@ class Page extends MY_Controller {
      * map to /index.php/welcome/<method_name>
      * @see https://codeigniter.com/user_guide/general/urls.html
      */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('user_model');
+        $this->user_model->setUserName($this->user_name);
+    }
+
     public function pwchange()
     {
         $base_url = base_url();
         $has_footer = false;
         $message_class = "text-hide";
+        $message = "";
+        if($this->session->userdata("user")['first_login'] === '1') {
+            // 最初のログイン情報をクリア
+            $user = $this->user_model->find_by_shain_bn($this->shain_bn);
+            $user['first_login'] = '0';
+            $this->user_model->save($user);
+            $this->session->set_userdata(array("user" => $user));
+
+            $message_class = "";
+            $message = "初回ログイン時はパスワードを変更してください。";
+        }
 
         if($this->input->post()) {
             $message_class = "";
+            $message = "パスワードを変更しました。引き続き、メニュー予約をする場合は、<a href='{$base_url}'><b>こちら</b></a>をクリックして下さい。";
         }
 
         $this->smarty->assign(compact("has_footer", "message_class", "message"));
@@ -36,8 +61,17 @@ class Page extends MY_Controller {
     {
         if($this->input->post()) {
             // ログイン処理して
-            // 予約画面にリダイレクト
-            redirect(base_url());
+            if ($this->form_validation->run('login') !== false) {
+                $shain_bn = $this->input->post("shain_bn");
+                $user = $this->user_model->find_by_shain_bn($shain_bn);
+                $data = array(
+                    "user" => $user,
+                    "is_logged_in" => 1
+                );
+                $this->session->set_userdata($data);
+                // 予約画面にリダイレクト
+                redirect(base_url());
+            }
         }
         $has_header = false;
         $has_footer = false;
@@ -49,6 +83,7 @@ class Page extends MY_Controller {
     public function logout()
     {
         // ログアウト処理をしてからlogin画面にリダイレクト
+        $this->session->sess_destroy();
         redirect(base_url()."login");
     }
 
@@ -67,7 +102,13 @@ class Page extends MY_Controller {
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            echo json_encode("");
+            $user = $this->user_model->find_by_shain_bn($this->shain_bn);
+            $user['gender'] = $this->input->post('gender');
+            log_message('info', $this->input->post('gender'));
+            $this->user_model->save($user);
+            $this->session->set_userdata(array("user" => $user));
+
+            echo json_encode('success');
         }
     }
 

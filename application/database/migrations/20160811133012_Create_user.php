@@ -39,7 +39,7 @@ class Migration_Create_user extends CI_Migration {
                 'constraint' => '4',
                 'null' => true,
             ),
-            'gendar' => array(
+            'gender' => array(
                 'type' => 'char',
                 'constraint' => '1',
                 'null' => true

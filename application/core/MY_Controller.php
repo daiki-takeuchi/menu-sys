@@ -12,7 +12,10 @@ class MY_Controller extends CI_Controller
     protected $is_login;
     protected $user_id;
     protected $user_name;
-    protected $employee_id;
+    protected $shain_bn;
+    protected $permission_menu;
+    protected $permission_user;
+    protected $first_login;
 
     protected $page_title = '';
 
@@ -26,10 +29,24 @@ class MY_Controller extends CI_Controller
         $this->load->library('form_validation');
 
         $userdata = $this->session->userdata();
-        $data['is_login'] = $this->is_login = isset($userdata["is_logged_in"]) ? $userdata["is_logged_in"] : false;
-        $data['user_id'] = $this->user_id = isset($userdata["user"]["id"]) ? $userdata["user"]["id"] : false;
-        $data['user_name'] = $this->user_name = isset($userdata["user"]["name"]) ? $userdata["user"]["name"] : false;
-        $data['employee_id'] = $this->employee_id = isset($userdata["user"]["employee_id"]) ? $userdata["user"]["employee_id"] : false;
+        if($this->uri->segment(1 ,0) === 'login') {
+            // ログイン画面はそのまま遷移する
+            return;
+        } elseif(!isset($userdata["is_logged_in"])) {
+            // ログインしていない場合はログイン画面に遷移する
+            redirect(site_url() . 'login');
+        } elseif ($userdata["user"]["first_login"] === '1' && $this->uri->segment(1 ,0) !== 'pwchange') {
+            // 最初のログイン時はパスワード変更画面に遷移する
+            redirect(site_url() . 'pwchange');
+        }
+
+        $data['is_login'] = $this->is_login = $userdata["is_logged_in"];
+        $data['user_id'] = $this->user_id = $userdata["user"]["id"];
+        $data['user_name'] = $this->user_name = $userdata["user"]["name"];
+        $data['shain_bn'] = $this->shain_bn = $userdata["user"]["shain_bn"];
+        $data['gender'] = $userdata["user"]["gender"];
+        $data['permission_menu'] = $this->permission_menu = $userdata["user"]["permission_menu"];
+        $data['permission_user'] = $this->permission_user = $userdata["user"]["permission_user"];
 
         $this->smarty->assign($data);
     }

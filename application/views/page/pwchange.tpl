@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
                         <div class="alert alert-success {$message_class}" style="text-align: left;margin-bottom: 2px;">
-                            パスワードを変更しました。引き続き、メニュー予約をする場合は、<a href='{base_url}'><b>こちら</b></a>をクリックして下さい。
+                            {$message}
                         </div>
                     </div>
                 </div>
@@ -69,4 +69,5 @@
             </div>
         </div>
     </div>
+    <input type="hidden" id="hid_alert" value="{$gender}" />
 {/block}

@@ -10,6 +10,9 @@
                 <div class="panel panel-default panel-login">
                     <div class="panel-heading" style="background: url('{base_url}assets/img/logo.png') no-repeat 10px center;background-size: 40px;background-color: #ff9900;">食堂メニュー予約システム</div>
                     <div class="panel-body center">
+                        {if {validation_errors} != null}
+                            <div class="alert alert-danger">{validation_errors}</div>
+                        {/if}
                         <div class="row" style="margin: 5px;display: inline-block;">
                             <div class="col-xs-12 bg-light-gray" style="height: 380px; width: 220px;padding-top: 15px;">
                                 <div style="text-align: center;"><img class="img-rounded" src="{base_url}assets/img/a_lunch.jpg"></div>
@@ -17,7 +20,7 @@
                                     <div class="row" style="padding-top: 20px;">
                                         <div class="col-xs-10 col-xs-offset-1 controls">
                                             <div class="form-group">
-                                                <input type="text" class="form-control soft_keyboard" name="shain_id" placeholder="社員番号" />
+                                                <input type="text" class="form-control soft_keyboard" name="shain_bn" placeholder="社員番号" />
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
