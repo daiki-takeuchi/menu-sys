@@ -3,7 +3,7 @@
 class News_model extends MY_Model
 {
     protected $table = 'news';
-    protected $per_page = 15;
+    protected $per_page = 10;
 
     public function get_news($offset = false)
     {
