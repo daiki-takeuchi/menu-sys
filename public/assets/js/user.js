@@ -108,4 +108,23 @@ $(function () {
         $('#save_btn').val('save-user-more');
         $('#form').submit();
     });
+
+    $('.btn-user-delete').click(function () {
+        var userId = this.id;
+        BootstrapDialog.confirm({
+            title: '削除の確認',
+            message: '削除してよろしいですか？',
+            type: BootstrapDialog.TYPE_WARNING,
+            closable: true,
+            draggable: true,
+            btnCancelLabel: 'キャンセル',
+            btnOKLabel: '削除する',
+            btnOKClass: 'btn-warning',
+            callback: function(result) {
+                if(result) {
+                    window.location.href = base_url + 'user/delete/' + userId;
+                }
+            }
+        });
+    });
 });

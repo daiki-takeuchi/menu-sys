@@ -100,10 +100,10 @@
 {/block}
 {block name=footer_left}
     {if $id}
-    <a href="{base_url}user/delete/{$id}" class="btn btn-delete box rd24 font-pop {if $id === $user_id}disabled{/if}"
-           style="font-size: large;">
+        <button id="{$id}" class="btn btn-delete btn-user-delete box rd24 font-pop {if $id === $user_id}disabled{/if}"
+           style="font-size: large;" {if $id === $user_id}disabled{/if}>
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
-    </a>
+        </button>
     {/if}
 {/block}
 {block name=footer_right}
