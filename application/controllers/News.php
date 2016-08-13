@@ -31,6 +31,7 @@ class News extends MY_Controller {
         parent::__construct();
         $this->load->model('news_model');
 
+        $this->news_model->setUserName($this->user_name);
     }
 
     public function index()
@@ -88,7 +89,6 @@ class News extends MY_Controller {
                 }
             }
         }
-
         $data['news'] = $news;
 
         $this->smarty->assign($data);

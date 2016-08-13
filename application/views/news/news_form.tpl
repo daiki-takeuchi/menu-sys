@@ -11,30 +11,39 @@
 {block name=main_contents}
     <form class="form-horizontal" method="post" id="form">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2" style="padding-top: 30px;">
+            <div class="col-xs-10 col-xs-offset-1" style="padding-top: 30px;">
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1">
                         {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
                         <div class="row">
-                            <label><span class="label-required rd5">必須</span> 掲載期間</label>
-                            <div class="col-sm-5">
+                            <div class="col-sm-4 col-sm-offset-1">
                                 <div class="form-group">
-                                    <div class='input-group date all'>
-                                            <span class="input-group-addon">
-                                                <span class="fa fa-calendar"></span>
-                                            </span>
-                                        <input type="text" class="form-control date-all" style="min-width: 120px;" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" />
+                                    <label><span class="label-required rd5">必須</span> 掲載開始日</label>
+                                    <div class='input-group'>
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                        <input type="text" class="form-control date-all" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-sm-offset-1">
+                            <div class="col-sm-4 col-sm-offset-1">
                                 <div class="form-group">
+                                    <label><span class="label-required rd5">必須</span> 掲載終了日</label>
                                     <div class='input-group'>
-                                            <span class="input-group-addon">
-                                                <span class="fa fa-calendar"></span>
-                                            </span>
-                                        <input type="text" class="form-control date-all" style="min-width: 120px;" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" />
+                                        <span class="input-group-addon">
+                                            <span class="fa fa-calendar"></span>
+                                        </span>
+                                        <input type="text" class="form-control date-all" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" />
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-10 col-sm-offset-1">
+                                <div class="form-group">
+                                    <label><span class="label-required rd5">必須</span> お知らせ</label>
+                                    <textarea class="form-control" rows="5" name="content">{$news.content}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -78,7 +87,7 @@
             style="margin-right:15px;font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存してもう１つ追加</span>
     </button>
-    <button class="btn btn-orange box rd24 font-pop btn-news-user"
+    <button class="btn btn-orange box rd24 font-pop btn-save-news"
             style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存する</span>
     </button>

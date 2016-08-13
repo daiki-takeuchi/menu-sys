@@ -288,6 +288,14 @@ span.label-news {
     min-width: 120px;
 }
 
+.date-all input[type="text"][readonly] {
+    background: #fff;
+}
+
+.date-all input[type="text"] {
+    min-width: 120px;
+}
+
 .bg-white {
     background: #fff;
 }
@@ -565,15 +573,19 @@ div#body{
     .spNone { display: none;}
 }
 
-@media screen and (max-width: 992px){
+@media screen and (max-width: 767px){
+    .spNone768 { display: none;}
+}
+
+@media screen and (max-width: 991px){
     .spNone992 { display: none;}
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
     .spNone1024 { display: none;}
 }
 
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1024px){
     .ltNone1024 { display: none;}
 }
 

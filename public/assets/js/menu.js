@@ -8,7 +8,7 @@ $(function () {
                     $(".selectpicker").selectpicker({
                         "selectedText": "cat"
                     });
-                    $('.input-group.date').datepicker({
+                    $('.date-all').datepicker({
                         weekStart: 1,
                         format: "yyyy/mm/dd",
                         language: "ja",
