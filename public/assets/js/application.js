@@ -8,9 +8,16 @@ $(function () {
         return;
     }
 
-    $('.input-group.date').datepicker({
+    $('.date').datepicker({
         format: "yyyy/mm/dd",
         startDate: "today",
+        language: "ja",
+        autoclose: true,
+        todayHighlight: true
+    });
+
+    $('.date-all').datepicker({
+        format: "yyyy/mm/dd",
         language: "ja",
         autoclose: true,
         todayHighlight: true

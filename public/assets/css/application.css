@@ -280,11 +280,11 @@ span.label-news {
     cursor: pointer;
 }
 
-.input-group.date input[type="text"][readonly] {
+.date input[type="text"][readonly] {
     background: #fff;
 }
 
-.input-group.date input[type="text"] {
+.date input[type="text"] {
     min-width: 120px;
 }
 

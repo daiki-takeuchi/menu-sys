@@ -67,12 +67,50 @@ class News extends MY_Controller {
     {
         parent::edit($news_id);
 
+        // 選択したお知らせ情報を取得
+        $news = $this->news_model->find($news_id);
+        if (empty($news) && !empty($news_id)) {
+            $this->display('news/not_found.tpl');
+            return;
+        }
+
+        if($this->input->post()) {
+            if ($news_id === null) $news =[];
+            $news = array_merge($news, $this->input->post());
+            $btn = $this->input->post('btn-save');
+            unset($news['btn-save']);
+
+            if($this->_save($news)) {
+                if($btn === 'save-news') {
+                    redirect(base_url() . 'news');
+                } elseif ($btn === 'save-news-more') {
+                    redirect(base_url() . 'news/new');
+                }
+            }
+        }
+
+        $data['news'] = $news;
+
+        $this->smarty->assign($data);
         $this->display('news/news_form.tpl');
     }
 
     public function delete($news_id)
     {
+        $news = $this->news_model->find($news_id);
+        if(isset($news['id'])) {
+            $this->news_model->delete($news);
+        }
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'news');
+    }
+
+    private function _save(&$news) {
+        if ($this->form_validation->run('news/save') === false) {
+            return false;
+        }
+        $this->news_model->save($news);
+        $news = $this->news_model->find($news['id']);
+        return true;
     }
 }

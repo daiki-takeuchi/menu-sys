@@ -39,4 +39,21 @@ $config = array(
             'rules' => 'required'
         ),
     ),
+    'news/save' => array(
+        array(
+            'field' => 'start_date',
+            'label' => '掲載開始日',
+            'rules' => 'required|trim'
+        ),
+        array(
+            'field' => 'end_date',
+            'label' => '掲載終了日',
+            'rules' => 'required|trim'
+        ),
+        array(
+            'field' => 'content',
+            'label' => 'お知らせ',
+            'rules' => 'required|trim'
+        ),
+    ),
 );

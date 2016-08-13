@@ -8,11 +8,11 @@
                 </div>
                 <div class="form-group area-target-date">
                     <div><label>対象日</label></div>
-                    <div class='input-group date'>
+                    <div class='input-group'>
                 <span class="input-group-addon">
                     <span class="fa fa-calendar"></span>
                 </span>
-                        <input type="text" class="form-control" name="target-date" value="{$smarty.now|date_format:'%Y/%m/%d'}" placeholder="対象日" />
+                        <input type="text" class="form-control date" name="target-date" value="{$smarty.now|date_format:'%Y/%m/%d'}" placeholder="対象日" />
                     </div>
                 </div>
                 <div class="form-group area-target-year-month hidden">

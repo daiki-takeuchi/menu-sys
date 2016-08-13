@@ -54,22 +54,22 @@
                                 <div class="col-sm-5">
                                     <div class="form-group">
                                         <label><span class="label-required rd5">必須</span> メニュー提供日</label>
-                                        <div class='input-group date'>
+                                        <div class='input-group'>
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control" style="min-width: 120px;" name="menu-provide-date" />
+                                            <input type="text" class="form-control date" name="menu-provide-date" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-5 col-sm-offset-2">
                                     <div class="form-group">
                                         <label><span class="label-required rd5">必須</span> メニュー公開日</label>
-                                        <div class='input-group date'>
+                                        <div class='input-group'>
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control" style="min-width: 120px;" name="menu-open-date" />
+                                            <input type="text" class="form-control date" name="menu-open-date" />
                                         </div>
                                     </div>
                                 </div>
