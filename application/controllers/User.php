@@ -126,7 +126,9 @@ class User extends MY_Controller {
         if ($this->form_validation->run('user/save') === false) {
             return false;
         }
-        $user['password'] = sha1($this->input->post('shain_bn').$this->input->post('shain_bn'));
+        if (empty($user['id'])) {
+            $user['password'] = sha1($this->input->post('shain_bn').$this->input->post('shain_bn'));
+        }
         $this->user_model->save($user);
         $user = $this->user_model->find($user['id']);
         if($user['id'] == $this->user_id) {

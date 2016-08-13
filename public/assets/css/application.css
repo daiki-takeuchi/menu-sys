@@ -565,6 +565,10 @@ div#body{
     .spNone { display: none;}
 }
 
+@media screen and (max-width: 992px){
+    .spNone992 { display: none;}
+}
+
 @media screen and (max-width: 1024px){
     .spNone1024 { display: none;}
 }
