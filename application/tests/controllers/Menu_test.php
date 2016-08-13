@@ -32,7 +32,7 @@ class Menu_test extends TestCase
     public function 初回ログイン時はパスワード変更画面に遷移する()
 	{
         // ログイン
-        $data = ['shain_bn' => '23456789', 'password' => 'password'];
+        $data = ['shain_bn' => '23456789', 'password' => '23456789'];
         $this->request('POST', 'login', $data);
 
         $this->request('GET', '/');

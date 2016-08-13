@@ -32,7 +32,7 @@ class User_test extends TestCase
 	public function ユーザー管理に遷移できる()
 	{
         // ログイン
-        $data = ['shain_bn' => '12345678', 'password' => 'password'];
+        $data = ['shain_bn' => '12345678', 'password' => '12345678'];
         $this->request('POST', 'login', $data);
 
 		$output = $this->request('GET', 'user');
