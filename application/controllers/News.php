@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * News User
+ *
+ * @property News_model $news_model
+ */
 class News extends MY_Controller {
 
     /**
@@ -21,8 +26,19 @@ class News extends MY_Controller {
 
     protected $page_title = 'お知らせ';
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('news_model');
+
+    }
+
     public function index()
     {
+        $offset = $this->uri->segment(3 ,0);
+        // 登録されているデータを全件取得
+        $data['news_list'] = $this->news_model->get_news($offset);
+
         $data['year']['values'] = array(date('Y')-1,date('Y'),date('Y')+1);
         $data['year']['selected'] = date('Y');
         for ($i=1; $i<=12; $i++){
@@ -30,17 +46,16 @@ class News extends MY_Controller {
         }
         $data['month']['selected'] = date('n');
 
-        $data['news_list'] = array(
-            array('id' => 1, 'start_date' => '2016/7/7', 'end_date' => '2016/7/12', 'contents' => '【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。'),
-            array('id' => 2, 'start_date' => '2016/7/7', 'end_date' => '2016/7/12', 'contents' => '【News2】このテキストはNewsTicker用のダミーテキスト［2］です。'),
-            array('id' => 3, 'start_date' => '2016/7/7', 'end_date' => '2016/7/12', 'contents' => '【News3】このテキストはNewsTicker用のダミーテキスト［3］です。'),
-        );
-
         // pagerの作成
-        $data['pager'] = [];
+        $data['pager'] = $this->news_model->get_pagination();
 
         $this->smarty->assign($data);
         $this->display('news/index.tpl');
+    }
+
+    public function pages()
+    {
+        $this->index();
     }
 
     public function news_new()

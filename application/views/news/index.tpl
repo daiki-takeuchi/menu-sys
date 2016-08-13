@@ -64,8 +64,8 @@
             <table id="id-tbl-fav-menu" class="table table-sm table-condensed table-hover table-striped">
                 <thead>
                 <tr>
-                    <th style="text-align: center;">掲載開始</th>
-                    <th style="text-align: center;">掲載終了</th>
+                    <th style="text-align: center;width: 150px;">掲載開始</th>
+                    <th style="text-align: center;width: 150px;">掲載終了</th>
                     <th>お知らせ</th>
                 </tr>
                 </thead>
@@ -74,7 +74,7 @@
                     <tr>
                         <td style="text-align: center;padding-top: 10px;">{$news.start_date|date_format:"Y/m/d"}</td>
                         <td style="text-align: center;padding-top: 10px;">{$news.end_date|date_format:"Y/m/d"}</td>
-                        <td style="padding-top: 10px;"><a href="{base_url}news/edit/{$news.id}">{$news.contents}</a></td>
+                        <td style="padding-top: 10px;"><a href="{base_url}news/edit/{$news.id}">{$news.content}</a></td>
                     </tr>
                 {/foreach}
                 </tbody>
