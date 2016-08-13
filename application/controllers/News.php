@@ -30,7 +30,11 @@ class News extends MY_Controller {
         }
         $data['month']['selected'] = date('n');
 
-        $data['news'] = [];
+        $data['news_list'] = array(
+            array('id' => 1, 'start_date' => '2016/7/7', 'end_date' => '2016/7/12', 'contents' => '【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。'),
+            array('id' => 2, 'start_date' => '2016/7/7', 'end_date' => '2016/7/12', 'contents' => '【News2】このテキストはNewsTicker用のダミーテキスト［2］です。'),
+            array('id' => 3, 'start_date' => '2016/7/7', 'end_date' => '2016/7/12', 'contents' => '【News3】このテキストはNewsTicker用のダミーテキスト［3］です。'),
+        );
 
         // pagerの作成
         $data['pager'] = [];

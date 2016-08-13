@@ -4,7 +4,7 @@
 {/block}
 {block name=main_contents}
     <div class="container">
-        <div class="bg-light-gray" style="padding: 5px 10px 5px 10px;">
+        <div class="bg-light-gray" style="padding: 5px 10px 10px 10px;">
             <div style="font-size: 12pt;">
                 <span class="fa fa-search"></span><span class="font-pop"> 絞り込み</span>
             </div>
@@ -70,11 +70,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                {foreach from=$news item=news_item}
+                {foreach from=$news_list item=news}
                     <tr>
-                        <td style="text-align: center;padding-top: 10px;">{$news_item.start_date|date_format:"Y/m/d"}</td>
-                        <td style="text-align: center;padding-top: 10px;">{$news_item.end_date|date_format:"Y/m/d"}</td>
-                        <td style="padding-top: 10px;"><a href="{base_url}news/edit/{$news_item.id}">{$news_item.contents}</a></td>
+                        <td style="text-align: center;padding-top: 10px;">{$news.start_date|date_format:"Y/m/d"}</td>
+                        <td style="text-align: center;padding-top: 10px;">{$news.end_date|date_format:"Y/m/d"}</td>
+                        <td style="padding-top: 10px;"><a href="{base_url}news/edit/{$news.id}">{$news.contents}</a></td>
                     </tr>
                 {/foreach}
                 </tbody>
