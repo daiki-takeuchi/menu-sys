@@ -43,7 +43,11 @@ class User extends MY_Controller {
         // マスター情報を取得
         $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
-        $data['organization'] = $this->lang->line('organization');
+
+        foreach ($data['company'] as $company_cc => $company_nm) {
+            $soshiki = $this->user_model->get_organization_for_select($company_cc);
+            $data['organization'][$company_nm] = array_column($soshiki, 'soshiki_nm', 'soshiki_cc');
+        }
 
         // pagerの作成
         $data['pager'] = $this->user_model->get_pagination();
@@ -96,7 +100,7 @@ class User extends MY_Controller {
         $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
         $data['organization'] = [];
         if($user_id) {
-            $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => $this->lang->line('organization2')[$user['company_cc']]);
+            $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->user_model->get_organization($user['company_cc']), 'soshiki_nm', 'soshiki_cc'));
         }
 
         $this->smarty->assign($data);
@@ -118,7 +122,8 @@ class User extends MY_Controller {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
             $company_cc = $this->input->post('company_cc');
-            echo json_encode($this->lang->line('organization2')[$company_cc]);
+            $organization = $this->user_model->get_organization($company_cc);
+            echo json_encode($organization);
         }
     }
 

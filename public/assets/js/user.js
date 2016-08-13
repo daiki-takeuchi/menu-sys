@@ -82,7 +82,7 @@ $(function () {
                 $optionGroup = $('<optgroup>').attr('label',company_nm);
                 $select.append($optionGroup);
                 $.each(data, function(key, item) {
-                    $option = $('<option>').val(key).text(item);
+                    $option = $('<option>').val(item.soshiki_cc).text(item.soshiki_nm);
                     $optionGroup.append($option);
                 });
                 $select.selectpicker('refresh');

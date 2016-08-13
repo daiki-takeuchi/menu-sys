@@ -32,4 +32,22 @@ class User_model extends MY_Model
         }
         return $this->find();
     }
+
+    public function get_organization($company_cc) {
+        $this->db->select("soshiki_cc, soshiki_nm");
+        $this->db->distinct();
+        $this->db->where("company_cc",strval($company_cc));
+        $this->db->order_by("soshiki_cc");
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
+
+    public function get_organization_for_select($company_cc) {
+        $this->db->select("company_cc || '|' || soshiki_cc soshiki_cc , soshiki_nm");
+        $this->db->distinct();
+        $this->db->where("company_cc",strval($company_cc));
+        $this->db->order_by("soshiki_cc");
+        $query = $this->db->get($this->table);
+        return $query->result_array();
+    }
 }
