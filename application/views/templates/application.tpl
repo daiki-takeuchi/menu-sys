@@ -23,6 +23,7 @@
     <script src="{base_url}assets/js/jquery.validate.messages_ja.min.js"></script>
     <script src="{base_url}assets/js/jquery.validate.bootstrap3.js"></script>
     <script type="text/javascript">window.base_url = "{base_url}";</script>
+    <script type="text/javascript">window.download_date = "{download_date}";</script>
     {block name=include_js}{/block}
     <script src="{base_url}assets/js/application.js"></script>
     {include file='templates/shim.tpl'}

@@ -11,6 +11,7 @@ $(function () {
                     $('.date-all').datepicker({
                         weekStart: 1,
                         format: "yyyy/mm/dd",
+                        endDate: download_date,
                         language: "ja",
                         autoclose: true,
                         todayHighlight: true
