@@ -8,7 +8,7 @@ $(function () {
         return;
     }
 
-    $('.date').datepicker({
+    var date = $('.date').datepicker({
         format: "yyyy/mm/dd",
         startDate: "today",
         language: "ja",
@@ -16,12 +16,21 @@ $(function () {
         todayHighlight: true
     });
 
-    $('.date-all').datepicker({
+    var date_all = $('.date-all').datepicker({
         format: "yyyy/mm/dd",
         language: "ja",
         autoclose: true,
         todayHighlight: true
     });
+
+    date.on('change', function () {
+        $(this).focus();
+    });
+
+    date_all.on('change', function () {
+        $(this).focus();
+    });
+
 });
 
 var MessageBox = (function() {
