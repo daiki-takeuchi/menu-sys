@@ -28,6 +28,7 @@
 
             var $formGroup = $(element).closest('div.form-group');
             var $feedback = $formGroup.find('span.form-control-feedback');
+            $(element).closest('.form-group').find('.help-block').html('');
 
             // フォームグループに正常クラスを設定する
             $formGroup.removeClass(errorClass).addClass(validClass);

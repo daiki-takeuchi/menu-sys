@@ -203,7 +203,7 @@ input {
 }
 
 .bootstrap-select.open {
-    z-index: 1;
+    z-index: 3;
 }
 
 .form-horizontal .checkbox,

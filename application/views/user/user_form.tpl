@@ -30,26 +30,32 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 会社名</label><br />
-                                    {html_options id="company" name="company_cc" options=$company data-width="100%" class="selectpicker show-menu-arrow" title="会社を選択してください" selected="{$user.company_cc}"}
+                                    {html_options id="company" name="company_cc" options=$company data-width="100%" class="selectpicker show-menu-arrow" title="会社を選択してください" selected="{$user.company_cc}" required="required"}
+                                    <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-1">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 組織</label><br />
                                     {html_options id="organization" name="soshiki_cc" options=$organization data-width="100%"
                                     data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
                                     data-size="8" selected="{if isset($user.soshiki_cc)}{$user.soshiki_cc}{/if}" required="required"}
                                     <input type="hidden" id="soshiki_nm" name="soshiki_nm" value="{$user.soshiki_nm}" />
+                                    <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-5">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 雇用形態</label><br />
-                                    {html_options name="shain_keitai_cc" options=$keitai data-width="100%" class="selectpicker show-menu-arrow" title="雇用形態を選択してください" selected="{$user.shain_keitai_cc}"}
+                                    {html_options name="shain_keitai_cc" options=$keitai data-width="100%" class="selectpicker show-menu-arrow" title="雇用形態を選択してください" selected="{$user.shain_keitai_cc}" required="required"}
+                                    <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-1">
