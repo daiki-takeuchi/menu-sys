@@ -4,7 +4,7 @@
     <script src="{base_url}assets/js/user.js"></script>
 {/block}
 {block name=main_contents}
-    <form class="form-horizontal" method="post" id="form">
+    <form class="form-horizontal" method="post" id="form" data-toggle="validator">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2" style="padding-top: 30px;">
                 <div class="row">
@@ -14,13 +14,15 @@
                             <div class="col-sm-5">
                                 <div class="form-group">
                                     <label><span class="label-required rd5">必須</span> 名前</label>
-                                    <input type="text" class="form-control" name="name" value="{$user.name}" />
+                                    <input type="text" class="form-control" name="name" value="{$user.name}" required />
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-1">
                                 <div class="form-group">
                                     <label><span class="label-required rd5">必須</span> 社員番号</label>
-                                    <input type="text" class="form-control" name="shain_bn" value="{$user.shain_bn}" />
+                                    <input type="text" class="form-control" name="shain_bn" value="{$user.shain_bn}" required />
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +38,8 @@
                                     <label><span class="label-required rd5">必須</span> 組織</label><br />
                                     {html_options id="organization" name="soshiki_cc" options=$organization data-width="100%"
                                     data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
-                                    data-size="8" selected="{if isset($user.soshiki_cc)}{$user.soshiki_cc}{/if}"}
+                                    data-size="8" selected="{if isset($user.soshiki_cc)}{$user.soshiki_cc}{/if}" required="required"}
+                                    <div class="help-block with-errors"></div>
                                     <input type="hidden" id="soshiki_nm" name="soshiki_nm" value="{$user.soshiki_nm}" />
                                 </div>
                             </div>

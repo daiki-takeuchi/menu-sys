@@ -9,7 +9,7 @@
     <script src="{base_url}assets/js/news.js"></script>
 {/block}
 {block name=main_contents}
-    <form class="form-horizontal" method="post" id="form">
+    <form class="form-horizontal" method="post" id="form" data-toggle="validator">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1" style="padding-top: 30px;">
                 <div class="row">
@@ -25,6 +25,7 @@
                                         </span>
                                         <input type="text" class="form-control date-all" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" required />
                                     </div>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-sm-4 col-sm-offset-1">
@@ -36,6 +37,7 @@
                                         </span>
                                         <input type="text" class="form-control date-all" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" required />
                                     </div>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>
@@ -44,6 +46,7 @@
                                 <div class="form-group">
                                     <label><span class="label-required rd5">必須</span> お知らせ</label>
                                     <textarea class="form-control" rows="5" name="content" required maxlength="100">{$news.content}</textarea>
+                                    <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                         </div>

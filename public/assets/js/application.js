@@ -61,3 +61,5 @@ $(function () {
         "selectedText": "cat"
     });
 });
+
+$('#form').validator();
