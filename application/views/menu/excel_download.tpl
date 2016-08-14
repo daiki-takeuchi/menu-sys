@@ -12,7 +12,7 @@
                 <span class="input-group-addon">
                     <span class="fa fa-calendar"></span>
                 </span>
-                        <input type="text" class="form-control date-all" name="target-date" value="{download_date}" placeholder="対象日" />
+                        <input type="text" class="form-control date-all" name="target-date" autocomplete="off" value="{download_date}" placeholder="対象日" />
                     </div>
                 </div>
                 <div class="form-group area-target-year-month hidden">

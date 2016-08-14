@@ -23,7 +23,7 @@
                                         <span class="input-group-addon">
                                             <span class="fa fa-calendar"></span>
                                         </span>
-                                        <input type="text" class="form-control date-all" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" required />
+                                        <input type="text" class="form-control date-all" autocomplete="off" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" required />
                                     </div>
                                     <div class="help-block with-errors"></div>
                                     <span class="form-control-feedback"></span>
@@ -36,7 +36,7 @@
                                         <span class="input-group-addon">
                                             <span class="fa fa-calendar"></span>
                                         </span>
-                                        <input type="text" class="form-control date-all" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" required />
+                                        <input type="text" class="form-control date-all" autocomplete="off" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" required />
                                     </div>
                                     <div class="help-block with-errors"></div>
                                     <span class="form-control-feedback"></span>
