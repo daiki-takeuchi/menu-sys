@@ -709,3 +709,17 @@ table.table-headerfixed thead th {
     background-color: #337ab7;
     border-color: #337ab7;
 }
+
+/* jquery.validation用 */
+label.has-error {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.form-group.has-feedback.has-error {
+    margin-bottom: 0;
+}
+
+.help-block.with-errors {
+    margin: 0;
+}

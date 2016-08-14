@@ -12,17 +12,19 @@
                         {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
                         <div class="row">
                             <div class="col-sm-5">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 名前</label>
                                     <input type="text" class="form-control" name="name" value="{$user.name}" required />
                                     <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                             <div class="col-sm-6 col-sm-offset-1">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 社員番号</label>
                                     <input type="text" class="form-control" name="shain_bn" value="{$user.shain_bn}" required />
                                     <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                         </div>
@@ -39,7 +41,6 @@
                                     {html_options id="organization" name="soshiki_cc" options=$organization data-width="100%"
                                     data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
                                     data-size="8" selected="{if isset($user.soshiki_cc)}{$user.soshiki_cc}{/if}" required="required"}
-                                    <div class="help-block with-errors"></div>
                                     <input type="hidden" id="soshiki_nm" name="soshiki_nm" value="{$user.soshiki_nm}" />
                                 </div>
                             </div>

@@ -17,7 +17,7 @@
                         {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
                         <div class="row">
                             <div class="col-sm-4 col-sm-offset-1">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 掲載開始日</label>
                                     <div class='input-group'>
                                         <span class="input-group-addon">
@@ -26,10 +26,11 @@
                                         <input type="text" class="form-control date-all" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" required />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                             <div class="col-sm-4 col-sm-offset-1">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 掲載終了日</label>
                                     <div class='input-group'>
                                         <span class="input-group-addon">
@@ -38,14 +39,16 @@
                                         <input type="text" class="form-control date-all" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" required />
                                     </div>
                                     <div class="help-block with-errors"></div>
+                                    <span class="form-control-feedback"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-sm-10 col-sm-offset-1">
-                                <div class="form-group">
+                                <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> お知らせ</label>
                                     <textarea class="form-control" rows="5" name="content" required maxlength="100">{$news.content}</textarea>
+                                    <span class="form-control-feedback"></span>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>

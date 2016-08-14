@@ -62,4 +62,6 @@ $(function () {
     });
 });
 
-$('#form').validator();
+$(function () {
+    $("#form").validate();
+});
