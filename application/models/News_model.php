@@ -8,6 +8,7 @@ class News_model extends MY_Model
     public function get_news($offset = false)
     {
         $this->db->order_by('start_date','desc');
+        $this->db->order_by('updated_at','desc');
         if($offset !== false){
             $this->db->limit($this->per_page, $offset);
         }

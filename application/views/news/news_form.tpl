@@ -23,7 +23,7 @@
                                         <span class="input-group-addon">
                                             <span class="fa fa-calendar"></span>
                                         </span>
-                                        <input type="text" class="form-control date-all" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" />
+                                        <input type="text" class="form-control date-all" name="start_date" value="{$news.start_date|date_format:'Y/m/d'}" required />
                                     </div>
                                 </div>
                             </div>
@@ -34,7 +34,7 @@
                                         <span class="input-group-addon">
                                             <span class="fa fa-calendar"></span>
                                         </span>
-                                        <input type="text" class="form-control date-all" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" />
+                                        <input type="text" class="form-control date-all" name="end_date" value="{$news.end_date|date_format:'Y/m/d'}" required />
                                     </div>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                             <div class="col-sm-10 col-sm-offset-1">
                                 <div class="form-group">
                                     <label><span class="label-required rd5">必須</span> お知らせ</label>
-                                    <textarea class="form-control" rows="5" name="content">{$news.content}</textarea>
+                                    <textarea class="form-control" rows="5" name="content" required maxlength="100">{$news.content}</textarea>
                                 </div>
                             </div>
                         </div>
