@@ -80,7 +80,7 @@
                 </thead>
                 <tbody>
                 {foreach from=$users item=users_item}
-                <tr>
+                <tr id="{$users_item.id}">
                     <td style="padding-top: 10px;"><a href="{base_url}user/edit/{$users_item.id}">{$users_item.name}</a></td>
                     <td style="text-align: center;padding-top: 10px;">{$users_item.shain_bn}</td>
                     <td style="text-align: center;padding-top: 10px;">{$keitai[$users_item.shain_keitai_cc]}</td>

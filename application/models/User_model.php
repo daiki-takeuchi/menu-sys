@@ -11,11 +11,7 @@ class User_model extends MY_Model
         $this->db->where("password", sha1($shain_bn.$password));
         $query = $this->db->get($this->table);
 
-        if($query->num_rows() === 1){
-            return true;
-        }else{
-            return false;
-        }
+        return $query->num_rows() === 1;
     }
 
     public function find_by_shain_bn($shain_bn = false)

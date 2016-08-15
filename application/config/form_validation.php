@@ -12,6 +12,23 @@ $config = array(
             'rules' => 'required|sha1|trim'
         )
     ),
+    'pwchange' => array(
+        array(
+            'field' => 'old_password',
+            'label' => '現在のパスワード',
+            'rules' => 'required|trim|callback__chk_old_password'
+        ),
+        array(
+            'field' => 'new_password',
+            'label' => '新しいパスワード',
+            'rules' => 'required|trim|matches[new_password_confirmation]'
+        ),
+        array(
+            'field' => 'new_password_confirmation',
+            'label' => '新しいパスワード（確認）',
+            'rules' => 'required|trim'
+        )
+    ),
     'user/save' => array(
         array(
             'field' => 'name',

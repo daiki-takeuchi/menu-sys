@@ -46,6 +46,7 @@ $(function () {
 
     $('.btn-pw-reset').click(function () {
         var $cur_tr = $(this).closest('tr');
+        var user_id = $cur_tr.attr("id");
         BootstrapDialog.confirm({
             title: 'パスワードリセットの確認',
             message: $cur_tr.children('td:eq(0)').text() + 'さん のパスワードをリセットしてよろしいですか？',
@@ -60,7 +61,17 @@ $(function () {
                     // リセット処理
                     var button = $(this);
                     button.prop('disabled', true);
-                    MessageBox.show('パスワードをリセットしました。');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: base_url + 'user/pw_reset',
+                        data: {user_id : user_id},
+                        dataType: 'json',
+                        success: function(data, dataType) {
+                            MessageBox.show('パスワードをリセットしました。');
+                        },
+                        error: function(XMLHttpRequest, textStatus, errorThrown){MessageBox.show(errorThrown.message);}
+                    });
                 }
             }
         });

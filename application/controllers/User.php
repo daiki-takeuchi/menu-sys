@@ -127,6 +127,19 @@ class User extends MY_Controller {
         }
     }
 
+    public function pw_reset() {
+        // Ajax通信の場合のみ処理する
+        if($this->input->is_ajax_request()) {
+            $user_id = $this->input->post('user_id');
+            $user = $this->user_model->find($user_id);
+            if(isset($user['id'])) {
+                $user['password'] = sha1($user['shain_bn'].$user['shain_bn']);
+                $this->user_model->save($user);
+            }
+            echo json_encode('success');
+        }
+    }
+
     private function _save(&$user) {
         if ($this->form_validation->run('user/save') === false) {
             return false;

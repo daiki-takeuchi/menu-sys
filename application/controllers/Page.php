@@ -35,7 +35,6 @@ class Page extends MY_Controller {
     {
         $base_url = base_url();
         $has_footer = false;
-        $message_class = "text-hide";
         $message = "";
         if($this->session->userdata("user")['first_login'] === '1') {
             // 最初のログイン情報をクリア
@@ -44,16 +43,22 @@ class Page extends MY_Controller {
             $this->user_model->save($user);
             $this->session->set_userdata(array("user" => $user));
 
-            $message_class = "";
             $message = "初回ログイン時はパスワードを変更してください。";
         }
 
         if($this->input->post()) {
-            $message_class = "";
-            $message = "パスワードを変更しました。引き続き、メニュー予約をする場合は、<a href='{$base_url}'><b>こちら</b></a>をクリックして下さい。";
+            if ($this->form_validation->run('pwchange') !== false) {
+                $new_password = $this->input->post('new_password');
+                $user = $this->user_model->find_by_shain_bn($this->shain_bn);
+                if(isset($user['id'])) {
+                    $user['password'] = sha1($this->shain_bn.$new_password);
+                    $this->user_model->save($user);
+                }
+                $message = "パスワードを変更しました。引き続き、メニュー予約をする場合は、<a href='{$base_url}'><b>こちら</b></a>をクリックして下さい。";
+            }
         }
 
-        $this->smarty->assign(compact("has_footer", "message_class", "message"));
+        $this->smarty->assign(compact("has_footer", "message"));
         $this->display("page/pwchange.tpl");
     }
 
@@ -119,5 +124,15 @@ class Page extends MY_Controller {
         $option = array('mkdir_mode' => 0777, 'image_versions' => array());
 
         $upload_handler = new MyUploadHandler($option);
+    }
+
+    public function _chk_old_password($old_password)
+    {
+        if($this->user_model->can_log_in($this->shain_bn, $old_password)) {
+            return true;
+        } else {
+            $this->form_validation->set_message("_chk_old_password", "現在のパスワードが異なります。");
+            return false;
+        }
     }
 }
