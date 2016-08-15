@@ -25,6 +25,7 @@ class User extends MY_Controller {
      */
 
     protected $page_title = 'ユーザー';
+    private  $edit_user_id;
 
     public function __construct()
     {
@@ -69,6 +70,7 @@ class User extends MY_Controller {
     public function edit($user_id = null)
     {
         parent::edit($user_id);
+        $this->edit_user_id = $user_id;
 
         // 選択したユーザー情報を取得
         $user = $this->user_model->find($user_id);
@@ -155,4 +157,16 @@ class User extends MY_Controller {
         }
         return true;
     }
+
+    public function _duplicate_shain_bn($shain_bn)
+    {
+        $user = $this->user_model->find_by_shain_bn($shain_bn);
+        if(empty($user) || $user['id'] == $this->edit_user_id) {
+            return true;
+        } else {
+            $this->form_validation->set_message("_duplicate_shain_bn", "既に同じ社員番号の方が登録されています。");
+            return false;
+        }
+    }
+
 }

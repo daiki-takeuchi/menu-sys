@@ -38,7 +38,7 @@ $config = array(
         array(
             'field' => 'shain_bn',
             'label' => '社員番号',
-            'rules' => 'required|trim'
+            'rules' => 'required|trim|callback__duplicate_shain_bn'
         ),
         array(
             'field' => 'company_cc',
