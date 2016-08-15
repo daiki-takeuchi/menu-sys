@@ -23,7 +23,7 @@
                             <div class="col-sm-6 col-sm-offset-1">
                                 <div class="form-group has-feedback">
                                     <label><span class="label-required rd5">必須</span> 社員番号</label>
-                                    <input type="text" class="form-control" name="shain_bn" value="{$user.shain_bn}" required />
+                                    <input type="text" class="form-control" name="shain_bn" value="{$user.shain_bn}" ime-mode="inactive" required />
                                     <div class="help-block with-errors"></div>
                                     <span class="form-control-feedback"></span>
                                 </div>

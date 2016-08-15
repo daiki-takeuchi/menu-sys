@@ -20,7 +20,7 @@
                                     <div class="row" style="padding-top: 20px;">
                                         <div class="col-xs-10 col-xs-offset-1 controls">
                                             <div class="form-group">
-                                                <input type="text" class="form-control soft_keyboard" name="shain_bn" placeholder="社員番号" />
+                                                <input type="text" class="form-control soft_keyboard" name="shain_bn" ime-mode="inactive" placeholder="社員番号" />
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
