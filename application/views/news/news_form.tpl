@@ -46,7 +46,7 @@
                         <div class="row">
                             <div class="col-sm-10 col-sm-offset-1">
                                 <div class="form-group has-feedback">
-                                    <label><span class="label-required rd5">必須</span> お知らせ</label>
+                                    <label><span class="label-required rd5">必須</span> お知らせ（100文字まで。改行は反映されません。）</label>
                                     <textarea class="form-control" rows="5" name="content" required maxlength="100">{$news.content}</textarea>
                                     <span class="form-control-feedback"></span>
                                     <div class="help-block with-errors"></div>
