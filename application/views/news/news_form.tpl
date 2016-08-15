@@ -9,6 +9,7 @@
     <script src="{base_url}assets/js/news.js"></script>
 {/block}
 {block name=main_contents}
+<div class="container-fluid">
     <form class="form-horizontal" method="post" id="form" data-toggle="validator">
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1" style="padding-top: 30px;">
@@ -79,6 +80,7 @@
             </div>
         </div>
     </div>
+</div>
 {/block}
 {block name=footer_left}
     {if $id}
