@@ -11,13 +11,18 @@ $lang['company'] = [
     ['company_cc' => '1201', 'company_nm' => 'クノール食品㈱'],
     ['company_cc' => '1432', 'company_nm' => 'クノールサービス㈱'],
     ['company_cc' => '1434', 'company_nm' => 'クノールトレーディング㈱'],
+    ['company_cc' => '1310', 'company_nm' => 'ＮＲＩシステムテクノ㈱'],
 ];
 
 $lang['keitai'] = [
     ['keitai_cc' => '01', 'keitai_nm' => '正社員'],
-    ['keitai_cc' => '02', 'keitai_nm' => 'パート'],
-    ['keitai_cc' => '03', 'keitai_nm' => '派遣社員'],
-    ['keitai_cc' => '04', 'keitai_nm' => '嘱託・契約社員'],
+    ['keitai_cc' => '02', 'keitai_nm' => '役員'],
+    ['keitai_cc' => '03', 'keitai_nm' => '嘱託・契約社員'],
+    ['keitai_cc' => '04', 'keitai_nm' => '受入出向'],
+    ['keitai_cc' => '05', 'keitai_nm' => '派遣社員'],
+    ['keitai_cc' => '06', 'keitai_nm' => '委託先'],
+    ['keitai_cc' => '07', 'keitai_nm' => 'パート'],
+    ['keitai_cc' => 'ZZ', 'keitai_nm' => '常駐業者'],
 ];
 
 $lang['gender'] = [

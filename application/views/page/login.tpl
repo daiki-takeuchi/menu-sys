@@ -14,16 +14,20 @@
                             <div class="alert alert-danger">{validation_errors}</div>
                         {/if}
                         <div class="row" style="margin: 5px;display: inline-block;">
-                            <div class="col-xs-12 bg-light-gray" style="height: 380px; width: 220px;padding-top: 15px;">
+                            <div class="col-xs-12 bg-light-gray" style="height: 390px; width: 220px;padding-top: 15px;">
                                 <div style="text-align: center;"><img class="img-rounded" src="{base_url}assets/img/a_lunch.jpg"></div>
                                 <form class="form-horizontal" method="post">
                                     <div class="row" style="padding-top: 20px;">
                                         <div class="col-xs-10 col-xs-offset-1 controls">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control soft_keyboard" name="shain_bn" ime-mode="inactive" placeholder="社員番号" />
+                                            <div class="form-group has-feedback">
+                                                <input type="text" class="form-control soft_keyboard" name="shain_bn" placeholder="社員番号" style="ime-mode: inactive" required />
+                                                <div class="help-block with-errors"></div>
+                                                <span class="form-control-feedback"></span>
                                             </div>
-                                            <div class="form-group">
-                                                <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" />
+                                            <div class="form-group has-feedback">
+                                                <input type="password" class="form-control soft_keyboard" name="password" placeholder="パスワード" required />
+                                                <div class="help-block with-errors"></div>
+                                                <span class="form-control-feedback"></span>
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" name="login" class="btn btn-orange box rd24 font-pop"
@@ -38,7 +42,7 @@
                         </div>
                         <div class="row" style="margin: 5px;display: inline-block;">
                             <div class="hidden-xs">
-                                <div class="col-xs-12 bg-light-gray" style="height: 380px;padding-top: 10px;">
+                                <div class="col-xs-12 bg-light-gray" style="height: 390px;padding-top: 10px;">
                                     <div>
                                         <button type="button" class="btn-keyboard">1</button>
                                         <button type="button" class="btn-keyboard">2</button>
