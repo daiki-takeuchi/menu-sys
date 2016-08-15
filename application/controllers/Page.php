@@ -70,7 +70,8 @@ class Page extends MY_Controller {
                 $shain_bn = $this->input->post("shain_bn");
                 $user = $this->user_model->find_by_shain_bn($shain_bn);
                 $data = array(
-                    "user" => $user
+                    "user" => $user,
+                    "is_logged_in" => 1
                 );
                 $this->session->set_userdata($data);
                 // ×ボタンを押すまで有効なクッキーを作成

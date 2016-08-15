@@ -27,9 +27,12 @@ class MY_Controller extends CI_Controller
         $this->load->helper('cookie');
         $this->load->library('form_validation');
         $this->lang->load('master_lang');
-        $is_logged_in = $this->input->cookie("is_logged_in");
 
         $userdata = $this->session->userdata();
+
+        // TODO phpunitでcookieが空になってしまうため、テストの時はSesseionを利用する
+        $is_logged_in = ENVIRONMENT === 'testing' ? $userdata["is_logged_in"] : $this->input->cookie("is_logged_in");
+
         if($this->uri->segment(1 ,0) === 'login') {
             // ログイン画面はそのまま遷移する
             return;
