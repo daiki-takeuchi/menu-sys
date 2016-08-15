@@ -76,8 +76,8 @@ $(function () {
 });
 
 $(function () {
-    $(".pager").click(function (event) {
+    $(".pager li a").click(function (event) {
         event.preventDefault();
-        $('#form').attr('action', event.target.href).submit();
+        $('#form').attr('action', $(this).attr('href')).submit();
     });
 });
