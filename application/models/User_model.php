@@ -4,6 +4,7 @@ class User_model extends MY_Model
 {
     protected $table = 'user';
     protected $per_page = 10;
+    private $count = 0;
 
     public function can_log_in($shain_bn, $password){
 
@@ -20,9 +21,23 @@ class User_model extends MY_Model
         return $query->row_array();
     }
 
-    public function get_users($offset = false)
+    public function get_users($offset = false, $name = false, $soshiki_cc = false)
     {
+        if($name) {
+            $this->db->like('name', $name);
+        }
+        if($soshiki_cc) {
+            $this->db->where_in("company_cc || '|' || soshiki_cc", $soshiki_cc);
+        }
+        $this->count = $this->db->count_all_results($this->table);
+
         $this->db->order_by('id');
+        if($name) {
+            $this->db->like('name', $name);
+        }
+        if($soshiki_cc) {
+            $this->db->where_in("company_cc || '|' || soshiki_cc", $soshiki_cc);
+        }
         if($offset !== false){
             $this->db->limit($this->per_page, $offset);
         }
@@ -45,5 +60,10 @@ class User_model extends MY_Model
         $this->db->order_by("soshiki_cc");
         $query = $this->db->get($this->table);
         return $query->result_array();
+    }
+
+    public function get_count_all()
+    {
+        return $this->count;
     }
 }

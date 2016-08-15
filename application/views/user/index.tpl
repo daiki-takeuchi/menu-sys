@@ -9,19 +9,19 @@
             <div style="font-size: 12pt;">
                 <span class="fa fa-search"></span><span class="font-pop"> 絞り込み</span>
             </div>
-            <form class="form-horizonta" method="post">
+            <form class="form-horizonta" method="post" id="form">
                 <div class="row">
                     <div class='form-group'>
                         <div class="col-xs-10 col-xs-offset-1 col-md-3 col-lg-4" style="margin-bottom: 5px;">
                             <div class='input-group'>
                                 <span class="input-group-addon">名前</span>
-                                <input type="text" class="form-control" name="name" />
+                                <input type="text" class="form-control" name="name" value="{$name}" />
                             </div>
                         </div>
                         <div class="col-xs-10 col-xs-offset-1 col-md-4 col-md-pull-1" style="margin-bottom: 5px;z-index: 1;">
                             <div class='input-group'>
                                 <span class="input-group-addon">組織</span>
-                                {html_options name="sel_organization[]" options=$organization data-width="fit"
+                                {html_options name="soshiki_cc[]" options=$organization selected=$selected data-width="fit"
                                 data-live-search="true" class="selectpicker show-menu-arrow" title="組織を選択してください"
                                 data-size="8" data-actions-box="true" data-selected-text-format="count > 1" multiple="multiple"}
                             </div>

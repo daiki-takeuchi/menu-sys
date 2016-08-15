@@ -74,3 +74,10 @@ $(function () {
 $(function () {
     $("#form").validate();
 });
+
+$(function () {
+    $(".pager").click(function (event) {
+        event.preventDefault();
+        $('#form').attr('action', event.target.href).submit();
+    });
+});

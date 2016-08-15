@@ -38,8 +38,16 @@ class User extends MY_Controller {
     public function index()
     {
         $offset = $this->uri->segment(3 ,0);
-        // 登録されているデータを全件取得
-        $data['users'] = $this->user_model->get_users($offset);
+        $name = $soshiki_cc = null;
+        // 登録されているデータを取得
+        if($this->input->post()) {
+            $name = $this->input->post('name');
+            $name = isset($name) && !is_null($name) ? $name : null;
+            $soshiki_cc = $this->input->post('soshiki_cc');
+        }
+        $data['users'] = $this->user_model->get_users($offset, $name, $soshiki_cc);
+        $data['name'] = $name;
+        $data['selected'] = $soshiki_cc;
 
         // マスター情報を取得
         $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
