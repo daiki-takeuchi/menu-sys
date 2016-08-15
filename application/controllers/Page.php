@@ -70,10 +70,11 @@ class Page extends MY_Controller {
                 $shain_bn = $this->input->post("shain_bn");
                 $user = $this->user_model->find_by_shain_bn($shain_bn);
                 $data = array(
-                    "user" => $user,
-                    "is_logged_in" => 1
+                    "user" => $user
                 );
                 $this->session->set_userdata($data);
+                // ×ボタンを押すまで有効なクッキーを作成
+                $this->input->set_cookie("is_logged_in", "1", 0);
                 // 予約画面にリダイレクト
                 redirect(base_url());
             }
@@ -89,6 +90,7 @@ class Page extends MY_Controller {
     {
         // ログアウト処理をしてからlogin画面にリダイレクト
         $this->session->sess_destroy();
+        $this->input->set_cookie("is_logged_in",'0','');
         redirect(base_url()."login");
     }
 

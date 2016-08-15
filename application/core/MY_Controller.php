@@ -8,8 +8,6 @@
  */
 class MY_Controller extends CI_Controller
 {
-
-    protected $is_login;
     protected $user_id;
     protected $user_name;
     protected $shain_bn;
@@ -26,14 +24,16 @@ class MY_Controller extends CI_Controller
         $this->smarty->compile_dir = APPPATH . 'views/templates_c';
         $this->load->helper('url');
         $this->load->helper('form');
+        $this->load->helper('cookie');
         $this->load->library('form_validation');
         $this->lang->load('master_lang');
+        $is_logged_in = $this->input->cookie("is_logged_in");
 
         $userdata = $this->session->userdata();
         if($this->uri->segment(1 ,0) === 'login') {
             // ログイン画面はそのまま遷移する
             return;
-        } elseif(!isset($userdata["is_logged_in"])) {
+        } elseif(!isset($is_logged_in)) {
             // ログインしていない場合はログイン画面に遷移する
             redirect(base_url() . 'login');
         } elseif ($userdata["user"]["first_login"] === '1' && $this->uri->segment(1 ,0) !== 'pwchange') {
@@ -41,7 +41,6 @@ class MY_Controller extends CI_Controller
             redirect(base_url() . 'pwchange');
         }
 
-        $data['is_login'] = $this->is_login = $userdata["is_logged_in"];
         $data['user_id'] = $this->user_id = $userdata["user"]["id"];
         $data['user_name'] = $this->user_name = $userdata["user"]["name"];
         $data['shain_bn'] = $this->shain_bn = $userdata["user"]["shain_bn"];
