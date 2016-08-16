@@ -81,11 +81,11 @@
                 <tbody>
                 {foreach from=$users item=users_item}
                 <tr id="{$users_item.id}">
-                    <td style="padding-top: 10px;"><a href="{base_url}user/edit/{$users_item.id}">{$users_item.name}</a></td>
+                    <td style="padding-top: 10px;"><a href="{base_url}user/edit/{$users_item.id}">{$users_item.name|escape}</a></td>
                     <td style="text-align: center;padding-top: 10px;">{$users_item.shain_bn}</td>
                     <td style="text-align: center;padding-top: 10px;">{$keitai[$users_item.shain_keitai_cc]}</td>
                     <td style="padding-top: 10px;">{$company[$users_item.company_cc]}</td>
-                    <td style="padding-top: 10px;">{$users_item.soshiki_nm}</td>
+                    <td style="padding-top: 10px;">{$users_item.soshiki_nm|escape}</td>
                     <td style="text-align: center;padding-top: 10px;"><span class="fa {if $users_item.permission_menu}fa-circle-o{else}fa-times{/if}"></span></td>
                     <td style="text-align: center;padding-top: 10px;"><span class="fa {if $users_item.permission_user}fa-circle-o{else}fa-times{/if}"></span></td>
                     <td style="text-align: center;">
