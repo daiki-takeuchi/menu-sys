@@ -9,7 +9,7 @@
             <div style="font-size: 12pt;">
                 <span class="fa fa-search"></span><span class="font-pop"> 絞り込み</span>
             </div>
-            <form class="form-horizonta" method="post" id="form" action="{base_url}user">
+            <form class="form" method="post" id="form" action="{base_url}user">
                 <div class="row">
                     <div class='form-group'>
                         <div class="col-xs-10 col-xs-offset-1 col-md-3 col-lg-4" style="margin-bottom: 5px;">
@@ -93,6 +93,7 @@
                     </td>
                 </tr>
                 {/foreach}
+                {if !$users}<tr><td colspan="8">検索結果がありません。</td></tr>{/if}
                 </tbody>
             </table>
         </div>

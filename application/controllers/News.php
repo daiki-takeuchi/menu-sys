@@ -37,16 +37,31 @@ class News extends MY_Controller {
     public function index()
     {
         $offset = $this->uri->segment(3 ,0);
-        // 登録されているデータを全件取得
-        $data['news_list'] = $this->news_model->get_news($offset);
-
-        $data['year']['values'] = array(date('Y')-1,date('Y'),date('Y')+1);
-        $data['year']['selected'] = date('Y');
-        for ($i=1; $i<=12; $i++){
-            $data['month']['values'][] = $i;
+        $content = $start_year = $start_month = $end_year = $end_month = $now_news = null;
+        // Postデータを取得
+        if($this->input->post()) {
+            $content = $this->input->post('content');
+            $content = isset($content) && !is_null($content) ? $content : null;
+            $start_year = $this->input->post('start_year');
+            $start_month = $this->input->post('start_month');
+            $end_year = $this->input->post('end_year');
+            $end_month = $this->input->post('end_month');
+            $now_news = $this->input->post('now_news');
         }
-        $data['month']['selected'] = date('n');
+        // 登録されているデータを全件取得
+        $data['news_list'] = $this->news_model->get_news($offset, $content, $start_year, $start_month, $end_year, $end_month, $now_news);
 
+        $data['content'] = $content;
+        $data['start_year_selected'] = $start_year;
+        $data['start_month_selected'] = $start_month;
+        $data['end_year_selected'] = $end_year;
+        $data['end_month_selected'] = $end_month;
+        $data['now_news'] = $now_news;
+
+        $data['year'] = array(date('Y')-1,date('Y'),date('Y')+1);
+        for ($i=1; $i<=12; $i++){
+            $data['month'][] = $i;
+        }
         // pagerの作成
         $data['pager'] = $this->news_model->get_pagination();
 

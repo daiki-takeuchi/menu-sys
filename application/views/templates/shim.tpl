@@ -1,3 +1,3 @@
 <!--[if lt IE 9]>
-<script src="/assets/js/html5shiv.min.js"></script>
+<script src="{base_url}assets/js/html5shiv.min.js"></script>
 <![endif]-->
