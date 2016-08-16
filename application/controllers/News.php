@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * News User
+ * News Controller
  *
  * @property News_model $news_model
  */

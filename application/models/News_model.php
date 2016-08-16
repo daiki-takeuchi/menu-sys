@@ -20,6 +20,14 @@ class News_model extends MY_Model
         return $this->find();
     }
 
+    public function get_now_news()
+    {
+        $this->db->where(array('start_date <=' => date('Y/m/d'), 'end_date >=' => date('Y/m/d')));
+        $this->db->order_by('start_date','desc');
+        $this->db->order_by('updated_at','desc');
+        return $this->find();
+    }
+
     public function get_count_all()
     {
         return $this->count;
@@ -43,8 +51,7 @@ class News_model extends MY_Model
             $this->db->where("date_part('month', end_date) <=", $end_month);
         }
         if($now_news) {
-            $this->db->where('start_date <=', date('Y/m/d'));
-            $this->db->where('end_date >=', date('Y/m/d'));
+            $this->db->where(array('start_date <=' => date('Y/m/d'), 'end_date >=' => date('Y/m/d')));
         }
     }
 }

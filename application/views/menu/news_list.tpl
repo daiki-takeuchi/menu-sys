@@ -11,8 +11,8 @@
                 <tbody>
                 {foreach from=$news_list item=news name=news}
                     <tr>
-                        <td>{$news.date|date_format:"%Y/%m/%d"}</td>
-                        <td><span class="news-content"><a>{$news.content}({$smarty.foreach.news.iteration}件 / {count($news_list)}件 )</a></span></td>
+                        <td>{$news.start_date|date_format:"%Y/%m/%d"}</td>
+                        <td><span class="news-content"><a>{$news.content|escape}({$smarty.foreach.news.iteration}件 / {count($news_list)}件 )</a></span></td>
                     </tr>
                 {/foreach}
                 </tbody>

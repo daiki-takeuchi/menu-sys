@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Menu Controller
+ *
+ * @property News_model $news_model
+ */
 class Menu extends MY_Controller {
 
 	/**
@@ -21,14 +26,18 @@ class Menu extends MY_Controller {
 
     protected $page_title = 'メニュー';
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('news_model');
+
+        $this->news_model->setUserName($this->user_name);
+    }
+
     public function index()
 	{
         $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
-        $data['news_list'] = array(
-            array('date' => '2016/7/7', 'content' => '【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。'),
-            array('date' => '2016/7/7', 'content' => '【News2】このテキストはNewsTicker用のダミーテキスト［2］です。'),
-            array('date' => '2016/7/7', 'content' => '【News3】このテキストはNewsTicker用のダミーテキスト［3］です。'),
-        );
+        $data['news_list'] = $this->news_model->get_now_news();
 
         $this->smarty->assign($data);
         $this->display('menu/index.tpl');
@@ -37,11 +46,7 @@ class Menu extends MY_Controller {
     public function menu_list()
     {
         $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
-        $data['news_list'] = array(
-            array('date' => '2016/7/7', 'content' => '【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。'),
-            array('date' => '2016/7/7', 'content' => '【News2】このテキストはNewsTicker用のダミーテキスト［2］です。'),
-            array('date' => '2016/7/7', 'content' => '【News3】このテキストはNewsTicker用のダミーテキスト［3］です。'),
-        );
+        $data['news_list'] = $this->news_model->get_now_news();
 
         $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
@@ -51,11 +56,7 @@ class Menu extends MY_Controller {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
 
-            $data['news_list'] = array(
-                array('date' => '2016/7/7', 'content' => '【メンテナンスのお知らせ】7月29日(金) 午前6時00分 〜 午前8時00分の間、サーバーメンテナンスのためご利用頂けません。'),
-                array('date' => '2016/7/7', 'content' => '【News2】このテキストはNewsTicker用のダミーテキスト［2］です。'),
-                array('date' => '2016/7/7', 'content' => '【News3】このテキストはNewsTicker用のダミーテキスト［3］です。'),
-            );
+            $data['news_list'] = $this->news_model->get_now_news();
 
             $this->smarty->assign($data);
             $this->display('menu/news_list.tpl');
