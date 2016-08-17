@@ -20,7 +20,7 @@
     <script src="{base_url}assets/js/bootstrap-dialog.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-select.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-select.ja_JP.js"></script>
-    <script src="{base_url}assets/js/jquery.validate.js"></script>
+    <script src="{base_url}assets/js/jquery.validate.min.js"></script>
     <script src="{base_url}assets/js/jquery.validate.messages_ja.min.js"></script>
     <script src="{base_url}assets/js/jquery.validate.bootstrap3.js"></script>
     <script type="text/javascript">window.base_url = "{base_url}";</script>

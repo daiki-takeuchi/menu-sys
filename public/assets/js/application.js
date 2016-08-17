@@ -73,7 +73,12 @@ $(function () {
 
 $(function () {
     $("#form").validate({
-        ignoreTitle: true
+        ignoreTitle: true,
+        onfocusout: function(element) {
+            if(!$(element).hasClass('date')) {
+                this.element(element);
+            }
+        }
     });
 });
 
