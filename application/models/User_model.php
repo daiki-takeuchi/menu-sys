@@ -15,12 +15,6 @@ class User_model extends MY_Model
         return $query->num_rows() === 1;
     }
 
-    public function find_by_shain_bn($shain_bn = false)
-    {
-        $query = $this->db->get_where($this->table, array("shain_bn" => $shain_bn));
-        return $query->row_array();
-    }
-
     public function get_users($offset = false, $name = false, $soshiki_cc = false)
     {
         $this->where($name, $soshiki_cc);

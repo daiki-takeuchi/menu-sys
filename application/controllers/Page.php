@@ -38,7 +38,7 @@ class Page extends MY_Controller {
         $message = "";
         if($this->session->userdata("user")['first_login'] === '1') {
             // 最初のログイン情報をクリア
-            $user = $this->user_model->find_by_shain_bn($this->shain_bn);
+            $user = $this->user_model->find_by(array('shain_bn' => $this->shain_bn));
             $user['first_login'] = '0';
             $this->user_model->save($user);
             $this->session->set_userdata(array("user" => $user));
@@ -49,7 +49,7 @@ class Page extends MY_Controller {
         if($this->input->post()) {
             if ($this->form_validation->run('pwchange') !== false) {
                 $new_password = $this->input->post('new_password');
-                $user = $this->user_model->find_by_shain_bn($this->shain_bn);
+                $user = $this->user_model->find_by(array('shain_bn' => $this->shain_bn));
                 if(isset($user['id'])) {
                     $user['password'] = sha1($this->shain_bn.$new_password);
                     $this->user_model->save($user);
@@ -68,7 +68,7 @@ class Page extends MY_Controller {
             // ログイン処理して
             if ($this->form_validation->run('login') !== false) {
                 $shain_bn = $this->input->post("shain_bn");
-                $user = $this->user_model->find_by_shain_bn($shain_bn);
+                $user = $this->user_model->find_by(array("shain_bn" => $shain_bn));
                 $data = array(
                     "user" => $user,
                     "is_logged_in" => 1
@@ -110,7 +110,7 @@ class Page extends MY_Controller {
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            $user = $this->user_model->find_by_shain_bn($this->shain_bn);
+            $user = $this->user_model->find_by(array('shain_bn' => $this->shain_bn));
             $user['gender'] = $this->input->post('gender');
             $this->user_model->save($user);
             $this->session->set_userdata(array("user" => $user));

@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2" style="padding-top: 30px;">
                 <div class="row">
+                    {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
                     <div class="col-xs-10 col-xs-offset-1">
-                        {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group has-feedback">

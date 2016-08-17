@@ -34,7 +34,20 @@ class MY_Model extends CI_Model
         }
 
         $query = $this->db->get_where($this->table, array('id' => $id));
+        log_message('info', $this->db->last_query());
         return $query->row_array();
+    }
+
+    public function find_by($where = false)
+    {
+        $query = $this->db->get_where($this->table, $where);
+        log_message('info', $this->db->last_query());
+        if($query->num_rows() > 1) {
+            $ret = $query->result_array();
+        } else {
+            $ret = $query->row_array();
+        }
+        return $ret;
     }
 
     public function save(&$data)

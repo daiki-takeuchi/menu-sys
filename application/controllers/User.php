@@ -109,7 +109,7 @@ class User extends MY_Controller {
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
         $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
         $data['organization'] = [];
-        if($user_id) {
+        if($user_id || $this->input->post()) {
             $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->user_model->get_organization($user['company_cc']), 'soshiki_nm', 'soshiki_cc'));
         }
 
@@ -168,8 +168,8 @@ class User extends MY_Controller {
 
     public function _duplicate_shain_bn($shain_bn)
     {
-        $user = $this->user_model->find_by_shain_bn($shain_bn);
-        if(empty($user) || $user['id'] == $this->edit_user_id) {
+        $user = $this->user_model->find_by(array('shain_bn' => $shain_bn));
+        if((empty($user) && !empty($this->edit_user_id)) || $user['id'] == $this->edit_user_id) {
             return true;
         } else {
             $this->form_validation->set_message("_duplicate_shain_bn", "既に同じ社員番号の方が登録されています。");
