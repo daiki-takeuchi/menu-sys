@@ -73,4 +73,36 @@ $config = array(
             'rules' => 'required|trim'
         ),
     ),
+    'menu/save' => array(
+        array(
+            'field' => 'supply_date',
+            'label' => 'メニュー提供日',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'open_date',
+            'label' => 'メニュー公開日',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'nemu_name',
+            'label' => 'メニュー名',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'category_id',
+            'label' => 'カテゴリ',
+            'rules' => 'required|numeric'
+        ),
+        array(
+            'field' => 'price_regular',
+            'label' => '正規従業員の価格',
+            'rules' => 'required|integer'
+        ),
+        array(
+            'field' => 'price_non_regular',
+            'label' => '正規従業員以外の価格',
+            'rules' => 'required|integer'
+        ),
+    ),
 );

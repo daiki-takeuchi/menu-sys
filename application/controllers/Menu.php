@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Class Menu
  *
+ * @property Menu_model $menu_model
  * @property News_model $news_model
  * @property Category_model $category_model
  */
@@ -30,6 +31,7 @@ class Menu extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('menu_model');
         $this->load->model('news_model');
         $this->load->model('category_model');
 
@@ -73,6 +75,31 @@ class Menu extends MY_Controller {
     public function edit($menu_id = null)
     {
         parent::edit($menu_id);
+
+        // 選択したメニュー情報を取得
+        $menu = $this->menu_model->find($menu_id);
+        if (empty($menu) && !empty($menu_id)) {
+            $this->display('menu/not_found.tpl');
+            return;
+        }
+
+        if($this->input->post()) {
+            if ($menu_id === null) $menu =[];
+            $menu = array_merge($menu, $this->input->post());
+            $btn = $this->input->post('btn-save');
+            unset($menu['btn-save']);
+var_dump($this->input->post());
+            if($this->_save($menu)) {
+                if($btn === 'save-menu') {
+//                    redirect(base_url() . 'menu');
+                } elseif ($btn === 'save-menu-more') {
+//                    redirect(base_url() . 'menu/new');
+                }
+            }
+        }
+
+        $data['menu'] = $menu;
+
         $category = [];
         foreach ($this->lang->line('kubun') as $kubun => $value) {
             $category[$value] = array_column($this->category_model->get_categorys($kubun), 'category_name', 'id');
@@ -133,5 +160,14 @@ class Menu extends MY_Controller {
         if($this->input->is_ajax_request()) {
             echo json_encode(array('ヘルシーメニュー', '減塩','1日に必要な野菜の1/3使用', 'Healty Menu'));
         }
+    }
+
+    private function _save(&$menu) {
+        if ($this->form_validation->run('menu/save') === false) {
+            return false;
+        }
+//        $this->menu_model->save($menu);
+//        $menu = $this->menu_model->find($menu['id']);
+        return true;
     }
 }

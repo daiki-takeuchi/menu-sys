@@ -46,64 +46,82 @@
                 </div>
                 <div id="files" class="files"></div>
             </div>
-            <form class="form-horizontal" method="post" id="form">
+            <form class="form-horizontal" method="post" id="form" data-toggle="validator">
                 <div class="col-md-8 pull-right">
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1">
                             <div class="row">
                                 <div class="col-sm-5">
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <label><span class="label-required rd5">必須</span> メニュー提供日</label>
                                         <div class='input-group'>
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control date" name="menu-provide-date" />
+                                            <input type="text" class="form-control date" name="supply_date" required />
                                         </div>
+                                        <div class="help-block with-errors"></div>
+                                        <span class="form-control-feedback"></span>
                                     </div>
                                 </div>
                                 <div class="col-sm-5 col-sm-offset-2">
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <label><span class="label-required rd5">必須</span> メニュー公開日</label>
                                         <div class='input-group'>
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control date" name="menu-open-date" />
+                                            <input type="text" class="form-control date" name="open_date" required />
                                         </div>
+                                        <div class="help-block with-errors"></div>
+                                        <span class="form-control-feedback"></span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group has-feedback">
                                 <label><span class="label-required rd5">必須</span> メニュー名</label>
-                                <input type="text" class="form-control" name="nemu_name" />
+                                <input type="text" class="form-control" name="nemu_name" required />
+                                <div class="help-block with-errors"></div>
+                                <span class="form-control-feedback"></span>
                             </div>
                             <div class="form-group">
                                 <label> タグ（"減塩"や"ヘルシーメニュー"等の強調したい文字を入力してください。）</label>
                                 <input type="text" class="form-control tag-input" name="tag" />
                             </div>
-                            <div class="form-group">
+                            <div class="form-group has-feedback">
                                 <label><span class="label-required rd5">必須</span> カテゴリ</label><br />
-                                {html_options name="sel_category" options=$category data-width="175px" class="selectpicker show-menu-arrow" title=" "}
+                                <div style="position:relative">
+                                    {html_options name="category_id" options=$category data-width="100%" class="selectpicker show-menu-arrow" title="カテゴリを選択してください" required="required"}
+                                    <span class="form-control-feedback"></span>
+                                </div>
+                                <div class="help-block with-errors"></div>
                             </div>
                             <div class="form-group" style="margin-bottom: 0">
                                 <label><span class="label-required rd5">必須</span> 価格</label>
                             </div>
                             <div class="row">
                                 <div class="col-xs-5">
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price-regular" placeholder="正規従業員の価格" />
+                                            <div style="position:relative">
+                                                <input type="number" class="form-control" name="price_regular" placeholder="正規従業員の価格" required />
+                                                <span class="form-control-feedback"></span>
+                                            </div>
                                             <span class="input-group-addon">円</span>
                                         </div>
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-xs-5 col-xs-offset-2">
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="price-non-regular" placeholder="正規従業員以外の価格" />
+                                            <div style="position:relative">
+                                                <input type="number" class="form-control" name="price_non_regular" placeholder="正規従業員以外の価格" required />
+                                                <span class="form-control-feedback"></span>
+                                            </div>
                                             <span class="input-group-addon">円</span>
                                         </div>
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                             </div>
@@ -112,7 +130,7 @@
                                 <div class="row">
                                     <div class="col-sm-5">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="with-rice" placeholder="" />
+                                            <input type="text" class="form-control" name="with_rice" placeholder="" />
                                             <span class="input-group-addon">付き</span>
                                         </div>
                                     </div>
@@ -125,7 +143,7 @@
                                 <div class="col-xs-5">
                                     <div class="form-group">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price-regular-with-rice" placeholder="正規従業員の価格" />
+                                            <input type="number" class="form-control" name="price_regular_with_rice" placeholder="正規従業員の価格" />
                                             <span class="input-group-addon">円</span>
                                         </div>
                                     </div>
@@ -133,7 +151,7 @@
                                 <div class="col-xs-5 col-xs-offset-2">
                                     <div class="form-group">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price-non-regular-with-rice" placeholder="正規従業員以外の価格" />
+                                            <input type="number" class="form-control" name="price_non_regular_with_rice" placeholder="正規従業員以外の価格" />
                                             <span class="input-group-addon">円</span>
                                         </div>
                                     </div>
@@ -192,25 +210,26 @@
                         </div>
                     </div>
                 </div>
+                <input type="hidden" name="btn-save" id="save_btn" />
             </form>
         </div>
     </div>
 {/block}
 {block name=footer_left}
     {if $id}
-        <a href="{base_url}menu/delete/{$id}" class="btn btn-delete box rd24 font-pop"
-           style="font-size: large;">
+        <button id="{$id}" class="btn btn-delete btn-menu-delete box rd24 font-pop"
+                style="font-size: large;">
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
-        </a>
+        </button>
     {/if}
 {/block}
 {block name=footer_right}
-    <button type="submit" class="btn btn-orange box rd24 font-pop spNone"
+    <button class="btn btn-orange box rd24 font-pop spNone btn-save-menu-more"
             style="margin-right:15px;font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存してもう１つ追加</span>
     </button>
-    <a href="{base_url}menu/list" class="btn btn-orange box rd24 font-pop"
+    <button class="btn btn-orange box rd24 font-pop btn-save-menu"
        style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存する</span>
-    </a>
+    </button>
 {/block}
