@@ -45,7 +45,19 @@ class Menu extends MY_Controller {
         $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
 
-        $this->get_week($y, $m, $d);
+        $date = $this->get_date($y, $m, $d);
+        $monday = $this->get_this_monday($date);
+        $next_monday = strtotime('next monday', $monday);
+        $last_monday = strtotime('last monday', $monday);
+
+        $i = 0;
+        foreach ($this->lang->line('week') as $item) {
+            $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            $i++;
+        }
+        $data['select_date'] = date('Y/m/d', $date);
+        $data['next_monday'] = date('Y/m/d', $next_monday);
+        $data['last_monday'] = date('Y/m/d', $last_monday);
 
         $this->smarty->assign($data);
         $this->display('menu/index.tpl');
@@ -56,7 +68,19 @@ class Menu extends MY_Controller {
         $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
 
-        $this->get_week($y, $m, $d);
+        $date = $this->get_date($y, $m, $d);
+        $monday = $this->get_this_monday($date);
+        $next_monday = strtotime('next monday', $monday);
+        $last_monday = strtotime('last monday', $monday);
+
+        $i = 0;
+        foreach ($this->lang->line('week') as $item) {
+            $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            $i++;
+        }
+        $data['select_date'] = date('Y/m/d', $date);
+        $data['next_monday'] = date('Y/m/d', $next_monday);
+        $data['last_monday'] = date('Y/m/d', $last_monday);
 
         $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
@@ -176,15 +200,18 @@ class Menu extends MY_Controller {
         return true;
     }
 
-    private function get_week($y = false, $m = false, $d = false) {
+    private function get_date($y = false, $m = false, $d = false) {
         if(checkdate($m, $d, $y)) {
             $date = strtotime(date("Y/m/d",strtotime($y .'/' . $m .'/' . $d)));
-        } elseif($y === false || $m === false || $d === fasle) {
+        } elseif($y === false || $m === false || $d === false) {
             $date = strtotime(date('Y/m/d'));
         } else {
             redirect(base_url() . 'menu/list');
         }
-        $monday = (strtotime('monday', $date) == strtotime('today', $date))? strtotime('monday', $date):strtotime('last monday', $date);
-        var_dump(date('Y/n/j', $monday));
+        return $date;
+    }
+
+    private function get_this_monday($date) {
+        return (strtotime('monday', $date) == strtotime('today', $date))? strtotime('monday', $date):strtotime('last monday', $date);
     }
 }
