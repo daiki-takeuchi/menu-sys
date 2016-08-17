@@ -44,13 +44,11 @@
                                     <tr>
                                         <td align="center">
                                             <select class="selectpicker show-menu-arrow" data-width="105px">
-                                                <option value="20160711" selected>7/11(月)</option>
-                                                <option value="20160712">7/12(火)</option>
-                                                <option value="20160713">7/13(水)</option>
-                                                <option value="20160714">7/14(木)</option>
-                                                <option value="20160715">7/15(金)</option>
-                                                <option value="20160716">7/16(土)</option>
-                                                <option value="20160717">7/17(日)</option>
+                                                {foreach from=$week item=date key=day_of_week}
+                                                <option value="{$date|date_format:'Y/n/j'}"{if $date === $select_date} selected{/if}>
+                                                    {$date|date_format:'n/j'}({$day_of_week})
+                                                </option>
+                                                {/foreach}
                                             </select>
                                         </td>
                                     </tr>
