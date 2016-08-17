@@ -11,6 +11,7 @@
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
     <script src="{base_url}assets/js/tag-it.min.js"></script>
     <script src="{base_url}assets/js/menu.js"></script>
+    <script src="{base_url}assets/js/menu.validation.js"></script>
 
     <script src="{base_url}assets/js/jquery.iframe-transport.js"></script>
     <script src="{base_url}assets/js/jquery.fileupload.js"></script>

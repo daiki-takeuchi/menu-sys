@@ -37,23 +37,3 @@
         }
     });
 }(jQuery));
-
-// DOM構築後の処理
-$(function() {
-    "use strict";
-    // ページ内のすべてのフォームにValidatorを設定します
-    $('form').each(function(index, element) {
-        var $form = $(element);
-        var validator = $form.validate();
-
-        // フォームがresetされたときの処理
-        $form.bind('reset', function() {
-            // Validatorをリセットします
-            validator.resetForm();
-            // フォーム内のすべてのform-groupからerrorClassとvalidClassを削除します
-            $form.find('.form-group').each(function(index, element) {
-                $(element).removeClass($.validator.defaults.errorClass).removeClass($.validator.defaults.validClass);
-            });
-        });
-    });
-});

@@ -3,6 +3,7 @@
 {block name=include_js}
     <script src="{base_url}assets/js/keyboard.js"></script>
     <script src="{base_url}assets/js/page.js"></script>
+    <script src="{base_url}assets/js/pwchange.validation.js"></script>
 {/block}
 {block name=main_contents}
     <div class="container-fluid">

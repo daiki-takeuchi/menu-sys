@@ -72,7 +72,9 @@ $(function () {
 });
 
 $(function () {
-    $("#form").validate();
+    $("#form").validate({
+        ignoreTitle: true
+    });
 });
 
 $(function () {
