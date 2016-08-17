@@ -32,12 +32,11 @@ class MY_Controller extends CI_Controller
 
         // TODO phpunitでcookieが空になってしまうため、テストの時はSesseionを利用する
         $is_logged_in = ENVIRONMENT === 'testing' ? $userdata["is_logged_in"] : $this->input->cookie("is_logged_in");
-        $is_logged_in_sess = $userdata["is_logged_in"];
 
         if($this->uri->segment(1 ,0) === 'login') {
             // ログイン画面はそのまま遷移する
             return;
-        } elseif(!isset($is_logged_in) || !isset($is_logged_in_sess)) {
+        } elseif(!isset($is_logged_in) || !isset($userdata["is_logged_in"])) {
             // ログインしていない場合はログイン画面に遷移する
             redirect(base_url() . 'login');
         } elseif ($userdata["user"]["first_login"] === '1' && $this->uri->segment(1 ,0) !== 'pwchange') {
