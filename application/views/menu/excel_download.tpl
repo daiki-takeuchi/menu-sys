@@ -23,7 +23,7 @@
                 </div>
                 <div class="form-group">
                     <div><label>対象カテゴリ</label></div>
-                    {html_options class="selectpicker show-menu-arrow" data-width="100px" name="target-category" options=$category selected="2"}
+                    {html_options class="selectpicker show-menu-arrow" data-width="100px" name="target-category" options=$kubun selected="2"}
                 </div>
             </form>
         </div>

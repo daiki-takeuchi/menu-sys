@@ -30,3 +30,5 @@ $lang['gender'] = [
     ['gender_cc' => '2', 'gender_nm' => '女性'],
     ['gender_cc' => '3', 'gender_nm' => 'その他'],
 ];
+
+$lang['kubun'] = ['1' => '朝食', '2' => 'ランチ', '3' => '夕食'];

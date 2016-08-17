@@ -2,9 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Menu Controller
+ * Class Menu
  *
  * @property News_model $news_model
+ * @property Category_model $category_model
  */
 class Menu extends MY_Controller {
 
@@ -30,13 +31,14 @@ class Menu extends MY_Controller {
     {
         parent::__construct();
         $this->load->model('news_model');
+        $this->load->model('category_model');
 
         $this->news_model->setUserName($this->user_name);
     }
 
     public function index()
 	{
-        $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
+        $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
 
         $this->smarty->assign($data);
@@ -45,7 +47,7 @@ class Menu extends MY_Controller {
 
     public function menu_list()
     {
-        $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
+        $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
 
         $this->smarty->assign($data);
@@ -71,11 +73,11 @@ class Menu extends MY_Controller {
     public function edit($menu_id = null)
     {
         parent::edit($menu_id);
-        $data['category'] = array(
-            '朝食' => array(1 => 'A定食',2 => 'B定食'),
-            'ランチ' => array(3 => 'スペシャルランチ', 4 => 'Aランチ', 5 => 'Bランチ'),
-            '夕食' => array(6 => 'スペシャルディナー')
-        );
+        $category = [];
+        foreach ($this->lang->line('kubun') as $kubun => $value) {
+            $category[$value] = array_column($this->category_model->get_categorys($kubun), 'category_name', 'id');
+        }
+        $data['category'] = $category;
 
         $this->smarty->assign($data);
         $this->display('menu/menu_form.tpl');
@@ -119,7 +121,7 @@ class Menu extends MY_Controller {
                 $data['month']['values'][] = $i;
             }
             $data['month']['selected'] = date('n');
-            $data['category'] = array('1' => '朝食', '2' => 'ランチ', '3' => '夕食');
+            $data['kubun'] = $this->lang->line('kubun');
 
             $this->smarty->assign($data);
             $this->display('menu/excel_download.tpl');
