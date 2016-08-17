@@ -85,7 +85,7 @@ $config = array(
             'rules' => 'required'
         ),
         array(
-            'field' => 'nemu_name',
+            'field' => 'menu_name',
             'label' => 'メニュー名',
             'rules' => 'required'
         ),

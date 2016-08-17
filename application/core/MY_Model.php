@@ -39,6 +39,7 @@ class MY_Model extends CI_Model
 
     public function save(&$data)
     {
+        $data = array_filter($data, 'strlen');  // ブランク項目を除外
         if (!isset($data['id'])) {
             $data['created_at'] = $data['updated_at'] = date('Y/m/d H:i:s');
             $data['created_user'] = $data['updated_user'] = $this->user_name;

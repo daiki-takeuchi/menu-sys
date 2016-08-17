@@ -20,6 +20,7 @@
 {block name=main_contents}
     <div class="container">
         <div class="row">
+            {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
             <div class="col-md-8 col-md-push-4">
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1" style="padding-right: 0;">
@@ -58,7 +59,7 @@
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control date" name="supply_date" required />
+                                            <input type="text" class="form-control date" name="supply_date" value="{$menu.supply_date|date_format:"Y/m/d"}" required />
                                         </div>
                                         <div class="help-block with-errors"></div>
                                         <span class="form-control-feedback"></span>
@@ -71,7 +72,7 @@
                                             <span class="input-group-addon">
                                                 <span class="fa fa-calendar"></span>
                                             </span>
-                                            <input type="text" class="form-control date" name="open_date" required />
+                                            <input type="text" class="form-control date" name="open_date" value="{$menu.open_date|date_format:"Y/m/d"}" required />
                                         </div>
                                         <div class="help-block with-errors"></div>
                                         <span class="form-control-feedback"></span>
@@ -80,18 +81,18 @@
                             </div>
                             <div class="form-group has-feedback">
                                 <label><span class="label-required rd5">必須</span> メニュー名</label>
-                                <input type="text" class="form-control" name="nemu_name" required />
+                                <input type="text" class="form-control" name="menu_name" value="{$menu.menu_name}" required />
                                 <div class="help-block with-errors"></div>
                                 <span class="form-control-feedback"></span>
                             </div>
                             <div class="form-group">
                                 <label> タグ（"減塩"や"ヘルシーメニュー"等の強調したい文字を入力してください。）</label>
-                                <input type="text" class="form-control tag-input" name="tag" />
+                                <input type="text" class="form-control tag-input" name="tag" value="{$menu.tag}" />
                             </div>
                             <div class="form-group has-feedback">
                                 <label><span class="label-required rd5">必須</span> カテゴリ</label><br />
                                 <div style="position:relative">
-                                    {html_options name="category_id" options=$category data-width="100%" class="selectpicker show-menu-arrow" title="カテゴリを選択してください" required="required"}
+                                    {html_options name="category_id" options=$category data-width="100%" class="selectpicker show-menu-arrow" title="カテゴリを選択してください" selected="{$menu.category_id}" required="required"}
                                     <span class="form-control-feedback"></span>
                                 </div>
                                 <div class="help-block with-errors"></div>
@@ -104,7 +105,7 @@
                                     <div class="form-group has-feedback">
                                         <div class='input-group'>
                                             <div style="position:relative">
-                                                <input type="number" class="form-control" name="price_regular" placeholder="正規従業員の価格" required />
+                                                <input type="number" class="form-control" name="price_regular" placeholder="正規従業員の価格" value="{$menu.price_regular}" required />
                                                 <span class="form-control-feedback"></span>
                                             </div>
                                             <span class="input-group-addon">円</span>
@@ -116,7 +117,7 @@
                                     <div class="form-group has-feedback">
                                         <div class="input-group">
                                             <div style="position:relative">
-                                                <input type="number" class="form-control" name="price_non_regular" placeholder="正規従業員以外の価格" required />
+                                                <input type="number" class="form-control" name="price_non_regular" placeholder="正規従業員以外の価格" value="{$menu.price_non_regular}" required />
                                                 <span class="form-control-feedback"></span>
                                             </div>
                                             <span class="input-group-addon">円</span>
@@ -125,12 +126,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="margin-bottom: 0">
                                 <label>ご飯付き、小鉢付きなどで価格が違う場合は以下の項目を入力してください。</label>
-                                <div class="row">
-                                    <div class="col-sm-5">
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <div class="form-group">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" name="with_rice" placeholder="" />
+                                            <input type="text" class="form-control" name="with_rice" value="{$menu.with_rice}" />
                                             <span class="input-group-addon">付き</span>
                                         </div>
                                     </div>
@@ -143,7 +146,7 @@
                                 <div class="col-xs-5">
                                     <div class="form-group">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price_regular_with_rice" placeholder="正規従業員の価格" />
+                                            <input type="number" class="form-control" name="price_regular_with_rice" placeholder="正規従業員の価格" value="{$menu.price_regular_with_rice}" />
                                             <span class="input-group-addon">円</span>
                                         </div>
                                     </div>
@@ -151,7 +154,7 @@
                                 <div class="col-xs-5 col-xs-offset-2">
                                     <div class="form-group">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price_non_regular_with_rice" placeholder="正規従業員以外の価格" />
+                                            <input type="number" class="form-control" name="price_non_regular_with_rice" placeholder="正規従業員以外の価格" value="{$menu.price_non_regular_with_rice}" />
                                             <span class="input-group-addon">円</span>
                                         </div>
                                     </div>
@@ -168,7 +171,7 @@
                                     <div class="form-group">
                                         <label>エネルギー</label>
                                         <div class='input-group'>
-                                            <input type="text" class="form-control" name="energy" />
+                                            <input type="text" class="form-control" name="energy" value="{$menu.energy}" />
                                             <span class="input-group-addon">kcal</span>
                                         </div>
                                     </div>
@@ -177,7 +180,7 @@
                                     <div class="form-group">
                                         <label>塩分</label>
                                         <div class='input-group'>
-                                            <input type="text" class="form-control" name="salt" />
+                                            <input type="text" class="form-control" name="salt" value="{$menu.salt}" />
                                             <span class="input-group-addon">g</span>
                                         </div>
                                     </div>
@@ -186,7 +189,7 @@
                                     <div class="form-group">
                                         <label>たんぱく質</label>
                                         <div class='input-group'>
-                                            <input type="text" class="form-control" name="protein" />
+                                            <input type="text" class="form-control" name="protein" value="{$menu.protein}" />
                                             <span class="input-group-addon">g</span>
                                         </div>
                                     </div>
@@ -195,7 +198,7 @@
                                     <div class="form-group">
                                         <label>脂質</label>
                                         <div class='input-group'>
-                                            <input type="text" class="form-control" name="lipid" />
+                                            <input type="text" class="form-control" name="lipid" value="{$menu.lipid}" />
                                             <span class="input-group-addon">g</span>
                                         </div>
                                     </div>
@@ -203,7 +206,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label>アレルゲン</label>
-                                        <input type="text" class="form-control" name="allergen" />
+                                        <input type="text" class="form-control" name="allergen" value="{$menu.allergen}" />
                                     </div>
                                 </div>
                             </div>

@@ -35,22 +35,28 @@ class Menu extends MY_Controller {
         $this->load->model('news_model');
         $this->load->model('category_model');
 
+        $this->menu_model->setUserName($this->user_name);
         $this->news_model->setUserName($this->user_name);
+        $this->category_model->setUserName($this->user_name);
     }
 
-    public function index()
-	{
-        $data['kubun'] = $this->lang->line('kubun');
-        $data['news_list'] = $this->news_model->get_now_news();
-
-        $this->smarty->assign($data);
-        $this->display('menu/index.tpl');
-	}
-
-    public function menu_list()
+    public function index($y = false, $m = false, $d = false)
     {
         $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
+
+        $this->get_week($y, $m, $d);
+
+        $this->smarty->assign($data);
+        $this->display('menu/index.tpl');
+    }
+
+    public function menu_list($y = false, $m = false, $d = false)
+    {
+        $data['kubun'] = $this->lang->line('kubun');
+        $data['news_list'] = $this->news_model->get_now_news();
+
+        $this->get_week($y, $m, $d);
 
         $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
@@ -88,12 +94,11 @@ class Menu extends MY_Controller {
             $menu = array_merge($menu, $this->input->post());
             $btn = $this->input->post('btn-save');
             unset($menu['btn-save']);
-var_dump($this->input->post());
             if($this->_save($menu)) {
                 if($btn === 'save-menu') {
-//                    redirect(base_url() . 'menu');
+                    redirect(base_url() . 'menu/list');
                 } elseif ($btn === 'save-menu-more') {
-//                    redirect(base_url() . 'menu/new');
+                    redirect(base_url() . 'menu/new');
                 }
             }
         }
@@ -166,8 +171,20 @@ var_dump($this->input->post());
         if ($this->form_validation->run('menu/save') === false) {
             return false;
         }
-//        $this->menu_model->save($menu);
-//        $menu = $this->menu_model->find($menu['id']);
+        $this->menu_model->save($menu);
+        $menu = $this->menu_model->find($menu['id']);
         return true;
+    }
+
+    private function get_week($y = false, $m = false, $d = false) {
+        if(checkdate($m, $d, $y)) {
+            $date = strtotime(date("Y/m/d",strtotime($y .'/' . $m .'/' . $d)));
+        } elseif($y === false || $m === false || $d === fasle) {
+            $date = strtotime(date('Y/m/d'));
+        } else {
+            redirect(base_url() . 'menu/list');
+        }
+        $monday = (strtotime('monday', $date) == strtotime('today', $date))? strtotime('monday', $date):strtotime('last monday', $date);
+        var_dump(date('Y/n/j', $monday));
     }
 }
