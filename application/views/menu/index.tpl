@@ -15,128 +15,33 @@
         {include file='menu/header_calendar.tpl'}
     </div>
     <div class="list_menu">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-2">
-                    <div class="img-menu-category">
-                        <img src="{base_url}assets/img/special_lunch.jpg">
+        {foreach from=$menu_list item=menu key=category_id name=menu_list}
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-md-2">
+                        <div class="img-menu-category">
+                            <img src="{base_url}assets/img/{if $category_id == 3}special_lunch{elseif $category_id == 4}a_lunch{elseif $category_id == 5}b_lunch{elseif $category_id == 6}japanese_noodle{elseif $category_id == 7}bowl{/if}.jpg">
+                        </div>
                     </div>
-                </div>
-                <div class="menu col-sm-9 col-md-10">
-                    <div class="row">
-                        <div class="col-sm-5 col-md-4 col-lg-3">
-                            <div class="img-menu">
-                                <img src="{base_url}assets/img/chicken.jpg">
+                    {foreach from=$menu item=menu_item name=menu}
+                        <div class="col-sm-9 col-md-10{if $smarty.foreach.menu.iteration > 1} col-sm-offset-3 col-md-offset-2{/if}">
+                            {if $smarty.foreach.menu.iteration > 1}<hr style="margin: 0 0 5px 0;"/>{/if}
+                            <div class="row" style="margin: 5px;">
+                                <div class="col-sm-5 col-md-4 col-lg-3">
+                                    <div class="img-menu">
+                                        <img src="{base_url}assets/img/chicken.jpg">
+                                    </div>
+                                </div>
+                                <div class="col-sm-7 col-md-8 col-lg-9">
+                                    {$menu_item.menu_name}
+                                </div>
                             </div>
                         </div>
-                        <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
-                        </div>
-                    </div>
+                    {/foreach}
                 </div>
             </div>
-        </div>
-        <hr style="margin: 0 0 5px 0;"/>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-2">
-                    <div class="img-menu-category">
-                        <img src="{base_url}assets/img/a_lunch.jpg">
-                    </div>
-                </div>
-                <div class="menu col-sm-9 col-md-10">
-                    <div class="row">
-                        <div class="col-sm-5 col-md-4 col-lg-3">
-                            <div class="img-menu">
-                                <img src="{base_url}assets/img/mabo.jpg">
-                            </div>
-                        </div>
-                        <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr style="margin: 0 0 5px 0;"/>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-2">
-                    <div class="img-menu-category">
-                        <img src="{base_url}assets/img/b_lunch.jpg">
-                    </div>
-                </div>
-                <div class="menu col-sm-9 col-md-10">
-                    <div class="row">
-                        <div class="col-sm-5 col-md-4 col-lg-3">
-                            <div class="img-menu">
-                                <img src="{base_url}assets/img/fish.jpg">
-                            </div>
-                        </div>
-                        <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr style="margin: 0 0 5px 0;"/>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-2">
-                    <div class="img-menu-category">
-                        <img src="{base_url}assets/img/japanese_noodle.jpg">
-                    </div>
-                </div>
-                <div class="menu col-sm-9 col-md-10">
-                    <div class="row">
-                        <div class="col-sm-5 col-md-4 col-lg-3">
-                            <div class="img-menu">
-                                <img src="{base_url}assets/img/soba.jpg">
-                            </div>
-                        </div>
-                        <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr style="margin: 0 0 5px 0;"/>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3 col-md-2">
-                    <div class="img-menu-category">
-                        <img src="{base_url}assets/img/bowl.jpg">
-                    </div>
-                </div>
-                <div class="menu col-sm-9 col-md-10">
-                    <div class="row">
-                        <div class="col-sm-5 col-md-4 col-lg-3">
-                            <div class="img-menu">
-                                <img src="{base_url}assets/img/oyako.jpg">
-                            </div>
-                        </div>
-                        <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
-                    <hr style="margin: 0 0 5px 0;"/>
-                    <div class="row">
-                        <div class="col-sm-5 col-md-4 col-lg-3">
-                            <div class="img-menu">
-                                <img src="{base_url}assets/img/gyudon.jpg">
-                            </div>
-                        </div>
-                        <div class="ccol-sm-7 col-md-8 col-lg-9">
-                            <span>aaa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            {if !$smarty.foreach.menu_list.last}<hr style="margin: 0 0 5px 0;"/>{/if}
+        {/foreach}
     </div>
 {/block}
 {block name=footer_right}

@@ -24,9 +24,9 @@ class MY_Model extends CI_Model
         $this->user_name = $user_name;
     }
 
-    public function find($id = FALSE)
+    public function find($id = false)
     {
-        if ($id === FALSE) {
+        if ($id === false) {
             // SQLを実行
             $query = $this->db->get($this->table);
             log_message('info', $this->db->last_query());
@@ -38,11 +38,11 @@ class MY_Model extends CI_Model
         return $query->row_array();
     }
 
-    public function find_by($where = false)
+    public function find_by($where = false, $is_array = false)
     {
         $query = $this->db->get_where($this->table, $where);
         log_message('info', $this->db->last_query());
-        if($query->num_rows() > 1) {
+        if($query->num_rows() > 1 || $is_array === true) {
             $ret = $query->result_array();
         } else {
             $ret = $query->row_array();

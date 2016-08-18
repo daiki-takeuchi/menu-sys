@@ -55,6 +55,7 @@ class Menu extends MY_Controller {
             $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
             $i++;
         }
+        $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
         $data['select_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
         $data['last_monday'] = date('Y/m/d', $last_monday);
@@ -78,6 +79,7 @@ class Menu extends MY_Controller {
             $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
             $i++;
         }
+        $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
         $data['select_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
         $data['last_monday'] = date('Y/m/d', $last_monday);
@@ -213,5 +215,16 @@ class Menu extends MY_Controller {
 
     private function get_this_monday($date) {
         return (strtotime('monday', $date) == strtotime('today', $date))? strtotime('monday', $date):strtotime('last monday', $date);
+    }
+
+    private function get_menu($supply_date) {
+
+        $LUNCH = 2;
+        $cat = $this->category_model->get_categorys($LUNCH);
+        $ret = [];
+        foreach ($cat as $item) {
+            $ret[$item['id']] = $this->menu_model->find_by(array('supply_date' => $supply_date, 'category_id' => intval($item['id'])), true);
+        }
+        return $ret;
     }
 }
