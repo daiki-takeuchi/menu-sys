@@ -145,19 +145,27 @@
                             </div>
                             <div class="row">
                                 <div class="col-xs-5">
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price_regular_with_rice" placeholder="正規従業員の価格" value="{$menu.price_regular_with_rice}" />
+                                            <div style="position:relative">
+                                                <input type="number" class="form-control" name="price_regular_with_rice" placeholder="正規従業員の価格" value="{$menu.price_regular_with_rice}" />
+                                                <span class="form-control-feedback"></span>
+                                            </div>
                                             <span class="input-group-addon">円</span>
                                         </div>
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                                 <div class="col-xs-5 col-xs-offset-2">
-                                    <div class="form-group">
+                                    <div class="form-group has-feedback">
                                         <div class='input-group'>
-                                            <input type="number" class="form-control" name="price_non_regular_with_rice" placeholder="正規従業員以外の価格" value="{$menu.price_non_regular_with_rice}" />
+                                            <div style="position:relative">
+                                                <input type="number" class="form-control" name="price_non_regular_with_rice" placeholder="正規従業員以外の価格" value="{$menu.price_non_regular_with_rice}" />
+                                                <span class="form-control-feedback"></span>
+                                            </div>
                                             <span class="input-group-addon">円</span>
                                         </div>
+                                        <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
                             </div>
