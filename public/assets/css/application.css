@@ -229,9 +229,9 @@ textarea {
     min-height: 100%;
     height: auto;
     /* フッターの高さ分だけ、ネガティブインデントを指定 */
-    margin: 85px auto -120px;
+    margin: 85px auto -80px;
     /* フッターの高さ分だけ、パディングを指定 */
-    padding: 0 0 120px;
+    padding: 0 0 80px;
 }
 
 .rd3 {
