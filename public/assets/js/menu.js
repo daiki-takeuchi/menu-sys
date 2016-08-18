@@ -140,4 +140,8 @@ $(function () {
             });
         }
     });
+
+    $('.tag-input-readonly').tagit({
+        readOnly: true
+    });
 });

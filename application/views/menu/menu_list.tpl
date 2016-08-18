@@ -2,10 +2,13 @@
 {block name=title}メニュー管理{/block}
 {block name=include_css}
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-datepicker.min.css"/>
+    <link rel="stylesheet" href="{base_url}assets/css/jquery.tagit.css">
+    <link rel="stylesheet" href="{base_url}assets/css/tag-input.css">
 {/block}
 {block name=include_js}
     <script src="{base_url}assets/js/bootstrap-datepicker.min.js"></script>
     <script src="{base_url}assets/js/bootstrap-datepicker.ja.min.js"></script>
+    <script src="{base_url}assets/js/tag-it.min.js"></script>
     <script src="{base_url}assets/js/ticker.js"></script>
     <script src="{base_url}assets/js/popup-news.js"></script>
     <script src="{base_url}assets/js/menu.js"></script>
@@ -34,7 +37,26 @@
                             </div>
                         </div>
                         <div class="col-sm-7 col-md-8 col-lg-9">
-                            <a href="{base_url}menu/edit/{$menu_item.id}">{$menu_item.menu_name}</a>
+                            <a class="font-pop" style="font-size: 18pt;" href="{base_url}menu/edit/{$menu_item.id}">{$menu_item.menu_name}</a>
+                            <ul class="tag-input-readonly" style="border-color: #fff;font-size: 9pt;margin-left: -5px;">
+                                {assign var="tags" value=","|explode:$menu_item.tag}
+                                {foreach from=$tags item=tag}
+                                    <li>{$tag}</li>
+                                {/foreach}
+                            </ul>
+                            <div style="font-size: 10pt;">
+                                <div style="margin: 5px 0 5px 0;"><span style="font-size: 9pt;">アレルゲン：</span>{if $menu_item.allergen}{$menu_item.allergen}{else}なし{/if}</div>
+                                <table>
+                                    <tr>
+                                        <td><span style="font-size: 9pt;">エネルギー：</span>{$menu_item.energy} kcal</td>
+                                        <td style="padding-left: 15px;"><span style="font-size: 9pt;">塩分：</span>{$menu_item.salt} g</td>
+                                    </tr>
+                                    <tr>
+                                        <td><span style="font-size: 9pt;">たんぱく質：</span>{$menu_item.protein} g</td>
+                                        <td style="padding-left: 15px;"><span style="font-size: 9pt;">脂質：</span>{$menu_item.lipid} g</td>
+                                    </tr>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
