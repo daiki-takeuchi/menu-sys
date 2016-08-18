@@ -42,6 +42,7 @@ class Menu extends MY_Controller {
 
     public function index($y = false, $m = false, $d = false)
     {
+        $data['page'] = 'index';
         $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
 
@@ -66,6 +67,7 @@ class Menu extends MY_Controller {
 
     public function menu_list($y = false, $m = false, $d = false)
     {
+        $data['page'] = 'menu_list';
         $data['kubun'] = $this->lang->line('kubun');
         $data['news_list'] = $this->news_model->get_now_news();
 
