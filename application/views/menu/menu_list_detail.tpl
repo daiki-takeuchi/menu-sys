@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-sm-3 col-md-2">
                 <div class="img-menu-category">
-                    <img src="{base_url}assets/img/{if $category_id == 3}special_lunch{elseif $category_id == 4}a_lunch{elseif $category_id == 5}b_lunch{elseif $category_id == 6}japanese_noodle{elseif $category_id == 7}bowl{/if}.jpg">
+                    <img src="{base_url}assets/img/{if $category_id == 3}special_lunch{elseif $category_id == 4}a_lunch{elseif $category_id == 5}b_lunch{elseif $category_id == 6}japanese_noodle{elseif $category_id == 7}bowl{elseif $category_id == 9}chinese_noodle{elseif $category_id == 10}pasta{elseif $category_id == 11}curry{/if}.jpg">
                 </div>
             </div>
             {foreach from=$menu item=menu_item name=menu}

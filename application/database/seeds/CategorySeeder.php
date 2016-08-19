@@ -142,5 +142,56 @@ class CategorySeeder extends Seeder
             'updated_user' => 'Seeder'
         ];
         $this->db->insert('category', $data);
+
+        $data = [
+            'id' => 9,
+            'category_name' => '中華麺',
+            'kubun' => 2,
+            'price_regular' => 200,
+            'price_non_regular' => 300,
+            'with_rice' => null,
+            'price_regular_with_rice' => null,
+            'price_non_regular_with_rice' => null,
+            'sort_number' => 6,
+            'created_at' => date('Y/m/d H:i:s'),
+            'created_user' => 'Seeder',
+            'updated_at' => date('Y/m/d H:i:s'),
+            'updated_user' => 'Seeder'
+        ];
+        $this->db->insert('category', $data);
+
+        $data = [
+            'id' => 10,
+            'category_name' => 'パスタ',
+            'kubun' => 2,
+            'price_regular' => 200,
+            'price_non_regular' => 300,
+            'with_rice' => null,
+            'price_regular_with_rice' => null,
+            'price_non_regular_with_rice' => null,
+            'sort_number' => 7,
+            'created_at' => date('Y/m/d H:i:s'),
+            'created_user' => 'Seeder',
+            'updated_at' => date('Y/m/d H:i:s'),
+            'updated_user' => 'Seeder'
+        ];
+        $this->db->insert('category', $data);
+
+        $data = [
+            'id' => 11,
+            'category_name' => 'カレー',
+            'kubun' => 2,
+            'price_regular' => 200,
+            'price_non_regular' => 300,
+            'with_rice' => null,
+            'price_regular_with_rice' => null,
+            'price_non_regular_with_rice' => null,
+            'sort_number' => 8,
+            'created_at' => date('Y/m/d H:i:s'),
+            'created_user' => 'Seeder',
+            'updated_at' => date('Y/m/d H:i:s'),
+            'updated_user' => 'Seeder'
+        ];
+        $this->db->insert('category', $data);
     }
 }

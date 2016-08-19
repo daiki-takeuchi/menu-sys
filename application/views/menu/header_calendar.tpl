@@ -9,7 +9,7 @@
                     <tr>
                         <td>
                             <div align="center" style="height:45px;padding-top:9px;">
-                                <a href="{base_url}menu/list/{$last_monday|date_format:'Y/n/j'}" class="btn btn-orange btn-sm box rd15">
+                                <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$last_monday|date_format:'Y/n/j'}" class="btn btn-orange btn-sm box rd15">
                                     <span class="fa fa-arrow-left"></span> <span class="spNone">前の週</span>
                                 </a>
                             </div>
@@ -21,7 +21,7 @@
                                     <tr>
                                         {foreach from=$week item=date key=day_of_week}
                                         <td align="center">
-                                            <a href="{base_url}menu/list/{$date|date_format:'Y/n/j'}" class="cal-day{if $date === $select_date} cal-selected{/if}">
+                                            <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$date|date_format:'Y/n/j'}" class="cal-day{if $date === $select_date} cal-selected{/if}">
                                                 {$date|date_format:'n/j'}({$day_of_week})
                                             </a>
                                         </td>
@@ -60,7 +60,7 @@
                         </td>
                         <td>
                             <div align="center" style="height:45px;padding-top:9px;">
-                                <a href="{base_url}menu/list/{$next_monday|date_format:'Y/n/j'}" type="button" class="btn btn-orange btn-sm box rd15">
+                                <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$next_monday|date_format:'Y/n/j'}" type="button" class="btn btn-orange btn-sm box rd15">
                                     <span class="spNone">次の週</span> <span class="fa fa-arrow-right"></span>
                                 </a>
                             </div>
