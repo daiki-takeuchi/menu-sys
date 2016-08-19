@@ -23,12 +23,12 @@ $(function () {
         todayHighlight: true
     });
 
-    date.on('change', function () {
-        $(this).focus();
+    date.on('hide', function () {
+        $(this).valid();
     });
 
-    date_all.on('change', function () {
-        $(this).focus();
+    date_all.on('hide', function () {
+        $(this).valid();
     });
 
 });
@@ -75,7 +75,7 @@ $(function () {
     $("#form").validate({
         ignoreTitle: true,
         onfocusout: function(element) {
-            if(!$(element).hasClass('date')) {
+            if(!($(element).hasClass('date') || $(element).hasClass('date-all'))) {
                 this.element(element);
             }
         }

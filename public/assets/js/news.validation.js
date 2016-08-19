@@ -19,7 +19,9 @@ $(function () {
         rules: rules,
         messages: messages,
         onfocusout: function(element) {
-            this.element(element);
+            if(!($(element).hasClass('date') || $(element).hasClass('date-all'))) {
+                this.element(element);
+            }
         }
     });
 });
