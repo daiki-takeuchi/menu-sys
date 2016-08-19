@@ -24,6 +24,9 @@ $(function () {
     $("#form").validate({
         ignoreTitle: true,
         rules: rules,
-        messages: messages
+        messages: messages,
+        onfocusout: function(element) {
+            this.element(element);
+        }
     });
 });
