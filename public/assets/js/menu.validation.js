@@ -12,12 +12,16 @@ $(function () {
         'category_id': {required: [true, 'カテゴリ']},
         'price_regular': {required: [true, '価格(正規従業員)']},
         'price_non_regular': {required: [true, '価格(正規従業員以外)']},
-        'price_regular_with_rice': {required: function () {
-            return $('[name="with_rice"]').val() !== '';
-        }},
-        'price_non_regular_with_rice': {required: function () {
-            return $('[name="with_rice"]').val() !== '';
-        }}
+        'price_regular_with_rice': {
+            required: function (element) {
+                return $('[name="with_rice"]').val() !== '';
+            }
+        },
+        'price_non_regular_with_rice': {
+            required: function (element) {
+                return $('[name="with_rice"]').val() !== '';
+            }
+        }
     };
 
     //入力項目ごとのエラーメッセージ定義

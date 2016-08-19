@@ -83,6 +83,18 @@ $(function () {
 });
 
 $(function () {
+    $('input,select,textarea').each(function(){
+        $(this)
+            .focusin(function(element) {
+                $(this).addClass('bg-light-yellow');
+            })
+            .focusout(function(element) {
+                $(this).removeClass('bg-light-yellow');
+            });
+    });
+});
+
+$(function () {
     $(".pager li a").click(function (event) {
         event.preventDefault();
         $('#form').attr('action', $(this).attr('href')).submit();
