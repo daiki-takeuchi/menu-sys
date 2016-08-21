@@ -26,7 +26,12 @@ class Menu extends MY_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 
+    const BREAKFAST = '1';
+    const LUNCH = '2';
+    const DINNER = '3';
+
     protected $page_title = 'メニュー';
+    private $kubun = self::LUNCH;
 
     public function __construct()
     {
@@ -43,7 +48,8 @@ class Menu extends MY_Controller {
     public function index($y = false, $m = false, $d = false)
     {
         $data['page'] = 'index';
-        $data['kubun'] = $this->lang->line('kubun');
+        $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_en');
+        $data['selected_kubun'] = array_column($this->lang->line('kubun'), 'kubun_en', 'kubun_cc')[$this->kubun];
         $data['news_list'] = $this->news_model->get_now_news();
 
         $date = $this->get_date($y, $m, $d);
@@ -57,7 +63,7 @@ class Menu extends MY_Controller {
             $i++;
         }
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
-        $data['select_date'] = date('Y/m/d', $date);
+        $data['selected_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
         $data['last_monday'] = date('Y/m/d', $last_monday);
 
@@ -65,10 +71,29 @@ class Menu extends MY_Controller {
         $this->display('menu/index.tpl');
     }
 
+    public function breakfast($y = false, $m = false, $d = false)
+    {
+        $this->kubun = self::BREAKFAST;
+        $this->index($y, $m, $d);
+    }
+
+    public function lunch($y = false, $m = false, $d = false)
+    {
+        $this->kubun = self::LUNCH;
+        $this->index($y, $m, $d);
+    }
+
+    public function dinner($y = false, $m = false, $d = false)
+    {
+        $this->kubun = self::DINNER;
+        $this->index($y, $m, $d);
+    }
+
     public function menu_list($y = false, $m = false, $d = false)
     {
         $data['page'] = 'menu_list';
-        $data['kubun'] = $this->lang->line('kubun');
+        $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_en');
+        $data['selected_kubun'] = array_column($this->lang->line('kubun'), 'kubun_en', 'kubun_cc')[$this->kubun];
         $data['news_list'] = $this->news_model->get_now_news();
 
         $date = $this->get_date($y, $m, $d);
@@ -82,12 +107,30 @@ class Menu extends MY_Controller {
             $i++;
         }
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
-        $data['select_date'] = date('Y/m/d', $date);
+        $data['selected_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
         $data['last_monday'] = date('Y/m/d', $last_monday);
 
         $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
+    }
+
+    public function list_breakfast($y = false, $m = false, $d = false)
+    {
+        $this->kubun = self::BREAKFAST;
+        $this->menu_list($y, $m, $d);
+    }
+
+    public function list_lunch($y = false, $m = false, $d = false)
+    {
+        $this->kubun = self::LUNCH;
+        $this->menu_list($y, $m, $d);
+    }
+
+    public function list_dinner($y = false, $m = false, $d = false)
+    {
+        $this->kubun = self::DINNER;
+        $this->menu_list($y, $m, $d);
     }
 
     public  function news_list() {
@@ -221,8 +264,7 @@ class Menu extends MY_Controller {
 
     private function get_menu($supply_date) {
 
-        $LUNCH = 2;
-        $cat = $this->category_model->get_categorys($LUNCH);
+        $cat = $this->category_model->get_categorys($this->kubun);
         $ret = [];
         foreach ($cat as $item) {
             $ret[$item['id']] = $this->menu_model->find_by(array('supply_date' => $supply_date, 'category_id' => intval($item['id'])), true);

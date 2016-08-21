@@ -1,4 +1,21 @@
 $(function () {
+    $('.target-category').change(function () {
+        var pathArray = window.location.pathname.split( '/' );
+        var len = pathArray.length;
+        var kubun = pathArray[len - 4];
+        var url = '';
+        if(kubun === undefined) {
+            url = base_url + window.location.pathname.substr(1) + '/' + $(this).val();
+        } else {
+            pathArray[len - 4] = $(this).val();
+            for (var i = 0; i < len; i++){
+                url += pathArray[i] + '/';
+            }
+            url = base_url + url.substr( 0, url.length-1 ).substr(1);
+        }
+        MessageBox.show(url);
+    });
+
     $('.excel-download').click(function() {
         BootstrapDialog.show({
             title: "帳票ダウンロード",

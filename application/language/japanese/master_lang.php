@@ -31,6 +31,10 @@ $lang['gender'] = [
     ['gender_cc' => '3', 'gender_nm' => 'その他'],
 ];
 
-$lang['kubun'] = ['1' => '朝食', '2' => 'ランチ', '3' => '夕食'];
+$lang['kubun'] = [
+    ['kubun_cc' => '1', 'kubun_en' => 'breakfast', 'kubun_nm' => '朝食'],
+    ['kubun_cc' => '2', 'kubun_en' => 'lunch', 'kubun_nm' => 'ランチ'],
+    ['kubun_cc' => '3', 'kubun_en' => 'dinner', 'kubun_nm' => '夕食'],
+];
 
 $lang['week'] = [1 => '月', 2=> '火', 3 => '水', 4=> '木', 5 => '金', 6 => '土', 0 =>'日'];
