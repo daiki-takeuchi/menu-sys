@@ -1,5 +1,5 @@
 {extends file='templates/application.tpl'}
-{block name=title}お知らせ管理{/block}
+{block name=title}メニュー検索{/block}
 {block name=include_js}
 {/block}
 {block name=main_contents}
@@ -8,7 +8,7 @@
             <div style="font-size: 12pt;">
                 <span class="fa fa-search"></span><span class="font-pop"> 絞り込み</span>
             </div>
-            <form class="form" method="post" id="form" action="{base_url}news">
+            <form class="form" method="post" id="form" action="{base_url}menu/search">
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1">
                         <div class="row">
@@ -72,22 +72,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                {foreach from=$news_list item=news}
+                {foreach from=$menu_list item=menu}
                     <tr>
-                        <td style="text-align: center;padding-top: 10px;">{$news.start_date|date_format:"Y/m/d"}</td>
-                        <td style="text-align: center;padding-top: 10px;">{$news.end_date|date_format:"Y/m/d"}</td>
-                        <td style="padding-top: 10px;"><a href="{base_url}news/edit/{$news.id}">{$news.content|escape}</a></td>
+                        <td style="text-align: center;padding-top: 10px;">{$menu.start_date|date_format:"Y/m/d"}</td>
+                        <td style="text-align: center;padding-top: 10px;">{$menu.end_date|date_format:"Y/m/d"}</td>
+                        <td style="padding-top: 10px;"><a href="{base_url}menu/edit/{$menu.id}">{$menu.content|escape}</a></td>
                     </tr>
                 {/foreach}
-                {if !$news_list}<tr><td colspan="3">検索結果がありません。</td></tr>{/if}
+                {if !$menu_list}<tr><td colspan="3">検索結果がありません。</td></tr>{/if}
                 </tbody>
             </table>
         </div>
     </div>
 {/block}
 {block name=footer_right}
-    <a href="{base_url}news/new" class="btn btn-orange box rd24 font-pop"
+    <a href="{base_url}menu/new" class="btn btn-orange box rd24 font-pop"
             style="font-size: large;width:150px;">
-        <span class="fa fa-plus"></span> お知らせ登録
+        <span class="fa fa-plus"></span> メニュー登録
     </a>
 {/block}

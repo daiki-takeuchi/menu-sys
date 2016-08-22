@@ -89,6 +89,22 @@ class Menu extends MY_Controller {
         $this->index($y, $m, $d);
     }
 
+    public function search()
+    {
+        $data['content'] = '';
+        $data['year'] = '';
+        $data['start_year_selected'] = '';
+        $data['end_year_selected'] = '';
+        $data['month'] = '';
+        $data['start_month_selected'] = '';
+        $data['end_month_selected'] = '';
+        $data['pager'] = '';
+        $data['menu_list'] = [];
+
+        $this->smarty->assign($data);
+        $this->display('menu/menu_search.tpl');
+    }
+
     public function menu_list($y = false, $m = false, $d = false)
     {
         $data['page'] = 'menu_list';
@@ -177,7 +193,8 @@ class Menu extends MY_Controller {
         $data['menu'] = $menu;
 
         $category = [];
-        foreach ($this->lang->line('kubun') as $kubun => $value) {
+        $kubuns = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_cc');
+        foreach ($kubuns as $kubun => $value) {
             $category[$value] = array_column($this->category_model->get_categorys($kubun), 'category_name', 'id');
         }
         $data['category'] = $category;
