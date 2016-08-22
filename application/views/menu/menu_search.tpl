@@ -14,8 +14,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class='form-group'>
-                                    <label>お知らせ : </label>
-                                    <input type="text" class="form-control" name="content" value="{$content}" />
+                                    <label>メニュー名 : </label>
+                                    <input type="text" class="form-control" name="menu_name" value="{$menu_name}" />
                                 </div>
                             </div>
                             <div class="col-md-6" style="margin-bottom: 5px;">

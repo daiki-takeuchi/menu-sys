@@ -91,7 +91,13 @@ class Menu extends MY_Controller {
 
     public function search()
     {
-        $data['content'] = '';
+        $offset = $this->uri->segment(3 ,0);
+        $menu_name =  null;
+        // Postデータを取得
+        if($this->input->post()) {
+            $menu_name = $this->input->post('menu_name');
+        }
+        $data['menu_name'] = $menu_name;
         $data['year'] = '';
         $data['start_year_selected'] = '';
         $data['end_year_selected'] = '';
