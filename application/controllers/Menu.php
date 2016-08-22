@@ -98,15 +98,15 @@ class Menu extends MY_Controller {
             $menu_name = $this->input->post('menu_name');
         }
         $data['menu_name'] = $menu_name;
-        $data['year'] = '';
-        $data['start_year_selected'] = '';
-        $data['end_year_selected'] = '';
-        $data['month'] = '';
-        $data['start_month_selected'] = '';
-        $data['end_month_selected'] = '';
         $data['pager'] = '';
+        $category = [];
+        $kubuns = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_cc');
+        foreach ($kubuns as $kubun => $value) {
+            $category[$value] = array_column($this->category_model->get_categorys($kubun), 'category_name', 'id');
+        }
+        $data['category'] = $category;
         $data['menu_list'] = [];
-
+        $data['category_id'] = $this->input->post('category_id');
         $this->smarty->assign($data);
         $this->display('menu/menu_search.tpl');
     }

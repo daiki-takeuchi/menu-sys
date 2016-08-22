@@ -12,40 +12,24 @@
                 <div class="row">
                     <div class="col-xs-10 col-xs-offset-1">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class='form-group'>
-                                    <label>メニュー名 : </label>
-                                    <input type="text" class="form-control" name="menu_name" value="{$menu_name}" />
-                                </div>
-                            </div>
-                            <div class="col-md-6" style="margin-bottom: 5px;">
-                                <div class="spNone992" style="margin-top: 25px;"></div>
-                                <div class="checkbox-inline">
-                                    <label><input type="checkbox" name="now_news" {if isset($now_news)}checked{/if}>現在掲載中のお知らせだけを掲載する</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-9">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class='form-group' style="margin: 0;">
-                                            <label>期間 : </label><br />
-                                            {html_options class="selectpicker show-menu-arrow" data-width="90px" name="start_year" title=" " values=$year output=$year selected=$start_year_selected} 年　
-                                            {html_options class="selectpicker show-menu-arrow" data-width="65px" name="start_month" title=" " values=$month output=$month selected=$start_month_selected} 月
-                                            <span style="padding-left: 20px;">〜<span>　
+                                            <label>メニュー名 : </label>
+                                            <input type="text" class="form-control" name="menu_name" value="{$menu_name}" />
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class='form-group' style="margin: 0;">
-                                            <label>　</label><br />
-                                            {html_options class="selectpicker show-menu-arrow" data-width="90px" name="end_year" title=" " values=$year output=$year selected=$end_year_selected} 年　
-                                            {html_options class="selectpicker show-menu-arrow" data-width="65px" name="end_month" title=" " values=$month output=$month selected=$end_month_selected} 月　
+                                            <label>カテゴリ : </label>
+                                            {html_options name="category_id[]" options=$category data-width="100%" class="selectpicker show-menu-arrow" title="カテゴリを選択してください" selected=$category_id
+                                            data-size="8" data-actions-box="true" data-selected-text-format="count > 1" multiple="multiple"}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-1" style="margin-top: 20px;">
+                            <div class="col-md-3" style="margin-top: 20px;">
                                 <button class="btn btn-orange box rd24 font-pop pull-right" style="font-size: large;">
                                     <span class="fa fa-search"></span> 検索
                                 </button>
