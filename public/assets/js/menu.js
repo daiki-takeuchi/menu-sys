@@ -1,19 +1,10 @@
 $(function () {
     $('.target-category').change(function () {
-        var pathArray = window.location.pathname.split( '/' );
-        var len = pathArray.length;
-        var kubun = pathArray[len - 4];
-        var url = '';
-        if(kubun === undefined) {
-            url = base_url + window.location.pathname.substr(1) + '/' + $(this).val();
-        } else {
-            pathArray[len - 4] = $(this).val();
-            for (var i = 0; i < len; i++){
-                url += pathArray[i] + '/';
-            }
-            url = base_url + url.substr( 0, url.length-1 ).substr(1);
-        }
-        MessageBox.show(url);
+        var selected_date = $(this).attr('data-selected-date');
+        var page = ($(this).attr('data-page') == 'index')? 'menu' : 'menu/list';
+        var kubun = $(this).val();
+
+        window.location.href = base_url +  page + '/' + kubun + '/' + selected_date;
     });
 
     $('.excel-download').click(function() {
