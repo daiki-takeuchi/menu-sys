@@ -36,6 +36,11 @@ class Menu extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
+
+        // 検索条件の保存を削除
+        $this->session->set_userdata('pager_news', null);
+        $this->session->set_userdata('pager_user', null);
+
         $this->load->model('menu_model');
         $this->load->model('news_model');
         $this->load->model('category_model');
@@ -92,11 +97,19 @@ class Menu extends MY_Controller {
     public function search()
     {
         $offset = $this->uri->segment(3 ,0);
-        $menu_name =  null;
+        $menu_name = $category_id = null;
         // Postデータを取得
         if($this->input->post()) {
-            $menu_name = $this->input->post('menu_name');
+            $this->session->set_userdata('pager_menu', $this->input->post());
         }
+        $session = $this->session->get_userdata();
+        if(isset($session['pager_menu'])) {
+            $post = $session['pager_menu'];
+            $menu_name = $post['menu_name'];
+            $menu_name = isset($menu_name) && !is_null($menu_name) ? $menu_name : null;
+            $category_id = isset($post['category_id'])?$post['category_id']:null;
+        }
+
         $data['menu_name'] = $menu_name;
         $data['pager'] = '';
         $category = [];
@@ -106,7 +119,7 @@ class Menu extends MY_Controller {
         }
         $data['category'] = $category;
         $data['menu_list'] = [];
-        $data['category_id'] = $this->input->post('category_id');
+        $data['category_id'] = $category_id;
         $this->smarty->assign($data);
         $this->display('menu/menu_search.tpl');
     }
@@ -189,7 +202,7 @@ class Menu extends MY_Controller {
             unset($menu['btn-save']);
             if($this->_save($menu)) {
                 if($btn === 'save-menu') {
-                    redirect(base_url() . 'menu/list');
+                    redirect(base_url() . 'menu/edit/' . $menu['id']);
                 } elseif ($btn === 'save-menu-more') {
                     redirect(base_url() . 'menu/new');
                 }
@@ -204,6 +217,12 @@ class Menu extends MY_Controller {
             $category[$value] = array_column($this->category_model->get_categorys($kubun), 'category_name', 'id');
         }
         $data['category'] = $category;
+
+        $back_url = base_url() . 'menu/list';
+        if(isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], base_url()) && !strstr($_SERVER['HTTP_REFERER'], $this->uri->uri_string)) {
+            $back_url = $_SERVER['HTTP_REFERER'];
+        }
+        $data['back_url'] = $back_url;
 
         $this->smarty->assign($data);
         $this->display('menu/menu_form.tpl');

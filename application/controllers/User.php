@@ -30,6 +30,11 @@ class User extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
+
+        // 検索条件の保存を削除
+        $this->session->set_userdata('pager_menu', null);
+        $this->session->set_userdata('pager_news', null);
+
         $this->load->model('user_model');
 
         $this->user_model->setUserName($this->user_name);
@@ -41,9 +46,14 @@ class User extends MY_Controller {
         $name = $soshiki_cc = null;
         // 登録されているデータを取得
         if($this->input->post()) {
-            $name = $this->input->post('name');
+            $this->session->set_userdata('pager_user', $this->input->post());
+        }
+        $session = $this->session->get_userdata();
+        if(isset($session['pager_user'])) {
+            $post = $session['pager_user'];
+            $name = $post['name'];
             $name = isset($name) && !is_null($name) ? $name : null;
-            $soshiki_cc = $this->input->post('soshiki_cc');
+            $soshiki_cc = isset($post['soshiki_cc'])?$post['soshiki_cc']:null;
         }
         $data['users'] = $this->user_model->get_users($offset, $name, $soshiki_cc);
         $data['name'] = $name;
@@ -95,7 +105,7 @@ class User extends MY_Controller {
 
             if($this->_save($user)) {
                 if($btn === 'save-user') {
-                    redirect(base_url() . 'user');
+                    redirect(base_url() . 'user/edit/' . $user['id']);
                 } elseif ($btn === 'save-user-more') {
                     redirect(base_url() . 'user/new');
                 }

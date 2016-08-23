@@ -29,8 +29,12 @@ class News extends MY_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('news_model');
 
+        // 検索条件の保存を削除
+        $this->session->set_userdata('pager_menu', null);
+        $this->session->set_userdata('pager_user', null);
+
+        $this->load->model('news_model');
         $this->news_model->setUserName($this->user_name);
     }
 
@@ -40,14 +44,20 @@ class News extends MY_Controller {
         $content = $start_year = $start_month = $end_year = $end_month = $now_news = null;
         // Postデータを取得
         if($this->input->post()) {
-            $content = $this->input->post('content');
-            $content = isset($content) && !is_null($content) ? $content : null;
-            $start_year = $this->input->post('start_year');
-            $start_month = $this->input->post('start_month');
-            $end_year = $this->input->post('end_year');
-            $end_month = $this->input->post('end_month');
-            $now_news = $this->input->post('now_news');
+            $this->session->set_userdata('pager_news', $this->input->post());
         }
+        $session = $this->session->get_userdata();
+        if(isset($session['pager_news'])) {
+            $post = $session['pager_news'];
+            $content = $post['content'];
+            $content = isset($content) && !is_null($content) ? $content : null;
+            $start_year = isset($post['start_year'])?$post['start_year']:null;
+            $start_month = isset($post['start_month'])?$post['start_month']:null;
+            $end_year = isset($post['end_year'])?$post['end_year']:null;
+            $end_month = isset($post['end_month'])?$post['end_month']:null;
+            $now_news = isset($post['now_news'])?$post['now_news']:null;
+        }
+
         // 登録されているデータを全件取得
         $data['news_list'] = $this->news_model->get_news($offset, $content, $start_year, $start_month, $end_year, $end_month, $now_news);
 
@@ -98,7 +108,7 @@ class News extends MY_Controller {
 
             if($this->_save($news)) {
                 if($btn === 'save-news') {
-                    redirect(base_url() . 'news');
+                    redirect(base_url() . 'news/edit/' . $news['id']);
                 } elseif ($btn === 'save-news-more') {
                     redirect(base_url() . 'news/new');
                 }

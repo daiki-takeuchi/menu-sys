@@ -96,7 +96,8 @@ $(function () {
 
 $(function () {
     $(".pager li a").click(function (event) {
-        event.preventDefault();
-        $('#form').attr('action', $(this).attr('href')).submit();
+        if($(this).attr('href') === undefined) {
+            event.preventDefault();
+        }
     });
 });

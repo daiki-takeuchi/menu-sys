@@ -230,18 +230,22 @@
 {block name=footer_left}
     {if $id}
         <button id="{$id}" class="btn btn-delete btn-menu-delete box rd24 font-pop"
-                style="font-size: large;">
+                style="margin-right:15px;font-size: large;">
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
         </button>
     {/if}
+    <a href="{$back_url}" class="btn btn-delete box rd24 font-pop"
+       style="font-size: large;">
+        <span class="fa fa-arrow-left"></span><span class="spNone"> 戻る</span>
+    </a>
 {/block}
 {block name=footer_right}
-    <button class="btn btn-orange box rd24 font-pop spNone btn-save-menu-more"
+    <button class="btn btn-orange box rd24 font-pop btn-save-menu-more"
             style="margin-right:15px;font-size: large;">
-        <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存してもう１つ追加</span>
+        <span class="fa fa-copy"></span><span class="spNone"> コピー</span>
     </button>
     <button class="btn btn-orange box rd24 font-pop btn-save-menu"
        style="font-size: large;">
-        <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存する</span>
+        <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存</span>
     </button>
 {/block}
