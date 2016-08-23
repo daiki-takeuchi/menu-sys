@@ -87,7 +87,6 @@
                 </div>
             </div>
         </div>
-        <input type="hidden" name="btn-save" id="save_btn" />
     </form>
     <div class="row">
         <div class="col-xs-10 col-xs-offset-1 col-lg-6 col-lg-offset-3" style="padding-top: 30px;">
@@ -118,16 +117,12 @@
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
         </button>
     {/if}
-    <a href="{base_url}user" class="btn btn-delete box rd24 font-pop"
+    <a href="{$back_url}" class="btn btn-delete box rd24 font-pop"
        style="font-size: large;">
         <span class="fa fa-arrow-left"></span><span class="spNone"> 戻る</span>
     </a>
 {/block}
 {block name=footer_right}
-    <button class="btn btn-orange box rd24 font-pop btn-save-user-more"
-            style="margin-right:15px;font-size: large;">
-        <span class="fa fa-copy"></span><span class="spNone"> コピー</span>
-    </button>
     <button class="btn btn-orange box rd24 font-pop btn-save-user"
        style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存</span>

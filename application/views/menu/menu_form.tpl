@@ -240,10 +240,12 @@
     </a>
 {/block}
 {block name=footer_right}
-    <button class="btn btn-orange box rd24 font-pop btn-save-menu-more"
-            style="margin-right:15px;font-size: large;">
-        <span class="fa fa-copy"></span><span class="spNone"> コピー</span>
-    </button>
+    {if $id}
+        <button class="btn btn-orange box rd24 font-pop btn-save-menu-more"
+                style="margin-right:15px;font-size: large;">
+            <span class="fa fa-copy"></span><span class="spNone"> コピー</span>
+        </button>
+    {/if}
     <button class="btn btn-orange box rd24 font-pop btn-save-menu"
        style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存</span>

@@ -100,15 +100,9 @@ class User extends MY_Controller {
         if($this->input->post()) {
             if ($user_id === null) $user =[];
             $user = array_merge($user, $this->input->post());
-            $btn = $this->input->post('btn-save');
-            unset($user['btn-save']);
 
             if($this->_save($user)) {
-                if($btn === 'save-user') {
-                    redirect(base_url() . 'user/edit/' . $user['id']);
-                } elseif ($btn === 'save-user-more') {
-                    redirect(base_url() . 'user/new');
-                }
+                redirect(base_url() . 'user/edit/' . $user['id']);
             }
         }
 
@@ -122,6 +116,12 @@ class User extends MY_Controller {
         if($user_id || $this->input->post()) {
             $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->user_model->get_organization($user['company_cc']), 'soshiki_nm', 'soshiki_cc'));
         }
+
+        $back_url = base_url() . 'user';
+        if(isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], base_url()) && !strstr($_SERVER['HTTP_REFERER'], $this->uri->uri_string)) {
+            $back_url = $_SERVER['HTTP_REFERER'];
+        }
+        $data['back_url'] = $back_url;
 
         $this->smarty->assign($data);
 

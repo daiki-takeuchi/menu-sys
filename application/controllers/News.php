@@ -103,18 +103,17 @@ class News extends MY_Controller {
         if($this->input->post()) {
             if ($news_id === null) $news =[];
             $news = array_merge($news, $this->input->post());
-            $btn = $this->input->post('btn-save');
-            unset($news['btn-save']);
-
             if($this->_save($news)) {
-                if($btn === 'save-news') {
-                    redirect(base_url() . 'news/edit/' . $news['id']);
-                } elseif ($btn === 'save-news-more') {
-                    redirect(base_url() . 'news/new');
-                }
+                redirect(base_url() . 'news/edit/' . $news['id']);
             }
         }
         $data['news'] = $news;
+
+        $back_url = base_url() . 'news';
+        if(isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], base_url()) && !strstr($_SERVER['HTTP_REFERER'], $this->uri->uri_string)) {
+            $back_url = $_SERVER['HTTP_REFERER'];
+        }
+        $data['back_url'] = $back_url;
 
         $this->smarty->assign($data);
         $this->display('news/news_form.tpl');

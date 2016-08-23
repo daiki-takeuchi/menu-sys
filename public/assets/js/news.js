@@ -1,12 +1,6 @@
 $(function () {
 
     $('.btn-save-news').click(function () {
-        $('#save_btn').val('save-news');
-        $('#form').submit();
-    });
-
-    $('.btn-save-news-more').click(function () {
-        $('#save_btn').val('save-news-more');
         $('#form').submit();
     });
 

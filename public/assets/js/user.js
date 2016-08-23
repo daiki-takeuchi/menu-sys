@@ -111,12 +111,6 @@ $(function () {
     }
 
     $('.btn-save-user').click(function () {
-        $('#save_btn').val('save-user');
-        $('#form').submit();
-    });
-
-    $('.btn-save-user-more').click(function () {
-        $('#save_btn').val('save-user-more');
         $('#form').submit();
     });
 
