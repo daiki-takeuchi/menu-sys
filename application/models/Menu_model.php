@@ -33,7 +33,7 @@ class Menu_model extends MY_Model
     public function get_pagination()
     {
         $this->load->library('Generate_pagination');
-        $path = site_url() . $this->table . "/search";
+        $path = base_url() . $this->table . "/search";
         $total_rows = $this->get_count_all();
 
         $pagination = $this->generate_pagination->get_links($path, $total_rows, $this->per_page);
