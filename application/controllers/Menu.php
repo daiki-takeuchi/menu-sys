@@ -10,22 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class Menu extends MY_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
     const BREAKFAST = '1';
     const LUNCH = '2';
     const DINNER = '3';
@@ -67,6 +51,8 @@ class Menu extends MY_Controller {
             $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
             $i++;
         }
+
+        $data['href'] = base_url() . 'menu/' . date('Y/m/d', $date);
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
@@ -97,7 +83,7 @@ class Menu extends MY_Controller {
     public function search()
     {
         $offset = $this->uri->segment(3 ,0);
-        $menu_name = $category_id = null;
+        $menu_name = $category_id = $start_year = $start_month = $end_year = $end_month = null;
         // Postデータを取得
         if($this->input->post()) {
             $this->session->set_userdata('pager_menu', $this->input->post());
@@ -108,18 +94,37 @@ class Menu extends MY_Controller {
             $menu_name = $post['menu_name'];
             $menu_name = isset($menu_name) && !is_null($menu_name) ? $menu_name : null;
             $category_id = isset($post['category_id'])?$post['category_id']:null;
+            $start_year = isset($post['start_year'])?$post['start_year']:null;
+            $start_month = isset($post['start_month'])?$post['start_month']:null;
+            $end_year = isset($post['end_year'])?$post['end_year']:null;
+            $end_month = isset($post['end_month'])?$post['end_month']:null;
         }
-
+        $data['menu_list'] = $this->menu_model->get_menu($offset, $menu_name, $category_id, $start_year, $start_month, $end_year, $end_month);
         $data['menu_name'] = $menu_name;
-        $data['pager'] = '';
+        $data['selected'] = $category_id;
+
+        $data['year'] = array('', date('Y')-1,date('Y'),date('Y')+1);
+        $data['month'][] = '';
+        for ($i=1; $i<=12; $i++){
+            $data['month'][] = $i;
+        }
+        $data['start_year_selected'] = $start_year;
+        $data['start_month_selected'] = $start_month;
+        $data['end_year_selected'] = $end_year;
+        $data['end_month_selected'] = $end_month;
+
+        // マスター情報を取得
         $category = [];
         $kubuns = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_cc');
         foreach ($kubuns as $kubun => $value) {
             $category[$value] = array_column($this->category_model->get_categorys($kubun), 'category_name', 'id');
         }
         $data['category'] = $category;
-        $data['menu_list'] = [];
-        $data['category_id'] = $category_id;
+        $data['category_master'] = array_column($this->category_model->get_categorys(), 'category_name', 'id');
+
+        // pagerの作成
+        $data['pager'] = $this->menu_model->get_pagination();
+
         $this->smarty->assign($data);
         $this->display('menu/menu_search.tpl');
     }
@@ -141,6 +146,8 @@ class Menu extends MY_Controller {
             $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
             $i++;
         }
+
+        $data['href'] = site_url() . 'menu/' . date('Y/m/d', $date);
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
