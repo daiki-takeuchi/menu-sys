@@ -1,10 +1,6 @@
-engines:
-  duplication:
-    enabled: true
-    config:
-      languages:
-      - php
-      - javascript
+# Save as .codeclimate.yml (note leading .) in project root directory
+languages:
+  PHP: true
 exclude_paths:
  - "application/database/seeds/*"
  - "application/third_party/*"
