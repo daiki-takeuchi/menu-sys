@@ -28,6 +28,7 @@
     {block name=include_js}{/block}
     <script src="{base_url}assets/js/application.js"></script>
     {include file='templates/shim.tpl'}
+    {include file='templates/message.tpl'}
 </head>
 <body>
 {if !isset($has_header) || $has_header}

@@ -111,7 +111,30 @@ $(function () {
     }
 
     $('.btn-save-user').click(function () {
-        $('#form').submit();
+        if($('#id_hid_shain_bn').val() !== $('[name="shain_bn"]').val() && $('#id_hid_shain_bn').val() !== "") {
+            BootstrapDialog.confirm({
+                title: 'パスワードリセットの確認',
+                message: '社員番号を変更する場合はパスワードをリセットする必要がありますがよろしいですか？',
+                type: BootstrapDialog.TYPE_WARNING,
+                closable: true,
+                draggable: true,
+                btnCancelLabel: 'キャンセル',
+                btnOKLabel: 'リセットして保存',
+                btnOKClass: 'btn-warning',
+                callback: function(result) {
+                    if(result) {
+                        $('<input>').attr({
+                            type: 'hidden',
+                            name: 'password_reset',
+                            value: 1
+                        }).appendTo('#form');
+                        $('#form').submit();
+                    }
+                }
+            });
+        } else {
+            $('#form').submit();
+        }
     });
 
     $('.btn-user-delete').click(function () {

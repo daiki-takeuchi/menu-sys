@@ -208,6 +208,7 @@ class Menu extends MY_Controller {
             $btn = $this->input->post('btn-save');
             unset($menu['btn-save']);
             if($this->_save($menu)) {
+                $this->session->set_flashdata('message', '保存しました。');
                 if($btn === 'save-menu') {
                     redirect(base_url() . 'menu/edit/' . $menu['id']);
                 } elseif ($btn === 'save-menu-more') {
@@ -238,6 +239,11 @@ class Menu extends MY_Controller {
 
     public function delete($menu_id)
     {
+        $menu = $this->menu_model->find($menu_id);
+        if(isset($menu['id'])) {
+            $this->menu_model->delete($menu);
+        }
+        $this->session->set_flashdata('message', '削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'menu/list');
     }
@@ -254,7 +260,7 @@ class Menu extends MY_Controller {
                 $data['month']['values'][] = $i;
             }
             $data['month']['selected'] = date('n');
-            $data['kubun'] = $this->lang->line('kubun');
+            $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_cc');
 
             $this->smarty->assign($data);
             $this->display('menu/excel_download.tpl');

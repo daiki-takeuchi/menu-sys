@@ -104,6 +104,7 @@ class News extends MY_Controller {
             if ($news_id === null) $news =[];
             $news = array_merge($news, $this->input->post());
             if($this->_save($news)) {
+                $this->session->set_flashdata('message', '保存しました。');
                 redirect(base_url() . 'news/edit/' . $news['id']);
             }
         }
@@ -126,6 +127,7 @@ class News extends MY_Controller {
         if(isset($news['id'])) {
             $this->news_model->delete($news);
         }
+        $this->session->set_flashdata('message', '削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'news');
     }

@@ -102,6 +102,7 @@ class User extends MY_Controller {
             $user = array_merge($user, $this->input->post());
 
             if($this->_save($user)) {
+                $this->session->set_flashdata('message', '保存しました。');
                 redirect(base_url() . 'user/edit/' . $user['id']);
             }
         }
@@ -135,6 +136,7 @@ class User extends MY_Controller {
         if(isset($user['id'])) {
             $this->user_model->delete($user);
         }
+        $this->session->set_flashdata('message', '削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'user');
     }
@@ -155,6 +157,7 @@ class User extends MY_Controller {
             $user = $this->user_model->find($user_id);
             if(isset($user['id'])) {
                 $user['password'] = sha1($user['shain_bn'].$user['shain_bn']);
+                $user['first_login'] = 1;
                 $this->user_model->save($user);
             }
             echo json_encode('success');
@@ -165,8 +168,10 @@ class User extends MY_Controller {
         if ($this->form_validation->run('user/save') === false) {
             return false;
         }
-        if (empty($user['id'])) {
+        if (empty($user['id']) || isset($user['password_reset'])) {
+            unset($user['password_reset']);
             $user['password'] = sha1($this->input->post('shain_bn').$this->input->post('shain_bn'));
+            $user['first_login'] = 1;
         }
         $this->user_model->save($user);
         $user = $this->user_model->find($user['id']);

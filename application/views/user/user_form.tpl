@@ -109,6 +109,7 @@
         </div>
     </div>
 </div>
+<input type="hidden" id="id_hid_shain_bn" value="{$user.shain_bn}" />
 {/block}
 {block name=footer_left}
     {if $id}

@@ -51,6 +51,7 @@ class MY_Controller extends CI_Controller
         $data['permission_menu'] = $this->permission_menu = $userdata["user"]["permission_menu"];
         $data['permission_user'] = $this->permission_user = $userdata["user"]["permission_user"];
 
+        $data['message'] = $this->session->flashdata('message');
         $this->smarty->assign($data);
     }
 
