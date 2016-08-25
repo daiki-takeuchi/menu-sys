@@ -1,36 +1,13 @@
-engines:
-  csslint:
-    enabled: true
-  duplication:
-    enabled: true
-    config:
-      languages:
-      - ruby
-      - javascript
-      - python
-      - php
-  fixme:
-    enabled: true
-  phpmd:
-    enabled: true
-    exclude_fingerprints:
-    - a9384c62da48768f10a57d93a592057a  ratings:
-  paths:
-  - "**.css"
-  - "**.inc"
-  - "**.js"
-  - "**.jsx"
-  - "**.module"
-  - "**.php"
-  - "**.py"
-  - "**.rb"
+# Save as .codeclimate.yml (note leading .) in project root directory
+languages:
+  PHP: true
 exclude_paths:
-- application/database/seeds/*
-- application/third_party/*
-- application/tests/*
-- application/libraries/UploadHandler.php
-- public/assets/js/jquery*
-- public/assets/js/holder.js
-- public/assets/js/tag-it*
-- public/assets/js/bootstrap*
-- public/assets/css/bootstrap*
+ - "application/database/seeds/*"
+ - "application/third_party/*"
+ - "application/tests/*"
+ - "application/libraries/UploadHandler.php"
+ - "public/assets/js/jquery*"
+ - "public/assets/js/holder.js"
+ - "public/assets/js/tag-it*"
+ - "public/assets/js/bootstrap*"
+ - "public/assets/css/bootstrap*"
