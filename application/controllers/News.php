@@ -110,7 +110,8 @@ class News extends MY_Controller {
         $data['news'] = $news;
 
         $back_url = base_url() . 'news';
-        if(isset($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], base_url()) && !strstr($_SERVER['HTTP_REFERER'], $this->uri->uri_string)) {
+        $http_referer = $this->input->server('HTTP_REFERER');
+        if(strstr($http_referer, base_url()) && !strstr($http_referer, $this->uri->uri_string)) {
             $back_url = $_SERVER['HTTP_REFERER'];
         }
         $data['back_url'] = $back_url;
