@@ -57,8 +57,8 @@ $(function () {
         $('#form').submit();
     });
 
-    $('.btn-save-menu-more').click(function () {
-        $('#save_btn').val('save-menu-more');
+    $('.btn-copy-menu').click(function () {
+        $('#save_btn').val('copy-menu');
         $('#form').submit();
     });
 

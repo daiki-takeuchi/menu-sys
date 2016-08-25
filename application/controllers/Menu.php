@@ -202,18 +202,23 @@ class Menu extends MY_Controller {
             return;
         }
 
+        if($this->session->flashdata('post')) {
+            $menu = $this->session->flashdata('post');
+        }
         if($this->input->post()) {
             if ($menu_id === null) $menu =[];
             $menu = array_merge($menu, $this->input->post());
             $btn = $this->input->post('btn-save');
             unset($menu['btn-save']);
+            if($btn === 'copy-menu') {
+                $menu['supply_date'] = $menu['open_date'] = null;
+
+                $this->session->set_flashdata('post', $menu);
+                redirect(base_url() . 'menu/new');
+            }
             if($this->_save($menu)) {
                 $this->session->set_flashdata('message', '保存しました。');
-                if($btn === 'save-menu') {
-                    redirect(base_url() . 'menu/edit/' . $menu['id']);
-                } elseif ($btn === 'save-menu-more') {
-                    redirect(base_url() . 'menu/new');
-                }
+                redirect(base_url() . 'menu/edit/' . $menu['id']);
             }
         }
 
