@@ -18,7 +18,6 @@ class User_test extends TestCase
         $CI->load->library('Seeder');
         $CI->seeder->call('UserSeeder_KSK');
         $CI->seeder->call('UserSeeder_Add_30');
-        $CI->seeder->call('UserSeeder_Add_30');
     }
 
     public function setUp()
