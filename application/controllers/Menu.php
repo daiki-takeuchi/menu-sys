@@ -242,26 +242,6 @@ class Menu extends MY_Controller {
         redirect(base_url().'menu/list');
     }
 
-    public function favorite_menu_list()
-    {
-        // Ajax通信の場合のみ処理する
-        if($this->input->is_ajax_request()) {
-            $data['favorite_menu_list'] = array(
-                array('menu_id' => '1', 'menu_name' => 'チキンカツ定食'),
-                array('menu_id' => '2', 'menu_name' => 'カレーライス'),
-                array('menu_id' => '3', 'menu_name' => 'ラーメン'),
-                array('menu_id' => '4', 'menu_name' => '生姜焼き定食'),
-                array('menu_id' => '5', 'menu_name' => 'うどん'),
-                array('menu_id' => '6', 'menu_name' => '長崎ちゃんぽん'),
-                array('menu_id' => '7', 'menu_name' => 'そば'),
-                array('menu_id' => '8', 'menu_name' => 'チキンカレー'),
-            );
-
-            $this->smarty->assign($data);
-            $this->display('menu/favorite_menu_list.tpl');
-        }
-    }
-
     public function excel_download()
     {
         // Ajax通信の場合のみ処理する

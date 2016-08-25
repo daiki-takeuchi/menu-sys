@@ -20,22 +20,8 @@
 {/block}
 {block name=main_contents}
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 15px;">
             {if {validation_errors()}}<div class="alert alert-danger">{validation_errors()}</div>{/if}
-            <div class="col-md-8 col-md-push-4">
-                <div class="row">
-                    <div class="col-xs-10 col-xs-offset-1" style="padding-right: 0;">
-                        <button type="button" class="btn btn-success btn-xs pull-right {if $id}register-favorite-menu{else}select-favorite-menu{/if}" style="margin: 5px 0 5px 0;">
-                            {if $id}
-                                このメニューを「よく使うメニュー」として登録
-                            {else}
-                                「よく使うメニュー」から選ぶ
-                            {/if}
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
             <div class="col-md-4 center">
                 <span class="fileinput-button">
                     <div class="img-thumbnail img-menu-form">
@@ -234,12 +220,12 @@
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
         </button>
     {/if}
-    <a href="{$back_url}" class="btn btn-delete box rd24 font-pop"
-       style="font-size: large;">
-        <span class="fa fa-arrow-left"></span><span class="spNone"> 戻る</span>
-    </a>
 {/block}
 {block name=footer_right}
+    <a href="{$back_url}" class="btn btn-orange box rd24 font-pop"
+       style="margin-right:15px;font-size: large;">
+        <span class="fa fa-arrow-left"></span><span class="spNone"> 戻る</span>
+    </a>
     {if $id}
         <button class="btn btn-orange box rd24 font-pop btn-save-menu-more"
                 style="margin-right:15px;font-size: large;">
