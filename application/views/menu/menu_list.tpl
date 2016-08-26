@@ -21,20 +21,16 @@
     {include file='menu/menu_list_detail.tpl'}
 {/block}
 {block name=footer_left}
-    <a href="{base_url}menu/search" class="btn btn-orange box rd24 font-pop"
-       style="margin-right:15px;font-size: large;">
-        <span class="fa fa-search"></span><span class="spNone768"> メニュー検索</span>
-    </a>
-    <a href="{base_url}menu/new" class="btn btn-orange box rd24 font-pop"
-       style="font-size: large;">
-        <span class="fa fa-plus"></span><span class="spNone768"> メニュー登録</span>
-    </a>
-{/block}
-{block name=footer_right}
     <button type="button" class="btn btn-orange box rd24 font-pop excel-download"
-            style="margin-right:15px;font-size: large;">
+            style="font-size: large;">
         <span class="fa fa-download"></span><span class="spNone768"> 帳票をDL</span>
     </button>
+{/block}
+{block name=footer_right}
+    <a href="{base_url}menu/new" class="btn btn-orange box rd24 font-pop"
+       style="margin-right:15px;font-size: large;">
+        <span class="fa fa-plus"></span><span class="spNone768"> メニュー登録</span>
+    </a>
     <a href="{base_url}menu/list" class="btn btn-orange box rd24 font-pop"
        style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone768"> 食数を保存</span>

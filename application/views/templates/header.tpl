@@ -22,6 +22,7 @@
                         <li role="separator" class="divider"></li>
                         {if $permission_menu}
                             <li><a href="{base_url}menu/list"><span class="fa fa-edit"></span> メニュー管理</a></li>
+                            <li><a href="{base_url}menu/search"><span class="fa fa-search"></span> メニュー検索</a></li>
                             <li><a href="{base_url}news"><span class="fa fa-bell"></span> お知らせ管理</a></li>
                         {/if}
                         {if $permission_user}
