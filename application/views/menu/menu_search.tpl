@@ -74,6 +74,7 @@
                     <th style="text-align: center;width: 150px;">提供日</th>
                     <th style="text-align: center;width: 150px;">公開日</th>
                     <th style="width: 180px;">カテゴリ</th>
+                    <th style="text-align: center;width: 110px;"></th>
                     <th>メニュー名</th>
                 </tr>
                 </thead>
@@ -83,6 +84,9 @@
                         <td style="text-align: center;padding-top: 8px;">{$menu.supply_date|date_format:"Y/m/d"}</td>
                         <td style="text-align: center;padding-top: 8px;">{$menu.open_date|date_format:"Y/m/d"}</td>
                         <td style="padding-top: 8px;">{$category_master[$menu.category_id]}</td>
+                        <td style="text-align: center;">
+                            <a href="{base_url}menu/copy/{$menu.id}" class="btn btn-sm btn-default btn-menu-copy rd15">コピー登録</a>
+                        </td>
                         <td style="padding-top: 8px;"><a href="{base_url}menu/edit/{$menu.id}">{$menu.menu_name|escape}</a></td>
                     </tr>
                 {/foreach}

@@ -208,7 +208,6 @@
                         </div>
                     </div>
                 </div>
-                <input type="hidden" name="btn-save" id="save_btn" />
             </form>
         </div>
     </div>
@@ -226,12 +225,6 @@
        style="margin-right:15px;font-size: large;">
         <span class="fa fa-arrow-left"></span><span class="spNone"> 戻る</span>
     </a>
-    {if $id}
-        <button class="btn btn-orange box rd24 font-pop btn-copy-menu"
-                style="margin-right:15px;font-size: large;">
-            <span class="fa fa-copy"></span><span class="spNone"> コピー</span>
-        </button>
-    {/if}
     <button class="btn btn-orange box rd24 font-pop btn-save-menu"
        style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone"> 保存</span>

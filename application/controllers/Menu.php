@@ -191,6 +191,19 @@ class Menu extends MY_Controller {
         $this->edit();
     }
 
+    public function copy($menu_id)
+    {
+        $menu = $this->menu_model->find($menu_id);
+        if (empty($menu) && !empty($menu_id)) {
+            $this->display('menu/not_found.tpl');
+            return;
+        }
+
+        $menu['supply_date'] = $menu['open_date'] = null;
+        $this->session->set_flashdata('menu', $menu);
+        redirect(base_url() . 'menu/new');
+    }
+
     public function edit($menu_id = null)
     {
         parent::edit($menu_id);
@@ -202,20 +215,13 @@ class Menu extends MY_Controller {
             return;
         }
 
-        if($this->session->flashdata('post')) {
-            $menu = $this->session->flashdata('post');
+        if($this->session->flashdata('menu')) {
+            $menu = $this->session->flashdata('menu');
         }
+
         if($this->input->post()) {
             if ($menu_id === null) $menu =[];
             $menu = array_merge($menu, $this->input->post());
-            $btn = $this->input->post('btn-save');
-            unset($menu['btn-save']);
-            if($btn === 'copy-menu') {
-                $menu['supply_date'] = $menu['open_date'] = null;
-
-                $this->session->set_flashdata('post', $menu);
-                redirect(base_url() . 'menu/new');
-            }
             if($this->_save($menu)) {
                 $this->session->set_flashdata('message', '保存しました。');
                 redirect(base_url() . 'menu/edit/' . $menu['id']);

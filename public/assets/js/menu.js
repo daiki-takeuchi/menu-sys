@@ -53,12 +53,6 @@ $(function () {
     });
 
     $('.btn-save-menu').click(function () {
-        $('#save_btn').val('save-menu');
-        $('#form').submit();
-    });
-
-    $('.btn-copy-menu').click(function () {
-        $('#save_btn').val('copy-menu');
         $('#form').submit();
     });
 
