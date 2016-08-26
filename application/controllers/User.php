@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Class User
  *
  * @property User_model $user_model
+ * @property Company_model $company_model
  */
 class User extends MY_Controller {
 
@@ -36,8 +37,10 @@ class User extends MY_Controller {
         $this->session->set_userdata('pager_news', null);
 
         $this->load->model('user_model');
+        $this->load->model('company_model');
 
         $this->user_model->setUserName($this->user_name);
+        $this->company_model->setUserName($this->user_name);
     }
 
     public function index()
@@ -60,7 +63,7 @@ class User extends MY_Controller {
         $data['selected'] = $soshiki_cc;
 
         // マスター情報を取得
-        $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
+        $data['company'] = array_column($this->company_model->find(), 'company_nm', 'company_cc');
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
 
         foreach ($data['company'] as $company_cc => $company_nm) {
@@ -110,12 +113,12 @@ class User extends MY_Controller {
         $data['user'] = $user;
 
         // マスター情報を取得
-        $data['company'] = array_column($this->lang->line('company'), 'company_nm', 'company_cc');
+        $data['company'] = array_column($this->company_model->find(), 'company_nm', 'company_cc');
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
         $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
         $data['organization'] = [];
         if($user_id || $this->input->post()) {
-            $data['organization'] = array(array_column($this->lang->line('company'), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->user_model->get_organization($user['company_cc']), 'soshiki_nm', 'soshiki_cc'));
+            $data['organization'] = array(array_column($this->company_model->find(), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->user_model->get_organization($user['company_cc']), 'soshiki_nm', 'soshiki_cc'));
         }
 
         $back_url = base_url() . 'user';

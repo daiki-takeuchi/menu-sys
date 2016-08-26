@@ -7,13 +7,6 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$lang['company'] = [
-    ['company_cc' => '1201', 'company_nm' => 'クノール食品㈱'],
-    ['company_cc' => '1432', 'company_nm' => 'クノールサービス㈱'],
-    ['company_cc' => '1434', 'company_nm' => 'クノールトレーディング㈱'],
-    ['company_cc' => '1310', 'company_nm' => 'ＮＲＩシステムテクノ㈱'],
-];
-
 $lang['keitai'] = [
     ['keitai_cc' => '01', 'keitai_nm' => '正社員'],
     ['keitai_cc' => '02', 'keitai_nm' => '役員'],
