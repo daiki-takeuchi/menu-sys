@@ -41,9 +41,15 @@
                         </table>
                     </div>
                     <div class="col-sm-1 col-md-3 col-lg-3">
-                        <div style="color: #ee6557;width: 120px;margin-left: -10px;">残り：<span class="font-pop" style="font-size: 16pt;font-weight: bold;">６</span> 食</div>
+                        <div style="color: #ee6557;width: 120px;margin-left: -10px;">
+                            残り：
+                            <span class="font-pop" style="font-size: 16pt;font-weight: bold;">６</span> 食
+                        </div>
                         <input type="text" class="font-pop" style="width: 65px;height: 70px;font-size: 24pt;text-align: center;" />
-                        <div style="width: 120px;margin-left: -20px;"><span class="font-pop" style="font-size: 24pt;font-weight: bold;">{mb_convert_kana($menu_item.price_regular,'KVRN')}</span>円</div>
+                        <div style="width: 120px;margin-left: -20px;">
+                            <span class="font-pop" style="font-size: 24pt;font-weight: bold;">
+                                {convert_han2full string=$menu_item.price_regular}</span>円
+                        </div>
                     </div>
                 </div>
             </div>
