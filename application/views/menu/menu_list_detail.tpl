@@ -16,7 +16,7 @@
                             <img src="{base_url}assets/img/chicken.jpg">
                         </div>
                     </div>
-                    <div class="col-sm-7 col-md-8 col-lg-9">
+                    <div class="col-sm-6 col-md-5 col-lg-5">
                         {if $page == 'menu_list'}
                             <a class="font-pop" style="font-size: 18pt;" href="{base_url}menu/edit/{$menu_item.id}">{$menu_item.menu_name}</a>
                         {else}
@@ -39,6 +39,11 @@
                                 <td style="padding-left: 15px;"><span style="font-size: 9pt;">脂質：</span>{$menu_item.lipid} g</td>
                             </tr>
                         </table>
+                    </div>
+                    <div class="col-sm-1 col-md-3 col-lg-3">
+                        <div style="color: #ee6557;width: 120px;margin-left: -10px;">残り：<span class="font-pop" style="font-size: 16pt;font-weight: bold;">６</span> 食</div>
+                        <input type="text" class="font-pop" style="width: 65px;height: 70px;font-size: 24pt;text-align: center;" />
+                        <div style="width: 120px;margin-left: -20px;"><span class="font-pop" style="font-size: 24pt;font-weight: bold;">{mb_convert_kana($menu_item.price_regular,'KVRN')}</span>円</div>
                     </div>
                 </div>
             </div>
