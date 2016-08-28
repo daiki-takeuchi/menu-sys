@@ -50,7 +50,7 @@
                                 <button class="btn btn-xs btn-primary btn-decrease"><span class="fa fa-minus"></span></button>
                             </div>
                             <input type="text" class="form-control font-pop" min="0"
-                                   style="width: 65px;height: 70px;font-size: 24pt;text-align: center;float: left;"
+                                   style="width: 70px;height: 75px;font-size: 24pt;text-align: center;float: left;"
                                    value="0" />
                             <div style="float: left;margin-left: 10px;margin-top: 23px;">
                                 <button class="btn btn-xs btn-primary btn-increase"><span class="fa fa-plus"></span></button>
