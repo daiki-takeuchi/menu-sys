@@ -1,5 +1,5 @@
-{if isset($message)}
+{if isset($popup_message)}
     <script>
-        $(function () {literal}{{/literal}MessageBox.show('{$message}'){literal}}{/literal});
+        $(function () {literal}{{/literal}MessageBox.show('{$popup_message}'){literal}}{/literal});
     </script>
 {/if}

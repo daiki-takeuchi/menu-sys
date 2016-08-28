@@ -105,7 +105,7 @@ class User extends MY_Controller {
             $user = array_merge($user, $this->input->post());
 
             if($this->_save($user)) {
-                $this->session->set_flashdata('message', '保存しました。');
+                $this->alert('保存しました。');
                 redirect(base_url() . 'user/edit/' . $user['id']);
             }
         }
@@ -139,7 +139,7 @@ class User extends MY_Controller {
         if(isset($user['id'])) {
             $this->user_model->delete($user);
         }
-        $this->session->set_flashdata('message', '削除しました。');
+        $this->alert('削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'user');
     }

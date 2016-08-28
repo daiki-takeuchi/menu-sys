@@ -223,7 +223,7 @@ class Menu extends MY_Controller {
             if ($menu_id === null) $menu =[];
             $menu = array_merge($menu, $this->input->post());
             if($this->_save($menu)) {
-                $this->session->set_flashdata('message', '保存しました。');
+                $this->alert('保存しました。');
                 redirect(base_url() . 'menu/edit/' . $menu['id']);
             }
         }
@@ -254,7 +254,7 @@ class Menu extends MY_Controller {
         if(isset($menu['id'])) {
             $this->menu_model->delete($menu);
         }
-        $this->session->set_flashdata('message', '削除しました。');
+        $this->alert('削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'menu/list');
     }

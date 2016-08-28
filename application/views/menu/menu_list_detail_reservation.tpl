@@ -14,5 +14,6 @@
 </div>
 <div style="width: 120px;margin-left: 10px;">
     <span class="font-pop" style="font-size: 24pt;font-weight: bold;">
-    {convert_han2full string=$menu_item.price_regular}</span>円
+    {if in_array($shain_keitai_cc, array('01','02','03','04'))}
+    {convert_han2full string=$menu_item.price_regular}{else}{convert_han2full string=$menu_item.price_non_regular}{/if}</span>円
 </div>

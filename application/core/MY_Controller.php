@@ -47,11 +47,12 @@ class MY_Controller extends CI_Controller
         $data['user_id'] = $this->user_id = $userdata["user"]["id"];
         $data['user_name'] = $this->user_name = $userdata["user"]["name"];
         $data['shain_bn'] = $this->shain_bn = $userdata["user"]["shain_bn"];
+        $data['shain_keitai_cc'] = $userdata["user"]["shain_keitai_cc"];
         $data['gender'] = $userdata["user"]["gender"];
         $data['permission_menu'] = $this->permission_menu = $userdata["user"]["permission_menu"];
         $data['permission_user'] = $this->permission_user = $userdata["user"]["permission_user"];
 
-        $data['message'] = $this->session->flashdata('message');
+        $data['popup_message'] = $this->session->flashdata('popup_message');
         $this->smarty->assign($data);
     }
 
@@ -62,6 +63,10 @@ class MY_Controller extends CI_Controller
             $title = $this->page_title.'編集';
         }
         $this->smarty->assign(compact('title', 'id'));
+    }
+
+    protected function alert($message) {
+        $this->session->set_flashdata('popup_message', $message);
     }
 
     /**
