@@ -28,7 +28,13 @@
                                 <li>{$tag}</li>
                             {/foreach}
                         </ul>
-                        <div style="margin: 5px 0 5px 0;"><span style="font-size: 9pt;">アレルゲン：</span>{if $menu_item.allergen}{$menu_item.allergen}{else}なし{/if}</div>
+                        {if $menu_item.with_rice}
+                        <div class="btn-group btn-with-rice" role="group" aria-label="with rice">
+                            <button type="button" class="btn btn-info btn-xs">{$menu_item.with_rice}なし</button>
+                            <button type="button" class="btn btn-default btn-xs">{$menu_item.with_rice}つき</button>
+                        </div>
+                        {/if}
+                        <div style="margin: 5px 0 5px 0;"><span style="font-size: 9pt;">特定原材料（７品目）：</span>{if $menu_item.allergen}{$menu_item.allergen}{else}なし{/if}</div>
                         <table>
                             <tr>
                                 <td><span style="font-size: 9pt;">エネルギー：</span>{$menu_item.energy} kcal</td>

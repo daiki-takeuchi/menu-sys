@@ -239,7 +239,7 @@ class Menu extends MY_Controller {
 
         $back_url = base_url() . 'menu/list';
         $http_referer = $this->input->server('HTTP_REFERER');
-        if(strstr($http_referer, base_url()) && !strstr($http_referer, $this->uri->uri_string)) {
+        if(strstr($http_referer, base_url()) && !strstr($http_referer, $this->uri->uri_string) && !strstr($http_referer, 'menu/new')) {
             $back_url = $http_referer;
         }
         $data['back_url'] = $back_url;

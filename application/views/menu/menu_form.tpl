@@ -200,7 +200,7 @@
                                 </div>
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label>アレルゲン</label>
+                                        <label>特定原材料（７品目）</label>
                                         <input type="text" class="form-control" name="allergen" value="{$menu.allergen}" />
                                     </div>
                                 </div>

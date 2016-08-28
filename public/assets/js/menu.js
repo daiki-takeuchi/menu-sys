@@ -87,6 +87,32 @@ $(function () {
         var input = $(this).parent().parent().find('input');
         input.val(parseInt(input.val(), 10) + 1);
     });
+    $('.btn-with-rice button:first-of-type').on('click', function () {
+        if($(this).hasClass('btn-default')) {
+            $(this).parent().find('button:last-of-type').addClass('btn-default');
+            $(this).parent().find('button:last-of-type').removeClass('btn-info');
+            $(this).addClass('btn-info');
+            $(this).removeClass('btn-default');
+        } else {
+            $(this).parent().find('button:last-of-type').addClass('btn-info');
+            $(this).parent().find('button:last-of-type').removeClass('btn-default');
+            $(this).addClass('btn-default');
+            $(this).removeClass('btn-info');
+        }
+    });
+    $('.btn-with-rice button:last-of-type').on('click', function () {
+        if($(this).hasClass('btn-default')) {
+            $(this).parent().find('button:first-of-type').addClass('btn-default');
+            $(this).parent().find('button:first-of-type').removeClass('btn-info');
+            $(this).addClass('btn-info');
+            $(this).removeClass('btn-default');
+        } else {
+            $(this).parent().find('button:first-of-type').addClass('btn-info');
+            $(this).parent().find('button:first-of-type').removeClass('btn-default');
+            $(this).addClass('btn-default');
+            $(this).removeClass('btn-info');
+        }
+    });
 });
 
 $(function () {
