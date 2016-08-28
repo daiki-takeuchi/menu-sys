@@ -725,3 +725,21 @@ label.has-error {
 .help-block.with-errors {
     margin: 0;
 }
+
+.reservation_remain {
+    color: #ee6557;
+    width: 120px;
+    margin-left: 20px;
+}
+
+.reservation {
+    width:300px;
+}
+
+.reservation input[type="text"] {
+    width: 70px;
+    height: 75px;
+    font-size: 24pt;
+    text-align: center;
+    background-color: #fff;
+}
