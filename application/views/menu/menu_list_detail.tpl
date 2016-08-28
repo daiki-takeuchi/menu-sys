@@ -41,12 +41,23 @@
                         </table>
                     </div>
                     <div class="col-sm-1 col-md-3 col-lg-3">
-                        <div style="color: #ee6557;width: 120px;margin-left: -10px;">
+                        <div style="color: #ee6557;width: 120px;margin-left: 20px;">
                             残り：
                             <span class="font-pop" style="font-size: 16pt;font-weight: bold;">６</span> 食
                         </div>
-                        <input type="text" class="font-pop" style="width: 65px;height: 70px;font-size: 24pt;text-align: center;" />
-                        <div style="width: 120px;margin-left: -20px;">
+                        <div class='input-group' style="width:300px;">
+                            <div style="float: left;margin-right: 10px;margin-top: 23px;">
+                                <button class="btn btn-xs btn-primary btn-decrease"><span class="fa fa-minus"></span></button>
+                            </div>
+                            <input type="text" class="form-control font-pop" min="0"
+                                   style="width: 65px;height: 70px;font-size: 24pt;text-align: center;float: left;"
+                                   value="0" />
+                            <div style="float: left;margin-left: 10px;margin-top: 23px;">
+                                <button class="btn btn-xs btn-primary btn-increase"><span class="fa fa-plus"></span></button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div style="width: 120px;margin-left: 10px;">
                             <span class="font-pop" style="font-size: 24pt;font-weight: bold;">
                                 {convert_han2full string=$menu_item.price_regular}</span>円
                         </div>

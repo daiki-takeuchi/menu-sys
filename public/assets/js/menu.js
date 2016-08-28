@@ -74,6 +74,19 @@ $(function () {
             }
         });
     });
+
+    $('.btn-decrease').on('click', function () {
+        var input = $(this).parent().parent().find('input');
+        if(input.val() > 0) {
+            input.val(parseInt(input.val(), 10) - 1);
+        } else {
+            MessageBox.show('マイナスにはできません。');
+        }
+    });
+    $('.btn-increase').on('click', function () {
+        var input = $(this).parent().parent().find('input');
+        input.val(parseInt(input.val(), 10) + 1);
+    });
 });
 
 $(function () {
