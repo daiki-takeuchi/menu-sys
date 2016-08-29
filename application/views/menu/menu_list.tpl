@@ -14,11 +14,13 @@
     <script src="{base_url}assets/js/menu.js"></script>
 {/block}
 {block name=main_contents}
+<form method="post" id="form">
     <div class="container">
         {include file='menu/news_ticker.tpl'}
         {include file='menu/header_calendar.tpl'}
     </div>
     {include file='menu/menu_list_detail.tpl'}
+</form>
 {/block}
 {block name=footer_left}
     <button type="button" class="btn btn-orange box rd24 font-pop excel-download"
@@ -31,9 +33,9 @@
        style="margin-right:15px;font-size: large;">
         <span class="fa fa-plus"></span><span class="spNone768"> メニュー登録</span>
     </a>
-    <a href="{base_url}menu/list" class="btn btn-orange box rd24 font-pop"
+    <button class="btn btn-orange btn-save-num box rd24 font-pop"
        style="font-size: large;">
         <span class="glyphicon glyphicon-saved"></span><span class="spNone768"> 食数を保存</span>
-    </a>
+    </button>
 {/block}
 

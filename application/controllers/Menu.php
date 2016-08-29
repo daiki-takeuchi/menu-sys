@@ -131,6 +131,10 @@ class Menu extends MY_Controller {
 
     public function menu_list($y = false, $m = false, $d = false)
     {
+        if($this->input->post()) {
+            $this->alert('食数を保存しました。');
+            redirect(current_url());
+        }
         $data['page'] = 'menu_list';
         $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_en');
         $data['selected_kubun'] = array_column($this->lang->line('kubun'), 'kubun_en', 'kubun_cc')[$this->kubun];

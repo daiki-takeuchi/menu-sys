@@ -22,6 +22,7 @@
                         {else}
                             <div class="font-pop" style="font-size: 18pt;">{$menu_item.menu_name}</div>
                         {/if}
+                        <input type="hidden" name="id[]" value="{$menu_item.id}" />
                         <ul class="tag-input-readonly" style="border-color: #fff;font-size: 9pt;margin-left: -5px;">
                             {assign var="tags" value=","|explode:$menu_item.tag}
                             {foreach from=$tags item=tag}

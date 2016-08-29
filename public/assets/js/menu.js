@@ -89,7 +89,7 @@ $(function () {
         input.val(parseInt(input.val(), 10) + 1);
     });
 
-    $('.btn-with-rice button:first-of-type').on('click', function () {
+    $('.btn-with-rice button:first-of-type').click(function () {
         var $price_elem = $(this).parent().parent().parent().find('.price');
         var $price_with_rice_elem = $(this).parent().parent().parent().find('.price-with-rice');
         if($(this).hasClass('btn-default')) {
@@ -117,7 +117,7 @@ $(function () {
         }
     });
 
-    $('.btn-with-rice button:last-of-type').on('click', function () {
+    $('.btn-with-rice button:last-of-type').click(function () {
         var $price_elem = $(this).parent().parent().parent().find('.price');
         var $price_with_rice_elem = $(this).parent().parent().parent().find('.price-with-rice');
         if($(this).hasClass('btn-default')) {
@@ -143,6 +143,10 @@ $(function () {
                 $price_elem.removeClass('hidden');
             });
         }
+    });
+
+    $('.btn-save-num').click(function () {
+        $('#form').submit();
     });
 });
 
