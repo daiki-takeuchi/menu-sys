@@ -90,38 +90,58 @@ $(function () {
     });
 
     $('.btn-with-rice button:first-of-type').on('click', function () {
+        var $price_elem = $(this).parent().parent().parent().find('.price');
+        var $price_with_rice_elem = $(this).parent().parent().parent().find('.price-with-rice');
         if($(this).hasClass('btn-default')) {
             $(this).parent().find('button:last-of-type').addClass('btn-default');
             $(this).parent().find('button:last-of-type').removeClass('btn-info');
             $(this).addClass('btn-info');
             $(this).removeClass('btn-default');
-            $(this).parent().parent().parent().find('.price-with-rice').addClass('hidden');
-            $(this).parent().parent().parent().find('.price').removeClass('hidden');
+            $price_with_rice_elem.delay(200).fadeOut(300,function () {
+                $price_with_rice_elem.addClass('hidden');
+            });
+            $price_elem.delay(200).fadeIn(300,function () {
+                $price_elem.removeClass('hidden');
+            });
         } else {
             $(this).parent().find('button:last-of-type').addClass('btn-info');
             $(this).parent().find('button:last-of-type').removeClass('btn-default');
             $(this).addClass('btn-default');
             $(this).removeClass('btn-info');
-            $(this).parent().parent().parent().find('.price').addClass('hidden');
-            $(this).parent().parent().parent().find('.price-with-rice').removeClass('hidden');
+            $price_elem.delay(200).fadeOut(300,function () {
+                $price_elem.addClass('hidden');
+            });
+            $price_with_rice_elem.delay(200).fadeIn(300,function () {
+                $price_with_rice_elem.removeClass('hidden');
+            });
         }
     });
 
     $('.btn-with-rice button:last-of-type').on('click', function () {
+        var $price_elem = $(this).parent().parent().parent().find('.price');
+        var $price_with_rice_elem = $(this).parent().parent().parent().find('.price-with-rice');
         if($(this).hasClass('btn-default')) {
             $(this).parent().find('button:first-of-type').addClass('btn-default');
             $(this).parent().find('button:first-of-type').removeClass('btn-info');
             $(this).addClass('btn-info');
             $(this).removeClass('btn-default');
-            $(this).parent().parent().parent().find('.price').addClass('hidden');
-            $(this).parent().parent().parent().find('.price-with-rice').removeClass('hidden');
+            $price_elem.delay(200).fadeOut(300,function () {
+                $price_elem.addClass('hidden');
+            });
+            $price_with_rice_elem.delay(200).fadeIn(300,function () {
+                $price_with_rice_elem.removeClass('hidden');
+            });
         } else {
             $(this).parent().find('button:first-of-type').addClass('btn-info');
             $(this).parent().find('button:first-of-type').removeClass('btn-default');
             $(this).addClass('btn-default');
             $(this).removeClass('btn-info');
-            $(this).parent().parent().parent().find('.price-with-rice').addClass('hidden');
-            $(this).parent().parent().parent().find('.price').removeClass('hidden');
+            $price_with_rice_elem.delay(200).fadeOut(300,function () {
+                $price_with_rice_elem.addClass('hidden');
+            });
+            $price_elem.delay(200).fadeIn(300,function () {
+                $price_elem.removeClass('hidden');
+            });
         }
     });
 });
