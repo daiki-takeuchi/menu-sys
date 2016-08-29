@@ -1,6 +1,8 @@
 <div class="reservation_remain center">
-    残り：
-    <span class="font-pop" style="font-size: 16pt;font-weight: bold;">６</span> 食
+    {if $menu_item.max_supply_num}
+        残り：
+        <span style="font-size: 16pt;font-weight: bold;">６</span> 食
+    {/if}
 </div>
 <div class='input-group reservation'>
     <div class="pull-left" style="margin-right: 10px;margin-top: 23px;">

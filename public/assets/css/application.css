@@ -729,6 +729,7 @@ label.has-error {
 .reservation_remain {
     color: #ee6557;
     width: 120px;
+    height: 30px;
     margin-left: 10px;
 }
 
