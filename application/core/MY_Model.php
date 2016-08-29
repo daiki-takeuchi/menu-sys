@@ -50,6 +50,12 @@ class MY_Model extends CI_Model
         return $ret;
     }
 
+    public function order_by($orderby, $direction = '')
+    {
+        $this->db->order_by($orderby, $direction);
+        return $this;
+    }
+
     public function save(&$data)
     {
         $data = array_filter($data, 'strlen');  // ブランク項目を除外
