@@ -198,6 +198,10 @@ input {
     height: auto;
 }
 
+.btn-group > .btn:hover, .btn-group > .btn:focus, .btn-group > .btn:active, .btn-group > .btn.active {
+    z-index: 0;
+}
+
 .input-group, .bootstrap-select {
     z-index: 0;
 }
