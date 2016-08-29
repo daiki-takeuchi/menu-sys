@@ -15,13 +15,13 @@
         <span class="input-group-addon" style="border: 0;background-color:#fff;">食</span>
     </div>
 </div>
-<div class="center" style="width: 240px;">
+<div class="center" style="width: 300px;">
     <span class="font-pop price">
         <span style="font-size: 24pt;font-weight: bold;">
             {convert_han2full string=$menu_item.price_regular}
         </span>円
         <span style="font-size: 24pt;font-weight: bold;">
-        / {convert_han2full string=$menu_item.price_non_regular}
+        &nbsp;/ {convert_han2full string=$menu_item.price_non_regular}
         </span>円
     </span>
     <span class="font-pop price-with-rice hidden">
@@ -29,7 +29,7 @@
             {convert_han2full string=$menu_item.price_regular_with_rice}
         </span>円
         <span style="font-size: 24pt;font-weight: bold;">
-        / {convert_han2full string=$menu_item.price_non_regular_with_rice}
+        &nbsp;/ {convert_han2full string=$menu_item.price_non_regular_with_rice}
         </span>円
     </span>
 </div>
