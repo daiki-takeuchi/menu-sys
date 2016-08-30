@@ -17,6 +17,9 @@ class Migration_Create_reservation extends CI_Migration {
             'user_id' => array(
                 'type' => 'int',
             ),
+            'menu_id' => array(
+                'type' => 'int',
+            ),
             'company_cc' => array(
                 'type' => 'varchar',
                 'constraint' => '20',
@@ -28,9 +31,6 @@ class Migration_Create_reservation extends CI_Migration {
             'shain_bn' => array(
                 'type' => 'varchar',
                 'constraint' => '20',
-            ),
-            'menu_id' => array(
-                'type' => 'int',
             ),
             'quantity' => array(
                 'type' => 'int',
