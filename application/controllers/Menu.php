@@ -280,7 +280,7 @@ class Menu extends MY_Controller {
     {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            $data['form_list'] = array('1' => '予約者リスト', '2' => '食数実績表', '3' => '食堂取組報告', );
+            $data['form_list'] = array('1' => '予約者リスト', '2' => '予約数（組織別）', '3' => '食数実績表', '4' => '食堂取組報告', );
 
             $data['year']['values'] = array(date('Y')-1,date('Y'),date('Y')+1);
             $data['year']['selected'] = date('Y');
