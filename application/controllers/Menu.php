@@ -53,6 +53,7 @@ class Menu extends MY_Controller {
                     $reservation['soshiki_cc'] = $this->soshiki_cc;
                     $reservation['soshiki_nm'] = $this->soshiki_nm;
                     $reservation['shain_bn'] = $this->shain_bn;
+                    $reservation['user_name'] = $this->user_name;
                     $reservation['quantity'] = $quantity[$i];
                     $reservation['whether_with_rice'] = $whether_with_rices[$i];
                     $this->reservation_model->save($reservation);
