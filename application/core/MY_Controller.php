@@ -11,6 +11,9 @@ class MY_Controller extends CI_Controller
     protected $user_id;
     protected $user_name;
     protected $shain_bn;
+    protected $company_cc;
+    protected $soshiki_cc;
+    protected $soshiki_nm;
     protected $permission_menu;
     protected $permission_user;
     protected $first_login;
@@ -48,9 +51,13 @@ class MY_Controller extends CI_Controller
         $data['user_name'] = $this->user_name = $userdata["user"]["name"];
         $data['shain_bn'] = $this->shain_bn = $userdata["user"]["shain_bn"];
         $data['shain_keitai_cc'] = $userdata["user"]["shain_keitai_cc"];
+        $data['company_cc'] = $this->company_cc = $userdata["user"]["company_cc"];
+        $data['soshiki_cc'] = $this->soshiki_cc = $userdata["user"]["soshiki_cc"];
+        $data['soshiki_nm'] = $this->soshiki_nm = $userdata["user"]["soshiki_nm"];
         $data['gender'] = empty($userdata["user"]["gender"])? "" : $userdata["user"]["gender"];
         $data['permission_menu'] = $this->permission_menu = $userdata["user"]["permission_menu"];
         $data['permission_user'] = $this->permission_user = $userdata["user"]["permission_user"];
+
 
         $data['popup_message'] = $this->session->flashdata('popup_message');
         $this->smarty->assign($data);

@@ -49,6 +49,10 @@ class Menu extends MY_Controller {
                 if($quantity[$i] !== '0') {
                     $reservation['menu_id'] = $id;
                     $reservation['user_id'] = $this->user_id;
+                    $reservation['company_cc'] = $this->company_cc;
+                    $reservation['soshiki_cc'] = $this->soshiki_cc;
+                    $reservation['soshiki_nm'] = $this->soshiki_nm;
+                    $reservation['shain_bn'] = $this->shain_bn;
                     $reservation['quantity'] = $quantity[$i];
                     $reservation['whether_with_rice'] = $whether_with_rices[$i];
                     $this->reservation_model->save($reservation);
