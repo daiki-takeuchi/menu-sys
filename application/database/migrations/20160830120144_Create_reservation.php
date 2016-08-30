@@ -28,6 +28,10 @@ class Migration_Create_reservation extends CI_Migration {
                 'type' => 'varchar',
                 'constraint' => '20',
             ),
+            'soshiki_nm' => array(
+                'type' => 'varchar',
+                'constraint' => '100',
+            ),
             'shain_bn' => array(
                 'type' => 'varchar',
                 'constraint' => '20',
