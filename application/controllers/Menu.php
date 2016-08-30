@@ -132,6 +132,19 @@ class Menu extends MY_Controller {
     public function menu_list($y = false, $m = false, $d = false)
     {
         if($this->input->post()) {
+            $ids = $this->input->post('id');
+            $max_supply_nums = $this->input->post('max_supply_num');
+            $actual_supply_nums = $this->input->post('actual_supply_num');
+            $i = 0;
+            foreach ($ids as $id) {
+                if($max_supply_nums[$i] || $actual_supply_nums[$i]) {
+                    $menu = $this->menu_model->find($id);
+                    $menu['max_supply_num'] = $max_supply_nums[$i];
+                    $menu['actual_supply_num'] = $actual_supply_nums[$i];
+                    $this->menu_model->save($menu);
+                }
+                $i++;
+            }
             $this->alert('食数を保存しました。');
             redirect(current_url());
         }

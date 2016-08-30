@@ -6,12 +6,12 @@
     </div>
     <div class="input-group" style="margin-bottom: 5px;">
         <span class="input-group-addon" style="border: none;background-color:#fff;">最大食数：</span>
-        <input type="number" name="max_supply_num[]" class="form-control center" style="font-size: 14pt;" />
+        <input type="number" name="max_supply_num[]" class="form-control center" style="font-size: 14pt;" value="{$menu_item.max_supply_num}" />
         <span class="input-group-addon" style="border: 0;background-color:#fff;">食</span>
     </div>
     <div class="input-group">
         <span class="input-group-addon" style="border: none;background-color:#fff;">実績食数：</span>
-        <input type="number" name="actual_supply_num[]" class="form-control center" style="font-size: 14pt;" />
+        <input type="number" name="actual_supply_num[]" class="form-control center" style="font-size: 14pt;" value="{$menu_item.actual_supply_num}" />
         <span class="input-group-addon" style="border: 0;background-color:#fff;">食</span>
     </div>
 </div>
