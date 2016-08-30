@@ -24,6 +24,11 @@ class Migration_Create_reservation extends CI_Migration {
                 'type' => 'int',
                 'null' => true,
             ),
+            'whether_with_rice' => array(
+                'type' => 'char',
+                'constraint' => '1',
+                'default' => '0'
+            ),
             'created_at' => array(
                 'type' => 'TIMESTAMP'
             ),
