@@ -46,7 +46,7 @@ class Menu extends MY_Controller {
             $i = 0;
             foreach ($ids as $id) {
                 $reservation = $this->reservation_model->find_by(['menu_id' => $id, 'user_id' => $this->user_id]);
-                if($quantity[$i] !== 0) {
+                if($quantity[$i] !== '0') {
                     $reservation['menu_id'] = $id;
                     $reservation['user_id'] = $this->user_id;
                     $reservation['quantity'] = $quantity[$i];
