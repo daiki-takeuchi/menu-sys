@@ -103,6 +103,7 @@ $(function () {
             $price_elem.delay(200).fadeIn(300,function () {
                 $price_elem.removeClass('hidden');
             });
+            $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('0');
         } else {
             $(this).parent().find('button:last-of-type').addClass('btn-info');
             $(this).parent().find('button:last-of-type').removeClass('btn-default');
@@ -114,6 +115,7 @@ $(function () {
             $price_with_rice_elem.delay(200).fadeIn(300,function () {
                 $price_with_rice_elem.removeClass('hidden');
             });
+            $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('1');
         }
     });
 
@@ -131,6 +133,7 @@ $(function () {
             $price_with_rice_elem.delay(200).fadeIn(300,function () {
                 $price_with_rice_elem.removeClass('hidden');
             });
+            $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('1');
         } else {
             $(this).parent().find('button:first-of-type').addClass('btn-info');
             $(this).parent().find('button:first-of-type').removeClass('btn-default');
@@ -142,6 +145,7 @@ $(function () {
             $price_elem.delay(200).fadeIn(300,function () {
                 $price_elem.removeClass('hidden');
             });
+            $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('0');
         }
     });
 
