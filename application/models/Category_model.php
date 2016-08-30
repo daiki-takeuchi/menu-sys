@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Category_model
+ *
+ */
 class Category_model extends MY_Model
 {
     protected $table = 'category';

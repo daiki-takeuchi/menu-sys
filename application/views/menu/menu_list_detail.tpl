@@ -35,7 +35,7 @@
                             <button type="button" class="btn btn-default btn-xs">{$menu_item.with_rice}つき</button>
                         </div>
                         {/if}
-                        <input type="hidden" name="whether_with_rice[]" value="" />
+                        <input type="hidden" name="whether_with_rice[]" value="0" />
                         <div style="margin: 5px 0 5px 0;"><span style="font-size: 9pt;">特定原材料（７品目）：</span>{if $menu_item.allergen}{$menu_item.allergen}{else}なし{/if}</div>
                         <table>
                             <tr>

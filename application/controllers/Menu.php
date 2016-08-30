@@ -7,6 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Menu_model $menu_model
  * @property News_model $news_model
  * @property Category_model $category_model
+ * @property Reservation_model $reservation_model
  */
 class Menu extends MY_Controller {
 
@@ -28,29 +29,36 @@ class Menu extends MY_Controller {
         $this->load->model('menu_model');
         $this->load->model('news_model');
         $this->load->model('category_model');
+        $this->load->model('reservation_model');
 
         $this->menu_model->setUserName($this->user_name);
         $this->news_model->setUserName($this->user_name);
         $this->category_model->setUserName($this->user_name);
+        $this->reservation_model->setUserName($this->user_name);
     }
 
     public function index($y = false, $m = false, $d = false)
     {
         if($this->input->post()) {
             $ids = $this->input->post('id');
+            $quantity = $this->input->post('quantity');
+            $whether_with_rices = $this->input->post('whether_with_rice');
             $i = 0;
-//             foreach ($ids as $id) {
-//                 if($max_supply_nums[$i] || $actual_supply_nums[$i]) {
-//                     $menu = $this->menu_model->find($id);
-//                     $menu['max_supply_num'] = $max_supply_nums[$i];
-//                     $menu['actual_supply_num'] = $actual_supply_nums[$i];
-//                     $this->menu_model->save($menu);
-//                 }
-//                 $i++;
-//             }
-//            var_dump($this->input->post());
+            foreach ($ids as $id) {
+                $reservation = $this->reservation_model->find_by(['menu_id' => $id, 'user_id' => $this->user_id]);
+                if($quantity[$i] !== 0) {
+                    $reservation['menu_id'] = $id;
+                    $reservation['user_id'] = $this->user_id;
+                    $reservation['quantity'] = $quantity[$i];
+                    $reservation['whether_with_rice'] = $whether_with_rices[$i];
+                    $this->reservation_model->save($reservation);
+                } else {
+                    $this->reservation_model->delete($reservation);
+                }
+                $i++;
+            }
             $this->alert('予約しました。');
-//            redirect(current_url());
+            redirect(current_url());
         }
         $data['page'] = 'index';
         $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_en');
