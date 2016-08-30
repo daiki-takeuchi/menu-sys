@@ -14,14 +14,16 @@
     <script src="{base_url}assets/js/menu.js"></script>
 {/block}
 {block name=main_contents}
+<form method="post" id="form">
     <div class="container">
         {include file='menu/news_ticker.tpl'}
         {include file='menu/header_calendar.tpl'}
     </div>
     {include file='menu/menu_list_detail.tpl'}
+</form>
 {/block}
 {block name=footer_right}
-    <button type="button" class="btn btn-orange box rd24 font-pop"
+    <button class="btn btn-orange btn-menu-reserve box rd24 font-pop"
             style="font-size: large;width:150px;">
         予約する
     </button>

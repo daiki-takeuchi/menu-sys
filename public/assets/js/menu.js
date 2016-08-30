@@ -148,6 +148,10 @@ $(function () {
     $('.btn-save-num').click(function () {
         $('#form').submit();
     });
+
+    $('.btn-menu-reserve').click(function () {
+        $('#form').submit();
+    });
 });
 
 $(function () {

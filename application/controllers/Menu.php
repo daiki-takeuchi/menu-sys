@@ -36,6 +36,22 @@ class Menu extends MY_Controller {
 
     public function index($y = false, $m = false, $d = false)
     {
+        if($this->input->post()) {
+            $ids = $this->input->post('id');
+            $i = 0;
+//             foreach ($ids as $id) {
+//                 if($max_supply_nums[$i] || $actual_supply_nums[$i]) {
+//                     $menu = $this->menu_model->find($id);
+//                     $menu['max_supply_num'] = $max_supply_nums[$i];
+//                     $menu['actual_supply_num'] = $actual_supply_nums[$i];
+//                     $this->menu_model->save($menu);
+//                 }
+//                 $i++;
+//             }
+//            var_dump($this->input->post());
+            $this->alert('予約しました。');
+//            redirect(current_url());
+        }
         $data['page'] = 'index';
         $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_en');
         $data['selected_kubun'] = array_column($this->lang->line('kubun'), 'kubun_en', 'kubun_cc')[$this->kubun];
