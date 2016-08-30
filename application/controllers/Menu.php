@@ -52,7 +52,7 @@ class Menu extends MY_Controller {
                     $reservation['quantity'] = $quantity[$i];
                     $reservation['whether_with_rice'] = $whether_with_rices[$i];
                     $this->reservation_model->save($reservation);
-                } else {
+                } elseif(!empty($reservation)) {
                     $this->reservation_model->delete($reservation);
                 }
                 $i++;
