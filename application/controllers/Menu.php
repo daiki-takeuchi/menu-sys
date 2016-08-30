@@ -360,7 +360,13 @@ class Menu extends MY_Controller {
         $cat = $this->category_model->get_categorys($this->kubun);
         $ret = [];
         foreach ($cat as $item) {
-            $ret[$item['id']] = $this->menu_model->find_by(array('supply_date' => $supply_date, 'category_id' => intval($item['id'])), true);
+            $menus = $this->menu_model->find_by(array('supply_date' => $supply_date, 'category_id' => intval($item['id'])), true);
+            foreach ($menus as &$menu) {
+                $reservation = $this->reservation_model->find_by(['menu_id' => $menu['id'], 'user_id' => $this->user_id]);
+                if(!$reservation) $reservation = [];
+                $menu = $menu + $reservation;
+            }
+            $ret[$item['id']] = $menus;
         }
         return $ret;
     }

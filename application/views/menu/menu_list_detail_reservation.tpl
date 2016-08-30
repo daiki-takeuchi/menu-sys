@@ -9,7 +9,7 @@
         <button type="button" class="btn btn-xs btn-primary btn-decrease"><span class="fa fa-minus"></span></button>
     </div>
     <input type="text" name="quantity[]" class="form-control font-pop pull-left" min="0"
-           value="0" readonly />
+           value="{if isset($menu_item.quantity)}{$menu_item.quantity}{else}0{/if}" readonly />
     <div class="pull-left" style="margin-left: 10px;margin-top: 23px;">
         <button type="button" class="btn btn-xs btn-primary btn-increase"><span class="fa fa-plus"></span></button>
     </div>

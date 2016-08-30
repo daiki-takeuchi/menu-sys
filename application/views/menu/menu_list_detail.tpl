@@ -31,11 +31,11 @@
                         </ul>
                         {if $menu_item.with_rice}
                         <div class="btn-group btn-with-rice" role="group" aria-label="with rice">
-                            <button type="button" class="btn btn-info btn-xs">{$menu_item.with_rice}なし</button>
-                            <button type="button" class="btn btn-default btn-xs">{$menu_item.with_rice}つき</button>
+                            <button type="button" class="btn btn-xs {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1'}btn-default{else}btn-info{/if}">{$menu_item.with_rice}なし</button>
+                            <button type="button" class="btn btn-xs {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1'}btn-info{else}btn-default{/if}">{$menu_item.with_rice}つき</button>
                         </div>
                         {/if}
-                        <input type="hidden" name="whether_with_rice[]" value="0" />
+                        <input type="hidden" name="whether_with_rice[]" value="{if isset($menu_item.whether_with_rice)}{$menu_item.whether_with_rice}{else}0{/if}" />
                         <div style="margin: 5px 0 5px 0;"><span style="font-size: 9pt;">特定原材料（７品目）：</span>{if $menu_item.allergen}{$menu_item.allergen}{else}なし{/if}</div>
                         <table>
                             <tr>
