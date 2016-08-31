@@ -364,6 +364,7 @@ class Menu extends MY_Controller {
             foreach ($menus as &$menu) {
                 $reservation = $this->reservation_model->find_by(['menu_id' => $menu['id'], 'user_id' => $this->user_id]);
                 if(!$reservation) $reservation = [];
+                $reservation['reservation_count'] = $this->reservation_model->get_reservation_count($menu['id']);
                 $menu = $menu + $reservation;
             }
             $ret[$item['id']] = $menus;

@@ -1,7 +1,7 @@
 <div class="reservation_remain center">
     {if $menu_item.max_supply_num}
         残り：
-        <span style="font-size: 16pt;font-weight: bold;">６</span> 食
+        <span style="font-size: 16pt;font-weight: bold;">{$menu_item.max_supply_num - $menu_item.reservation_count}</span> 食
     {/if}
 </div>
 <div class='input-group reservation'>
