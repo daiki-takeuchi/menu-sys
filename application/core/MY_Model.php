@@ -58,17 +58,18 @@ class MY_Model extends CI_Model
 
     public function save(&$data)
     {
-        $data = array_filter($data, 'strlen');  // ブランク項目を除外
         if (!isset($data['id'])) {
             $data['created_at'] = $data['updated_at'] = date('Y/m/d H:i:s');
             $data['created_user'] = $data['updated_user'] = $this->user_name;
-            $this->db->insert($this->table, $data);
+            $this->set($data);
+            $this->db->insert($this->table);
             $data['id'] = $this->db->insert_id();
         } else {
             $data['updated_at'] = date('Y/m/d H:i:s');
             $data['updated_user'] = $this->user_name;
             $this->db->where('id', $data['id']);
-            $this->db->update($this->table, $data);
+            $this->set($data);
+            $this->db->update($this->table);
         }
         log_message('info', $this->db->last_query());
     }
@@ -111,5 +112,11 @@ class MY_Model extends CI_Model
     {
         $sql = 'LOCK TABLE ' . $this->table . ' IN EXCLUSIVE MODE';
         $this->db->query($sql);
+    }
+
+    private function set($data) {
+        foreach ($data as $key => $value) {
+            $this->db->set($key, empty($value)?null:$value);
+        }
     }
 }
