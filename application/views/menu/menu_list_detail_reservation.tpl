@@ -15,10 +15,10 @@
     </div>
 </div>
 <div class="center" style="width: 120px;margin-left: 10px;">
-    <span class="font-pop price {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1'}hidden{/if}" style="font-size: 24pt;font-weight: bold;">
+    <span class="font-pop font-price price {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1'}hidden{/if}">
     {if in_array($shain_keitai_cc, array('01','02','03','04'))}
         {convert_han2full string=$menu_item.price_regular}{else}{convert_han2full string=$menu_item.price_non_regular}{/if}</span>
-    <span class="font-pop price-with-rice {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '0'}hidden{/if}" style="font-size: 24pt;font-weight: bold;">
+    <span class="font-pop font-price price-with-rice {if (isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '0') || !isset($menu_item.whether_with_rice)}hidden{/if}">
     {if in_array($shain_keitai_cc, array('01','02','03','04'))}
         {convert_han2full string=$menu_item.price_regular_with_rice}{else}{convert_han2full string=$menu_item.price_non_regular_with_rice}{/if}</span>
     円

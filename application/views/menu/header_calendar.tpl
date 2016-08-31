@@ -28,13 +28,13 @@
                                         {/foreach}
                                     </tr>
                                     <tr>
-                                        <td align="center" style="font-size: x-small;color: #999">予約済み</td>
-                                        <td align="center" style="font-size: x-small;color: #999">予約済み</td>
-                                        <td align="center" style="font-size: x-small;color: #999">予約済み</td>
-                                        <td align="center"></td>
-                                        <td align="center"></td>
-                                        <td align="center"></td>
-                                        <td align="center"></td>
+                                        <td class="menu_reserved">予約済み</td>
+                                        <td class="menu_reserved">予約済み</td>
+                                        <td class="menu_reserved">予約済み</td>
+                                        <td class="menu_reserved"></td>
+                                        <td class="menu_reserved"></td>
+                                        <td class="menu_reserved"></td>
+                                        <td class="menu_reserved"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -53,7 +53,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td align="center" style="font-size: x-small;color: #999">予約済み</td>
+                                        <td class="menu_reserved">予約済み</td>
                                     </tr>
                                 </table>
                             </div>
