@@ -156,6 +156,10 @@ $(function () {
     $('.btn-menu-reserve').click(function () {
         $('#form').submit();
     });
+
+    $('.select-date').change(function () {
+        window.location.href = base_url + 'menu/' + $(this).val();
+    });
 });
 
 $(function () {

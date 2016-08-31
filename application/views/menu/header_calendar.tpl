@@ -43,9 +43,9 @@
                                 <table style="table-layout:fixed;" width="100%">
                                     <tr>
                                         <td align="center">
-                                            <select class="selectpicker show-menu-arrow" data-width="105px">
+                                            <select class="selectpicker show-menu-arrow select-date" data-width="105px">
                                                 {foreach from=$week item=date key=day_of_week}
-                                                <option value="{$date|date_format:'Y/n/j'}"{if $date === $selected_date} selected{/if}>
+                                                <option value="{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$date|date_format:'Y/n/j'}"{if $date === $selected_date} selected{/if}>
                                                     {$date|date_format:'n/j'}({$day_of_week})
                                                 </option>
                                                 {/foreach}
