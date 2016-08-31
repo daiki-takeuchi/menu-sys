@@ -31,8 +31,8 @@
                         </ul>
                         {if $menu_item.with_rice}
                         <div class="btn-group btn-with-rice" role="group" aria-label="with rice">
-                            <button type="button" class="btn btn-xs {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1'}btn-default{else}btn-info{/if}">{$menu_item.with_rice}なし</button>
-                            <button type="button" class="btn btn-xs {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1'}btn-info{else}btn-default{/if}">{$menu_item.with_rice}つき</button>
+                            <button type="button" class="btn btn-xs {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1' && $page === 'index'}btn-default{else}btn-info{/if}">{$menu_item.with_rice}なし</button>
+                            <button type="button" class="btn btn-xs {if isset($menu_item.whether_with_rice) && $menu_item.whether_with_rice === '1' && $page === 'index'}btn-info{else}btn-default{/if}">{$menu_item.with_rice}つき</button>
                         </div>
                         {/if}
                         <input type="hidden" name="whether_with_rice[]" value="{if isset($menu_item.whether_with_rice)}{$menu_item.whether_with_rice}{else}0{/if}" />

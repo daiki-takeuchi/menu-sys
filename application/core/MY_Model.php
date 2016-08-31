@@ -116,7 +116,7 @@ class MY_Model extends CI_Model
 
     private function set($data) {
         foreach ($data as $key => $value) {
-            $this->db->set($key, empty($value)?null:$value);
+            $this->db->set($key, $value===''?null:$value);
         }
     }
 }
