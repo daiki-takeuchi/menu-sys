@@ -496,8 +496,8 @@ a.cal-selected {
 /* リスト表示する時のメニュー画像 トリミング用 */
 .img-menu {
     overflow: hidden;
-    width: 210px;
-    height: 150px;
+    width: 215px;
+    height: 160px;
 }
 
 .img-menu img {
