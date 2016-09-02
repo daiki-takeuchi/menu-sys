@@ -75,9 +75,11 @@
                                 <div class="form-group">
                                     <label>利用する管理者機能</label><br />
                                     <div class="checkbox-inline">
+                                        <input type="hidden" name="permission_menu" value="0">
                                         <label><input type="checkbox" name="permission_menu" value="1" {if isset($user.permission_menu) && $user.permission_menu}checked{/if}>メニュー登録</label>
                                     </div>
                                     <div class="checkbox-inline">
+                                        <input type="hidden" name="permission_user" value="0">
                                         <label><input type="checkbox" name="permission_user" value="1" {if isset($user.permission_user) && $user.permission_user}checked{/if}>ユーザー登録</label>
                                     </div>
                                 </div>
