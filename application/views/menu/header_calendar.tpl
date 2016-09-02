@@ -2,7 +2,7 @@
     <div id="header-bk">
         <div id="header" class="header">
             <div class="header-cat" align="center" style="width:170px;">
-                {html_options class="selectpicker show-menu-arrow target-category" data-width="100px" data-selected-date=$selected_date data-page=$page name="target-category" options=$kubun selected=$selected_kubun}
+                {html_options class="selectpicker show-menu-arrow target-category" data-width="100px" data-selected-date=$selected_date|date_format:'Y/n/j' data-page=$page name="target-category" options=$kubun selected=$selected_kubun}
             </div>
             <div class="header-cal">
                 <table style="margin-right: 15px;">
