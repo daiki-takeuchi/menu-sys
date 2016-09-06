@@ -14,6 +14,7 @@ $(function () {
             } else {
                 input.val(input.val() + $(this).text());
             }
+            input.valid();
         }
     });
 });
