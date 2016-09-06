@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="format-detection" content="telephone=no"/>
     <link rel="shortcut icon" href="{base_url}favicon.ico" />
+    <link rel="apple-touch-icon" sizes="152x152" href="{base_url}apple-touch-icon.png">
     <link rel="stylesheet" href="{base_url}assets/css/jquery-ui-1.12.0.min.css"/>
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="{base_url}assets/css/bootstrap-dialog.min.css"/>
