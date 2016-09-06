@@ -41,28 +41,26 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="row" style="margin: 5px;display: inline-block;">
-                            <div class="hidden-xs">
-                                <div class="col-xs-12 bg-light-gray" style="height: 390px;padding-top: 10px;">
-                                    <div>
-                                        <button type="button" class="btn-keyboard">1</button>
-                                        <button type="button" class="btn-keyboard">2</button>
-                                        <button type="button" class="btn-keyboard">3</button>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn-keyboard">4</button>
-                                        <button type="button" class="btn-keyboard">5</button>
-                                        <button type="button" class="btn-keyboard">6</button>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn-keyboard">7</button>
-                                        <button type="button" class="btn-keyboard">8</button>
-                                        <button type="button" class="btn-keyboard">9</button>
-                                    </div>
-                                    <div>
-                                        <button type="button" class="btn-keyboard">0</button>
-                                        <button type="button" class="btn-keyboard" style="width: 155px;">BackSpace</button>
-                                    </div>
+                        <div class="row hidden-xs" style="margin: 5px;display: inline-block;">
+                            <div class="col-xs-12 bg-light-gray" style="height: 390px;padding-top: 10px;">
+                                <div>
+                                    <button type="button" class="btn-keyboard">1</button>
+                                    <button type="button" class="btn-keyboard">2</button>
+                                    <button type="button" class="btn-keyboard">3</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn-keyboard">4</button>
+                                    <button type="button" class="btn-keyboard">5</button>
+                                    <button type="button" class="btn-keyboard">6</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn-keyboard">7</button>
+                                    <button type="button" class="btn-keyboard">8</button>
+                                    <button type="button" class="btn-keyboard">9</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn-keyboard">0</button>
+                                    <button type="button" class="btn-keyboard" style="width: 155px;">BackSpace</button>
                                 </div>
                             </div>
                         </div>
