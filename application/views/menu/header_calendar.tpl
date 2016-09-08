@@ -28,13 +28,9 @@
                                         {/foreach}
                                     </tr>
                                     <tr>
-                                        <td class="menu_reserved">予約済み</td>
-                                        <td class="menu_reserved">予約済み</td>
-                                        <td class="menu_reserved">予約済み</td>
-                                        <td class="menu_reserved"></td>
-                                        <td class="menu_reserved"></td>
-                                        <td class="menu_reserved"></td>
-                                        <td class="menu_reserved"></td>
+                                        {foreach from=$reservation item=is_reserved}
+                                            <td class="menu_reserved">{if $is_reserved}予約済み{/if}</td>
+                                        {/foreach}
                                     </tr>
                                 </table>
                             </div>

@@ -81,6 +81,13 @@ class Menu extends MY_Controller {
             $i++;
         }
 
+        $i = 0;
+        foreach ($this->lang->line('week') as $item) {
+            $data['reservation'][date('Y/m/d', strtotime($i . ' day', $monday))] =
+                $this->reservation_model->is_reserved(date('Y/m/d', strtotime($i . ' day', $monday)), $this->user_id);
+            $i++;
+        }
+
         $data['href'] = base_url() . 'menu/' . date('Y/m/d', $date);
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
@@ -190,6 +197,13 @@ class Menu extends MY_Controller {
         $i = 0;
         foreach ($this->lang->line('week') as $item) {
             $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            $i++;
+        }
+
+        $i = 0;
+        foreach ($this->lang->line('week') as $item) {
+            $data['reservation'][date('Y/m/d', strtotime($i . ' day', $monday))] =
+                $this->reservation_model->is_reserved(date('Y/m/d', strtotime($i . ' day', $monday)), $this->user_id);
             $i++;
         }
 
