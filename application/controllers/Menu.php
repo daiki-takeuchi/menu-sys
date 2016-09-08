@@ -72,8 +72,6 @@ class Menu extends MY_Controller {
 
         $date = $this->get_date($y, $m, $d);
         $monday = $this->get_this_monday($date);
-        $next_monday = strtotime('next monday', $monday);
-        $last_monday = strtotime('last monday', $monday);
 
         $i = 0;
         $data['week'] = [];
@@ -96,9 +94,8 @@ class Menu extends MY_Controller {
         $data['href'] = base_url() . 'menu/' . date('Y/m/d', $date);
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
-        $data['next_monday'] = date('Y/m/d', $next_monday);
-        $data['last_monday'] = date('Y/m/d', $last_monday);
-        $data['next_week_menu_exists'] = $this->week_menu_exists($next_monday, $is_all = false);
+        $data['next_date'] = $this->get_next_date($date);
+        $data['prev_date'] = $this->get_prev_date($date);
 
         $this->smarty->assign($data);
         $this->display('menu/index.tpl');
@@ -197,8 +194,6 @@ class Menu extends MY_Controller {
 
         $date = $this->get_date($y, $m, $d);
         $monday = $this->get_this_monday($date);
-        $next_monday = strtotime('next monday', $monday);
-        $last_monday = strtotime('last monday', $monday);
 
         $i = 0;
         $data['week'] = [];
@@ -221,9 +216,8 @@ class Menu extends MY_Controller {
         $data['href'] = site_url() . 'menu/' . date('Y/m/d', $date);
         $data['menu_list'] = $this->get_menu_all(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
-        $data['next_monday'] = date('Y/m/d', $next_monday);
-        $data['last_monday'] = date('Y/m/d', $last_monday);
-        $data['next_week_menu_exists'] = $this->week_menu_exists($next_monday, $is_all = true);
+        $data['next_date'] = $this->get_next_date($date, $is_all = true);
+        $data['prev_date'] = $this->get_prev_date($date, $is_all = true);
 
         $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
@@ -413,16 +407,33 @@ class Menu extends MY_Controller {
         return $this->get_menu($supply_date, true);
     }
 
-    private function week_menu_exists($date, $is_all = false) {
-        // 月曜日
-        $monday = date('Y/m/d', $this->get_this_monday($date));
+    private function get_next_date($date, $is_all = false) {
+        $ret = null;
         // 日曜日
         $sunday = date('Y/m/d', $this->get_this_sunday($date));
-        $where = array('supply_date >=' => $monday, 'supply_date <=' => $sunday);
+        $where = array('supply_date >' => $sunday);
         if(!$is_all) {
             $where['open_date <='] = date('Y/m/d');
         }
-        $menus = $this->menu_model->find_by($where, true);
-        return count($menus) > 0;
+        $menus = $this->menu_model->order_by('supply_date','asc')->find_by($where, true);
+        if($menus) {
+            $ret = $menus[0]['supply_date'];
+        }
+        return $ret;
+    }
+
+    private function get_prev_date($date, $is_all = false) {
+        $ret = null;
+        // 月曜日
+        $monday = date('Y/m/d', $this->get_this_monday($date));
+        $where = array('supply_date <' => $monday);
+        if(!$is_all) {
+            $where['open_date <='] = date('Y/m/d');
+        }
+        $menus = $this->menu_model->order_by('supply_date','desc')->find_by($where, true);
+        if($menus) {
+            $ret = $menus[0]['supply_date'];
+        }
+        return $ret;
     }
 }

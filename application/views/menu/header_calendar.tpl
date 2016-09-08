@@ -9,9 +9,11 @@
                     <tr>
                         <td>
                             <div align="center" style="height:45px;padding-top:9px;">
-                                <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$last_monday|date_format:'Y/n/j'}" class="btn btn-orange btn-sm box rd15">
+                                {if $prev_date}
+                                <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$prev_date|date_format:'Y/n/j'}" class="btn btn-orange btn-sm box rd15">
                                     <span class="fa fa-arrow-left"></span> <span class="spNone">前の週</span>
                                 </a>
+                                {/if}
                             </div>
                         </td>
                         <td>
@@ -58,8 +60,8 @@
                         </td>
                         <td>
                             <div align="center" style="height:45px;padding-top:9px;">
-                                {if $next_week_menu_exists}
-                                <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$next_monday|date_format:'Y/n/j'}" type="button" class="btn btn-orange btn-sm box rd15">
+                                {if $next_date}
+                                <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$next_date|date_format:'Y/n/j'}" type="button" class="btn btn-orange btn-sm box rd15">
                                     <span class="spNone">次の週</span> <span class="fa fa-arrow-right"></span>
                                 </a>
                                 {/if}
