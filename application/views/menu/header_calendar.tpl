@@ -43,7 +43,7 @@
                                         <td align="center">
                                             <select class="selectpicker show-menu-arrow select-date" data-width="105px">
                                                 {foreach from=$week item=date key=day_of_week}
-                                                <option value="{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$date|date_format:'Y/n/j'}"{if $date === $selected_date} selected{/if}>
+                                                <option data-subtext="{if isset($reservation[$date]) && $reservation[$date]}予約済み{/if}" value="{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$date|date_format:'Y/n/j'}"{if $date === $selected_date} selected{/if}>
                                                     {$date|date_format:'n/j'}({$day_of_week})
                                                 </option>
                                                 {/foreach}
