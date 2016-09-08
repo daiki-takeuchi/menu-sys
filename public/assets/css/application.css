@@ -442,7 +442,6 @@ fieldset[disabled] .btn-delete.focus {
 }
 
 a.cal-day {
-    margin: 3px;
     padding: 4px 8px;
     text-decoration: none;
     cursor: pointer;
@@ -454,7 +453,6 @@ a.cal-day:hover {
     color: #fff;
     border-radius: 8px;
     display: inline-block;
-    padding: 4px 8px;
     text-decoration: none;
 }
 
@@ -463,7 +461,6 @@ a.cal-selected {
     color: #fff;
     border-radius: 8px;
     display: inline-block;
-    padding: 4px 8px;
     text-decoration: none;
     cursor: pointer;
 }

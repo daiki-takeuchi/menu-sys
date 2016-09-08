@@ -18,7 +18,7 @@
                             <div class="bg-light-gray spNone1024" align="center"
                                  style="height:50px;margin: 0 20px 0 20px;">
                                 <table style="table-layout:fixed;" width="100%">
-                                    <tr>
+                                    <tr height="28px;">
                                         {foreach from=$week item=date key=day_of_week}
                                         <td align="center">
                                             <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$date|date_format:'Y/n/j'}" class="cal-day{if $date === $selected_date} cal-selected{/if}">
