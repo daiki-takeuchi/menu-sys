@@ -17,7 +17,7 @@ class Reservation_model extends MY_Model
 
     public function is_reserved($date, $user_id) {
 
-        $query = $this->db->get_where('menu', ['supply_date' => $date]);
+        $query = $this->db->get_where('menu', ['supply_date' => $date, 'open_date <=' => date('Y/m/d')]);
         $result = $query->result_array();
 
         foreach ($result as $menu) {
