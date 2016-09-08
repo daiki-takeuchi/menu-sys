@@ -211,6 +211,7 @@ class Menu extends MY_Controller {
         }
 
         $i = 0;
+        $data['reservation'] =[];
         foreach ($data['week'] as $item) {
             $data['reservation'][$item] =
                 $this->reservation_model->is_reserved($item, $this->user_id);
