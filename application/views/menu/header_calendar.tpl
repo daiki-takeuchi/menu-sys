@@ -27,11 +27,13 @@
                                         </td>
                                         {/foreach}
                                     </tr>
+                                    {if $page == 'index'}
                                     <tr>
                                         {foreach from=$reservation item=is_reserved}
                                             <td class="menu_reserved">{if $is_reserved}予約済み{/if}</td>
                                         {/foreach}
                                     </tr>
+                                    {/if}
                                 </table>
                             </div>
                             <div class="ltNone1024" align="center"
@@ -56,9 +58,11 @@
                         </td>
                         <td>
                             <div align="center" style="height:45px;padding-top:9px;">
+                                {if $next_week_menu_exists}
                                 <a href="{base_url}menu/{if $page == 'menu_list'}list/{/if}{$selected_kubun}/{$next_monday|date_format:'Y/n/j'}" type="button" class="btn btn-orange btn-sm box rd15">
                                     <span class="spNone">次の週</span> <span class="fa fa-arrow-right"></span>
                                 </a>
+                                {/if}
                             </div>
                         </td>
                     </tr>

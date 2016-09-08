@@ -76,15 +76,20 @@ class Menu extends MY_Controller {
         $last_monday = strtotime('last monday', $monday);
 
         $i = 0;
+        $data['week'] = [];
         foreach ($this->lang->line('week') as $item) {
-            $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            $menus = $this->menu_model->find_by(['supply_date' => date('Y/m/d', strtotime($i . ' day', $monday)), 'open_date <=' => date('Y/m/d')]);
+            if($menus) {
+                $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            }
             $i++;
         }
 
         $i = 0;
-        foreach ($this->lang->line('week') as $item) {
-            $data['reservation'][date('Y/m/d', strtotime($i . ' day', $monday))] =
-                $this->reservation_model->is_reserved(date('Y/m/d', strtotime($i . ' day', $monday)), $this->user_id);
+        $data['reservation'] = [];
+        foreach ($data['week'] as $item) {
+            $data['reservation'][$item] =
+                $this->reservation_model->is_reserved($item, $this->user_id);
             $i++;
         }
 
@@ -93,6 +98,7 @@ class Menu extends MY_Controller {
         $data['selected_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
         $data['last_monday'] = date('Y/m/d', $last_monday);
+        $data['next_week_menu_exists'] = $this->week_menu_exists($next_monday, $is_all = false);
 
         $this->smarty->assign($data);
         $this->display('menu/index.tpl');
@@ -195,23 +201,28 @@ class Menu extends MY_Controller {
         $last_monday = strtotime('last monday', $monday);
 
         $i = 0;
+        $data['week'] = [];
         foreach ($this->lang->line('week') as $item) {
-            $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            $menus = $this->menu_model->find_by(['supply_date' => date('Y/m/d', strtotime($i . ' day', $monday))]);
+            if($menus) {
+                $data['week'][$item] = date('Y/m/d', strtotime($i . ' day', $monday));
+            }
             $i++;
         }
 
         $i = 0;
-        foreach ($this->lang->line('week') as $item) {
-            $data['reservation'][date('Y/m/d', strtotime($i . ' day', $monday))] =
-                $this->reservation_model->is_reserved(date('Y/m/d', strtotime($i . ' day', $monday)), $this->user_id);
+        foreach ($data['week'] as $item) {
+            $data['reservation'][$item] =
+                $this->reservation_model->is_reserved($item, $this->user_id);
             $i++;
         }
 
         $data['href'] = site_url() . 'menu/' . date('Y/m/d', $date);
-        $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
+        $data['menu_list'] = $this->get_menu_all(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
         $data['next_monday'] = date('Y/m/d', $next_monday);
         $data['last_monday'] = date('Y/m/d', $last_monday);
+        $data['next_week_menu_exists'] = $this->week_menu_exists($next_monday, $is_all = true);
 
         $this->smarty->assign($data);
         $this->display('menu/menu_list.tpl');
@@ -311,12 +322,13 @@ class Menu extends MY_Controller {
     public function delete($menu_id)
     {
         $menu = $this->menu_model->find($menu_id);
+        $supply_date = $menu['supply_date'];
         if(isset($menu['id'])) {
             $this->menu_model->delete($menu);
         }
         $this->alert('削除しました。');
         // 削除処理をしたら一覧に戻る
-        redirect(base_url().'menu/list');
+        redirect(base_url().'menu/list/' . date("Y/m/d",strtotime($supply_date)));
     }
 
     public function excel_download()
@@ -369,12 +381,20 @@ class Menu extends MY_Controller {
         return (strtotime('monday', $date) == strtotime('today', $date))? strtotime('monday', $date):strtotime('last monday', $date);
     }
 
-    private function get_menu($supply_date) {
+    private function get_this_sunday($date) {
+        return (strtotime('sunday', $date) == strtotime('today', $date))? strtotime('next sunday', $date):strtotime('sunday', $date);
+    }
+
+    private function get_menu($supply_date, $is_all = false) {
 
         $cat = $this->category_model->get_categorys($this->kubun);
         $ret = [];
         foreach ($cat as $item) {
-            $menus = $this->menu_model->find_by(array('supply_date' => $supply_date, 'category_id' => intval($item['id'])), true);
+            $where = array('supply_date' => $supply_date, 'category_id' => intval($item['id']));
+            if(!$is_all) {
+                $where['open_date <='] = date('Y/m/d');
+            }
+            $menus = $this->menu_model->find_by($where, true);
             foreach ($menus as &$menu) {
                 $reservation = $this->reservation_model->find_by(['menu_id' => $menu['id'], 'user_id' => $this->user_id]);
                 if(!$reservation) $reservation = [];
@@ -384,5 +404,22 @@ class Menu extends MY_Controller {
             $ret[$item['id']] = $menus;
         }
         return $ret;
+    }
+
+    private function get_menu_all($supply_date) {
+        return $this->get_menu($supply_date, true);
+    }
+
+    private function week_menu_exists($date, $is_all = false) {
+        // 月曜日
+        $monday = date('Y/m/d', $this->get_this_monday($date));
+        // 日曜日
+        $sunday = date('Y/m/d', $this->get_this_sunday($date));
+        $where = array('supply_date >=' => $monday, 'supply_date <=' => $sunday);
+        if(!$is_all) {
+            $where['open_date <='] = date('Y/m/d');
+        }
+        $menus = $this->menu_model->find_by($where, true);
+        return count($menus) > 0;
     }
 }
