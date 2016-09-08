@@ -49,7 +49,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="menu_reserved">予約済み</td>
+                                        <td class="menu_reserved">{if isset($reservation[$selected_date]) && $reservation[$selected_date]}予約済み{/if}</td>
                                     </tr>
                                 </table>
                             </div>
