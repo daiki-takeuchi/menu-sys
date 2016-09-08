@@ -401,7 +401,9 @@ class Menu extends MY_Controller {
                 $reservation['reservation_count'] = $this->reservation_model->get_reservation_count($menu['id']);
                 $menu = $menu + $reservation;
             }
-            $ret[$item['id']] = $menus;
+            if($menus) {
+                $ret[$item['id']] = $menus;
+            }
         }
         return $ret;
     }
