@@ -25,11 +25,10 @@ class MY_Controller extends CI_Controller
         parent::__construct();
         $this->smarty->template_dir = APPPATH . 'views';
         $this->smarty->compile_dir = APPPATH . 'views/templates_c';
-        $this->load->helper('url');
-        $this->load->helper('form');
-        $this->load->helper('cookie');
+        $this->load->helper(array('url','form','cookie','app_util'));
         $this->load->library('form_validation');
         $this->lang->load('master_lang');
+        $this->config->load('app_config');
 
         $userdata = $this->session->userdata();
 

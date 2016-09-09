@@ -23,8 +23,15 @@
 </form>
 {/block}
 {block name=footer_right}
+    {if {earlier_than_reference_time date="$selected_date"}}
     <button class="btn btn-orange btn-menu-reserve box rd24 font-pop"
             style="font-size: large;width:150px;">
         予約する
     </button>
+    {else}
+        <button class="btn btn-orange box rd24 font-pop disabled"
+                style="font-size: large;width:150px;">
+            予約は{$reference_time|date_format:'G:i'}まで
+        </button>
+    {/if}
 {/block}

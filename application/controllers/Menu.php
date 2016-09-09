@@ -39,7 +39,18 @@ class Menu extends MY_Controller {
 
     public function index($y = false, $m = false, $d = false)
     {
+        $reference_time = $this->config->item('reference_time');
+        $date = $this->get_date($y, $m, $d);
+
+        // 予約ボタン押下時
         if($this->input->post()) {
+
+            // 予約時刻が過ぎている場合はアラート表示
+            if(later_than_reference_time($date)) {
+                $this->alert('予約は当日' . date('G:i', $reference_time) . 'までです。');
+                redirect(current_url());
+            }
+
             $ids = $this->input->post('id');
             $quantity = $this->input->post('quantity');
             $whether_with_rices = $this->input->post('whether_with_rice');
@@ -70,7 +81,6 @@ class Menu extends MY_Controller {
         $data['selected_kubun'] = array_column($this->lang->line('kubun'), 'kubun_en', 'kubun_cc')[$this->kubun];
         $data['news_list'] = $this->news_model->get_now_news();
 
-        $date = $this->get_date($y, $m, $d);
         $monday = $this->get_this_monday($date);
 
         $i = 0;
@@ -96,6 +106,7 @@ class Menu extends MY_Controller {
         $data['selected_date'] = date('Y/m/d', $date);
         $data['next_date'] = $this->get_next_date($date);
         $data['prev_date'] = $this->get_prev_date($date);
+        $data['reference_time'] = $reference_time;
 
         $this->smarty->assign($data);
         $this->display('menu/index.tpl');
