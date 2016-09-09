@@ -30,7 +30,7 @@
     </button>
     {else}
         <button class="btn btn-orange box rd24 font-pop disabled"
-                style="font-size: large;width:150px;">
+                style="font-size: large;">
             予約は{$reference_time|date_format:'G:i'}まで
         </button>
     {/if}
