@@ -17,10 +17,15 @@
  */
 function smarty_function_download_date($params,&$smarty)
 {
+    $CI= &get_instance();
+    $CI->config->load('app_config');
+
     $date = date('Y/m/d');
-    //9:00前か？
-    if (strtotime(date('H:i:s')) <= strtotime('9:00:00')) {
+    $reference_time = $CI->config->item('reference_time');
+
+    //基準時刻より前か？
+    if (strtotime(date('H:i:s')) <= strtotime($reference_time)) {
         $date = date('Y/m/d',strtotime('-1 day')); //１日前
     }
-	return $date;
+    return $date;
 }
