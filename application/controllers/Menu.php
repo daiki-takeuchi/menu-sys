@@ -350,6 +350,7 @@ class Menu extends MY_Controller {
             }
             $data['month']['selected'] = date('n');
             $data['kubun'] = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_cc');
+            $data['reference_time'] = $this->config->item('reference_time');
 
             $this->smarty->assign($data);
             $this->display('menu/excel_download.tpl');

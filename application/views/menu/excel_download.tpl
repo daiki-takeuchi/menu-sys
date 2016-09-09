@@ -14,7 +14,7 @@
                         </span>
                         <input type="text" class="form-control date-all" name="target-date" autocomplete="off" value="{download_date}" placeholder="対象日" />
                     </div>
-                    <div>当日朝9:00以降ダウンロードできます。</div>
+                    <div>当日朝{$reference_time|date_format:'G:i'}以降ダウンロードできます。</div>
                 </div>
                 <div class="form-group area-target-year-month hidden">
                     <div><label>対象年月</label></div>
