@@ -10,7 +10,7 @@ $(function () {
     $('.excel-download').click(function() {
         BootstrapDialog.show({
             title: "帳票ダウンロード",
-            message: $('<div></div>').load('excel_download', function (response, status, xhr) {
+            message: $('<div></div>').load(base_url + 'menu/excel_download', function (response, status, xhr) {
                 // 画面描写より早くに動いちゃうときがあるので、0.1秒後に実行
                 setTimeout( function() {
                     $(".selectpicker").selectpicker({
