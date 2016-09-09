@@ -15,8 +15,14 @@ class Reservation_model extends MY_Model
         return is_null($query['quantity'])?0:$query['quantity'];
     }
 
-    public function is_reserved($date, $user_id) {
+    public function is_reserved($date, $kubun, $user_id) {
 
+        // 対象の区分のカテゴリidを取得
+        $this->db->select('id');
+        $query = $this->db->get_where('category', ['kubun' => $kubun]);
+        $categories = array_column($query->result_array(), 'id');
+
+        $this->db->where_in('category_id', $categories);
         $query = $this->db->get_where('menu', ['supply_date' => $date, 'open_date <=' => date('Y/m/d')]);
         $result = $query->result_array();
 

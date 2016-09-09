@@ -87,7 +87,7 @@ class Menu extends MY_Controller {
         $data['reservation'] = [];
         foreach ($data['week'] as $item) {
             $data['reservation'][$item] =
-                $this->reservation_model->is_reserved($item, $this->user_id);
+                $this->reservation_model->is_reserved($item, $this->kubun, $this->user_id);
             $i++;
         }
 
@@ -209,7 +209,7 @@ class Menu extends MY_Controller {
         $data['reservation'] =[];
         foreach ($data['week'] as $item) {
             $data['reservation'][$item] =
-                $this->reservation_model->is_reserved($item, $this->user_id);
+                $this->reservation_model->is_reserved($item, $this->kubun, $this->user_id);
             $i++;
         }
 
