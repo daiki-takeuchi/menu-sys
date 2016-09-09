@@ -46,7 +46,7 @@ class Menu extends MY_Controller {
         if($this->input->post()) {
 
             // 予約時刻が過ぎている場合はアラート表示
-            if(later_than_reference_time($date)) {
+            if(later_than_reference_time(date('Y/m/d',$date))) {
                 $this->alert('予約は当日' . date('G:i', $reference_time) . 'までです。');
                 redirect(current_url());
             }
