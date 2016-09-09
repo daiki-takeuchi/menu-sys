@@ -377,7 +377,7 @@ class Menu extends MY_Controller {
     }
 
     private function get_this_sunday($date) {
-        return (strtotime('sunday', $date) == strtotime('today', $date))? strtotime('next sunday', $date):strtotime('sunday', $date);
+        return strtotime('sunday', $date);
     }
 
     private function get_menu($supply_date, $is_all = false) {
