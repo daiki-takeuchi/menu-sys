@@ -397,7 +397,8 @@ class Menu extends MY_Controller {
                 $menu = $menu + $reservation;
             }
             if($menus) {
-                $ret[$item['id']] = $menus;
+                $ret[$item['id']]['menu'] = $menus;
+                $ret[$item['id']]['image_file'] = $item['image_file'];
             }
         }
         return $ret;

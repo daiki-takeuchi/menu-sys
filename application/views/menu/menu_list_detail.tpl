@@ -4,10 +4,12 @@
         <div class="row">
             <div class="col-sm-3 col-md-2">
                 <div class="img-menu-category">
-                    <img src="{base_url}assets/img/{if $category_id == 3}special_lunch{elseif $category_id == 4}a_lunch{elseif $category_id == 5}b_lunch{elseif $category_id == 6}japanese_noodle{elseif $category_id == 7}bowl{elseif $category_id == 9}chinese_noodle{elseif $category_id == 10}pasta{elseif $category_id == 11}curry{/if}.jpg">
+                    {if $menu.image_file}
+                        <img src="{base_url}assets/img/{$menu.image_file}">
+                    {/if}
                 </div>
             </div>
-            {foreach from=$menu item=menu_item name=menu}
+            {foreach from=$menu.menu item=menu_item name=menu}
             <div class="col-sm-9 col-md-10{if $smarty.foreach.menu.iteration > 1} col-sm-offset-3 col-md-offset-2{/if}">
                 {if $smarty.foreach.menu.iteration > 1}<hr style="margin: 0 0 5px 0;"/>{/if}
                 <div class="row" style="margin: 5px;">
