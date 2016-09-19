@@ -214,7 +214,7 @@
 {/block}
 {block name=footer_left}
     {if $id}
-        <button id="{$id}" class="btn btn-delete btn-menu-delete box rd24 font-pop"
+        <button id="{$id}" class="btn btn-delete btn-menu-delete box rd24 font-pop{if $reservation_count > 0} disabled{/if}"
                 style="margin-right:15px;font-size: large;">
             <span class="fa fa-trash"></span><span class="spNone"> 削除</span>
         </button>

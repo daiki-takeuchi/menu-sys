@@ -306,6 +306,7 @@ class Menu extends MY_Controller {
         }
 
         $data['menu'] = $menu;
+        $data['reservation_count'] = $this->reservation_model->get_reservation_count($menu['id']);
 
         $category = [];
         $kubuns = array_column($this->lang->line('kubun'), 'kubun_nm', 'kubun_cc');
@@ -330,8 +331,13 @@ class Menu extends MY_Controller {
         $menu = $this->menu_model->find($menu_id);
         $supply_date = $menu['supply_date'];
         if(isset($menu['id'])) {
-            $this->menu_model->delete($menu);
+            if ($this->reservation_model->get_reservation_count($menu['id']) > 0) {
+                $this->alert('このメニューは予約が入っているため、削除できません。');
+                // 削除できなければ元の画面に戻る
+                redirect(base_url().'menu/edit/' . $menu['id']);
+            }
         }
+        $this->menu_model->delete($menu);
         $this->alert('削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'menu/list/' . date("Y/m/d",strtotime($supply_date)));

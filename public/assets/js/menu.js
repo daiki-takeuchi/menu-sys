@@ -57,22 +57,33 @@ $(function () {
     });
 
     $('.btn-menu-delete').click(function () {
-        var menuId = this.id;
-        BootstrapDialog.confirm({
-            title: '削除の確認',
-            message: '削除してよろしいですか？',
-            type: BootstrapDialog.TYPE_WARNING,
-            closable: true,
-            draggable: true,
-            btnCancelLabel: 'キャンセル',
-            btnOKLabel: '削除する',
-            btnOKClass: 'btn-warning',
-            callback: function(result) {
-                if(result) {
-                    window.location.href = base_url + 'menu/delete/' + menuId;
+        if($(this).hasClass('disabled')) {
+            BootstrapDialog.alert({
+                title: '削除できません。',
+                message: 'このメニューは予約が入っているため、削除できません。',
+                type: BootstrapDialog.TYPE_DANGER,
+                closable: true,
+                draggable: true
+            });
+
+        } else {
+            var menuId = this.id;
+            BootstrapDialog.confirm({
+                title: '削除の確認',
+                message: '削除してよろしいですか？',
+                type: BootstrapDialog.TYPE_WARNING,
+                closable: true,
+                draggable: true,
+                btnCancelLabel: 'キャンセル',
+                btnOKLabel: '削除する',
+                btnOKClass: 'btn-warning',
+                callback: function(result) {
+                    if(result) {
+                        window.location.href = base_url + 'menu/delete/' + menuId;
+                    }
                 }
-            }
-        });
+            });
+        }
     });
 
     $('.btn-decrease').on('click', function () {
