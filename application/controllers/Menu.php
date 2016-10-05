@@ -336,8 +336,8 @@ class Menu extends MY_Controller {
                 // 削除できなければ元の画面に戻る
                 redirect(base_url().'menu/edit/' . $menu['id']);
             }
+            $this->menu_model->delete($menu);
         }
-        $this->menu_model->delete($menu);
         $this->alert('削除しました。');
         // 削除処理をしたら一覧に戻る
         redirect(base_url().'menu/list/' . date("Y/m/d",strtotime($supply_date)));
