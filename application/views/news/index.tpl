@@ -21,7 +21,7 @@
                             <div class="col-md-6" style="margin-bottom: 5px;">
                                 <div class="spNone992" style="margin-top: 25px;"></div>
                                 <div class="checkbox-inline">
-                                    <label><input type="checkbox" name="now_news" {if isset($now_news)}checked{/if}>現在掲載中のお知らせだけを掲載する</label>
+                                    <label><input type="checkbox" name="now_news" {if isset($now_news)}checked{/if}>現在掲載中のお知らせだけを表示する</label>
                                 </div>
                             </div>
                         </div>
