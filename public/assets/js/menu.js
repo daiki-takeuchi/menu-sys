@@ -24,6 +24,15 @@ $(function () {
                         autoclose: true,
                         todayHighlight: true
                     });
+                    $('input,select,textarea').each(function(){
+                        $(this)
+                            .focusin(function(element) {
+                                $(this).addClass('bg-light-yellow');
+                            })
+                            .focusout(function(element) {
+                                $(this).removeClass('bg-light-yellow');
+                            });
+                    });
                 }, 100 )
             }),
             buttons: [{
