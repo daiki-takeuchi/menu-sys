@@ -14,6 +14,7 @@ class MY_Controller extends CI_Controller
     protected $company_cc;
     protected $soshiki_cc;
     protected $soshiki_nm;
+    protected $shain_keitai_cc;
     protected $permission_menu;
     protected $permission_user;
     protected $first_login;
@@ -49,7 +50,7 @@ class MY_Controller extends CI_Controller
         $data['user_id'] = $this->user_id = $userdata["user"]["id"];
         $data['user_name'] = $this->user_name = $userdata["user"]["name"];
         $data['shain_bn'] = $this->shain_bn = $userdata["user"]["shain_bn"];
-        $data['shain_keitai_cc'] = $userdata["user"]["shain_keitai_cc"];
+        $data['shain_keitai_cc'] = $this->shain_keitai_cc = $userdata["user"]["shain_keitai_cc"];
         $data['company_cc'] = $this->company_cc = $userdata["user"]["company_cc"];
         $data['soshiki_cc'] = $this->soshiki_cc = $userdata["user"]["soshiki_cc"];
         $data['soshiki_nm'] = $this->soshiki_nm = $userdata["user"]["soshiki_nm"];

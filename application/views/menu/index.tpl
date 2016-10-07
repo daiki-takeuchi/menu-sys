@@ -23,14 +23,15 @@
 </form>
 {/block}
 {block name=footer_right}
+    <span style="margin:0;padding:0;">合計 <span id="sum_price" class="font-pop font-price price">{convert_han2full string=$sum_price}</span> 円</span>
     {if {earlier_than_reference_time date="$selected_date"}}
     <button class="btn btn-orange btn-menu-reserve box rd24 font-pop"
-            style="font-size: large;width:150px;">
+            style="font-size: large;width:150px;margin-left:27px;margin-top:-22px;">
         予約する
     </button>
     {else}
         <button class="btn btn-orange box rd24 font-pop disabled"
-                style="font-size: large;">
+                style="font-size: large;margin-left:27px;margin-top:-22px;">
             予約は{$reference_time|date_format:'G:i'}まで
         </button>
     {/if}

@@ -98,6 +98,27 @@ $(function () {
     $('.btn-decrease').on('click', function () {
         var input = $(this).parent().parent().find('input');
         if(input.val() > 0) {
+            var sum_price = $('#sum_price').html();
+            sum_price = sum_price.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+            }).replace(/,/g, '');
+
+            var span_price = $(this).parent().parent().parent().find('.font-price');
+            var price = 0;
+            $(span_price).each(function(i, elem) {
+                if(!$(elem).hasClass('hidden')) {
+                    price = $(elem).html().replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+                    }).replace(/,/g, '');
+                }
+            });
+
+            sum_price = parseInt(sum_price) - parseInt(price);
+            sum_price = sum_price.toString().replace(/(\d)(?=(\d\d\d)+$)/g, '$1,').replace(/[A-Za-z0-9]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+            });
+            $('#sum_price').html(sum_price);
+
             input.val(parseInt(input.val(), 10) - 1);
         } else {
             MessageBox.show('予約数はマイナスにはできません。');
@@ -107,6 +128,27 @@ $(function () {
     $('.btn-increase').on('click', function () {
         var input = $(this).parent().parent().find('input');
         if(input.val() < 99) {
+            var sum_price = $('#sum_price').html();
+            sum_price = sum_price.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+            }).replace(/,/g, '');
+
+            var span_price = $(this).parent().parent().parent().find('.font-price');
+            var price = 0;
+            $(span_price).each(function(i, elem) {
+                if(!$(elem).hasClass('hidden')) {
+                    price = $(elem).html().replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+                    }).replace(/,/g, '');
+                }
+            });
+
+            sum_price = parseInt(sum_price) + parseInt(price);
+            sum_price = sum_price.toString().replace(/(\d)(?=(\d\d\d)+$)/g, '$1,').replace(/[A-Za-z0-9]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+            });
+            $('#sum_price').html(sum_price);
+
             input.val(parseInt(input.val(), 10) + 1);
         } else {
             MessageBox.show('予約数は2桁より大きい値を入力できません。');

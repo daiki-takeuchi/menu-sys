@@ -103,6 +103,7 @@ class Menu extends MY_Controller {
 
         $data['href'] = base_url() . 'menu/' . date('Y/m/d', $date);
         $data['menu_list'] = $this->get_menu(date('Y/m/d', $date));
+        $data['sum_price'] = $this->get_sum_price(date('Y/m/d', $date));
         $data['selected_date'] = date('Y/m/d', $date);
         $data['next_date'] = $this->get_next_date($date);
         $data['prev_date'] = $this->get_prev_date($date);
@@ -432,6 +433,28 @@ class Menu extends MY_Controller {
 
     private function get_menu_all($supply_date) {
         return $this->get_menu($supply_date, true);
+    }
+
+    private function get_sum_price($supply_date) {
+
+        $cat = $this->category_model->get_categorys($this->kubun);
+        $ret = '0';
+        if(in_array($this->shain_keitai_cc, array('01','02','03','04'))) {
+            $price = 'price_regular';
+        } else {
+            $price = 'price_non_regular';
+        }
+        foreach ($cat as $item) {
+            $where = array('supply_date' => $supply_date, 'category_id' => intval($item['id']), 'open_date <=' => date('Y/m/d'));
+            $menus = $this->menu_model->find_by($where, true);
+            foreach ($menus as $menu) {
+                $reservation = $this->reservation_model->find_by(['menu_id' => $menu['id'], 'user_id' => $this->user_id]);
+                if($reservation) {
+                    $ret += (intval($menu[$price]) * intval($reservation['quantity']));
+                }
+            }
+        }
+        return number_format($ret);
     }
 
     private function get_next_date($date, $is_all = false) {
