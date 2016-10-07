@@ -375,9 +375,9 @@ class Menu extends MY_Controller {
                     $tags[] = $value;
                 }
             }
-            $tags = array_unique(array_merge(array('ヘルシーメニュー', '減塩','1日に必要な野菜の1/3使用', 'Healty Menu'), $tags));
+            $tags = array_values(array_unique(array_merge(array('ヘルシーメニュー', '減塩','1日に必要な野菜の1/3使用', 'Healty Menu'), $tags)));
             echo json_encode($tags);
-       }
+        }
     }
 
     private function _save(&$menu) {
