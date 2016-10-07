@@ -91,13 +91,17 @@ $(function () {
         if(input.val() > 0) {
             input.val(parseInt(input.val(), 10) - 1);
         } else {
-            MessageBox.show('マイナスにはできません。');
+            MessageBox.show('予約数はマイナスにはできません。');
         }
     });
 
     $('.btn-increase').on('click', function () {
         var input = $(this).parent().parent().find('input');
-        input.val(parseInt(input.val(), 10) + 1);
+        if(input.val() < 99) {
+            input.val(parseInt(input.val(), 10) + 1);
+        } else {
+            MessageBox.show('予約数は2桁より大きい値を入力できません。');
+        }
     });
 
     $('.btn-with-rice button:first-of-type').click(function () {
@@ -165,7 +169,29 @@ $(function () {
     });
 
     $('.btn-menu-reserve').click(function () {
-        $('#form').submit();
+        var sum = 0;
+        $("input[name='quantity\\[\\]']").each(function(i, elem) {
+            sum += parseInt($(elem).val());
+        });
+        if(sum > 1) {
+            BootstrapDialog.confirm({
+                title: '予約内容の確認',
+                message: '2食以上の予約があります。予約してもよろしいでしょうか？',
+                type: BootstrapDialog.TYPE_WARNING,
+                closable: true,
+                draggable: true,
+                btnCancelLabel: 'キャンセル',
+                btnOKLabel: '予約する',
+                btnOKClass: 'btn-warning',
+                callback: function(result) {
+                    if(result) {
+                        $('#form').submit();
+                    }
+                }
+            });
+        } else {
+            $('#form').submit();
+        }
     });
 
     $('.select-date').change(function () {

@@ -25,6 +25,13 @@ class Menu_model extends MY_Model
         return $this->find();
     }
 
+    public function get_tags() {
+        $this->db->select('tag');
+        $this->db->distinct();
+        $this->db->where('tag Is Not Null');
+        return $this->find();
+    }
+
     public function get_count_all()
     {
         return $this->count;

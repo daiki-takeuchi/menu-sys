@@ -366,7 +366,15 @@ class Menu extends MY_Controller {
     public function tag() {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
-            echo json_encode(array('ヘルシーメニュー', '減塩','1日に必要な野菜の1/3使用', 'Healty Menu'));
+            $tag_list = array_column($this->menu_model->get_tags(),"tag");
+            foreach ($tag_list as $tag) {
+                $tmp = explode(',', $tag);
+                foreach ($tmp as $value) {
+                    $tags[] = $value;
+                }
+            }
+            $tags = array_unique(array_merge(array('ヘルシーメニュー', '減塩','1日に必要な野菜の1/3使用', 'Healty Menu'), $tags));
+            echo json_encode($tags);
         }
     }
 
