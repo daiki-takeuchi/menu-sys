@@ -158,17 +158,32 @@ $(function () {
     $('.btn-with-rice button:first-of-type').click(function () {
         var $price_elem = $(this).parent().parent().parent().find('.price');
         var $price_with_rice_elem = $(this).parent().parent().parent().find('.price-with-rice');
+        var input = $(this).parent().parent().parent().find("input[name='quantity\\[\\]']");
+        var sum_price = $('#sum_price').html();
+        sum_price = sum_price.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+            return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+        }).replace(/,/g, '');
+        var price_with_rice = parseInt(input.val()) * parseInt($price_with_rice_elem.html().replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+            }).replace(/,/g, ''));
+        var price = parseInt(input.val()) * parseInt($price_elem.html().replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+            }).replace(/,/g, ''));
+
         if($(this).hasClass('btn-default')) {
             $(this).parent().find('button:last-of-type').addClass('btn-default');
             $(this).parent().find('button:last-of-type').removeClass('btn-info');
             $(this).addClass('btn-info');
             $(this).removeClass('btn-default');
+
             $price_with_rice_elem.delay(200).fadeOut(300,function () {
                 $price_with_rice_elem.addClass('hidden');
             });
             $price_elem.delay(200).fadeIn(300,function () {
                 $price_elem.removeClass('hidden');
             });
+            sum_price = sum_price - price_with_rice + price;
+
             $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('0');
         } else {
             $(this).parent().find('button:last-of-type').addClass('btn-info');
@@ -181,13 +196,31 @@ $(function () {
             $price_with_rice_elem.delay(200).fadeIn(300,function () {
                 $price_with_rice_elem.removeClass('hidden');
             });
+            sum_price = sum_price - price + price_with_rice;
+
             $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('1');
         }
+        sum_price = sum_price.toString().replace(/(\d)(?=(\d\d\d)+$)/g, '$1,').replace(/[A-Za-z0-9]/g, function(s) {
+            return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+        });
+        $('#sum_price').html(sum_price);
     });
 
     $('.btn-with-rice button:last-of-type').click(function () {
         var $price_elem = $(this).parent().parent().parent().find('.price');
         var $price_with_rice_elem = $(this).parent().parent().parent().find('.price-with-rice');
+        var input = $(this).parent().parent().parent().find("input[name='quantity\\[\\]']");
+        var sum_price = $('#sum_price').html();
+        sum_price = sum_price.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+            return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+        }).replace(/,/g, '');
+        var price_with_rice = parseInt(input.val()) * parseInt($price_with_rice_elem.html().replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+            }).replace(/,/g, ''));
+        var price = parseInt(input.val()) * parseInt($price_elem.html().replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+                return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+            }).replace(/,/g, ''));
+
         if($(this).hasClass('btn-default')) {
             $(this).parent().find('button:first-of-type').addClass('btn-default');
             $(this).parent().find('button:first-of-type').removeClass('btn-info');
@@ -199,6 +232,8 @@ $(function () {
             $price_with_rice_elem.delay(200).fadeIn(300,function () {
                 $price_with_rice_elem.removeClass('hidden');
             });
+            sum_price = sum_price - price + price_with_rice;
+
             $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('1');
         } else {
             $(this).parent().find('button:first-of-type').addClass('btn-info');
@@ -211,8 +246,14 @@ $(function () {
             $price_elem.delay(200).fadeIn(300,function () {
                 $price_elem.removeClass('hidden');
             });
+            sum_price = sum_price - price_with_rice + price;
+
             $(this).parent().parent().find('input[name="whether_with_rice\\[\\]"]').val('0');
         }
+        sum_price = sum_price.toString().replace(/(\d)(?=(\d\d\d)+$)/g, '$1,').replace(/[A-Za-z0-9]/g, function(s) {
+            return String.fromCharCode(s.charCodeAt(0) + 0xFEE0);
+        });
+        $('#sum_price').html(sum_price);
     });
 
     $('.btn-save-num').click(function () {
