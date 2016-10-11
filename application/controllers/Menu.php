@@ -451,7 +451,11 @@ class Menu extends MY_Controller {
             foreach ($menus as $menu) {
                 $reservation = $this->reservation_model->find_by(['menu_id' => $menu['id'], 'user_id' => $this->user_id]);
                 if($reservation) {
-                    $ret += (intval($menu[$price]) * intval($reservation['quantity']));
+                    if($reservation['whether_with_rice']) {
+                        $ret += (intval($menu[$price . '_with_rice']) * intval($reservation['quantity']));
+                    } else {
+                        $ret += (intval($menu[$price]) * intval($reservation['quantity']));
+                    }
                 }
             }
         }
