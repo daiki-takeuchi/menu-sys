@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  *
  * @property User_model $user_model
  * @property Company_model $company_model
+ * @property Organization_model $organization_model
  */
 class User extends MY_Controller {
 
@@ -38,9 +39,11 @@ class User extends MY_Controller {
 
         $this->load->model('user_model');
         $this->load->model('company_model');
+        $this->load->model('organization_model');
 
         $this->user_model->setUserName($this->user_name);
         $this->company_model->setUserName($this->user_name);
+        $this->organization_model->setUserName($this->user_name);
     }
 
     public function index()
@@ -67,7 +70,7 @@ class User extends MY_Controller {
         $data['keitai'] = array_column($this->lang->line('keitai'), 'keitai_nm', 'keitai_cc');
 
         foreach ($data['company'] as $company_cc => $company_nm) {
-            $soshiki = $this->user_model->get_organization_for_select($company_cc);
+            $soshiki = $this->organization_model->get_organization_for_select($company_cc, date('Y/m/d'));
             $data['organization'][$company_nm] = array_column($soshiki, 'soshiki_nm', 'soshiki_cc');
         }
 
@@ -118,7 +121,7 @@ class User extends MY_Controller {
         $data['gender'] = array_column($this->lang->line('gender'), 'gender_nm', 'gender_cc');
         $data['organization'] = [];
         if($user_id || $this->input->post()) {
-            $data['organization'] = array(array_column($this->company_model->find(), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->user_model->get_organization($user['company_cc']), 'soshiki_nm', 'soshiki_cc'));
+            $data['organization'] = array(array_column($this->company_model->find(), 'company_nm', 'company_cc')[$user['company_cc']] => array_column($this->organization_model->get_organization($user['company_cc'], date('Y/m/d')), 'soshiki_nm', 'soshiki_cc'));
         }
 
         $back_url = base_url() . 'user';
@@ -148,7 +151,7 @@ class User extends MY_Controller {
         // Ajax通信の場合のみ処理する
         if($this->input->is_ajax_request()) {
             $company_cc = $this->input->post('company_cc');
-            $organization = $this->user_model->get_organization($company_cc);
+            $organization = $this->organization_model->get_organization($company_cc, date('Y/m/d'));
             echo json_encode($organization);
         }
     }
