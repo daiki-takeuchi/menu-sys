@@ -47,10 +47,15 @@ var MessageBox = (function() {
     that.show = function(text, callback) {
         clearTimeout(hideHandler);
 
+        elem.stop();
         elem.find("span").html(text);
         elem.delay(200).fadeIn().delay(4000).fadeOut(function () {
             if(callback !== undefined) callback();
         });
+    };
+
+    that.hide = function() {
+        elem.css('display', 'none');
     };
 
     return that;
@@ -99,5 +104,12 @@ $(function () {
         if($(this).attr('href') === undefined) {
             event.preventDefault();
         }
+    });
+});
+
+$(function () {
+    $(".bb-alert a.close").click(function (event) {
+        event.preventDefault();
+        MessageBox.hide();
     });
 });

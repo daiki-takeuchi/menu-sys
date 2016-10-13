@@ -36,6 +36,7 @@
 {include file='templates/header.tpl'}
 {/if}
 <div class="bb-alert alert alert-info" style="display:none;">
+    <a href="#" class="close" title="close" style="padding-top:5px;">&times;</a>
     <span></span>
 </div>
 {block name=main_contents}{/block}

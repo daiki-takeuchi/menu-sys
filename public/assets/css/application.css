@@ -467,10 +467,10 @@ a.cal-selected {
 
 .bb-alert {
     position: fixed;
-    top: 20%;
-    right: 0;
+    top: 50%;
+    right: 40%;
     margin-bottom: 0;
-    font-size: small;
+    font-size: 18pt;
     z-index: 2000;
 }
 
