@@ -16,7 +16,7 @@
                         {/if}
                         <div class="row" style="margin: 5px;display: inline-block;">
                             <div class="col-xs-12 bg-light-gray" style="height: 390px; width: 220px;padding-top: 15px;">
-                                <div style="text-align: center;"><img class="img-rounded" src="{base_url}assets/img/a_lunch.jpg"></div>
+                                <div style="text-align: center;"><img class="img-rounded" src="{base_url}assets/img/icon_login.jpg"></div>
                                 <form class="form-horizontal" method="post" id="form" data-toggle="validator">
                                     <div class="row" style="padding-top: 20px;">
                                         <div class="col-xs-10 col-xs-offset-1 controls">
