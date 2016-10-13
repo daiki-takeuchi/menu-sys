@@ -47,6 +47,7 @@ var MessageBox = (function() {
     that.show = function(text, callback) {
         clearTimeout(hideHandler);
 
+        this.hide();
         elem.stop();
         elem.find("span").html(text);
         elem.delay(200).fadeIn().delay(4000).fadeOut(function () {
