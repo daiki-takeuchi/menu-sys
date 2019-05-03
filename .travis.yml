@@ -29,7 +29,7 @@ after_script:
 deploy:
   provider: heroku
   api_key:
-    secure: rHx63ux9rPj35lyrm0fcpXy5p+BKh9uyM5XsoLgXbsYtpl7E73k5ZI12ROOAa3tGF9n1HUaTnfWp5kVo/bPajkiu8W9du5cXTrdYSPC1Q8GHosOZJfCL0pvn+TgO0G1AL9CszYAkE7Ejg6oCrNYvq3e2aZPvdFuOSg2VrQ41aMbT1ZIo9TelrYnUGw7UP913CCUoo320wiPUlLGOqg+3HWiW+MT19cLqLHy2Ih4rI2OeZK4aB2RcQpEfHMwD/HsIBJCkQLEcwRnDQKR7cPcaywpX91Pg25a9ei54pcjmXnC0quw6YV709pwWyZ+Fw+KL4UrvfUjkNNnTOTjng4QTmJ2HvJ+QZv9hAU85+eNzufXwVRh9Pq5TYWq+kn02aPZeObXxcOt5x8UYnZAqGHL0mt+TvKwfNSauup9chUERAKn4XH7nXGWbdJxL+LooWGiLaUS8AyR35PV+i36+UJfG5tUTj9Y0SC6mtiKmz4u8DpYAQoyhOO4lIbelma7WvAe8lE8B0u3nUyULijPbqqQJO1B1hKkm2hESr5IWWe+xNn6N7Gw5G8O7SB/OMH+7hzVKMCYh1fmwPt8846yXv3dTamoH6YxvbU0pbO+Ybhke58TmFADB9kqyyN9OhEtxx2bQ5CQVLqvHCz4NGp5sOZTmTP+lSI+YeRXiO0NLDKrpar0=
+    secure: $HEROKU_API_KEY
   app: dry-plains-28266
   on:
     repo: daiki-takeuchi/menu-sys
